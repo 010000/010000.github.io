@@ -6,10 +6,28 @@
     <description>Recent content in Categories on 010000 logbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Mon, 25 Nov 2019 23:07:40 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 26 Nov 2019 08:33:56 +0900</lastBuildDate>
     
 	<atom:link href="https://010000.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>office</title>
+      <link>https://010000.github.io/categories/office/</link>
+      <pubDate>Tue, 26 Nov 2019 08:33:56 +0900</pubDate>
+      
+      <guid>https://010000.github.io/categories/office/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>test</title>
+      <link>https://010000.github.io/categories/test/</link>
+      <pubDate>Tue, 26 Nov 2019 08:33:56 +0900</pubDate>
+      
+      <guid>https://010000.github.io/categories/test/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>category</title>

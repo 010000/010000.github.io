@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>office on 010000 logbook</title>
+    <link>https://010000.github.io/categories/office/</link>
+    <description>Recent content in office on 010000 logbook</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Tue, 26 Nov 2019 08:33:56 +0900</lastBuildDate>
+    
+	<atom:link href="https://010000.github.io/categories/office/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Test333</title>
+      <link>https://010000.github.io/2019/11/test333/</link>
+      <pubDate>Tue, 26 Nov 2019 08:33:56 +0900</pubDate>
+      
+      <guid>https://010000.github.io/2019/11/test333/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
