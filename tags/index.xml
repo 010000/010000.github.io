@@ -6,17 +6,44 @@
     <description>Recent content in Tags on 010000 logbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Mon, 18 Nov 2019 00:12:08 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 25 Nov 2019 23:07:40 +0900</lastBuildDate>
     
 	<atom:link href="https://010000.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>tag1</title>
+      <link>https://010000.github.io/tags/tag1/</link>
+      <pubDate>Mon, 25 Nov 2019 23:07:40 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/tag1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tag2</title>
+      <link>https://010000.github.io/tags/tag2/</link>
+      <pubDate>Mon, 25 Nov 2019 23:07:40 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/tag2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>blogging</title>
       <link>https://010000.github.io/tags/blogging/</link>
-      <pubDate>Mon, 18 Nov 2019 00:12:08 +0900</pubDate>
+      <pubDate>Mon, 25 Nov 2019 23:01:57 +0900</pubDate>
       
       <guid>https://010000.github.io/tags/blogging/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>https://010000.github.io/tags/hugo/</link>
+      <pubDate>Mon, 25 Nov 2019 23:01:57 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/hugo/</guid>
       <description></description>
     </item>
     
@@ -26,15 +53,6 @@
       <pubDate>Mon, 18 Nov 2019 00:12:08 +0900</pubDate>
       
       <guid>https://010000.github.io/tags/font/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hugo</title>
-      <link>https://010000.github.io/tags/hugo/</link>
-      <pubDate>Mon, 18 Nov 2019 00:12:08 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/hugo/</guid>
       <description></description>
     </item>
     

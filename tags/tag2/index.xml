@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>010000 logbook</title>
-    <link>https://010000.github.io/</link>
-    <description>Recent content on 010000 logbook</description>
+    <title>tag2 on 010000 logbook</title>
+    <link>https://010000.github.io/tags/tag2/</link>
+    <description>Recent content in tag2 on 010000 logbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Mon, 25 Nov 2019 23:07:40 +0900</lastBuildDate>
     
-	<atom:link href="https://010000.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://010000.github.io/tags/tag2/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -30,29 +30,11 @@
     </item>
     
     <item>
-      <title>Customize Hugo Tranquilpeak Theme</title>
-      <link>https://010000.github.io/2019/11/customize-hugo-tranquilpeak-theme/</link>
-      <pubDate>Mon, 25 Nov 2019 23:01:57 +0900</pubDate>
-      
-      <guid>https://010000.github.io/2019/11/customize-hugo-tranquilpeak-theme/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Install Hugo Tranquilpeak Theme</title>
       <link>https://010000.github.io/2019/11/install-hugo-tranquilpeak-theme/</link>
       <pubDate>Mon, 25 Nov 2019 22:57:15 +0900</pubDate>
       
       <guid>https://010000.github.io/2019/11/install-hugo-tranquilpeak-theme/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hugo and Github pages 설치하기</title>
-      <link>https://010000.github.io/2019/11/hugo-and-github-pages-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/</link>
-      <pubDate>Mon, 18 Nov 2019 00:12:08 +0900</pubDate>
-      
-      <guid>https://010000.github.io/2019/11/hugo-and-github-pages-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/</guid>
       <description></description>
     </item>
     

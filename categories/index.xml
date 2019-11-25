@@ -6,10 +6,46 @@
     <description>Recent content in Categories on 010000 logbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Mon, 18 Nov 2019 00:12:08 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 25 Nov 2019 23:07:40 +0900</lastBuildDate>
     
 	<atom:link href="https://010000.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>category</title>
+      <link>https://010000.github.io/categories/category/</link>
+      <pubDate>Mon, 25 Nov 2019 23:07:40 +0900</pubDate>
+      
+      <guid>https://010000.github.io/categories/category/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>subcategory</title>
+      <link>https://010000.github.io/categories/subcategory/</link>
+      <pubDate>Mon, 25 Nov 2019 23:07:40 +0900</pubDate>
+      
+      <guid>https://010000.github.io/categories/subcategory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Blogging</title>
+      <link>https://010000.github.io/categories/blogging/</link>
+      <pubDate>Mon, 25 Nov 2019 23:01:57 +0900</pubDate>
+      
+      <guid>https://010000.github.io/categories/blogging/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://010000.github.io/categories/hugo/</link>
+      <pubDate>Mon, 25 Nov 2019 23:01:57 +0900</pubDate>
+      
+      <guid>https://010000.github.io/categories/hugo/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Blog</title>
@@ -17,15 +53,6 @@
       <pubDate>Mon, 18 Nov 2019 00:12:08 +0900</pubDate>
       
       <guid>https://010000.github.io/categories/blog/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hugo</title>
-      <link>https://010000.github.io/categories/hugo/</link>
-      <pubDate>Mon, 18 Nov 2019 00:12:08 +0900</pubDate>
-      
-      <guid>https://010000.github.io/categories/hugo/</guid>
       <description></description>
     </item>
     
