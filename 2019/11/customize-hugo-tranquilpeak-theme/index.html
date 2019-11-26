@@ -42,6 +42,8 @@
     
       <meta property="article:tag" content="Hugo">
     
+      <meta property="article:tag" content="Gist">
+    
   
 
 
@@ -286,40 +288,49 @@
 <p>기본 테마에는 없는 추가해야될 파일</p>
 
 <ol>
-<li><p>(로컬저장소) \Hugo\blog\layouts\shortcodes\ 위치에 아래 소스코드를 넣는다.</p>
-
-<pre><code class="language-javascript">&lt;code class=&quot;gist&quot; data-gist-id=&quot;{{ .Get 0 }}&quot; data-gist-line=&quot;{{ .Get 1 }}&quot; data-gist-caption=&quot;{{ .Get 2 }}&quot;&gt;&lt;/code&gt;
-</code></pre></li>
+<li>(로컬저장소) \Hugo\blog\layouts\shortcodes\ 위치에 아래 소스코드를 넣는다.</li>
 </ol>
 
-<p>아래  url을 참고하여 gist에 노출될 옵션들을 원하는대로 변경하여 사용하면 된다.
-    <a href="http://blairvanderhoof.com/gist-embed/">http://blairvanderhoof.com/gist-embed/</a></p>
+<p><code class="gist" data-gist-id="7e81ddf4492ab521864b5389d0cfa67d" data-gist-line="1-4" data-gist-caption="// http://blairvanderhoof.com/gist-embed/를 참조하여 수정하세요"></code>
+   /*```javascript
+   <code class="gist" data-gist-id="{{ .Get 0 }}" data-gist-line="{{ .Get 1 }}" data-gist-caption="{{ .Get 2 }}"></code></p>
 
-<ol>
-<li><p>(로컬저장소) Hugo\blog\layouts\partials\gist-header.html head에 추가되도록 생성한다.</p>
+<pre><code>
+   아래  url을 참고하여 gist에 노출될 옵션들을 원하는대로 변경하여 사용하면 된다.
+    http://blairvanderhoof.com/gist-embed/ */
+   
+2. (로컬저장소) Hugo\blog\layouts\partials\gist-header.html head에 추가되도록 생성한다.
 
-<pre><code class="language-html">&lt;script type=&quot;text/javascript&quot; src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js&quot;&gt;&lt;/script&gt;
-&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.7.1/gist-embed.min.js&quot;&gt;&lt;/script&gt;
-</code></pre></li>
-
-<li><p>(로컬저장소) \Hugo\blog\layouts\partials 폴더에 head.html 파일을 themes 폴더에서 찾아 복사 후 수정한다.
-원본: (로컬저장소) \Hugo\blog\themes\hugo-tranquilpeak-theme\layouts\partials\head.html
-복사본: (로컬저장소) \Hugo\blog\layouts\partials\head.html</p></li>
-</ol>
-
-<p>복사본의 파일을 열고 아래 부분을 추가한다.
-   *partials 폴더가 없다면 새로 생성한다.</p>
-
-<pre><code class="language-html">   {{ partial &quot;gist-header&quot; . }}
 </code></pre>
 
+<p>html
+   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.7.1/gist-embed.min.js"></script></p>
+
+<pre><code>
+3. (로컬저장소) \Hugo\blog\layouts\partials 폴더에 head.html 파일을 themes 폴더에서 찾아 복사 후 수정한다.
+   원본: (로컬저장소) \Hugo\blog\themes\hugo-tranquilpeak-theme\layouts\partials\head.html
+   복사본: (로컬저장소) \Hugo\blog\layouts\partials\head.html
+
+   복사본의 파일을 열고 아래 부분을 추가한다.
+   *partials 폴더가 없다면 새로 생성한다.
+
+</code></pre>
+
+<p>html
+   {{ partial &ldquo;gist-header&rdquo; . }}</p>
+
+<pre><code>
+4. .md 파일 생성할 때 아래와 같은 예로 gist-embed 로 추가하여 작성하면 된다.
+
+</code></pre>
+
+<p>html
+   &lsquo;<code class="gist" data-gist-id="22e3566df4c2be122120e161b4a6bb54" data-gist-line="2-4" data-gist-caption="// c:\test.js 예제 파일입니다"></code>&rsquo;
+   ```</p>
+
 <ol>
-<li><p>.md 파일 생성할 때 아래와 같은 예로 gist-embed 로 추가하여 작성하면 된다.</p>
-
-<pre><code class="language-html">'<code class="gist" data-gist-id="22e3566df4c2be122120e161b4a6bb54" data-gist-line="2-4" data-gist-caption="// c:\test.js 예제 파일입니다"></code>'
-</code></pre></li>
-
-<li><p>hugo server -D로 테스트해보고 github에 push하면 된다.</p></li>
+<li>hugo server -D로 테스트해보고 github에 push하면 된다.</li>
 </ol>
 
 <p>참고한 글:  <a href="https://ialy1595.github.io/post/blog-construct-2/">https://ialy1595.github.io/post/blog-construct-2/</a></p>
@@ -337,6 +348,8 @@
   <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/blogging/">Blogging</a>
 
   <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/hugo/">Hugo</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/gist/">Gist</a>
 
                   </div>
                 
