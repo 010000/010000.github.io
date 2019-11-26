@@ -120,11 +120,11 @@ img {
   padding-bottom: 20px;
 }
 
-img[src$='#center30'] {
+img[src$='#center25'] {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 30%;
+  width: 25%;
 }
 
 img[src$='#center50'] {
