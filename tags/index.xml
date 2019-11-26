@@ -6,10 +6,37 @@
     <description>Recent content in Tags on 010000 logbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Mon, 25 Nov 2019 23:07:40 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 26 Nov 2019 17:28:23 +0900</lastBuildDate>
     
 	<atom:link href="https://010000.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>blog</title>
+      <link>https://010000.github.io/tags/blog/</link>
+      <pubDate>Tue, 26 Nov 2019 17:28:23 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>https://010000.github.io/tags/hugo/</link>
+      <pubDate>Tue, 26 Nov 2019 17:28:23 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>images</title>
+      <link>https://010000.github.io/tags/images/</link>
+      <pubDate>Tue, 26 Nov 2019 17:28:23 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/images/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>tag1</title>
@@ -30,29 +57,11 @@
     </item>
     
     <item>
-      <title>Blog</title>
-      <link>https://010000.github.io/tags/blog/</link>
-      <pubDate>Mon, 25 Nov 2019 23:01:57 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/blog/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Gist</title>
       <link>https://010000.github.io/tags/gist/</link>
       <pubDate>Mon, 25 Nov 2019 23:01:57 +0900</pubDate>
       
       <guid>https://010000.github.io/tags/gist/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hugo</title>
-      <link>https://010000.github.io/tags/hugo/</link>
-      <pubDate>Mon, 25 Nov 2019 23:01:57 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/hugo/</guid>
       <description></description>
     </item>
     
