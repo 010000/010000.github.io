@@ -288,8 +288,8 @@
 
 <ol>
 <li><p>이미지 노출할 때 사이즈와 가운데 정렬을 style로 지정하여 적용한다.<br />
-1) (Local저장소) \blog\themes\hugo-tranquilpeak-theme\static\css 폴더에서 style.css 파일을 아래 경로에 복사한다.<br />
-2) (Local 저장소) \blog\static\css\style.css 로 복사된 css 파일에 아래 style을 추가한다.</p>
+1) (Local저장소) blog\themes\hugo-tranquilpeak-theme\static\css 폴더에서 style.css 파일을 아래 경로에 복사한다.<br />
+2) (Local저장소) blog\static\css\style.css 로 복사된 css 파일에 아래 style을 추가한다.</p>
 
 <pre><code class="language-css">img[src$='#center30'] {
 display: block;
@@ -320,19 +320,19 @@ width: 100%;
 }
 </code></pre></li>
 
-<li><p>(Local 저장소) blog/layouts/partials/header.html 에 위 1번의 style.css 파일을 추가한다.</p>
+<li><p>(Local저장소) blog\layouts\partials\header.html 에 위 1번의 style.css 파일을 추가한다.</p>
 
 <pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;{{ &quot;/css/styles.css&quot; | relURL }}&quot;&gt;
 </code></pre></li>
 
 <li><p>.md 파일을 아래 정보를 참고하여 이미지를 추가한다.<br />
 e.g. (Local저장소) blog\static\images\addingImages-hugo\lemmings_01.png<br />
-<img src="imagesaddingImages-hugolemmings_01.png#center100" alt="" /><br />
+<img src="https://010000.github.io/images/addingImages-hugo/lemmings_01.png#center100" alt="" /><br />
 image 저장 위치: (Local저장소) blog\static\images\<br />
 md파일은 아래와 같이 작성할 때 추가하면 된다.</p>
 
 <pre><code class="language-mark">//      이미지 파일 경로와 파일명     #css style
-![](/images/blog_construct/html0.png#center75)
+![](/images/blog_construct/imagefile01.png#center75)
 </code></pre></li>
 
 <li><p>hugo server -D 로 테스트 후 github push 하면 된다.</p></li>
