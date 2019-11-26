@@ -30,11 +30,11 @@
     </item>
     
     <item>
-      <title>blogging</title>
-      <link>https://010000.github.io/tags/blogging/</link>
+      <title>Blog</title>
+      <link>https://010000.github.io/tags/blog/</link>
       <pubDate>Mon, 25 Nov 2019 23:01:57 +0900</pubDate>
       
-      <guid>https://010000.github.io/tags/blogging/</guid>
+      <guid>https://010000.github.io/tags/blog/</guid>
       <description></description>
     </item>
     
@@ -53,6 +53,15 @@
       <pubDate>Mon, 25 Nov 2019 23:01:57 +0900</pubDate>
       
       <guid>https://010000.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>blogging</title>
+      <link>https://010000.github.io/tags/blogging/</link>
+      <pubDate>Mon, 18 Nov 2019 00:12:08 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/blogging/</guid>
       <description></description>
     </item>
     
