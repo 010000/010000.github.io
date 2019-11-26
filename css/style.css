@@ -114,6 +114,12 @@ a:hover {
   color: #349ef3;
   text-decoration: underline; }
 
+img {
+  max-width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
 img[src$='#center30'] {
   display: block;
   margin-left: auto;
@@ -2006,8 +2012,6 @@ a.fancybox {
     -moz-hypens: auto;
     hypens: auto; }
     .post .post-content img {
-      display: block;
-      width: auto;
       max-width: 100%; }
     .post .post-content :not(blockquote):not(.alert) > p {
       margin: 1.5em 0 0 0; }
