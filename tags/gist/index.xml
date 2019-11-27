@@ -17,7 +17,9 @@
       <pubDate>Mon, 25 Nov 2019 23:01:57 +0900</pubDate>
       
       <guid>https://010000.github.io/2019/11/customize-hugo-tranquilpeak-theme/</guid>
-      <description>&lt;p&gt;; Blair Vanderhoof의 gist-embed로 소스코드 노출하는 글을 보게되어 참고하여 적용해봤다.&lt;/p&gt;</description>
+      <description>&lt;p&gt;;Github gist에 업로드된 소스의 일부분만 노출하고 필요시 raw 전체도 볼 수 있도록 Blair Vanderhoof의 gist-embed로
+좀 더 직관적으로 볼 수 있는 글을 보게되어 적용해봤다.&lt;br /&gt;
+Blair Vanderhoof, Gist Embed Project (&lt;a href=&#34;http://blairvanderhoof.com/gist-embed/&#34;&gt;http://blairvanderhoof.com/gist-embed/&lt;/a&gt;)&lt;/p&gt;</description>
     </item>
     
   </channel>
