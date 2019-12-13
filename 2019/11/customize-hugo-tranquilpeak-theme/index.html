@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.59.1 with theme Tranquilpeak 0.4.7-BETA">
+<meta name="generator" content="Hugo 0.61.0 with theme Tranquilpeak 0.4.7-BETA">
 <meta name="author" content="Jeffrey Y. Jo">
 <meta name="keywords" content="tech">
 <meta name="description" content="
@@ -90,19 +90,16 @@ ref. Blair Vanderhoof, Gist Embed Project
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
     
     
-    <link rel="stylesheet" href="https://010000.github.io/css/style-pirq8wdc0dq6eiqpp6uo4hfz0qk6208waxmlkau1ht4jchsvx2sgvv6rfyi.min.css" />
-
-    <link rel="stylesheet" href="https://010000.github.io/css/styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-
+    <link rel="stylesheet" href="https://010000.github.io/css/style-wipiyohmdjgnazmzu4ewtr7sviegd5vky9bzabbazpwalb9bozl5reaijkzd.min.css" />
     
+    
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css">
+      
     
 
     
@@ -306,35 +303,36 @@ ref. Blair Vanderhoof, Gist Embed Project
             <div class="main-content-wrap">
               <ul>
 <li>Github gist에 업로드된 소스의 일부분만 노출하고 필요시 raw 전체도 볼 수 있도록 Blair Vanderhoof의 gist-embed로
-좀 더 직관적으로 가독성을 높일 수 있는 글을 보게되어 적용해봤다.<br /></li>
-<li>ref. Blair Vanderhoof, <a href="http://blairvanderhoof.com/gist-embed/">Gist Embed Project</a><br /></li>
+좀 더 직관적으로 가독성을 높일 수 있는 글을 보게되어 적용해봤다.</li>
+<li>ref. Blair Vanderhoof, <a href="http://blairvanderhoof.com/gist-embed/">Gist Embed Project</a></li>
 </ul>
-
-<h1 id="gist-embed로-소스코드-노출하기">gist-embed로 소스코드 노출하기</h1>
-
+<h1 id="gist-embed--">gist-embed로 소스코드 노출하기</h1>
 <p>기본 테마에는 없는 추가해야될 파일</p>
-
 <ol>
-<li><p>\blog\layouts\shortcodes\gist.html 위치에 아래 소스를 넣는다.
-<code class="gist" data-gist-id="7e81ddf4492ab521864b5389d0cfa67d" data-gist-line="1-5" data-gist-caption=""></code></p></li>
-
-<li><p>\blog\layouts\partials\gist-header.html 파일을 수정하여 head에 추가되도록 생성한다.
-<code class="gist" data-gist-id="7e81ddf4492ab521864b5389d0cfa67d" data-gist-line="7-10" data-gist-caption=""></code></p></li>
-
-<li><p>\blog\layouts\partials 폴더 head.html 파일을 themes 폴더에서 찾아 복사 후 수정한다.<br />
+<li>
+<p>\blog\layouts\shortcodes\gist.html 위치에 아래 소스를 넣는다.
+<code class="gist" data-gist-id="7e81ddf4492ab521864b5389d0cfa67d" data-gist-line="1-5" data-gist-caption=""></code></p>
+</li>
+<li>
+<p>\blog\layouts\partials\gist-header.html 파일을 수정하여 head에 추가되도록 생성한다.
+<code class="gist" data-gist-id="7e81ddf4492ab521864b5389d0cfa67d" data-gist-line="7-10" data-gist-caption=""></code></p>
+</li>
+<li>
+<p>\blog\layouts\partials 폴더 head.html 파일을 themes 폴더에서 찾아 복사 후 수정한다.<br>
 복사본의 파일을 열고 &lsquo;{{ partial &ldquo;gist - header&rdquo; . }}&lsquo;부분을 추가한다
 <code class="gist" data-gist-id="7e81ddf4492ab521864b5389d0cfa67d" data-gist-line="12-25" data-gist-caption=""></code>
-원본: (로컬저장소) \Hugo\blog\themes\hugo-tranquilpeak-theme\layouts\partials\head.html<br />
-복사본: (로컬저장소) \Hugo\blog\layouts\partials\head.html</p></li>
-
-<li><p>.md 파일을 작성할 때 아래와 같은 예로 gist-embed 로 추가하여 작성하면 된다.
-<code class="gist" data-gist-id="7e81ddf4492ab521864b5389d0cfa67d" data-gist-line="27-29" data-gist-caption=""></code></p></li>
-
-<li><p>hugo server -D로 테스트해보고 github에 push하면 된다.</p></li>
+원본: (로컬저장소) \Hugo\blog\themes\hugo-tranquilpeak-theme\layouts\partials\head.html<br>
+복사본: (로컬저장소) \Hugo\blog\layouts\partials\head.html</p>
+</li>
+<li>
+<p>.md 파일을 작성할 때 아래와 같은 예로 gist-embed 로 추가하여 작성하면 된다.
+<code class="gist" data-gist-id="7e81ddf4492ab521864b5389d0cfa67d" data-gist-line="27-29" data-gist-caption=""></code></p>
+</li>
+<li>
+<p>hugo server -D로 테스트해보고 github에 push하면 된다.</p>
+</li>
 </ol>
-
 <p>참고한 글</p>
-
 <ul>
 <li><a href="https://ialy1595.github.io/post/blog-construct-2/">https://ialy1595.github.io/post/blog-construct-2/</a></li>
 </ul>
@@ -596,7 +594,7 @@ ref. Blair Vanderhoof, Gist Embed Project
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
 
 
-<script src="https://010000.github.io/js/script-7mote7ezlzevuve8vte8kcms5cbygmb8btqpuqpw8bt3phecsop7sd1dpy.min.js"></script>
+<script src="https://010000.github.io/js/script-huqicg2ippovzekfwda3kcd4qo0zfiw8dsnq1bvouyp0vjpbdv41whsxrp.min.js"></script>
 
 
 <script lang="javascript">

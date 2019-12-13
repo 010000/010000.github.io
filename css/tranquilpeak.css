@@ -3,13 +3,13 @@
 @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
 @font-face {
-  font-family: 'Nanum Gothic', 'Open Sans';
+  font-family: 'Open Sans';
   font-style: normal;
   font-weight: 400;
   src: local("Open Sans"), local("OpenSans"), url(https://fonts.gstatic.com/s/opensans/v10/cJZKeOuBrn4kERxqtaUH3SZ2oysoEQEeKwjgmXLRnTc.ttf) format("truetype"); }
 
 @font-face {
-  font-family: 'Nanum Gothic', 'Open Sans';
+  font-family: 'Open Sans';
   font-style: normal;
   font-weight: 700;
   src: local("Open Sans Bold"), local("OpenSans-Bold"), url(https://fonts.gstatic.com/s/opensans/v10/k3k702ZOKiLJc3WVjuplzJS3E-kSBmtLoNJPDtbj2Pk.ttf) format("truetype"); }
@@ -114,40 +114,6 @@ a:hover {
   color: #349ef3;
   text-decoration: underline; }
 
-img {
-  max-width: 100%;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-img[src$='#center25'] {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 25%;
-}
-
-img[src$='#center50'] {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-
-img[src$='#center75'] {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 75%;
-}
-
-img[src$='#center100'] {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-}
-
 table {
   width: 100%;
   background: transparent;
@@ -189,11 +155,11 @@ pre > code {
   font-size: 1.4rem; }
 
 code {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   display: inline-block;
-  font-family: 'Nanum Gothic Coding', Menlo, Consolas, monospace;
+  font-family: Menlo, Consolas, monospace;
   font-weight: 400;
-  background-color: #000000;
+  background-color: #f7f8f8;
   padding: 0 10px; }
 
 blockquote {
@@ -2762,8 +2728,8 @@ a.tag--small,
     transform: translateY(-50%); }
 
 pre > code {
-  background: #000000;
-  color: #DDD; }
+  background: #f7f8f8;
+  color: #333; }
 
 pre > code.codeblock {
   overflow-x: auto; }
