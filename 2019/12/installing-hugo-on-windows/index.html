@@ -8,39 +8,51 @@
 <meta name="generator" content="Hugo 0.61.0 with theme Tranquilpeak 0.4.7-BETA">
 <meta name="author" content="Jeffrey Y. Jo">
 <meta name="keywords" content="tech">
-<meta name="description" content="">
+<meta name="description" content="
+Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인하며 설치하게 됩니다.
+윈도우즈 환경설정(path) 과정은 생략됐습니다. Update: Dec 15, 2019
+">
 
 
-<meta property="og:description" content="">
+<meta property="og:description" content="
+Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인하며 설치하게 됩니다.
+윈도우즈 환경설정(path) 과정은 생략됐습니다. Update: Dec 15, 2019
+">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Manage Hugo Tranquilpeak Theme">
-<meta name="twitter:title" content="Manage Hugo Tranquilpeak Theme">
-<meta property="og:url" content="https://010000.github.io/2019/11/manage-hugo-tranquilpeak-theme/">
-<meta property="twitter:url" content="https://010000.github.io/2019/11/manage-hugo-tranquilpeak-theme/">
+<meta property="og:title" content="Installing Hugo on Windows">
+<meta name="twitter:title" content="Installing Hugo on Windows">
+<meta property="og:url" content="https://010000.github.io/2019/12/installing-hugo-on-windows/">
+<meta property="twitter:url" content="https://010000.github.io/2019/12/installing-hugo-on-windows/">
 <meta property="og:site_name" content="010000 logbook">
-<meta property="og:description" content="">
-<meta name="twitter:description" content="">
+<meta property="og:description" content="
+Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인하며 설치하게 됩니다.
+윈도우즈 환경설정(path) 과정은 생략됐습니다. Update: Dec 15, 2019
+">
+<meta name="twitter:description" content="
+Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인하며 설치하게 됩니다.
+윈도우즈 환경설정(path) 과정은 생략됐습니다. Update: Dec 15, 2019
+">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2019-11-25T23:07:40">
+    <meta property="article:published_time" content="2019-12-14T23:57:15">
   
   
-    <meta property="article:modified_time" content="2019-11-25T23:07:40">
+    <meta property="article:modified_time" content="2019-12-14T23:57:15">
   
-  
-  
-    
-      <meta property="article:section" content="category">
-    
-      <meta property="article:section" content="subcategory">
-    
   
   
     
-      <meta property="article:tag" content="tag1">
+      <meta property="article:section" content="Blog">
     
-      <meta property="article:tag" content="tag2">
+      <meta property="article:section" content="Hugo">
+    
+  
+  
+    
+      <meta property="article:tag" content="Hugo">
+    
+      <meta property="article:tag" content="Install">
     
   
 
@@ -61,14 +73,14 @@
   <meta property="twitter:image" content="https://010000.github.io/galaga_t.png">
 
 
-    <title>Manage Hugo Tranquilpeak Theme</title>
+    <title>Installing Hugo on Windows</title>
 
     <link rel="icon" href="https://010000.github.io/favicon.ico">
     
 
     
 
-    <link rel="canonical" href="https://010000.github.io/2019/11/manage-hugo-tranquilpeak-theme/">
+    <link rel="canonical" href="https://010000.github.io/2019/12/installing-hugo-on-windows/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -254,15 +266,15 @@
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      Manage Hugo Tranquilpeak Theme
+      Installing Hugo on Windows
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2019-11-25T23:07:40&#43;09:00">
+      <time itemprop="datePublished" datetime="2019-12-14T23:57:15&#43;09:00">
         
-  November 25, 2019
+  December 14, 2019
 
       </time>
     
@@ -271,9 +283,9 @@
   
     <span>in</span>
     
-      <a class="category-link" href="https://010000.github.io/categories/category">category</a>, 
+      <a class="category-link" href="https://010000.github.io/categories/blog">Blog</a>, 
     
-      <a class="category-link" href="https://010000.github.io/categories/subcategory">subcategory</a>
+      <a class="category-link" href="https://010000.github.io/categories/hugo">Hugo</a>
     
   
 
@@ -283,7 +295,61 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              
+              <ul>
+<li>Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인하며 설치하게 됩니다.</li>
+<li>윈도우즈 환경설정(path) 과정은 생략됐습니다. <em>Update: Dec 15, 2019</em></li>
+</ul>
+<h2 id="configuration">Configuration</h2>
+<p>. OS with its version: Windows 10<br>
+. Browser with its version: Google Chrome<br>
+. Hugo version: v0.61.0 (windows/amd64 BuildDate: 2019-12-11T08:29:13Z)<br>
+. Hugo theme: hugo-tranquilpeak-theme (0.4.7-BETA)</p>
+<h2 id="install-hugo">Install Hugo</h2>
+<ol>
+<li>
+<p>Install Go lang</p>
+<p>Download: <a href="https://golang.org/dl/">golang.org</a><br>
+File: go1.13.5.windows-amd64.msi</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">C:\&gt;go version
+go version go 1.13.5 windows/amd64
+</code></pre></div></li>
+<li>
+<p>Install Git</p>
+<p>Download: <a href="https://gitforwindows.org/">gitforwindows.org</a><br>
+File: Git-2.24.1.2-64-bit.exe</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">C:\&gt;git version
+git version 2.24.1.windows.2
+</code></pre></div></li>
+<li>
+<p>Install Hugo</p>
+<p>Download: <a href="https://github.com/gohugoio/hugo/releases">https://github.com/gohugoio/hugo/releases</a><br>
+File: hugo_0.61.0_Windows-64bit.zip</p>
+<p>Step.1: Unzip the hugo zip file to bin folder
+*{Local drive}\Hugo\bin</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">C:\&gt;dir s:\Hugo\bin
+12/13/2019  00:10    &lt;DIR&gt;          .
+12/13/2019  00:10    &lt;DIR&gt;          ..
+12/11/2019  17:30        41,070,080 hugo.exe
+12/11/2019  17:15            11,357 LICENSE
+12/11/2019  17:15            11,227 README.md
+   
+C:\&gt;hugo version
+Hugo Static Site Generator v0.61.0-9B445B9D windows/amd64 BuildDate: 2019-12-11T08:29:13Z
+</code></pre></div></li>
+<li>
+<p>Create new site</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">S:\Hugo&gt;hugo new site blog
+Congratulations! Your new Hugo site is created in S:\Hugo\blog.
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">S:\Hugo&gt;dir
+   
+12/13/2019  11:04    &lt;DIR&gt;          .
+12/13/2019  11:04    &lt;DIR&gt;          ..
+12/13/2019  00:10    &lt;DIR&gt;          bin
+12/13/2019  14:36    &lt;DIR&gt;          blog
+               1개 파일         120,885,701 바이트
+               6개 디렉터리  63,021,146,112 바이트 남음
+</code></pre></div></li>
+</ol>
               
             </div>
           </div>
@@ -295,9 +361,9 @@
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">TAGGED IN</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/tag1/">tag1</a>
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/hugo/">Hugo</a>
 
-  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/tag2/">tag2</a>
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/install/">Install</a>
 
                   </div>
                 
@@ -310,7 +376,7 @@
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/2019/11/addingimages-hugo/" data-tooltip="AddingImages Hugo">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/2019/12/installing-hugo-tranquilpeak-theme-on-windows/" data-tooltip="Installing hugo-tranquilpeak-theme on Windows">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -318,7 +384,7 @@
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/2019/11/build-hugo-tranquilpeak-theme/" data-tooltip="Build Hugo Tranquilpeak Theme">
+                <a class="post-action-btn btn btn--disabled">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -336,19 +402,19 @@
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/2019/11/manage-hugo-tranquilpeak-theme/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/2019/12/installing-hugo-on-windows/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/2019/11/manage-hugo-tranquilpeak-theme/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/2019/12/installing-hugo-on-windows/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/2019/11/manage-hugo-tranquilpeak-theme/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/2019/12/installing-hugo-on-windows/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -403,7 +469,7 @@
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/2019/11/addingimages-hugo/" data-tooltip="AddingImages Hugo">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/2019/12/installing-hugo-tranquilpeak-theme-on-windows/" data-tooltip="Installing hugo-tranquilpeak-theme on Windows">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -411,7 +477,7 @@
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/2019/11/build-hugo-tranquilpeak-theme/" data-tooltip="Build Hugo Tranquilpeak Theme">
+                <a class="post-action-btn btn btn--disabled">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -429,19 +495,19 @@
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/2019/11/manage-hugo-tranquilpeak-theme/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/2019/12/installing-hugo-on-windows/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/2019/11/manage-hugo-tranquilpeak-theme/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/2019/12/installing-hugo-on-windows/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/2019/11/manage-hugo-tranquilpeak-theme/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/2019/12/installing-hugo-on-windows/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -471,19 +537,19 @@
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F010000.github.io%2F2019%2F11%2Fmanage-hugo-tranquilpeak-theme%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F010000.github.io%2F2019%2F12%2Finstalling-hugo-on-windows%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2F010000.github.io%2F2019%2F11%2Fmanage-hugo-tranquilpeak-theme%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2F010000.github.io%2F2019%2F12%2Finstalling-hugo-on-windows%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2F010000.github.io%2F2019%2F11%2Fmanage-hugo-tranquilpeak-theme%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2F010000.github.io%2F2019%2F12%2Finstalling-hugo-on-windows%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -575,9 +641,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/010000.github.io\/2019\/11\/manage-hugo-tranquilpeak-theme\/';
+          this.page.url = 'https:\/\/010000.github.io\/2019\/12\/installing-hugo-on-windows\/';
           
-            this.page.identifier = '\/2019\/11\/manage-hugo-tranquilpeak-theme\/'
+            this.page.identifier = '\/2019\/12\/installing-hugo-on-windows\/'
           
         };
         (function() {
