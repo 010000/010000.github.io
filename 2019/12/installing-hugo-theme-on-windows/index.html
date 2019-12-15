@@ -9,36 +9,32 @@
 <meta name="author" content="Jeffrey Y. Jo">
 <meta name="keywords" content="tech">
 <meta name="description" content="
-Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인하며 설치하게 됩니다.
-윈도우즈 환경설정(path) 과정은 생략했습니다. Update: Dec 15, 2019
+Windows  OS에서 Hugo / hugo-tranquilpeak-theme 테마를 설치합니다. Update: Dec 15, 2019
 ">
 
 
 <meta property="og:description" content="
-Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인하며 설치하게 됩니다.
-윈도우즈 환경설정(path) 과정은 생략했습니다. Update: Dec 15, 2019
+Windows  OS에서 Hugo / hugo-tranquilpeak-theme 테마를 설치합니다. Update: Dec 15, 2019
 ">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Installing Hugo on Windows">
-<meta name="twitter:title" content="Installing Hugo on Windows">
-<meta property="og:url" content="https://010000.github.io/2019/12/installing-hugo-on-windows/">
-<meta property="twitter:url" content="https://010000.github.io/2019/12/installing-hugo-on-windows/">
+<meta property="og:title" content="Installing hugo theme on Windows">
+<meta name="twitter:title" content="Installing hugo theme on Windows">
+<meta property="og:url" content="https://010000.github.io/2019/12/installing-hugo-theme-on-windows/">
+<meta property="twitter:url" content="https://010000.github.io/2019/12/installing-hugo-theme-on-windows/">
 <meta property="og:site_name" content="010000 logbook">
 <meta property="og:description" content="
-Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인하며 설치하게 됩니다.
-윈도우즈 환경설정(path) 과정은 생략했습니다. Update: Dec 15, 2019
+Windows  OS에서 Hugo / hugo-tranquilpeak-theme 테마를 설치합니다. Update: Dec 15, 2019
 ">
 <meta name="twitter:description" content="
-Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인하며 설치하게 됩니다.
-윈도우즈 환경설정(path) 과정은 생략했습니다. Update: Dec 15, 2019
+Windows  OS에서 Hugo / hugo-tranquilpeak-theme 테마를 설치합니다. Update: Dec 15, 2019
 ">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2019-12-14T23:57:15">
+    <meta property="article:published_time" content="2019-12-14T23:58:15">
   
   
-    <meta property="article:modified_time" content="2019-12-14T23:57:15">
+    <meta property="article:modified_time" content="2019-12-14T23:58:15">
   
   
   
@@ -53,6 +49,10 @@ Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인하며 설치�
       <meta property="article:tag" content="Hugo">
     
       <meta property="article:tag" content="Install">
+    
+      <meta property="article:tag" content="Theme">
+    
+      <meta property="article:tag" content="hugo-tranquilpeak-theme">
     
       <meta property="article:tag" content="Windows">
     
@@ -75,14 +75,14 @@ Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인하며 설치�
   <meta property="twitter:image" content="https://010000.github.io/galaga_t.png">
 
 
-    <title>Installing Hugo on Windows</title>
+    <title>Installing hugo theme on Windows</title>
 
     <link rel="icon" href="https://010000.github.io/favicon.ico">
     
 
     
 
-    <link rel="canonical" href="https://010000.github.io/2019/12/installing-hugo-on-windows/">
+    <link rel="canonical" href="https://010000.github.io/2019/12/installing-hugo-theme-on-windows/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -268,13 +268,13 @@ Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인하며 설치�
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      Installing Hugo on Windows
+      Installing hugo theme on Windows
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2019-12-14T23:57:15&#43;09:00">
+      <time itemprop="datePublished" datetime="2019-12-14T23:58:15&#43;09:00">
         
   December 14, 2019
 
@@ -298,8 +298,7 @@ Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인하며 설치�
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
               <ul>
-<li>Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인하며 설치하게 됩니다.</li>
-<li>윈도우즈 환경설정(path) 과정은 생략했습니다. <em>Update: Dec 15, 2019</em></li>
+<li>Windows  OS에서 Hugo / hugo-tranquilpeak-theme 테마를 설치합니다. <em>Update: Dec 15, 2019</em></li>
 </ul>
 <h2 id="configuration">Configuration</h2>
 <p>. OS with its version: Windows 10<br>
@@ -309,48 +308,67 @@ Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인하며 설치�
 <h2 id="install-hugo">Install Hugo</h2>
 <ol>
 <li>
-<p>Install Go lang</p>
-<p>Download: <a href="https://golang.org/dl/">golang.org</a><br>
-File: go1.13.5.windows-amd64.msi</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">C:\&gt;go version
-go version go 1.13.5 windows/amd64
+<p>Install Hugo theme, hugo-tranquilpeak-theme</p>
+<p>Git clone: <a href="https://github.com/kakawait/hugo-tranquilpeak-theme.git">hugo-tranquilpeak-theme.git</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">S:\Hugo\blog&gt;cd themes
+S:\Hugo\blog\themes&gt; git clone https://github.com/kakawait/hugo-tranquilpeak-theme.git
+Cloning into &#39;hugo-tranquilpeak-theme&#39;...
+remote: Enumerating objects: 5026, done.
+remote: Total 5026 (delta 0), reused 0 (delta 0), pack-reused 5026
+Receiving objects: 100% (5026/5026), 17.10 MiB | 1.28 MiB/s, done.
+Resolving deltas: 100% (2721/2721), done.
+Updating files: 100% (197/197), done.
 </code></pre></div></li>
 <li>
-<p>Install Git</p>
-<p>Download: <a href="https://gitforwindows.org/">gitforwindows.org</a><br>
-File: Git-2.24.1.2-64-bit.exe</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">C:\&gt;git version
-git version 2.24.1.windows.2
+<p>Copy &amp; edit config.toml file</p>
+<p>; Copy sample file, config.toml to blog folder<br>
+*need to edit the languageCode for Korean</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">S:\Hugo\blog&gt;cp themes\hugo-tranquilpeak-theme\exampleSite\config.toml config.toml
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">S:\Hugo\blog&gt;more config.toml
+(...)
+baseURL = &#34;https://010000.github.io/&#34;
+languageCode = &#34;ko-kr&#34;
+defaultContentLanguage = &#34;en-us&#34;
+title = &#34;010000 logbook&#34;
+theme = &#34;hugo-tranquilpeak-theme&#34;
+disqusShortname = &#34;010000&#34;
+# googleAnalytics = &#34;UA-123-45&#34;
+paginate = 7
+canonifyurls = true
+(...)
 </code></pre></div></li>
 <li>
-<p>Install Hugo</p>
-<p>Download: <a href="https://github.com/gohugoio/hugo/releases">https://github.com/gohugoio/hugo/releases</a><br>
-File: hugo_0.61.0_Windows-64bit.zip</p>
-<p>Step.1: Unzip the hugo_zip file in \Hugo\bin folder<br>
-*{Local drive}\Hugo\bin</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">C:\&gt;dir s:\Hugo\bin
-12/13/2019  00:10    &lt;DIR&gt;          .
-12/13/2019  00:10    &lt;DIR&gt;          ..
-12/11/2019  17:30        41,070,080 hugo.exe
-12/11/2019  17:15            11,357 LICENSE
-12/11/2019  17:15            11,227 README.md
+<p>Run hugo on local drive</p>
+<p>; hugo server -D<br>
+*display also draft documents with -D option</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">s:\0_GithubPages\Hugo\blog&gt;hugo server -D
+Building sites … WARNING: calling IsSet with unsupported type &#34;string&#34; (string) will always return false.
    
-C:\&gt;hugo version
-Hugo Static Site Generator v0.61.0-9B445B9D windows/amd64 BuildDate: 2019-12-11T08:29:13Z
+                   | EN-US
++------------------+-------+
+  Pages            |    48
+  Paginator pages  |     0
+  Non-page files   |     0
+  Static files     |    11
+  Processed images |     0
+  Aliases          |    17
+  Sitemaps         |     1
+  Cleaned          |     0
+   
+Built in 207 ms
+Watching for changes in s:\Hugo\blog\{archetypes,content,data,layouts,static,themes}
+Watching for config changes in s:\Hugo\blog\config.toml
+Environment: &#34;development&#34;
+Serving pages from memory
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Press Ctrl+C to stop
 </code></pre></div></li>
 <li>
-<p>Create new site</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">S:\Hugo&gt;hugo new site blog
-Congratulations! Your new Hugo site is created in S:\Hugo\blog.
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">S:\Hugo&gt;dir
-   
-12/13/2019  11:04    &lt;DIR&gt;          .
-12/13/2019  11:04    &lt;DIR&gt;          ..
-12/13/2019  00:10    &lt;DIR&gt;          bin
-12/13/2019  14:36    &lt;DIR&gt;          blog
-               1개 파일         120,885,701 바이트
-               6개 디렉터리  63,021,146,112 바이트 남음
-</code></pre></div></li>
+<p>Browse with the Chrome</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">http://localhost:1313/
+</code></pre></div><p>​</p>
+</li>
 </ol>
               
             </div>
@@ -367,6 +385,10 @@ Congratulations! Your new Hugo site is created in S:\Hugo\blog.
 
   <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/install/">Install</a>
 
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/theme/">Theme</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/hugo-tranquilpeak-theme/">hugo-tranquilpeak-theme</a>
+
   <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/windows/">Windows</a>
 
                   </div>
@@ -380,7 +402,7 @@ Congratulations! Your new Hugo site is created in S:\Hugo\blog.
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/2019/12/installing-hugo-theme-on-windows/" data-tooltip="Installing hugo theme on Windows">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -388,7 +410,7 @@ Congratulations! Your new Hugo site is created in S:\Hugo\blog.
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/2019/12/installing-hugo-on-windows/" data-tooltip="Installing Hugo on Windows">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -406,19 +428,19 @@ Congratulations! Your new Hugo site is created in S:\Hugo\blog.
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/2019/12/installing-hugo-on-windows/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/2019/12/installing-hugo-theme-on-windows/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/2019/12/installing-hugo-on-windows/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/2019/12/installing-hugo-theme-on-windows/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/2019/12/installing-hugo-on-windows/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/2019/12/installing-hugo-theme-on-windows/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -473,7 +495,7 @@ Congratulations! Your new Hugo site is created in S:\Hugo\blog.
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/2019/12/installing-hugo-theme-on-windows/" data-tooltip="Installing hugo theme on Windows">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -481,7 +503,7 @@ Congratulations! Your new Hugo site is created in S:\Hugo\blog.
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/2019/12/installing-hugo-on-windows/" data-tooltip="Installing Hugo on Windows">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -499,19 +521,19 @@ Congratulations! Your new Hugo site is created in S:\Hugo\blog.
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/2019/12/installing-hugo-on-windows/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/2019/12/installing-hugo-theme-on-windows/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/2019/12/installing-hugo-on-windows/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/2019/12/installing-hugo-theme-on-windows/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/2019/12/installing-hugo-on-windows/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/2019/12/installing-hugo-theme-on-windows/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -541,19 +563,19 @@ Congratulations! Your new Hugo site is created in S:\Hugo\blog.
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F010000.github.io%2F2019%2F12%2Finstalling-hugo-on-windows%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F010000.github.io%2F2019%2F12%2Finstalling-hugo-theme-on-windows%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2F010000.github.io%2F2019%2F12%2Finstalling-hugo-on-windows%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2F010000.github.io%2F2019%2F12%2Finstalling-hugo-theme-on-windows%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2F010000.github.io%2F2019%2F12%2Finstalling-hugo-on-windows%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2F010000.github.io%2F2019%2F12%2Finstalling-hugo-theme-on-windows%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -643,9 +665,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/010000.github.io\/2019\/12\/installing-hugo-on-windows\/';
+          this.page.url = 'https:\/\/010000.github.io\/2019\/12\/installing-hugo-theme-on-windows\/';
           
-            this.page.identifier = '\/2019\/12\/installing-hugo-on-windows\/'
+            this.page.identifier = '\/2019\/12\/installing-hugo-theme-on-windows\/'
           
         };
         (function() {
