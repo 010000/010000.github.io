@@ -100,6 +100,19 @@ Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인하며 설치�
 
     
       
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-154583659-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
     
     
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -302,7 +315,7 @@ Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인하며 설치�
 <li>윈도우즈 환경설정(path) 과정은 생략했습니다. <em>Update: Dec 15, 2019</em></li>
 </ul>
 <h2 id="configuration">Configuration</h2>
-<p>. OS with its version: Windows 10<br>
+<p>. OS with its version: Windows 10 (x64)<br>
 . Browser with its version: Google Chrome<br>
 . Hugo version: v0.61.0 (windows/amd64 BuildDate: 2019-12-11T08:29:13Z)<br>
 . Hugo theme: hugo-tranquilpeak-theme (0.4.7-BETA)</p>
@@ -318,7 +331,9 @@ go version go 1.13.5 windows/amd64
 <li>
 <p>Install Git</p>
 <p>Download: <a href="https://gitforwindows.org/">gitforwindows.org</a><br>
-File: Git-2.24.1.2-64-bit.exe</p>
+File: Git-2.24.1.2-64-bit.exe<br>
+;1번 Go lang 과 Git 설치가 되면 아래 3번 hugo.exe가 있는 /Hugo/bin 폴더를 포함하여<br>
+어느 경로에서든 실행될 수 있도록 윈도 환경설정 path에 등록해줍니다.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">C:\&gt;git version
 git version 2.24.1.windows.2
 </code></pre></div></li>
@@ -327,7 +342,8 @@ git version 2.24.1.windows.2
 <p>Download: <a href="https://github.com/gohugoio/hugo/releases">https://github.com/gohugoio/hugo/releases</a><br>
 File: hugo_0.61.0_Windows-64bit.zip</p>
 <p>Step.1: Unzip the hugo_zip file in \Hugo\bin folder<br>
-*{Local drive}\Hugo\bin</p>
+*{Local drive}\Hugo\bin<br>
+;bin 폴더를 만들어서 압축을 풀어도 되고, Hugo/ 폴더 아래 hugo_zip 압축 파일을 풀고 bin으로 rename 해도 됩니다.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">C:\&gt;dir s:\Hugo\bin
 12/13/2019  00:10    &lt;DIR&gt;          .
 12/13/2019  00:10    &lt;DIR&gt;          ..
@@ -339,7 +355,9 @@ C:\&gt;hugo version
 Hugo Static Site Generator v0.61.0-9B445B9D windows/amd64 BuildDate: 2019-12-11T08:29:13Z
 </code></pre></div></li>
 <li>
-<p>Create new site</p>
+<p>Create new site<br>
+;Hugo 테마와 작성된 글, 이미지 등의 Local 저장소 위치로 blog 란 이름의 폴더를 생성했습니다.<br>
+;브라우저 상에 {id}.github.io 로 시작하는 url 과는 무관한 경로입니다.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">S:\Hugo&gt;hugo new site blog
 Congratulations! Your new Hugo site is created in S:\Hugo\blog.
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">S:\Hugo&gt;dir
@@ -349,7 +367,7 @@ Congratulations! Your new Hugo site is created in S:\Hugo\blog.
 12/13/2019  00:10    &lt;DIR&gt;          bin
 12/13/2019  14:36    &lt;DIR&gt;          blog
                1개 파일         120,885,701 바이트
-               6개 디렉터리  63,021,146,112 바이트 남음
+            6개 디렉터리  63,021,146,112 바이트 남음
 </code></pre></div></li>
 </ol>
               
