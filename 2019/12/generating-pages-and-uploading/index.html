@@ -9,36 +9,36 @@
 <meta name="author" content="Jeffrey Y. Jo">
 <meta name="keywords" content="tech">
 <meta name="description" content="
-Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인하며 설치하게 됩니다.
-윈도우즈 환경설정(path) 과정은 생략했습니다. Update: Dec 15, 2019
+md파일을 Hugo 정적 페이지로 변환하고 github 에 올리기.
+github repository 생성 및 git 사용법은 생략됐습니다. Update: Dec 17, 2019
 ">
 
 
 <meta property="og:description" content="
-Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인하며 설치하게 됩니다.
-윈도우즈 환경설정(path) 과정은 생략했습니다. Update: Dec 15, 2019
+md파일을 Hugo 정적 페이지로 변환하고 github 에 올리기.
+github repository 생성 및 git 사용법은 생략됐습니다. Update: Dec 17, 2019
 ">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Installing Hugo on Windows">
-<meta name="twitter:title" content="Installing Hugo on Windows">
-<meta property="og:url" content="https://010000.github.io/2019/12/installing-hugo-on-windows/">
-<meta property="twitter:url" content="https://010000.github.io/2019/12/installing-hugo-on-windows/">
+<meta property="og:title" content="Generating pages and uploading">
+<meta name="twitter:title" content="Generating pages and uploading">
+<meta property="og:url" content="https://010000.github.io/2019/12/generating-pages-and-uploading/">
+<meta property="twitter:url" content="https://010000.github.io/2019/12/generating-pages-and-uploading/">
 <meta property="og:site_name" content="010000 logbook">
 <meta property="og:description" content="
-Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인하며 설치하게 됩니다.
-윈도우즈 환경설정(path) 과정은 생략했습니다. Update: Dec 15, 2019
+md파일을 Hugo 정적 페이지로 변환하고 github 에 올리기.
+github repository 생성 및 git 사용법은 생략됐습니다. Update: Dec 17, 2019
 ">
 <meta name="twitter:description" content="
-Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인하며 설치하게 됩니다.
-윈도우즈 환경설정(path) 과정은 생략했습니다. Update: Dec 15, 2019
+md파일을 Hugo 정적 페이지로 변환하고 github 에 올리기.
+github repository 생성 및 git 사용법은 생략됐습니다. Update: Dec 17, 2019
 ">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2019-12-14T23:57:15">
+    <meta property="article:published_time" content="2019-12-16T23:05:05">
   
   
-    <meta property="article:modified_time" content="2019-12-14T23:57:15">
+    <meta property="article:modified_time" content="2019-12-16T23:05:05">
   
   
   
@@ -53,6 +53,12 @@ Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인하며 설치�
       <meta property="article:tag" content="Hugo">
     
       <meta property="article:tag" content="Install">
+    
+      <meta property="article:tag" content="hugo-tranquilpeak-theme">
+    
+      <meta property="article:tag" content="git">
+    
+      <meta property="article:tag" content="submodule">
     
       <meta property="article:tag" content="Windows">
     
@@ -75,14 +81,14 @@ Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인하며 설치�
   <meta property="twitter:image" content="https://010000.github.io/galaga_t.png">
 
 
-    <title>Installing Hugo on Windows</title>
+    <title>Generating pages and uploading</title>
 
     <link rel="icon" href="https://010000.github.io/favicon.ico">
     
 
     
 
-    <link rel="canonical" href="https://010000.github.io/2019/12/installing-hugo-on-windows/">
+    <link rel="canonical" href="https://010000.github.io/2019/12/generating-pages-and-uploading/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -281,15 +287,15 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      Installing Hugo on Windows
+      Generating pages and uploading
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2019-12-14T23:57:15&#43;09:00">
+      <time itemprop="datePublished" datetime="2019-12-16T23:05:05&#43;09:00">
         
-  December 14, 2019
+  December 16, 2019
 
       </time>
     
@@ -311,64 +317,118 @@ if (!doNotTrack) {
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
               <ul>
-<li>Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인하며 설치하게 됩니다.</li>
-<li>윈도우즈 환경설정(path) 과정은 생략했습니다. <em>Update: Dec 15, 2019</em></li>
+<li>md파일을 Hugo 정적 페이지로 변환하고 github 에 올리기.</li>
+<li>github repository 생성 및 git 사용법은 생략됐습니다. <em>Update: Dec 17, 2019</em></li>
 </ul>
 <h2 id="configuration">Configuration</h2>
 <p>. OS with its version: Windows 10 (x64)<br>
 . Browser with its version: Google Chrome<br>
 . Hugo version: v0.61.0 (windows/amd64 BuildDate: 2019-12-11T08:29:13Z)<br>
-. Hugo theme: hugo-tranquilpeak-theme (0.4.7-BETA)</p>
-<h2 id="install-go-git-and-hugo">Install Go, Git and Hugo</h2>
+. Hugo theme: hugo-tranquilpeak-theme (0.4.7-BETA)<br>
+. Github repositories: BlogHugoContents(for contents), 010000.github.io (for public)</p>
+<h2 id="generate-static-page--upload-it-on-github">Generate static page &amp; Upload it on Github</h2>
 <ol>
 <li>
-<p>Install Go lang</p>
-<p>Download: <a href="https://golang.org/dl/">golang.org</a><br>
-File: go1.13.5.windows-amd64.msi</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">C:\&gt;go version
-go version go 1.13.5 windows/amd64
+<p>Hugo\blog 내 생성된 폴더와 파일은 github push할 때 3가지로 구분지으면 이해가 쉽다.<br>
+1.1. public 폴더 내 객체는 {userid}.github.io 에 올려져 (공개된)웹페이지로 노출된다<br>
+1.2. hugo 테마인 themes 폴더는 별도 git 설정을 하지 않으면 github에 업로드 되지 않는다<br>
+1.3. 1.1~1.2를 제외한 나머지는 소스 관리 목적상 별도 github repository로 업로드하는 것이 좋다<br>
+(1.1 public만 업로드만으로도 Hugo 정적 페이지로 노출된다)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">S:\Hugo\blog&gt;dir
+  
+12/15/2019  01:19    &lt;DIR&gt;          .
+12/15/2019  01:19    &lt;DIR&gt;          ..
+08/31/1754  07:43    &lt;DIR&gt;          public     1) html로 변환 저장. {userid}.github.io 로 업로드
+12/13/2019  13:20    &lt;DIR&gt;          themes     2) hugo 테마
+12/13/2019  11:04    &lt;DIR&gt;          archetypes 3) 나머지 md 문서, css, js 등의 contents 로
+12/13/2019  13:42    &lt;DIR&gt;          content       별도의 github repository 로 관리
+12/13/2019  11:04    &lt;DIR&gt;          data
+12/13/2019  13:53    &lt;DIR&gt;          layouts
+12/13/2019  13:40    &lt;DIR&gt;          resources
+12/13/2019  13:48    &lt;DIR&gt;          static
+12/16/2019  14:32             9,254 config.toml
+  
+             2개 파일               9,361 바이트
+          10개 디렉터리  63,018,098,688 바이트 남음
 </code></pre></div></li>
 <li>
-<p>Install Git</p>
-<p>Download: <a href="https://gitforwindows.org/">gitforwindows.org</a><br>
-File: Git-2.24.1.2-64-bit.exe<br>
-;1번 Go lang 과 Git 설치가 되면 아래 3번 hugo.exe가 있는 /Hugo/bin 폴더를 포함하여<br>
-어느 경로에서든 실행될 수 있도록 윈도 환경설정 path에 등록해줍니다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">C:\&gt;git version
-git version 2.24.1.windows.2
-</code></pre></div></li>
-<li>
-<p>Install Hugo</p>
-<p>Download: <a href="https://github.com/gohugoio/hugo/releases">https://github.com/gohugoio/hugo/releases</a><br>
-File: hugo_0.61.0_Windows-64bit.zip</p>
-<p>Step.1: Unzip the hugo_zip file in \Hugo\bin folder<br>
-*{Local drive}\Hugo\bin<br>
-;bin 폴더를 만들어서 압축을 풀어도 되고, Hugo/ 폴더 아래 hugo_zip 압축 파일을 풀고 bin으로 rename 해도 됩니다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">C:\&gt;dir s:\Hugo\bin
-12/13/2019  00:10    &lt;DIR&gt;          .
-12/13/2019  00:10    &lt;DIR&gt;          ..
-12/11/2019  17:30        41,070,080 hugo.exe
-12/11/2019  17:15            11,357 LICENSE
-12/11/2019  17:15            11,227 README.md
+<p>Hugo\content 폴더 내 md 파일 작성이 완료됐다면 정적 페이지를 생성한다.</p>
+<p>2.1. 사용중인 hugo 테마명 확인<br>
+2.2. 정적 페이지 생성<br>
+*주의 - Hugo\content 폴더 내 md 파일의 인코딩이 UTF-8이 아니면 오류가 발생할 수 있다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">S:\Hugo\blog&gt;dir themes
+12/13/2019  13:20    &lt;DIR&gt;          .
+12/13/2019  13:20    &lt;DIR&gt;          ..
+12/13/2019  13:37    &lt;DIR&gt;          hugo-tranquilpeak-theme
+               0개 파일                   0 바이트
+                  
+S:\Hugo\blog&gt;hugo -t hugo-tranquilpeak-theme
+Building sites (…)
+                   | EN-US
++------------------+-------+
+  Pages            |    22
+  Paginator pages  |     0
+  Non-page files   |     0
+  Static files     |     8
+  Processed images |     0
+  Aliases          |     7
+  Sitemaps         |     1
+  Cleaned          |     0
    
-C:\&gt;hugo version
-Hugo Static Site Generator v0.61.0-9B445B9D windows/amd64 BuildDate: 2019-12-11T08:29:13Z
+Total in 119 ms
+</code></pre></div><p>2.3. blog\public 폴더에서 git push 하면 {userid}.github.io로 생성된 페이지를 볼 수 있다.<br>
+*Github repository 생성과 git 설정이 선행되어야 아래 git push 가능하다</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">S:\Hugo\blog&gt;cd public
+S:\Hugo\blog\public&gt;git add .
+S:\Hugo\blog\public&gt;git commit -m &#34;first commit pages&#34;
+S:\Hugo\blog\public&gt;git git push origin master
+</code></pre></div><p>*Github 서비스가 처음이라면&hellip;  <a href="https://rogerdudler.github.io/git-guide/index.ko.html">Git간편안내서</a><br>
+*<a href="https://git-scm.com/book/ko/v2">Pro Git ebook</a></p>
+</li>
+<li>
+<p>Submodule 로 Hugo repository 관리하기</p>
+<blockquote>
+<p>hugo는 jekyll과 달리 github에서 자동으로 빌드를 해주는 것이 아니라 내가 빌드해서 만든 파일을 github page 기능으로 띄우는 것이다. 
+따라서 전체 컨텐츠를 저장할 곳과 빌드 결과로 github page를 띄울 곳, 이렇게 두개의 git repository가 필요하다.<br>
+<a href="https://ialy1595.github.io/post/blog-construct-1/">https://ialy1595.github.io/post/blog-construct-1/</a></p>
+</blockquote>
+<p>; 위의 2번과정까지만 완료해도 되지만 관리 목적상 submodule 를 이용한 repository 구성도 참고로 남긴다. <del>지나고 나면 잊어버리도해서&hellip; :-)</del></p>
+<p>*Contents 관리용 repository 이름은 자유롭게 생성해도 된다.<br>
+*{userid}.github.io 의 repository는 github 계정과 동일하게 생성한다.<br>
+다른 계정이 이미 있을 경우 페이지가 안뜨거나 관계없는 페이지가 열리는 현상이 보일 수 있다.</p>
+<p>*Repositories<br>
+Contents용 - BlogHugoContents<br>
+Public 웹서비스용 - {userid}.github.io</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">S:\Hugo\blog&gt;git init
+# $ git remote add origin &lt;contents용 repository url&gt;
+S:\Hugo\blog&gt;git remote add origin https://github.com/0l0000/BlogHugoContents.git
+   
+# git submodule add -b master &lt;public용 repository url&gt; public
+# S:\Hugo\blog 폴더에 public 폴더가 있으며 오류가 발생하니 삭제할 것 
+S:\Hugo\blog&gt;git submodule add -b master https://github.com/0l000/0l0000.github.io.git public
+&#39;public&#39; does not have a commit checked out
+   
+# $ hugo -t &lt;테마 이름&gt;
+S:\Hugo\blog&gt;hugo -t hugo-tranquilpeak-theme
+   
+# public 폴더에서 push 후 blog 폴더에서 push 한다.
+S:\Hugo\blog&gt;cd public
+S:\Hugo\blog\public&gt;git add &amp;&amp; git commit -m &#34;커밋 메세지&#34; &amp;&amp; git push origin master
+S:\Hugo\blog\public&gt;cd ..
+S:\Hugo\blog&gt;git add &amp;&amp; git commit -m &#34;커밋 메세지&#34; &amp;&amp; git push origin master
+   
 </code></pre></div></li>
 <li>
-<p>Create new site<br>
-;Hugo 테마와 작성된 글, 이미지 등의 Local 저장소 위치로 blog 란 이름의 폴더를 생성했습니다.<br>
-;브라우저에 {id}.github.io 로 시작하는 url 에 노출되는 경로가 아닙니다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">S:\Hugo&gt;hugo new site blog
-Congratulations! Your new Hugo site is created in S:\Hugo\blog.
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">S:\Hugo&gt;dir
-   
-12/13/2019  11:04    &lt;DIR&gt;          .
-12/13/2019  11:04    &lt;DIR&gt;          ..
-12/13/2019  00:10    &lt;DIR&gt;          bin
-12/13/2019  14:36    &lt;DIR&gt;          blog
-               1개 파일         120,885,701 바이트
-            6개 디렉터리  63,021,146,112 바이트 남음
+<p>Browse with the Chrome</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">https://{userid}.github.io/
 </code></pre></div></li>
+<li>
+<p>Ref.</p>
+<ul>
+<li><a href="https://ohgyun.com/711">Git: 서브모듈 이해하기</a></li>
+<li><a href="https://ialy1595.github.io/post/blog-construct-1/">블로그 구축기1 (Hugo + github.io)</a></li>
+</ul>
+</li>
 </ol>
               
             </div>
@@ -385,6 +445,12 @@ Congratulations! Your new Hugo site is created in S:\Hugo\blog.
 
   <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/install/">Install</a>
 
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/hugo-tranquilpeak-theme/">hugo-tranquilpeak-theme</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/git/">git</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/submodule/">submodule</a>
+
   <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/windows/">Windows</a>
 
                   </div>
@@ -398,7 +464,7 @@ Congratulations! Your new Hugo site is created in S:\Hugo\blog.
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/2019/12/installing-hugo-theme-on-windows/" data-tooltip="Installing hugo theme on Windows">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -406,7 +472,7 @@ Congratulations! Your new Hugo site is created in S:\Hugo\blog.
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/2019/12/editing-template-and-posting-first/" data-tooltip="Editing template and Posting first">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -424,19 +490,19 @@ Congratulations! Your new Hugo site is created in S:\Hugo\blog.
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/2019/12/installing-hugo-on-windows/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/2019/12/generating-pages-and-uploading/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/2019/12/installing-hugo-on-windows/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/2019/12/generating-pages-and-uploading/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/2019/12/installing-hugo-on-windows/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/2019/12/generating-pages-and-uploading/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -491,7 +557,7 @@ Congratulations! Your new Hugo site is created in S:\Hugo\blog.
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/2019/12/installing-hugo-theme-on-windows/" data-tooltip="Installing hugo theme on Windows">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -499,7 +565,7 @@ Congratulations! Your new Hugo site is created in S:\Hugo\blog.
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/2019/12/editing-template-and-posting-first/" data-tooltip="Editing template and Posting first">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -517,19 +583,19 @@ Congratulations! Your new Hugo site is created in S:\Hugo\blog.
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/2019/12/installing-hugo-on-windows/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/2019/12/generating-pages-and-uploading/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/2019/12/installing-hugo-on-windows/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/2019/12/generating-pages-and-uploading/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/2019/12/installing-hugo-on-windows/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/2019/12/generating-pages-and-uploading/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -559,19 +625,19 @@ Congratulations! Your new Hugo site is created in S:\Hugo\blog.
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F010000.github.io%2F2019%2F12%2Finstalling-hugo-on-windows%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F010000.github.io%2F2019%2F12%2Fgenerating-pages-and-uploading%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2F010000.github.io%2F2019%2F12%2Finstalling-hugo-on-windows%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2F010000.github.io%2F2019%2F12%2Fgenerating-pages-and-uploading%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2F010000.github.io%2F2019%2F12%2Finstalling-hugo-on-windows%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2F010000.github.io%2F2019%2F12%2Fgenerating-pages-and-uploading%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -661,9 +727,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/010000.github.io\/2019\/12\/installing-hugo-on-windows\/';
+          this.page.url = 'https:\/\/010000.github.io\/2019\/12\/generating-pages-and-uploading\/';
           
-            this.page.identifier = '\/2019\/12\/installing-hugo-on-windows\/'
+            this.page.identifier = '\/2019\/12\/generating-pages-and-uploading\/'
           
         };
         (function() {
