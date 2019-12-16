@@ -4,32 +4,67 @@
   
   <url>
     <loc>https://010000.github.io/</loc>
-    <lastmod>2019-12-14T23:58:15+09:00</lastmod>
+    <lastmod>2019-12-16T00:15:15+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://010000.github.io/categories/blog/</loc>
-    <lastmod>2019-12-14T23:58:15+09:00</lastmod>
+    <lastmod>2019-12-16T00:15:15+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://010000.github.io/categories/</loc>
-    <lastmod>2019-12-14T23:58:15+09:00</lastmod>
+    <lastmod>2019-12-16T00:15:15+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://010000.github.io/tags/hugo/</loc>
-    <lastmod>2019-12-14T23:58:15+09:00</lastmod>
+    <loc>https://010000.github.io/2019/12/changing-syntax-highlighter/</loc>
+    <lastmod>2019-12-16T00:15:15+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://010000.github.io/tags/highlight.js/</loc>
+    <lastmod>2019-12-16T00:15:15+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://010000.github.io/categories/hugo/</loc>
-    <lastmod>2019-12-14T23:58:15+09:00</lastmod>
+    <lastmod>2019-12-16T00:15:15+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://010000.github.io/tags/hugo/</loc>
+    <lastmod>2019-12-16T00:15:15+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://010000.github.io/tags/hugo-tranquilpeak-theme/</loc>
-    <lastmod>2019-12-14T23:58:15+09:00</lastmod>
+    <lastmod>2019-12-16T00:15:15+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://010000.github.io/tags/monokai-sublime/</loc>
+    <lastmod>2019-12-16T00:15:15+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://010000.github.io/post/</loc>
+    <lastmod>2019-12-16T00:15:15+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://010000.github.io/tags/syntax/</loc>
+    <lastmod>2019-12-16T00:15:15+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://010000.github.io/tags/</loc>
+    <lastmod>2019-12-16T00:15:15+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://010000.github.io/tags/windows/</loc>
+    <lastmod>2019-12-16T00:15:15+09:00</lastmod>
   </url>
   
   <url>
@@ -43,22 +78,7 @@
   </url>
   
   <url>
-    <loc>https://010000.github.io/post/</loc>
-    <lastmod>2019-12-14T23:58:15+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://010000.github.io/tags/</loc>
-    <lastmod>2019-12-14T23:58:15+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://010000.github.io/tags/theme/</loc>
-    <lastmod>2019-12-14T23:58:15+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://010000.github.io/tags/windows/</loc>
     <lastmod>2019-12-14T23:58:15+09:00</lastmod>
   </url>
   
