@@ -9,12 +9,12 @@
 <meta name="author" content="Jeffrey Y. Jo">
 <meta name="keywords" content="tech">
 <meta name="description" content="
-Hugo, .md 포멧인 template을 수정하고 테스트 글을 작성합니다. Update: Dec 16, 2019
+Hugo new .md 문서가 생성될 때 사용되는 template을 수정하고 테스트 글을 작성합니다. Update: Dec 16, 2019
 ">
 
 
 <meta property="og:description" content="
-Hugo, .md 포멧인 template을 수정하고 테스트 글을 작성합니다. Update: Dec 16, 2019
+Hugo new .md 문서가 생성될 때 사용되는 template을 수정하고 테스트 글을 작성합니다. Update: Dec 16, 2019
 ">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Editing template and posting first">
@@ -23,10 +23,10 @@ Hugo, .md 포멧인 template을 수정하고 테스트 글을 작성합니다. U
 <meta property="twitter:url" content="https://010000.github.io/2019/12/editing-template-and-posting-first/">
 <meta property="og:site_name" content="010000 logbook">
 <meta property="og:description" content="
-Hugo, .md 포멧인 template을 수정하고 테스트 글을 작성합니다. Update: Dec 16, 2019
+Hugo new .md 문서가 생성될 때 사용되는 template을 수정하고 테스트 글을 작성합니다. Update: Dec 16, 2019
 ">
 <meta name="twitter:description" content="
-Hugo, .md 포멧인 template을 수정하고 테스트 글을 작성합니다. Update: Dec 16, 2019
+Hugo new .md 문서가 생성될 때 사용되는 template을 수정하고 테스트 글을 작성합니다. Update: Dec 16, 2019
 ">
 <meta property="og:locale" content="en-us">
 
@@ -311,7 +311,7 @@ if (!doNotTrack) {
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
               <ul>
-<li>Hugo, .md 포멧인 template을 수정하고 테스트 글을 작성합니다. <em>Update: Dec 16, 2019</em></li>
+<li>Hugo new .md 문서가 생성될 때 사용되는 template을 수정하고 테스트 글을 작성합니다. <em>Update: Dec 16, 2019</em></li>
 </ul>
 <h2 id="configuration">Configuration</h2>
 <ul>
@@ -324,10 +324,10 @@ if (!doNotTrack) {
 <ol>
 <li>
 <p>Hugo new {filename}.md 파일을 생성할 때 참조되는 template을 수정한다.<br>
-아래 default.md를 그대로 사용해도 되고 필요한 것만 선택하여 작성해도 된다.</p>
-<p>File: \Hugo\blog\archetypes\default.md<br>
+아래 default.md 내용을 그대로 사용해도 되고 필요한 것만 선택하여 작성해도 된다.</p>
+<p>수정 파일: \Hugo\blog\archetypes\default.md<br>
 참조 파일: \Hugo\blog\themes\hugo-tranquilpeak-theme\archetypes\post.md</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">S:\Hugo\blog&gt;more archetypes\default.md
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">S:\Hugo\blog&gt; more archetypes\default.md
 ---
 title: &#34;{{ replace .TranslationBaseName &#34;-&#34; &#34; &#34; | title }}&#34;
 date: {{ .Date }}
@@ -346,30 +346,30 @@ keywords:
 &lt;!--more--&gt;
 </code></pre></div></li>
 <li>
-<p>Hugo new {filename}.md  또는 기존 md 파일 복사해서 작성</p>
-<p>2.1. hugo new 로 template 를 이용해 새로운 md 파일을 생성 후 작성할 수 있다.<br>
-파일의 위치는 blog\content 폴더에, 초안이 아닌 공개할 문서는 post 폴더에 작성하면 된다.<br>
-비공개와 같은 (작성중)초안 문서를 draft 폴더로 분류하는 경우도 많이 볼 수 있지만 md 파일내 &lsquo;draft: true&rsquo; 로 명시되어 있으면 public 폴더에 반영되지 않는다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">S:\Hugo\blog&gt;hugo new post/test1.md
-S:\Hugo\blog\content\post\test1.md created
-</code></pre></div><p>2.2. blog\content 폴더 내 기존 작성된 md파일 복사해서 사용해도 된다.<br>
-단, 파일명은 중복되면 안되며, md 파일 내 생성시간을 원하는 값으로 바꾸면된다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">S:\Hugo\blog\content\post&gt;cp test1.md test2.md
-S:\Hugo\blog\content\post&gt;notepad test2.md
+<p>Hugo new {filename}.md  또는 기존 md 파일 복사해서 작성하는 방법</p>
+<p>2.1. hugo new 로 template 를 이용해 새로운 md 파일을 생성하여 작성할 수 있다<br>
+md 파일의 위치는 blog\content 폴더로, 초안이 아닌 공개할 문서는 하위 post 폴더에 작성하면 된다<br>
+비공개와 같은 (작성중)초안 문서를 draft 폴더로 분류하는 경우도 볼 수 있지만 md 파일내 &lsquo;draft: true&rsquo; 로 명시되어 있으면 그 md 문서는 public 폴더에 반영되지 않는다</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">S:\Hugo\blog&gt; hugo new post/test1.md
+Hugo\blog\content\post\test1.md created
+</code></pre></div><p>2.2. blog\content 폴더 내 기존 md파일 복사해서 수정하여 사용해도 된다<br>
+단, 파일명은 중복되면 안되며, md 파일 내 생성시간을 원하는 값으로 바꾸면된다</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">S:\Hugo\blog\content\post&gt; cp test1.md test2.md
+S:\Hugo\blog\content\post&gt; notepad test2.md
 (...)
 title: &#34;Editing template and Posting first&#34;
 date: 2019-12-16T00:03:15+09:00
 draft: true
 (...)
-</code></pre></div><p>2.3. hugo 의 문서 삭제는 content 폴더, html로 변환 저장된 public 폴더에서 파일을 삭제하면 된다.</p>
-<p>2.4. notepad와 같은 편집기로 md 파일을 저장할 때 인코딩을 반드시 UTF-8 로 저장해야 한다.<br>
-흔히 옵션 변경없이 저장되는 ANSI 일 경우 html 변환시 오류가 발생된다.</p>
+</code></pre></div><p>2.3. hugo 의 문서 삭제는 content 폴더와 html로 변환 저장된 public 폴더에서 파일을 삭제하면 된다</p>
+<p>2.4. notepad와 같은 편집기로 md 파일을 저장할 때 인코딩을 반드시 UTF-8 로 저장해야 한다<br>
+흔히 메모장 앱에서 옵션 변경없이 저장되는 ANSI 일 경우 html 변환시 오류가 발생된다</p>
 </li>
 <li>
 <p>Run hugo on local drive</p>
 <p>; hugo server -D<br>
 *display also draft documents with -D option</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">s:\0_GithubPages\Hugo\blog&gt;hugo server -D
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">s:\0_GithubPages\Hugo\blog&gt; hugo server -D
 Building sites … WARNING: calling IsSet with unsupported type &#34;string&#34; (string) will always return false.
    
                    | EN-US

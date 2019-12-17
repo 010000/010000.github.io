@@ -6,18 +6,20 @@
     <description>Recent content in font on 010000 logbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Mon, 18 Nov 2019 00:12:08 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 17 Dec 2019 17:18:18 +0900</lastBuildDate>
     
 	<atom:link href="https://010000.github.io/tags/font/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Hugo and Github pages 설치하기</title>
-      <link>https://010000.github.io/2019/11/hugo-and-github-pages-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/</link>
-      <pubDate>Mon, 18 Nov 2019 00:12:08 +0900</pubDate>
+      <title>Changing fonts</title>
+      <link>https://010000.github.io/2019/12/changing-fonts/</link>
+      <pubDate>Tue, 17 Dec 2019 17:18:18 +0900</pubDate>
       
-      <guid>https://010000.github.io/2019/11/hugo-and-github-pages-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/</guid>
-      <description></description>
+      <guid>https://010000.github.io/2019/12/changing-fonts/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;Hugo / hugo-tranquilpeak-theme 테마의 font를 변경합니다. &lt;em&gt;Update: Dec 17, 2019&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
   </channel>

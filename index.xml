@@ -6,10 +6,21 @@
     <description>Recent content on 010000 logbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Mon, 16 Dec 2019 23:05:05 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 17 Dec 2019 17:18:18 +0900</lastBuildDate>
     
 	<atom:link href="https://010000.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Changing fonts</title>
+      <link>https://010000.github.io/2019/12/changing-fonts/</link>
+      <pubDate>Tue, 17 Dec 2019 17:18:18 +0900</pubDate>
+      
+      <guid>https://010000.github.io/2019/12/changing-fonts/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;Hugo / hugo-tranquilpeak-theme 테마의 font를 변경합니다. &lt;em&gt;Update: Dec 17, 2019&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
     
     <item>
       <title>Generating pages and uploading</title>
@@ -18,7 +29,7 @@
       
       <guid>https://010000.github.io/2019/12/generating-pages-and-uploading/</guid>
       <description>&lt;ul&gt;
-&lt;li&gt;md파일을 Hugo 정적 페이지로 변환하고 github 에 올립니다.&lt;/li&gt;
+&lt;li&gt;md파일을 html 정적 페이지로 변환하고 github 에 올립니다.&lt;/li&gt;
 &lt;li&gt;github repository 생성 및 git 사용법은 생략됐습니다. &lt;em&gt;Update: Dec 17, 2019&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
@@ -30,7 +41,7 @@
       
       <guid>https://010000.github.io/2019/12/editing-template-and-posting-first/</guid>
       <description>&lt;ul&gt;
-&lt;li&gt;Hugo, .md 포멧인 template을 수정하고 테스트 글을 작성합니다. &lt;em&gt;Update: Dec 16, 2019&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Hugo new .md 문서가 생성될 때 사용되는 template을 수정하고 테스트 글을 작성합니다. &lt;em&gt;Update: Dec 16, 2019&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
     
@@ -63,7 +74,7 @@
       
       <guid>https://010000.github.io/2019/12/installing-hugo-on-windows/</guid>
       <description>&lt;ul&gt;
-&lt;li&gt;Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인하며 설치하게 됩니다.&lt;/li&gt;
+&lt;li&gt;Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인 및 설치합니다&lt;/li&gt;
 &lt;li&gt;윈도우즈 환경설정(path) 과정은 생략했습니다. &lt;em&gt;Update: Dec 15, 2019&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>

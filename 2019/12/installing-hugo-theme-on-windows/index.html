@@ -325,7 +325,7 @@ if (!doNotTrack) {
 <li>
 <p>Install Hugo theme, hugo-tranquilpeak-theme</p>
 <p>Git clone: <a href="https://github.com/kakawait/hugo-tranquilpeak-theme.git">hugo-tranquilpeak-theme.git</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">S:\Hugo\blog&gt;cd themes
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">S:\Hugo\blog&gt; cd themes
 S:\Hugo\blog\themes&gt; git clone https://github.com/kakawait/hugo-tranquilpeak-theme.git
 Cloning into &#39;hugo-tranquilpeak-theme&#39;...
 remote: Enumerating objects: 5026, done.
@@ -336,10 +336,10 @@ Updating files: 100% (197/197), done.
 </code></pre></div></li>
 <li>
 <p>Copy &amp; edit config.toml file</p>
-<p>; Copy example file, config.toml to blog folder<br>
+<p>; Hugo\blog\theme 폴더 하위에서 example file(config.toml) 을 Hugo\blog 로 복사하여 수정합니다<br>
 *need to edit the languageCode for Korean</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">S:\Hugo\blog&gt;cp themes\hugo-tranquilpeak-theme\exampleSite\config.toml config.toml
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">S:\Hugo\blog&gt;more config.toml
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">S:\Hugo\blog&gt; more config.toml
 (...)
 baseURL = &#34;https://010000.github.io/&#34;
 languageCode = &#34;ko-kr&#34;
@@ -356,7 +356,7 @@ canonifyurls = true
 <p>Run hugo on local drive</p>
 <p>; hugo server -D<br>
 *display also draft documents with -D option</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">s:\Hugo\blog&gt;hugo server -D
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">s:\Hugo\blog&gt; hugo server -D
 Building sites … WARNING: calling IsSet with unsupported type &#34;string&#34; (string) will always return false.
    
                    | EN-US
