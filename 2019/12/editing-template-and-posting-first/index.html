@@ -54,6 +54,8 @@ Hugo new .md 문서가 생성될 때 사용되는 template을 수정하고 테�
     
       <meta property="article:tag" content="hugo-tranquilpeak-theme">
     
+      <meta property="article:tag" content="tranquilpeak">
+    
       <meta property="article:tag" content="Windows">
     
   
@@ -90,7 +92,7 @@ Hugo new .md 문서가 생성될 때 사용되는 template을 수정하고 테�
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
     
     
-    <link rel="stylesheet" href="https://010000.github.io/css/style-wipiyohmdjgnazmzu4ewtr7sviegd5vky9bzabbazpwalb9bozl5reaijkzd.min.css" />
+    <link rel="stylesheet" href="https://010000.github.io/css/style-imragi57nqxj3msgfdy7mfjvzppg7njuiw3wttqqep0wqxhx8rhp6jsbdc.min.css" />
     
     
       
@@ -323,8 +325,8 @@ if (!doNotTrack) {
 <h2 id="edit-template-defaultmd--compose-the-new-document">Edit template, default.md &amp; compose the new document</h2>
 <ol>
 <li>
-<p>Hugo new {filename}.md 파일을 생성할 때 참조되는 template을 수정한다.<br>
-아래 default.md 내용을 그대로 사용해도 되고 필요한 것만 선택하여 작성해도 된다.</p>
+<p>Hugo new {filename}.md 파일을 생성할 때 참조되는 template을 수정합니다<br>
+아래 default.md 내용을 그대로 사용해도 되고 필요한 것만 선택하여 작성해도 됩니다</p>
 <p>수정 파일: \Hugo\blog\archetypes\default.md<br>
 참조 파일: \Hugo\blog\themes\hugo-tranquilpeak-theme\archetypes\post.md</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">S:\Hugo\blog&gt; more archetypes\default.md
@@ -347,13 +349,13 @@ keywords:
 </code></pre></div></li>
 <li>
 <p>Hugo new {filename}.md  또는 기존 md 파일 복사해서 작성하는 방법</p>
-<p>2.1. hugo new 로 template 를 이용해 새로운 md 파일을 생성하여 작성할 수 있다<br>
-md 파일의 위치는 blog\content 폴더로, 초안이 아닌 공개할 문서는 하위 post 폴더에 작성하면 된다<br>
-비공개와 같은 (작성중)초안 문서를 draft 폴더로 분류하는 경우도 볼 수 있지만 md 파일내 &lsquo;draft: true&rsquo; 로 명시되어 있으면 그 md 문서는 public 폴더에 반영되지 않는다</p>
+<p>2.1. hugo new 로 template 를 이용해 새로운 md 파일을 생성하고 작성할 수 있습니다<br>
+md 파일의 위치는 blog\content 폴더로, 초안이 아닌 공개할 문서는 하위 post 폴더에 작성하면 됩니다<br>
+비공개와 같은 (작성중)초안 문서를 draft 폴더로 분류하는 경우도 볼 수 있지만 md 파일내 &lsquo;draft: true&rsquo; 로 명시되어 있으면 그 md 문서는 public 폴더에 반영되지 않습는다</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">S:\Hugo\blog&gt; hugo new post/test1.md
 Hugo\blog\content\post\test1.md created
-</code></pre></div><p>2.2. blog\content 폴더 내 기존 md파일 복사해서 수정하여 사용해도 된다<br>
-단, 파일명은 중복되면 안되며, md 파일 내 생성시간을 원하는 값으로 바꾸면된다</p>
+</code></pre></div><p>2.2. blog\content 폴더 내 기존 md파일을 복사, 수정하여 사용해도 됩니다<br>
+단, 파일명은 중복되면 안되며, md 파일 내 생성시간을 원하는 값으로 바꾸면 됩니다</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">S:\Hugo\blog\content\post&gt; cp test1.md test2.md
 S:\Hugo\blog\content\post&gt; notepad test2.md
 (...)
@@ -361,9 +363,9 @@ title: &#34;Editing template and Posting first&#34;
 date: 2019-12-16T00:03:15+09:00
 draft: true
 (...)
-</code></pre></div><p>2.3. hugo 의 문서 삭제는 content 폴더와 html로 변환 저장된 public 폴더에서 파일을 삭제하면 된다</p>
-<p>2.4. notepad와 같은 편집기로 md 파일을 저장할 때 인코딩을 반드시 UTF-8 로 저장해야 한다<br>
-흔히 메모장 앱에서 옵션 변경없이 저장되는 ANSI 일 경우 html 변환시 오류가 발생된다</p>
+</code></pre></div><p>2.3. hugo 의 문서 삭제는 content 폴더와 html로 변환 저장된 public 폴더에서 파일을 삭제하면 됩니다</p>
+<p>2.4. notepad와 같은 편집기로 md 파일을 저장할 때 인코딩을 반드시 UTF-8 로 저장해야 합니다<br>
+흔히 메모장 앱에서 옵션 변경없이 저장되는 ANSI 일 경우 html 변환시 오류가 발생됩니다</p>
 </li>
 <li>
 <p>Run hugo on local drive</p>
@@ -416,6 +418,8 @@ Press Ctrl+C to stop
   <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/theme/">Theme</a>
 
   <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/hugo-tranquilpeak-theme/">hugo-tranquilpeak-theme</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/tranquilpeak/">tranquilpeak</a>
 
   <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/windows/">Windows</a>
 
@@ -658,7 +662,7 @@ Press Ctrl+C to stop
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
 
 
-<script src="https://010000.github.io/js/script-huqicg2ippovzekfwda3kcd4qo0zfiw8dsnq1bvouyp0vjpbdv41whsxrp.min.js"></script>
+<script src="https://010000.github.io/js/script-sn9xfukkmkzwyy0c8pnefksilzosbzkdj2kp7jyy3tgi7sia3ubr8mv.min.js"></script>
 
 
 <script lang="javascript">

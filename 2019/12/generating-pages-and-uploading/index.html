@@ -56,6 +56,8 @@ github repository 생성 및 git 사용법은 생략됐습니다. Update: Dec 17
     
       <meta property="article:tag" content="hugo-tranquilpeak-theme">
     
+      <meta property="article:tag" content="tranquilpeak">
+    
       <meta property="article:tag" content="git">
     
       <meta property="article:tag" content="submodule">
@@ -96,7 +98,7 @@ github repository 생성 및 git 사용법은 생략됐습니다. Update: Dec 17
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
     
     
-    <link rel="stylesheet" href="https://010000.github.io/css/style-wipiyohmdjgnazmzu4ewtr7sviegd5vky9bzabbazpwalb9bozl5reaijkzd.min.css" />
+    <link rel="stylesheet" href="https://010000.github.io/css/style-imragi57nqxj3msgfdy7mfjvzppg7njuiw3wttqqep0wqxhx8rhp6jsbdc.min.css" />
     
     
       
@@ -331,11 +333,11 @@ if (!doNotTrack) {
 <h2 id="generate-static-page--upload-it-on-github">Generate static page &amp; Upload it on Github</h2>
 <ol>
 <li>
-<p>Hugo\blog 내 생성된 폴더와 파일을 github push할 때 3개의 폴더로 분류하면 이해가 쉽다.<br>
-1.1. public 폴더 내 파일들은 {userid}.github.io 에 올려져 (공개된)실제 웹페이지로 노출된다<br>
-1.2. hugo 테마가 저장된 themes 폴더는 별도 git 설정을 하지 않으면 github에 업로드 되지 않는다<br>
-1.3. 1.1~1.2를 제외한 나머지는 소스관리 목적상 별도 github repository에 업로드하는 것이 좋다<br>
-(즉, 1.1 public 폴더에 객체들만 업로드되어도 원하는 정적 페이지 웹서비스가 가능하다)</p>
+<p>Hugo\blog 내 생성된 폴더와 파일을 github push할 때 3개의 폴더로 구분하면 이해가 쉽습니다<br>
+1.1. public 폴더 내 파일들은 {userid}.github.io 에 올려져 (공개된)실제 웹페이지로 노출됩니다<br>
+1.2. hugo 테마가 저장된 themes 폴더는 별도 git 설정을 하지 않으면 github에 업로드 되지 않습니다<br>
+1.3. 1.1~1.2를 제외한 나머지는 소스관리 목적상 별도 github repository에 업로드하는 것이 좋습니다<br>
+(즉, 1.1 public 폴더에 객체들만 업로드되어도 원하는 정적 페이지 웹서비스가 가능합니다)</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">S:\Hugo\blog&gt; dir
   
 12/15/2019  01:19    &lt;DIR&gt;          .
@@ -354,10 +356,10 @@ if (!doNotTrack) {
           10개 디렉터리  63,018,098,688 바이트 남음
 </code></pre></div></li>
 <li>
-<p>Hugo\content 폴더 내 md 파일 작성이 완료됐다면 hugo 실행으로 정적 페이지를 생성한다.</p>
+<p>Hugo\content 폴더 내 md 파일 작성이 완료됐다면 hugo 실행으로 정적 페이지를 생성합니다</p>
 <p>2.1. 사용중인 hugo 테마명 확인<br>
 2.2. 정적 페이지 생성<br>
-*주의 - Hugo\content 폴더 내 md 파일의 인코딩이 UTF-8이 아니면 오류가 발생할 수 있다</p>
+*주의 - Hugo\content 폴더 내 md 파일의 인코딩이 UTF-8이 아니면 오류가 발생할 수 있습니다</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">S:\Hugo\blog&gt; dir themes
 12/13/2019  13:20    &lt;DIR&gt;          .
 12/13/2019  13:20    &lt;DIR&gt;          ..
@@ -378,8 +380,8 @@ Building sites (…)
   Cleaned          |     0
    
 Total in 119 ms
-</code></pre></div><p>2.3. blog\public 폴더 이동 후 git push 하면 {userid}.github.io url로 생성된 페이지를 볼 수 있다.<br>
-*Github repository 생성과 git 설정이 선행되어야 아래 git push 가능하다</p>
+</code></pre></div><p>2.3. blog\public 폴더 이동 후 git push 하면 {userid}.github.io url로 생성된 페이지를 볼 수 있습니다<br>
+*Github repository 생성과 git 설정이 선행되어야 아래 git push 가능합니다</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">S:\Hugo\blog&gt; cd public
 S:\Hugo\blog\public&gt; git add .
 S:\Hugo\blog\public&gt; git commit -m &#34;first commit pages&#34;
@@ -395,9 +397,9 @@ S:\Hugo\blog\public&gt; git git push origin master
 <a href="https://ialy1595.github.io/post/blog-construct-1/">https://ialy1595.github.io/post/blog-construct-1/</a></p>
 </blockquote>
 <p>; 위의 2번과정까지만 완료해도 원하는 웹서비스가 되지만 관리 목적상 submodule 를 이용한 repository 구성도 참고로 남긴다. <del>지나고 나면 잊어버리도해서&hellip; :-)</del></p>
-<p>*Contents 관리용 repository 이름은 자유롭게 생성해도 된다<br>
-*{userid}.github.io 의 repository는 github 계정과 동일하게 생성해야 한다<br>
-임의로 생성시 다른 계정에서 사용중으로 페이지가 안뜨거나 관계없는 페이지가 열리는 현상이 보일 수 있다</p>
+<p>*Contents 관리용 repository 이름은 자유롭게 생성해도 됩니다<br>
+*{userid}.github.io 의 repository는 github 계정과 동일하게 생성해야 합니다<br>
+임의로 생성시 다른 계정에서 사용중일 경우 페이지가 안뜨거나 관계없는 페이지가 뜨는 현상이 보일 수 있습니다</p>
 <p>*Repositories<br>
 Contents용 - BlogHugoContents<br>
 Public 웹서비스용 - {userid}.github.io</p>
@@ -448,6 +450,8 @@ S:\Hugo\blog&gt; git add &amp;&amp; git commit -m &#34;커밋 메세지&#34; &am
   <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/install/">Install</a>
 
   <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/hugo-tranquilpeak-theme/">hugo-tranquilpeak-theme</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/tranquilpeak/">tranquilpeak</a>
 
   <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/git/">git</a>
 
@@ -694,7 +698,7 @@ S:\Hugo\blog&gt; git add &amp;&amp; git commit -m &#34;커밋 메세지&#34; &am
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
 
 
-<script src="https://010000.github.io/js/script-huqicg2ippovzekfwda3kcd4qo0zfiw8dsnq1bvouyp0vjpbdv41whsxrp.min.js"></script>
+<script src="https://010000.github.io/js/script-sn9xfukkmkzwyy0c8pnefksilzosbzkdj2kp7jyy3tgi7sia3ubr8mv.min.js"></script>
 
 
 <script lang="javascript">

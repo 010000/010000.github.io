@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Windows on 010000 logbook</title>
-    <link>https://010000.github.io/tags/windows/</link>
-    <description>Recent content in Windows on 010000 logbook</description>
+    <title>tranquilpeak on 010000 logbook</title>
+    <link>https://010000.github.io/tags/tranquilpeak/</link>
+    <description>Recent content in tranquilpeak on 010000 logbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Wed, 18 Dec 2019 07:28:18 +0900</lastBuildDate>
     
-	<atom:link href="https://010000.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://010000.github.io/tags/tranquilpeak/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -64,18 +64,6 @@
       <guid>https://010000.github.io/2019/12/installing-hugo-theme-on-windows/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;Windows  OS에서 Hugo / hugo-tranquilpeak-theme 테마를 설치합니다. &lt;em&gt;Update: Dec 15, 2019&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    
-    <item>
-      <title>Installing Hugo on Windows</title>
-      <link>https://010000.github.io/2019/12/installing-hugo-on-windows/</link>
-      <pubDate>Sat, 14 Dec 2019 23:57:15 +0900</pubDate>
-      
-      <guid>https://010000.github.io/2019/12/installing-hugo-on-windows/</guid>
-      <description>&lt;ul&gt;
-&lt;li&gt;Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인 및 설치합니다&lt;/li&gt;
-&lt;li&gt;윈도우즈 환경설정(path) 과정은 생략했습니다. &lt;em&gt;Update: Dec 15, 2019&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
     
