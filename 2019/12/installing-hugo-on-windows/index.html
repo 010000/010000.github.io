@@ -90,12 +90,8 @@ Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인 및 설치합�
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
     
     
-    <link rel="stylesheet" href="https://010000.github.io/css/style-imragi57nqxj3msgfdy7mfjvzppg7njuiw3wttqqep0wqxhx8rhp6jsbdc.min.css" />
+    <link rel="stylesheet" href="https://010000.github.io/css/style-ijngreyift5qrejkcytgzqkbbggknnq0lpzj3qvn8hudzplbnhbulm7smlo.min.css" />
     
-    
-      
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/monokai-sublime.min.css">
-      
     
 
     
@@ -327,7 +323,7 @@ if (!doNotTrack) {
 <p>Install Go lang</p>
 <p>Download: <a href="https://golang.org/dl/">golang.org</a><br>
 File: go1.13.5.windows-amd64.msi</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">C:\&gt; go version
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">C<span style="color:#960050;background-color:#1e0010">:</span>\&gt; go version
 go version go 1.13.5 windows/amd64
 </code></pre></div></li>
 <li>
@@ -336,7 +332,7 @@ go version go 1.13.5 windows/amd64
 File: Git-2.24.1.2-64-bit.exe<br>
 ;1번 Go lang 과 Git 설치가 되면 아래 3번 hugo.exe가 있는 /Hugo/bin 폴더를 포함하여<br>
 어느 경로에서든 실행될 수 있도록 Windows 환경설정 path에 등록해줍니다</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">C:\&gt; git version
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">C<span style="color:#960050;background-color:#1e0010">:</span>\&gt; git version
 git version 2.24.1.windows.2
 </code></pre></div></li>
 <li>
@@ -346,28 +342,28 @@ File: hugo_0.61.0_Windows-64bit.zip</p>
 <p>Step.1: Unzip the hugo_zip file in \Hugo\bin folder<br>
 *{Local drive}\Hugo\bin<br>
 ;bin 폴더를 만들어서 압축을 풀어도 되고, Hugo/ 폴더 아래 hugo_zip 압축 파일을 풀고 bin으로 rename 해도 됩니다</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">C:\&gt; dir s:\Hugo\bin
-12/13/2019  00:10    &lt;DIR&gt;          .
-12/13/2019  00:10    &lt;DIR&gt;          ..
-12/11/2019  17:30        41,070,080 hugo.exe
-12/11/2019  17:15            11,357 LICENSE
-12/11/2019  17:15            11,227 README.md
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">C<span style="color:#960050;background-color:#1e0010">:</span>\&gt; dir s<span style="color:#960050;background-color:#1e0010">:</span>\Hugo\bin
+12/13/2019  00<span style="color:#960050;background-color:#1e0010">:</span>10    &lt;DIR&gt;          .
+12/13/2019  00<span style="color:#960050;background-color:#1e0010">:</span>10    &lt;DIR&gt;          ..
+12/11/2019  17<span style="color:#960050;background-color:#1e0010">:</span>30        41,070,080 hugo.exe
+12/11/2019  17<span style="color:#960050;background-color:#1e0010">:</span>15            11,357 LICENSE
+12/11/2019  17<span style="color:#960050;background-color:#1e0010">:</span>15            11,227 README.md
    
-C:\&gt;hugo version
-Hugo Static Site Generator v0.61.0-9B445B9D windows/amd64 BuildDate: 2019-12-11T08:29:13Z
+C<span style="color:#960050;background-color:#1e0010">:</span>\&gt;hugo version
+Hugo Static Site Generator v0.61.0-9B445B9D windows/amd64 BuildDate<span style="color:#960050;background-color:#1e0010">:</span> 2019-12-11T08<span style="color:#960050;background-color:#1e0010">:</span>29<span style="color:#960050;background-color:#1e0010">:</span>13Z
 </code></pre></div></li>
 <li>
 <p>Create new site<br>
 ;Hugo 테마와 작성된 글, 이미지 등의 Local 저장소 위치로 blog 란 이름의 폴더를 생성했습니다<br>
 ;blog 폴더는 {id}.github.io 로 시작하는 url 상에 노출되는 경로가 아닙니다</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">S:\Hugo&gt; hugo new site blog
-Congratulations! Your new Hugo site is created in S:\Hugo\blog.
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">S:\Hugo&gt; dir
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S<span style="color:#960050;background-color:#1e0010">:</span>\Hugo&gt; hugo new site blog
+Congratulations! Your new Hugo site is created <span style="color:#66d9ef">in</span> S<span style="color:#960050;background-color:#1e0010">:</span>\Hugo\blog.
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S<span style="color:#960050;background-color:#1e0010">:</span>\Hugo&gt; dir
    
-12/13/2019  11:04    &lt;DIR&gt;          .
-12/13/2019  11:04    &lt;DIR&gt;          ..
-12/13/2019  00:10    &lt;DIR&gt;          bin
-12/13/2019  14:36    &lt;DIR&gt;          blog
+12/13/2019  11<span style="color:#960050;background-color:#1e0010">:</span>04    &lt;DIR&gt;          .
+12/13/2019  11<span style="color:#960050;background-color:#1e0010">:</span>04    &lt;DIR&gt;          ..
+12/13/2019  00<span style="color:#960050;background-color:#1e0010">:</span>10    &lt;DIR&gt;          bin
+12/13/2019  14<span style="color:#960050;background-color:#1e0010">:</span>36    &lt;DIR&gt;          blog
                1개 파일         120,885,701 바이트
             6개 디렉터리  63,021,146,112 바이트 남음
 </code></pre></div></li>
@@ -628,7 +624,7 @@ Congratulations! Your new Hugo site is created in S:\Hugo\blog.
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
 
 
-<script src="https://010000.github.io/js/script-sn9xfukkmkzwyy0c8pnefksilzosbzkdj2kp7jyy3tgi7sia3ubr8mv.min.js"></script>
+<script src="https://010000.github.io/js/script-sfmerixulrdfchgdilgeg3qhetcqrx3drqtmsls2xte8cdwzjvec2q6eq6.min.js"></script>
 
 
 <script lang="javascript">

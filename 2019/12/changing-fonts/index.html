@@ -90,12 +90,8 @@ Hugo / hugo-tranquilpeak-theme 테마의 font를 변경합니다. Update: Dec 18
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
     
     
-    <link rel="stylesheet" href="https://010000.github.io/css/style-imragi57nqxj3msgfdy7mfjvzppg7njuiw3wttqqep0wqxhx8rhp6jsbdc.min.css" />
+    <link rel="stylesheet" href="https://010000.github.io/css/style-ijngreyift5qrejkcytgzqkbbggknnq0lpzj3qvn8hudzplbnhbulm7smlo.min.css" />
     
-    
-      
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/monokai-sublime.min.css">
-      
     
 
     
@@ -326,121 +322,124 @@ if (!doNotTrack) {
 <li>
 <p>_fonts.scss, _variables.scss 두 파일을 아래를 참고하여 수정합니다<br>
 _fonts.scss 파일을 열고 마지막 라인에 구글 웹폰트를 추가합니다</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">S</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#f92672">Hugo</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#f92672">blog</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#f92672">themes</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#f92672">hugo-tranquilpeak-theme</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#f92672">src</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#f92672">scss</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#f92672">utils</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">more</span> <span style="color:#f92672">_fonts</span>.<span style="color:#a6e22e">scss</span>
-<span style="color:#f92672">(</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">)</span>
-@<span style="color:#66d9ef">import</span>
-    <span style="color:#f92672">url</span><span style="color:#f92672">(</span><span style="color:#f92672">https</span><span style="color:#f92672">:</span><span style="color:#f92672">/</span><span style="color:#f92672">/</span><span style="color:#f92672">fonts</span>.<span style="color:#a6e22e">googleapis</span>.<span style="color:#a6e22e">com</span><span style="color:#f92672">/</span><span style="color:#f92672">earlyaccess</span><span style="color:#f92672">/</span><span style="color:#f92672">notosanskr</span>.<span style="color:#a6e22e">css</span><span style="color:#f92672">)</span><span style="color:#f92672">,</span>
-    <span style="color:#f92672">url</span><span style="color:#f92672">(</span><span style="color:#f92672">https</span><span style="color:#f92672">:</span><span style="color:#f92672">/</span><span style="color:#f92672">/</span><span style="color:#f92672">fonts</span>.<span style="color:#a6e22e">googleapis</span>.<span style="color:#a6e22e">com</span><span style="color:#f92672">/</span><span style="color:#f92672">earlyaccess</span><span style="color:#f92672">/</span><span style="color:#f92672">nanumgothiccoding</span>.<span style="color:#a6e22e">css</span><span style="color:#f92672">)</span>;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S<span style="color:#960050;background-color:#1e0010">:</span>\Hugo\blog\themes\hugo-tranquilpeak-theme\src\scss\utils&gt; more _fonts.scss
+(...)
+@import
+    url(<span style="color:#e6db74">&#39;https://fonts.googleapis.com/css?family=Noto+Sans+KR&amp;display=swap&#39;</span>),
+    url(<span style="color:#e6db74">&#39;https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding&amp;display=swap&#39;</span>),
+    url(<span style="color:#e6db74">&#39;https://fonts.googleapis.com/css?family=IBM+Plex+Mono&amp;display=swap&#39;</span>);
 </code></pre></div><p>_variables.scss 파일을 열고 아래 내용을 참고하여 폰트를 변경 합니다</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">S</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#f92672">Hugo</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#f92672">blog</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#f92672">themes</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#f92672">hugo-tranquilpeak-theme</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#f92672">src</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#f92672">scss</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#f92672">utils</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">more</span> <span style="color:#f92672">_variables</span>.<span style="color:#a6e22e">scss</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S<span style="color:#960050;background-color:#1e0010">:</span>\Hugo\blog\themes\hugo-tranquilpeak-theme\src\scss\utils&gt; more _variables.scss
    
-<span style="color:#f92672">/</span><span style="color:#f92672">/</span> <span style="color:#f92672">Global</span> <span style="color:#f92672">settings</span>
-<span style="color:#f92672">/</span><span style="color:#f92672">/</span> <span style="color:#f92672">--------------------------------------------</span>
-<span style="color:#f92672">/</span><span style="color:#f92672">/</span> <span style="color:#f92672">Font</span> <span style="color:#f92672">families</span>
-<span style="color:#f92672">$</span><span style="color:#f92672">open-sans</span><span style="color:#f92672">:</span>            <span style="color:#e6db74">&#39;Open Sans&#39;</span><span style="color:#f92672">;</span>
-<span style="color:#f92672">$</span><span style="color:#f92672">open-sans-sans-serif</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Open Sans&#39;</span><span style="color:#f92672">,</span> <span style="color:#f92672">sans-serif</span><span style="color:#f92672">;</span>
-<span style="color:#f92672">$</span><span style="color:#f92672">merriweather-serif</span><span style="color:#f92672">:</span>   <span style="color:#e6db74">&#39;Merriweather&#39;</span><span style="color:#f92672">,</span> <span style="color:#f92672">serif</span><span style="color:#f92672">;</span>
-<span style="color:#f92672">$</span><span style="color:#f92672">menlo</span><span style="color:#f92672">:</span>                 <span style="color:#f92672">Menlo</span><span style="color:#f92672">,</span> <span style="color:#f92672">Consolas</span><span style="color:#f92672">,</span> <span style="color:#f92672">monospace</span><span style="color:#f92672">;</span>
-<span style="color:#f92672">$</span><span style="color:#f92672">noto-sans-kr</span><span style="color:#f92672">:</span>          <span style="color:#e6db74">&#39;Noto Sans KR&#39;</span><span style="color:#f92672">,</span> <span style="color:#f92672">sans-serif</span><span style="color:#f92672">;</span>
-<span style="color:#f92672">$</span><span style="color:#f92672">nanum-gothic-coding</span><span style="color:#f92672">:</span>   <span style="color:#e6db74">&#39;Nanum Gothic Coding&#39;</span><span style="color:#f92672">,</span> <span style="color:#f92672">monospace</span><span style="color:#f92672">;</span>
+// Global settings
+// --------------------------------------------
+// Font families
+$open-sans<span style="color:#960050;background-color:#1e0010">:</span>            <span style="color:#e6db74">&#39;Open Sans&#39;</span>;
+$open-sans-sans-serif<span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#39;Open Sans&#39;</span>, sans-serif;
+$merriweather-serif<span style="color:#960050;background-color:#1e0010">:</span>   <span style="color:#e6db74">&#39;Merriweather&#39;</span>, serif;
+$menlo<span style="color:#960050;background-color:#1e0010">:</span>                 Menlo, Consolas, monospace;
+$noto-sans-kr<span style="color:#960050;background-color:#1e0010">:</span>         <span style="color:#e6db74">&#39;Noto Sans KR&#39;</span>, sans-serif;
+$nanum-gothic-coding<span style="color:#960050;background-color:#1e0010">:</span>  <span style="color:#e6db74">&#39;Nanum Gothic Coding&#39;</span>, monospace;
+$ibm-plex-mono<span style="color:#960050;background-color:#1e0010">:</span>        <span style="color:#e6db74">&#39;IBM Plex Mono&#39;</span>, monospace;
    
-<span style="color:#f92672">$</span><span style="color:#f92672">font-family-base</span><span style="color:#f92672">:</span> <span style="color:#f92672">$</span><span style="color:#f92672">noto-sans-kr</span><span style="color:#f92672">;</span>
+$font-family-base<span style="color:#960050;background-color:#1e0010">:</span> $noto-sans-kr;
    
-<span style="color:#f92672">$</span><span style="color:#f92672">font-families</span><span style="color:#f92672">:</span> <span style="color:#f92672">(</span>
-   <span style="color:#f92672">/</span><span style="color:#f92672">/</span> <span style="color:#f92672">base</span>
-   <span style="color:#e6db74">&#39;headings&#39;</span><span style="color:#f92672">:</span>          <span style="color:#f92672">$</span><span style="color:#f92672">noto-sans-kr</span><span style="color:#f92672">,</span>
-   <span style="color:#f92672">/</span><span style="color:#f92672">/</span> <span style="color:#f92672">components</span>
-   <span style="color:#e6db74">&#39;code&#39;</span><span style="color:#f92672">:</span>              <span style="color:#f92672">$</span><span style="color:#f92672">nanum-gothic-coding</span><span style="color:#f92672">,</span>
-   <span style="color:#e6db74">&#39;caption&#39;</span><span style="color:#f92672">:</span>           <span style="color:#f92672">$</span><span style="color:#f92672">noto-sans-kr</span><span style="color:#f92672">,</span>
-   <span style="color:#e6db74">&#39;image-gallery&#39;</span><span style="color:#f92672">:</span>     <span style="color:#f92672">$</span><span style="color:#f92672">noto-sans-kr</span><span style="color:#f92672">,</span>
-   <span style="color:#e6db74">&#39;post-header-cover&#39;</span><span style="color:#f92672">:</span> <span style="color:#f92672">$</span><span style="color:#f92672">noto-sans-kr</span><span style="color:#f92672">,</span>
-   <span style="color:#e6db74">&#39;post-meta&#39;</span><span style="color:#f92672">:</span>         <span style="color:#f92672">$</span><span style="color:#f92672">noto-sans-kr</span><span style="color:#f92672">,</span>
-   <span style="color:#e6db74">&#39;post-content&#39;</span><span style="color:#f92672">:</span>      <span style="color:#f92672">$</span><span style="color:#f92672">noto-sans-kr</span><span style="color:#f92672">,</span>
-   <span style="color:#e6db74">&#39;post-excerpt-link&#39;</span><span style="color:#f92672">:</span> <span style="color:#f92672">$</span><span style="color:#f92672">noto-sans-kr</span><span style="color:#f92672">,</span>
-   <span style="color:#e6db74">&#39;highlight&#39;</span><span style="color:#f92672">:</span>         <span style="color:#f92672">$</span><span style="color:#f92672">nanum-gothic-coding</span><span style="color:#f92672">,</span>
-   <span style="color:#f92672">/</span><span style="color:#f92672">/</span> <span style="color:#f92672">layout</span>
-   <span style="color:#e6db74">&#39;sidebar&#39;</span><span style="color:#f92672">:</span>           <span style="color:#f92672">$</span><span style="color:#f92672">noto-sans-kr</span>
-<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
-<span style="color:#f92672">(</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">)</span>
+$font-families<span style="color:#960050;background-color:#1e0010">:</span> (
+   // base
+   <span style="color:#e6db74">&#39;headings&#39;</span><span style="color:#960050;background-color:#1e0010">:</span>          $noto-sans-kr,
+   // components
+   <span style="color:#e6db74">&#39;code&#39;</span><span style="color:#960050;background-color:#1e0010">:</span>              $ibm-plex-mono,
+   <span style="color:#e6db74">&#39;caption&#39;</span><span style="color:#960050;background-color:#1e0010">:</span>           $noto-sans-kr,
+   <span style="color:#e6db74">&#39;image-gallery&#39;</span><span style="color:#960050;background-color:#1e0010">:</span>     $noto-sans-kr,
+   <span style="color:#e6db74">&#39;post-header-cover&#39;</span><span style="color:#960050;background-color:#1e0010">:</span> $noto-sans-kr,
+   <span style="color:#e6db74">&#39;post-meta&#39;</span><span style="color:#960050;background-color:#1e0010">:</span>         $noto-sans-kr,
+   <span style="color:#e6db74">&#39;post-content&#39;</span><span style="color:#960050;background-color:#1e0010">:</span>      $noto-sans-kr,
+   <span style="color:#e6db74">&#39;post-excerpt-link&#39;</span><span style="color:#960050;background-color:#1e0010">:</span> $noto-sans-kr,
+   <span style="color:#e6db74">&#39;highlight&#39;</span><span style="color:#960050;background-color:#1e0010">:</span>         $ibm-plex-mono,
+   // layout
+   <span style="color:#e6db74">&#39;sidebar&#39;</span><span style="color:#960050;background-color:#1e0010">:</span>           $noto-sans-kr
+);
+(...)
 </code></pre></div></li>
 <li>
 <p>themes\hugo-tranquilpeak-theme 폴더로 이동 후 rebuild 합니다</p>
 <p>;rebuild 가 실패하거나 실행이 안될경우 아래 3번 과정을 진행합니다</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">S:\&gt; cd Hugo\blog\themes\hugo-tranquilpeak-theme
-S:\Hugo\blog\themes\hugo-tranquilpeak-theme&gt; npm run prod
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S<span style="color:#960050;background-color:#1e0010">:</span>\&gt; cd Hugo\blog\themes\hugo-tranquilpeak-theme
+S<span style="color:#960050;background-color:#1e0010">:</span>\Hugo\blog\themes\hugo-tranquilpeak-theme&gt; npm run prod
 </code></pre></div></li>
 <li>
 <p>hugo-tranquilpeak-theme 수정 후 필요한 rebuild 환경구성</p>
 <p>; node.js v8.x 버전까지 하위 버전이 필요합니다<br>
 다운받고 설치 후 어느 경로든 실행할 수 있도록 윈도 path도 설정합니다<br>
 (Download: <a href="https://nodejs.org/dist/latest-v8.x/">node-v8.16.2-x64.msi</a>)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">S:\&gt; where node
-C:\Program Files\nodejs\node.exe
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S<span style="color:#960050;background-color:#1e0010">:</span>\&gt; where node
+C<span style="color:#960050;background-color:#1e0010">:</span>\Program Files\nodejs\node.exe
    
-S:\&gt; where npm
-C:\Program Files\nodejs\npm
-C:\Program Files\nodejs\npm.cmd
+S<span style="color:#960050;background-color:#1e0010">:</span>\&gt; where npm
+C<span style="color:#960050;background-color:#1e0010">:</span>\Program Files\nodejs\npm
+C<span style="color:#960050;background-color:#1e0010">:</span>\Program Files\nodejs\npm.cmd
    
-S:\&gt; node -v
+S<span style="color:#960050;background-color:#1e0010">:</span>\&gt; node -v
 v8.16.2
-S:\&gt; npm -v
+S<span style="color:#960050;background-color:#1e0010">:</span>\&gt; npm -v
 6.4.1
 </code></pre></div></li>
 <li>
 <p>설치가 완료되면 다시 rebuild 합니다</p>
 <p>*rebuild 를 위한 구성 중  node_modules 이름의 폴더와 하위 파일들이 생성됩니다</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">S:\&gt; cd Hugo\blog\themes\hugo-tranquilpeak-theme
-S:\Hugo\blog\themes\hugo-tranquilpeak-theme&gt; npm install grunt-cli -g
-S:\Hugo\blog\themes\hugo-tranquilpeak-theme&gt; npm install grunt --save-dev
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S<span style="color:#960050;background-color:#1e0010">:</span>\&gt; cd Hugo\blog\themes\hugo-tranquilpeak-theme
+S<span style="color:#960050;background-color:#1e0010">:</span>\Hugo\blog\themes\hugo-tranquilpeak-theme&gt; npm install grunt-cli -g
+S<span style="color:#960050;background-color:#1e0010">:</span>\Hugo\blog\themes\hugo-tranquilpeak-theme&gt; npm install grunt --save-dev
    
-S:\Hugo\blog\themes\hugo-tranquilpeak-theme&gt; dir |findstr node_modules
-12/13/2019  13:35    &lt;DIR&gt;          node_modules
+S<span style="color:#960050;background-color:#1e0010">:</span>\Hugo\blog\themes\hugo-tranquilpeak-theme&gt; dir |findstr node_modules
+12/13/2019  13<span style="color:#960050;background-color:#1e0010">:</span>35    &lt;DIR&gt;          node_modules
    
-S:\Hugo\blog\themes\hugo-tranquilpeak-theme&gt; npm run prod
-<span style="color:#66d9ef">&gt; </span><span style="font-style:italic">hugo-tranquilpeak-theme@0.4.7-BETA grunt S:\Hugo\blog\themes\hugo-tranquilpeak-theme
-</span><span style="font-style:italic"></span><span style="color:#66d9ef">&gt; </span><span style="font-style:italic">node ./node_modules/grunt-cli/bin/grunt &#34;buildProd&#34;
-</span><span style="font-style:italic"></span>(...)
-Running &#34;sails-linker:prodJs&#34; (sails-linker) task
-File &#34;layouts/partials/script.html&#34; updated.
+S<span style="color:#960050;background-color:#1e0010">:</span>\Hugo\blog\themes\hugo-tranquilpeak-theme&gt; npm run prod
+&gt; hugo-tranquilpeak-theme@0.4.7-BETA grunt S<span style="color:#960050;background-color:#1e0010">:</span>\Hugo\blog\themes\hugo-tranquilpeak-theme
+&gt; node ./node_modules/grunt-cli/bin/grunt <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">buildProd</span><span style="color:#e6db74">&#34;</span>
+(...)
+Running <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">sails-linker:prodJs</span><span style="color:#e6db74">&#34;</span> (sails-linker) task
+File <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">layouts/partials/script.html</span><span style="color:#e6db74">&#34;</span> updated.
    
-Running &#34;sails-linker:prodCss&#34; (sails-linker) task
-File &#34;layouts/partials/head.html&#34; updated.
+Running <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">sails-linker:prodCss</span><span style="color:#e6db74">&#34;</span> (sails-linker) task
+File <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">layouts/partials/head.html</span><span style="color:#e6db74">&#34;</span> updated.
    
-Running &#34;replace:linker&#34; (replace) task
+Running <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">replace:linker</span><span style="color:#e6db74">&#34;</span> (replace) task
 Done
 </code></pre></div></li>
 <li>
 <p>Rebuild 후 페이지가 깨진다면&hellip;</p>
 <p>; head.html 파일을 수정하여 사용중이라면 rebuild 후 페이지가 깨져 보일 수 있습니다</p>
 <p>; theme rebuild를 하게되면 style-(&hellip;).min.css 파일이 재생성되는데</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">S:\Hugo\blog\themes\hugo-tranquilpeak-theme\static\css 디렉터리
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S<span style="color:#960050;background-color:#1e0010">:</span>\Hugo\blog\themes\hugo-tranquilpeak-theme\static\css 디렉터리
    
-12/18/2019  10:26    &lt;DIR&gt;          .
-12/18/2019  10:26    &lt;DIR&gt;          ..
-12/18/2019  10:26            87,217 style-geg01wgs4obts5g7vfuj9friotgndu90dxpl4byfnmoii24z6hq3yn8g.min.css
-12/18/2019  10:26           108,677 style.css
-12/18/2019  10:26           108,677 tranquilpeak.css
+12/18/2019  10<span style="color:#960050;background-color:#1e0010">:</span>26    &lt;DIR&gt;          .
+12/18/2019  10<span style="color:#960050;background-color:#1e0010">:</span>26    &lt;DIR&gt;          ..
+12/18/2019  10<span style="color:#960050;background-color:#1e0010">:</span>26            87,217 style-geg01wgs4obts5g7vfuj9friotgndu90dxpl4byfnmoii24z6hq3yn8g.min.css
+12/18/2019  10<span style="color:#960050;background-color:#1e0010">:</span>26           108,677 style.css
+12/18/2019  10<span style="color:#960050;background-color:#1e0010">:</span>26           108,677 tranquilpeak.css
                3개 파일             304,571 바이트
                2개 디렉터리  63,016,673,280 바이트 남음
 </code></pre></div><p>head.html 을 열어서 재생성된 style-(&hellip;).min.css 파일명으로 수정하면 됩니다</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">S:\Hugo\blog&gt; dir layouts\partials |findstr head.html
-12/18/2019  10:38             3,388 head.html
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S<span style="color:#960050;background-color:#1e0010">:</span>\Hugo\blog&gt; dir layouts\partials |findstr head.html
+12/18/2019  10<span style="color:#960050;background-color:#1e0010">:</span>38             3,388 head.html
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">S:\Hugo\blog&gt; notepad layouts\partials\head.html
 (...)
     <span style="color:#75715e">&lt;!--</span><span style="color:#75715e">STYLES</span><span style="color:#75715e">--&gt;</span>
-    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/css/style-geg01wgs4obts5g7vfuj9friotgndu90dxpl4byfnmoii24z6hq3yn8g.min.css&#34;</span> /&gt;
+    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/css/style-geg01wgs4obts5g7vfuj9friotgndu90dxpl4byfnmoii24z6hq3yn8g.min.css&#34;</span> /&gt;{ a}
     <span style="color:#75715e">&lt;!--</span><span style="color:#75715e">STYLES END</span><span style="color:#75715e">--&gt;</span>
 (...)
 </code></pre></div></li>
 <li>
 <p>Browse with the Chrome</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">http://localhost:1313/
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">http://localhost:1313/
 </code></pre></div></li>
 <li>
 <p>Ref.</p>
 <ul>
 <li><a href="https://wotjd.github.io/2019/05/blogging-hugo-%EB%A1%9C-github-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-3.-%ED%85%8C%EB%A7%88-%EC%84%A0%EC%A0%95-%EB%B0%8F-%EC%BB%A4%EC%8A%A4%ED%84%B0%EB%A7%88%EC%9D%B4%EC%A7%95/">엉망진창 Swift 코딩 | Hugo로 github 블로그 시작하기 -3.테마선정 및 커스터마이징</a></li>
 <li><a href="http://blog.lattecom.xyz/2016/05/08/tranquilpeak-theme-web-font/">Tranquilpeak 테마에 웹 폰트 적용하기</a></li>
+<li><a href="https://fonts.google.com/">Google Fonts</a></li>
 </ul>
 </li>
 </ol>
@@ -704,7 +703,7 @@ Done
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
 
 
-<script src="https://010000.github.io/js/script-sn9xfukkmkzwyy0c8pnefksilzosbzkdj2kp7jyy3tgi7sia3ubr8mv.min.js"></script>
+<script src="https://010000.github.io/js/script-sfmerixulrdfchgdilgeg3qhetcqrx3drqtmsls2xte8cdwzjvec2q6eq6.min.js"></script>
 
 
 <script lang="javascript">
