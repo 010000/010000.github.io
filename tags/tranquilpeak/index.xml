@@ -12,11 +12,11 @@
     
     
     <item>
-      <title>Changing fonts</title>
-      <link>https://010000.github.io/2019/12/changing-fonts/</link>
+      <title>Font 와 Highlight color 수정 후 theme rebuild</title>
+      <link>https://010000.github.io/2019/12/font-%EC%99%80-highlight-color-%EC%88%98%EC%A0%95-%ED%9B%84-theme-rebuild/</link>
       <pubDate>Thu, 19 Dec 2019 10:10:18 +0900</pubDate>
       
-      <guid>https://010000.github.io/2019/12/changing-fonts/</guid>
+      <guid>https://010000.github.io/2019/12/font-%EC%99%80-highlight-color-%EC%88%98%EC%A0%95-%ED%9B%84-theme-rebuild/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;Hugo / hugo-tranquilpeak-theme 테마의 font를 변경합니다.&lt;/li&gt;
 &lt;li&gt;수정한 값을 적용하기 위해 테마 rebuild 과정이 포함되어 있습니다. &lt;em&gt;Update: Dec 19, 2019&lt;/em&gt;&lt;/li&gt;
@@ -24,11 +24,11 @@
     </item>
     
     <item>
-      <title>Generating pages and uploading</title>
-      <link>https://010000.github.io/2019/12/generating-pages-and-uploading/</link>
+      <title>Web page 생성과 Github upload</title>
+      <link>https://010000.github.io/2019/12/web-page-%EC%83%9D%EC%84%B1%EA%B3%BC-github-upload/</link>
       <pubDate>Mon, 16 Dec 2019 23:05:05 +0900</pubDate>
       
-      <guid>https://010000.github.io/2019/12/generating-pages-and-uploading/</guid>
+      <guid>https://010000.github.io/2019/12/web-page-%EC%83%9D%EC%84%B1%EA%B3%BC-github-upload/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;md파일을 html 정적 페이지로 변환하고 github 에 올립니다.&lt;/li&gt;
 &lt;li&gt;github repository 생성 및 git 사용법은 생략됐습니다. &lt;em&gt;Update: Dec 17, 2019&lt;/em&gt;&lt;/li&gt;
@@ -36,22 +36,22 @@
     </item>
     
     <item>
-      <title>Editing template and posting first</title>
-      <link>https://010000.github.io/2019/12/editing-template-and-posting-first/</link>
+      <title>.md 파일 생성을 위한 template 수정과 new doc 생성</title>
+      <link>https://010000.github.io/2019/12/.md-%ED%8C%8C%EC%9D%BC-%EC%83%9D%EC%84%B1%EC%9D%84-%EC%9C%84%ED%95%9C-template-%EC%88%98%EC%A0%95%EA%B3%BC-new-doc-%EC%83%9D%EC%84%B1/</link>
       <pubDate>Mon, 16 Dec 2019 22:53:53 +0900</pubDate>
       
-      <guid>https://010000.github.io/2019/12/editing-template-and-posting-first/</guid>
+      <guid>https://010000.github.io/2019/12/.md-%ED%8C%8C%EC%9D%BC-%EC%83%9D%EC%84%B1%EC%9D%84-%EC%9C%84%ED%95%9C-template-%EC%88%98%EC%A0%95%EA%B3%BC-new-doc-%EC%83%9D%EC%84%B1/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;.md 문서가 생성될 때 사용되는 template을 수정하고 테스트 글을 작성합니다. &lt;em&gt;Update: Dec 16, 2019&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
     
     <item>
-      <title>Installing Hugo theme on Windows</title>
-      <link>https://010000.github.io/2019/12/installing-hugo-theme-on-windows/</link>
+      <title>Windows 환경에서 Hugo theme 설치하기</title>
+      <link>https://010000.github.io/2019/12/windows-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-hugo-theme-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/</link>
       <pubDate>Sat, 14 Dec 2019 23:58:15 +0900</pubDate>
       
-      <guid>https://010000.github.io/2019/12/installing-hugo-theme-on-windows/</guid>
+      <guid>https://010000.github.io/2019/12/windows-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-hugo-theme-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;Windows  OS에서 Hugo / hugo-tranquilpeak-theme 테마를 설치합니다. &lt;em&gt;Update: Dec 15, 2019&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
