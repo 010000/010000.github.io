@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.61.0 with theme Tranquilpeak 0.4.7-BETA">
-<meta name="author" content="Jeffrey Y. Jo">
+<meta name="generator" content="Hugo 0.72.0 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="author" content="Jeffrey YM. Jo">
 <meta name="keywords" content="tech">
 <meta name="description" content="
 md파일을 html 정적 페이지로 변환하고 github 에 올립니다.
@@ -98,7 +98,7 @@ github repository 생성 및 git 사용법은 생략됐습니다. Update: Dec 17
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
     
     
-    <link rel="stylesheet" href="https://010000.github.io/css/style-cnslfhtugqadax9aas2fommajymrswzejd8e4xfvspeigvkpf1sri9anvd.min.css" />
+    <link rel="stylesheet" href="https://010000.github.io/css/style-bnmxmkabgj3wbfhk7bzdszt831khgkssiheb7qz65kbwnxsqu7aawafl9o.min.css" />
     
     
 
@@ -152,7 +152,7 @@ if (!doNotTrack) {
         <a href="https://010000.github.io/#about">
           <img class="sidebar-profile-picture" src="https://010000.github.io/galaga_t.png" alt="Author&#39;s picture" />
         </a>
-        <h4 class="sidebar-profile-name">Jeffrey Y. Jo</h4>
+        <h4 class="sidebar-profile-name">Jeffrey YM. Jo</h4>
         
           <h5 class="sidebar-profile-bio">Will step every day because of alive.</h5>
         
@@ -334,7 +334,7 @@ if (!doNotTrack) {
 1.2. hugo 테마가 저장된 themes 폴더는 별도 git 설정을 하지 않으면 github에 업로드 되지 않습니다<br>
 1.3. 1.1~1.2를 제외한 나머지는 소스관리 목적상 별도 github repository에 업로드하는 것이 좋습니다<br>
 (즉, 1.1 public 폴더에 객체들만 업로드되어도 원하는 정적 페이지 웹서비스가 가능합니다)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S<span style="color:#960050;background-color:#1e0010">:</span>\Hugo\blog&gt; dir
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S:\Hugo\blog&gt; dir
   
 12/15/2019  01<span style="color:#960050;background-color:#1e0010">:</span>19    &lt;DIR&gt;          .
 12/15/2019  01<span style="color:#960050;background-color:#1e0010">:</span>19    &lt;DIR&gt;          ..
@@ -356,13 +356,13 @@ if (!doNotTrack) {
 <p>2.1. 사용중인 hugo 테마명 확인<br>
 2.2. 정적 페이지 생성<br>
 *주의 - Hugo\content 폴더 내 md 파일의 인코딩이 UTF-8이 아니면 오류가 발생할 수 있습니다</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S<span style="color:#960050;background-color:#1e0010">:</span>\Hugo\blog&gt; dir themes
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S:\Hugo\blog&gt; dir themes
 12/13/2019  13<span style="color:#960050;background-color:#1e0010">:</span>20    &lt;DIR&gt;          .
 12/13/2019  13<span style="color:#960050;background-color:#1e0010">:</span>20    &lt;DIR&gt;          ..
 12/13/2019  13<span style="color:#960050;background-color:#1e0010">:</span>37    &lt;DIR&gt;          hugo-tranquilpeak-theme
                0개 파일                   0 바이트
                   
-S<span style="color:#960050;background-color:#1e0010">:</span>\Hugo\blog&gt; hugo -t hugo-tranquilpeak-theme
+S:\Hugo\blog&gt; hugo -t hugo-tranquilpeak-theme
 Building sites (<span style="color:#960050;background-color:#1e0010">…</span>)
                    | EN-US
 +------------------+-------+
@@ -378,10 +378,10 @@ Building sites (<span style="color:#960050;background-color:#1e0010">…</span>)
 Total <span style="color:#66d9ef">in</span> 119 ms
 </code></pre></div><p>2.3. blog\public 폴더 이동 후 git push 하면 {userid}.github.io url로 생성된 페이지를 볼 수 있습니다<br>
 *Github repository 생성과 git 설정이 선행되어야 아래 git push 가능합니다</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S<span style="color:#960050;background-color:#1e0010">:</span>\Hugo\blog&gt; cd public
-S<span style="color:#960050;background-color:#1e0010">:</span>\Hugo\blog\public&gt; git add .
-S<span style="color:#960050;background-color:#1e0010">:</span>\Hugo\blog\public&gt; git commit -m <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">first commit pages</span><span style="color:#e6db74">&#34;</span>
-S<span style="color:#960050;background-color:#1e0010">:</span>\Hugo\blog\public&gt; git git push origin master
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S:\Hugo\blog&gt; cd public
+S:\Hugo\blog\public&gt; git add .
+S:\Hugo\blog\public&gt; git commit -m <span style="color:#e6db74">&#34;first commit pages&#34;</span>
+S:\Hugo\blog\public&gt; git git push origin master
 </code></pre></div><p>*Github 이 처음이라면&hellip;  <a href="https://rogerdudler.github.io/git-guide/index.ko.html">Git간편안내서</a><br>
 *<a href="https://git-scm.com/book/ko/v2">Pro Git ebook</a></p>
 </li>
@@ -399,23 +399,23 @@ S<span style="color:#960050;background-color:#1e0010">:</span>\Hugo\blog\public&
 <p>*Repositories<br>
 Contents용 - BlogHugoContents<br>
 Public 웹서비스용 - {userid}.github.io</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S<span style="color:#960050;background-color:#1e0010">:</span>\Hugo\blog&gt; git init
-<span style="color:#75715e"># $ git remote add origin &lt;contents용 repository url&gt;</span>
-S<span style="color:#960050;background-color:#1e0010">:</span>\Hugo\blog&gt; git remote add origin https<span style="color:#960050;background-color:#1e0010">:</span>//github.com/0l0000/BlogHugoContents.git
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S:\Hugo\blog&gt; git init
+<span style="color:#75715e"># $ git remote add origin &lt;contents용 repository url&gt;</span>
+S:\Hugo\blog&gt; git remote add origin https<span style="color:#960050;background-color:#1e0010">:</span>//github.com/0l0000/BlogHugoContents.git
    
-<span style="color:#75715e"># git submodule add -b master &lt;public용 repository url&gt; public</span>
-<span style="color:#75715e"># S:\Hugo\blog 폴더에 public 폴더가 있으며 오류가 발생하니 삭제할 것 </span>
-S<span style="color:#960050;background-color:#1e0010">:</span>\Hugo\blog&gt; git submodule add -b master https<span style="color:#960050;background-color:#1e0010">:</span>//github.com/0l000/0l0000.github.io.git public
+<span style="color:#75715e"># git submodule add -b master &lt;public용 repository url&gt; public</span>
+<span style="color:#75715e"># S:\Hugo\blog 폴더에 public 폴더가 있으며 오류가 발생하니 삭제할 것 </span>
+S:\Hugo\blog&gt; git submodule add -b master https<span style="color:#960050;background-color:#1e0010">:</span>//github.com/0l000/0l0000.github.io.git public
 <span style="color:#e6db74">&#39;public&#39;</span> does not have a commit checked out
    
-<span style="color:#75715e"># $ hugo -t &lt;테마 이름&gt;</span>
-S<span style="color:#960050;background-color:#1e0010">:</span>\Hugo\blog&gt; hugo -t hugo-tranquilpeak-theme
+<span style="color:#75715e"># $ hugo -t &lt;테마 이름&gt;</span>
+S:\Hugo\blog&gt; hugo -t hugo-tranquilpeak-theme
    
-<span style="color:#75715e"># public 폴더에서 push 후 blog 폴더에서 push 한다.</span>
-S<span style="color:#960050;background-color:#1e0010">:</span>\Hugo\blog&gt; cd public
-S<span style="color:#960050;background-color:#1e0010">:</span>\Hugo\blog\public&gt; git add &amp;&amp; git commit -m <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">커밋 메세지</span><span style="color:#e6db74">&#34;</span> &amp;&amp; git push origin master
-S<span style="color:#960050;background-color:#1e0010">:</span>\Hugo\blog\public&gt; cd ..
-S<span style="color:#960050;background-color:#1e0010">:</span>\Hugo\blog&gt; git add &amp;&amp; git commit -m <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">커밋 메세지</span><span style="color:#e6db74">&#34;</span> &amp;&amp; git push origin master
+<span style="color:#75715e"># public 폴더에서 push 후 blog 폴더에서 push 한다.</span>
+S:\Hugo\blog&gt; cd public
+S:\Hugo\blog\public&gt; git add &amp;&amp; git commit -m <span style="color:#e6db74">&#34;커밋 메세지&#34;</span> &amp;&amp; git push origin master
+S:\Hugo\blog\public&gt; cd ..
+S:\Hugo\blog&gt; git add &amp;&amp; git commit -m <span style="color:#e6db74">&#34;커밋 메세지&#34;</span> &amp;&amp; git push origin master
    
 </code></pre></div></li>
 <li>
@@ -546,7 +546,7 @@ S<span style="color:#960050;background-color:#1e0010">:</span>\Hugo\blog&gt; git
 
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2019 <a href="https://github.com/010000">010000 Logbook</a>. All Rights Reserved
+    &copy; 2020 <a href="https://github.com/010000">010000 Logbook</a>. All Rights Reserved
   </span>
 </footer>
 
@@ -657,7 +657,7 @@ S<span style="color:#960050;background-color:#1e0010">:</span>\Hugo\blog&gt; git
     
       <img id="about-card-picture" src="https://010000.github.io/galaga_t.png" alt="Author&#39;s picture" />
     
-    <h4 id="about-card-name">Jeffrey Y. Jo</h4>
+    <h4 id="about-card-name">Jeffrey YM. Jo</h4>
     
       <div id="about-card-bio">Will step every day because of alive.</div>
     
@@ -694,7 +694,7 @@ S<span style="color:#960050;background-color:#1e0010">:</span>\Hugo\blog&gt; git
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
 
 
-<script src="https://010000.github.io/js/script-cu2nqxloqh6pj857kgcwusfqvafucihmdkx4afhvxmknseqlp1yb5xwyf8p.min.js"></script>
+<script src="https://010000.github.io/js/script-hbrooqldibnofclonhyp3yhblzuaun3xxi1sil4yfzg6uezaawa3wd2fvp.min.js"></script>
 
 
 <script lang="javascript">

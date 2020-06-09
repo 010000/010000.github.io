@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.61.0 with theme Tranquilpeak 0.4.7-BETA">
-<meta name="author" content="Jeffrey Y. Jo">
+<meta name="generator" content="Hugo 0.72.0 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="author" content="Jeffrey YM. Jo">
 <meta name="keywords" content="tech">
 <meta name="description" content="
 Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인 및 설치합니다
@@ -90,7 +90,7 @@ Hugo 설명과 윈도우즈 환경설정(path) 과정은 생략했습니다. Upd
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
     
     
-    <link rel="stylesheet" href="https://010000.github.io/css/style-cnslfhtugqadax9aas2fommajymrswzejd8e4xfvspeigvkpf1sri9anvd.min.css" />
+    <link rel="stylesheet" href="https://010000.github.io/css/style-bnmxmkabgj3wbfhk7bzdszt831khgkssiheb7qz65kbwnxsqu7aawafl9o.min.css" />
     
     
 
@@ -144,7 +144,7 @@ if (!doNotTrack) {
         <a href="https://010000.github.io/#about">
           <img class="sidebar-profile-picture" src="https://010000.github.io/galaga_t.png" alt="Author&#39;s picture" />
         </a>
-        <h4 class="sidebar-profile-name">Jeffrey Y. Jo</h4>
+        <h4 class="sidebar-profile-name">Jeffrey YM. Jo</h4>
         
           <h5 class="sidebar-profile-bio">Will step every day because of alive.</h5>
         
@@ -323,7 +323,7 @@ if (!doNotTrack) {
 <p>Install Go lang</p>
 <p>Download: <a href="https://golang.org/dl/">golang.org</a><br>
 File: go1.13.5.windows-amd64.msi</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">C<span style="color:#960050;background-color:#1e0010">:</span>\&gt; go version
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">C:\&gt; go version
 go version go 1.13.5 windows/amd64
 </code></pre></div></li>
 <li>
@@ -332,7 +332,7 @@ go version go 1.13.5 windows/amd64
 File: Git-2.24.1.2-64-bit.exe<br>
 ;1번 Go lang 과 Git 설치가 되면 아래 3번 hugo.exe가 있는 /Hugo/bin 폴더를 포함하여<br>
 어느 경로에서든 실행될 수 있도록 Windows 환경설정 path에 등록해줍니다</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">C<span style="color:#960050;background-color:#1e0010">:</span>\&gt; git version
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">C:\&gt; git version
 git version 2.24.1.windows.2
 </code></pre></div></li>
 <li>
@@ -342,23 +342,23 @@ File: hugo_0.61.0_Windows-64bit.zip</p>
 <p>Step.1: Unzip the hugo_zip file in \Hugo\bin folder<br>
 *{Local drive}\Hugo\bin<br>
 ;bin 폴더를 만들어서 압축을 풀어도 되고, Hugo/ 폴더 아래 hugo_zip 압축 파일을 풀고 bin으로 rename 해도 됩니다</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">C<span style="color:#960050;background-color:#1e0010">:</span>\&gt; dir s<span style="color:#960050;background-color:#1e0010">:</span>\Hugo\bin
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">C:\&gt; dir s:\Hugo\bin
 12/13/2019  00<span style="color:#960050;background-color:#1e0010">:</span>10    &lt;DIR&gt;          .
 12/13/2019  00<span style="color:#960050;background-color:#1e0010">:</span>10    &lt;DIR&gt;          ..
 12/11/2019  17<span style="color:#960050;background-color:#1e0010">:</span>30        41,070,080 hugo.exe
 12/11/2019  17<span style="color:#960050;background-color:#1e0010">:</span>15            11,357 LICENSE
 12/11/2019  17<span style="color:#960050;background-color:#1e0010">:</span>15            11,227 README.md
    
-C<span style="color:#960050;background-color:#1e0010">:</span>\&gt;hugo version
+C:\&gt;hugo version
 Hugo Static Site Generator v0.61.0-9B445B9D windows/amd64 BuildDate<span style="color:#960050;background-color:#1e0010">:</span> 2019-12-11T08<span style="color:#960050;background-color:#1e0010">:</span>29<span style="color:#960050;background-color:#1e0010">:</span>13Z
 </code></pre></div></li>
 <li>
 <p>Create new site<br>
 ;Hugo 테마와 작성된 글, 이미지 등의 Local 저장소 위치로 blog 란 이름의 폴더를 생성했습니다<br>
 ;blog 폴더는 {id}.github.io 로 시작하는 url 상에 노출되는 경로가 아닙니다</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S<span style="color:#960050;background-color:#1e0010">:</span>\Hugo&gt; hugo new site blog
-Congratulations! Your new Hugo site is created <span style="color:#66d9ef">in</span> S<span style="color:#960050;background-color:#1e0010">:</span>\Hugo\blog.
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S<span style="color:#960050;background-color:#1e0010">:</span>\Hugo&gt; dir
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S:\Hugo&gt; hugo new site blog
+Congratulations! Your new Hugo site is created <span style="color:#66d9ef">in</span> S:\Hugo\blog.
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S:\Hugo&gt; dir
    
 12/13/2019  11<span style="color:#960050;background-color:#1e0010">:</span>04    &lt;DIR&gt;          .
 12/13/2019  11<span style="color:#960050;background-color:#1e0010">:</span>04    &lt;DIR&gt;          ..
@@ -476,7 +476,7 @@ Congratulations! Your new Hugo site is created <span style="color:#66d9ef">in</s
 
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2019 <a href="https://github.com/010000">010000 Logbook</a>. All Rights Reserved
+    &copy; 2020 <a href="https://github.com/010000">010000 Logbook</a>. All Rights Reserved
   </span>
 </footer>
 
@@ -587,7 +587,7 @@ Congratulations! Your new Hugo site is created <span style="color:#66d9ef">in</s
     
       <img id="about-card-picture" src="https://010000.github.io/galaga_t.png" alt="Author&#39;s picture" />
     
-    <h4 id="about-card-name">Jeffrey Y. Jo</h4>
+    <h4 id="about-card-name">Jeffrey YM. Jo</h4>
     
       <div id="about-card-bio">Will step every day because of alive.</div>
     
@@ -624,7 +624,7 @@ Congratulations! Your new Hugo site is created <span style="color:#66d9ef">in</s
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
 
 
-<script src="https://010000.github.io/js/script-cu2nqxloqh6pj857kgcwusfqvafucihmdkx4afhvxmknseqlp1yb5xwyf8p.min.js"></script>
+<script src="https://010000.github.io/js/script-hbrooqldibnofclonhyp3yhblzuaun3xxi1sil4yfzg6uezaawa3wd2fvp.min.js"></script>
 
 
 <script lang="javascript">

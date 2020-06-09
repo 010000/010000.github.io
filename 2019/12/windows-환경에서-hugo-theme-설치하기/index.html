@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.61.0 with theme Tranquilpeak 0.4.7-BETA">
-<meta name="author" content="Jeffrey Y. Jo">
+<meta name="generator" content="Hugo 0.72.0 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="author" content="Jeffrey YM. Jo">
 <meta name="keywords" content="tech">
 <meta name="description" content="
 Windows  OS에서 Hugo / hugo-tranquilpeak-theme 테마를 설치합니다. Update: Dec 15, 2019
@@ -92,7 +92,7 @@ Windows  OS에서 Hugo / hugo-tranquilpeak-theme 테마를 설치합니다. Upda
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
     
     
-    <link rel="stylesheet" href="https://010000.github.io/css/style-cnslfhtugqadax9aas2fommajymrswzejd8e4xfvspeigvkpf1sri9anvd.min.css" />
+    <link rel="stylesheet" href="https://010000.github.io/css/style-bnmxmkabgj3wbfhk7bzdszt831khgkssiheb7qz65kbwnxsqu7aawafl9o.min.css" />
     
     
 
@@ -146,7 +146,7 @@ if (!doNotTrack) {
         <a href="https://010000.github.io/#about">
           <img class="sidebar-profile-picture" src="https://010000.github.io/galaga_t.png" alt="Author&#39;s picture" />
         </a>
-        <h4 class="sidebar-profile-name">Jeffrey Y. Jo</h4>
+        <h4 class="sidebar-profile-name">Jeffrey YM. Jo</h4>
         
           <h5 class="sidebar-profile-bio">Will step every day because of alive.</h5>
         
@@ -323,8 +323,8 @@ if (!doNotTrack) {
 <li>
 <p>Install Hugo theme, hugo-tranquilpeak-theme</p>
 <p>Git clone: <a href="https://github.com/kakawait/hugo-tranquilpeak-theme.git">hugo-tranquilpeak-theme.git</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S<span style="color:#960050;background-color:#1e0010">:</span>\Hugo\blog&gt; cd themes
-S<span style="color:#960050;background-color:#1e0010">:</span>\Hugo\blog\themes&gt; git clone https<span style="color:#960050;background-color:#1e0010">:</span>//github.com/kakawait/hugo-tranquilpeak-theme.git
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S:\Hugo\blog&gt; cd themes
+S:\Hugo\blog\themes&gt; git clone https<span style="color:#960050;background-color:#1e0010">:</span>//github.com/kakawait/hugo-tranquilpeak-theme.git
 Cloning into <span style="color:#e6db74">&#39;hugo-tranquilpeak-theme&#39;</span>...
 remote<span style="color:#960050;background-color:#1e0010">:</span> Enumerating objects<span style="color:#960050;background-color:#1e0010">:</span> 5026, done.
 remote<span style="color:#960050;background-color:#1e0010">:</span> Total 5026 (delta 0), reused 0 (delta 0), pack-reused 5026
@@ -336,16 +336,16 @@ Updating files<span style="color:#960050;background-color:#1e0010">:</span> 100%
 <p>Copy &amp; edit config.toml file</p>
 <p>; Hugo\blog\theme 폴더 하위에서 example file(config.toml) 을 Hugo\blog 로 복사하여 수정합니다<br>
 *need to edit the languageCode for Korean</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S<span style="color:#960050;background-color:#1e0010">:</span>\Hugo\blog&gt;cp themes\hugo-tranquilpeak-theme\exampleSite\config.toml config.toml
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S<span style="color:#960050;background-color:#1e0010">:</span>\Hugo\blog&gt; more config.toml
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S:\Hugo\blog&gt;cp themes\hugo-tranquilpeak-theme\exampleSite\config.toml config.toml
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S:\Hugo\blog&gt; more config.toml
 (...)
-baseURL = <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">https://010000.github.io/</span><span style="color:#e6db74">&#34;</span>
-languageCode = <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">ko-kr</span><span style="color:#e6db74">&#34;</span>
-defaultContentLanguage = <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">en-us</span><span style="color:#e6db74">&#34;</span>
-title = <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">010000 logbook</span><span style="color:#e6db74">&#34;</span>
-theme = <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">hugo-tranquilpeak-theme</span><span style="color:#e6db74">&#34;</span>
-disqusShortname = <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">010000</span><span style="color:#e6db74">&#34;</span>
-<span style="color:#75715e"># googleAnalytics = &#34;UA-123-45&#34;</span>
+baseURL = <span style="color:#e6db74">&#34;https://010000.github.io/&#34;</span>
+languageCode = <span style="color:#e6db74">&#34;ko-kr&#34;</span>
+defaultContentLanguage = <span style="color:#e6db74">&#34;en-us&#34;</span>
+title = <span style="color:#e6db74">&#34;010000 logbook&#34;</span>
+theme = <span style="color:#e6db74">&#34;hugo-tranquilpeak-theme&#34;</span>
+disqusShortname = <span style="color:#e6db74">&#34;010000&#34;</span>
+<span style="color:#75715e"># googleAnalytics = &#34;UA-123-45&#34;</span>
 paginate = 7
 canonifyurls = true
 (...)
@@ -354,8 +354,8 @@ canonifyurls = true
 <p>Run hugo on local drive</p>
 <p>; hugo server -D<br>
 *display also draft documents with -D option</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">s<span style="color:#960050;background-color:#1e0010">:</span>\Hugo\blog&gt; hugo server -D
-Building sites <span style="color:#960050;background-color:#1e0010">…</span> WARNING<span style="color:#960050;background-color:#1e0010">:</span> calling IsSet with unsupported type <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">string</span><span style="color:#e6db74">&#34;</span> (string) will always <span style="color:#66d9ef">return</span> false.
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">s:\Hugo\blog&gt; hugo server -D
+Building sites <span style="color:#960050;background-color:#1e0010">…</span> WARNING<span style="color:#960050;background-color:#1e0010">:</span> calling IsSet with unsupported type <span style="color:#e6db74">&#34;string&#34;</span> (string) will always <span style="color:#66d9ef">return</span> false.
    
                    | EN-US
 +------------------+-------+
@@ -369,9 +369,9 @@ Building sites <span style="color:#960050;background-color:#1e0010">…</span> W
   Cleaned          |     0
    
 Built <span style="color:#66d9ef">in</span> 207 ms
-Watching <span style="color:#66d9ef">for</span> changes <span style="color:#66d9ef">in</span> s<span style="color:#960050;background-color:#1e0010">:</span>\Hugo\blog\{archetypes,content,data,layouts,static,themes}
-Watching <span style="color:#66d9ef">for</span> config changes <span style="color:#66d9ef">in</span> s<span style="color:#960050;background-color:#1e0010">:</span>\Hugo\blog\config.toml
-Environment<span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">development</span><span style="color:#e6db74">&#34;</span>
+Watching <span style="color:#66d9ef">for</span> changes <span style="color:#66d9ef">in</span> s:\Hugo\blog\{archetypes,content,data,layouts,static,themes}
+Watching <span style="color:#66d9ef">for</span> config changes <span style="color:#66d9ef">in</span> s:\Hugo\blog\config.toml
+Environment<span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;development&#34;</span>
 Serving pages from memory
 Running <span style="color:#66d9ef">in</span> Fast Render Mode. <span style="color:#66d9ef">For</span> full rebuilds on change<span style="color:#960050;background-color:#1e0010">:</span> hugo server --disableFastRender
 Web Server is available at http<span style="color:#960050;background-color:#1e0010">:</span>//localhost<span style="color:#960050;background-color:#1e0010">:</span>1313/ (bind address 127.0.0.1)
@@ -497,7 +497,7 @@ Press Ctrl+C to stop
 
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2019 <a href="https://github.com/010000">010000 Logbook</a>. All Rights Reserved
+    &copy; 2020 <a href="https://github.com/010000">010000 Logbook</a>. All Rights Reserved
   </span>
 </footer>
 
@@ -608,7 +608,7 @@ Press Ctrl+C to stop
     
       <img id="about-card-picture" src="https://010000.github.io/galaga_t.png" alt="Author&#39;s picture" />
     
-    <h4 id="about-card-name">Jeffrey Y. Jo</h4>
+    <h4 id="about-card-name">Jeffrey YM. Jo</h4>
     
       <div id="about-card-bio">Will step every day because of alive.</div>
     
@@ -645,7 +645,7 @@ Press Ctrl+C to stop
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
 
 
-<script src="https://010000.github.io/js/script-cu2nqxloqh6pj857kgcwusfqvafucihmdkx4afhvxmknseqlp1yb5xwyf8p.min.js"></script>
+<script src="https://010000.github.io/js/script-hbrooqldibnofclonhyp3yhblzuaun3xxi1sil4yfzg6uezaawa3wd2fvp.min.js"></script>
 
 
 <script lang="javascript">
