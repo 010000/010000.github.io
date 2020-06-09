@@ -5,40 +5,36 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.61.0 with theme Tranquilpeak 0.4.7-BETA">
-<meta name="author" content="Jeffrey Y. Jo">
+<meta name="generator" content="Hugo 0.72.0 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="author" content="Jeffrey YM. Jo">
 <meta name="keywords" content="tech">
 <meta name="description" content="
-Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인 및 설치합니다
-윈도우즈 환경설정(path) 과정은 생략했습니다. Update: Dec 15, 2019
+.md 문서가 생성될 때 사용되는 template을 수정하고 테스트 글을 작성합니다. Update: Dec 16, 2019
 ">
 
 
 <meta property="og:description" content="
-Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인 및 설치합니다
-윈도우즈 환경설정(path) 과정은 생략했습니다. Update: Dec 15, 2019
+.md 문서가 생성될 때 사용되는 template을 수정하고 테스트 글을 작성합니다. Update: Dec 16, 2019
 ">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Installing Hugo on Windows">
-<meta name="twitter:title" content="Installing Hugo on Windows">
-<meta property="og:url" content="https://010000.github.io/2019/12/installing-hugo-on-windows/">
-<meta property="twitter:url" content="https://010000.github.io/2019/12/installing-hugo-on-windows/">
+<meta property="og:title" content="md 파일 생성을 위한 template 수정과 new doc 생성">
+<meta name="twitter:title" content="md 파일 생성을 위한 template 수정과 new doc 생성">
+<meta property="og:url" content="https://010000.github.io/2019/12/md-%ED%8C%8C%EC%9D%BC-%EC%83%9D%EC%84%B1%EC%9D%84-%EC%9C%84%ED%95%9C-template-%EC%88%98%EC%A0%95%EA%B3%BC-new-doc-%EC%83%9D%EC%84%B1/">
+<meta property="twitter:url" content="https://010000.github.io/2019/12/md-%ED%8C%8C%EC%9D%BC-%EC%83%9D%EC%84%B1%EC%9D%84-%EC%9C%84%ED%95%9C-template-%EC%88%98%EC%A0%95%EA%B3%BC-new-doc-%EC%83%9D%EC%84%B1/">
 <meta property="og:site_name" content="010000 logbook">
 <meta property="og:description" content="
-Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인 및 설치합니다
-윈도우즈 환경설정(path) 과정은 생략했습니다. Update: Dec 15, 2019
+.md 문서가 생성될 때 사용되는 template을 수정하고 테스트 글을 작성합니다. Update: Dec 16, 2019
 ">
 <meta name="twitter:description" content="
-Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인 및 설치합니다
-윈도우즈 환경설정(path) 과정은 생략했습니다. Update: Dec 15, 2019
+.md 문서가 생성될 때 사용되는 template을 수정하고 테스트 글을 작성합니다. Update: Dec 16, 2019
 ">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2019-12-14T23:57:15">
+    <meta property="article:published_time" content="2019-12-16T22:53:53">
   
   
-    <meta property="article:modified_time" content="2019-12-14T23:57:15">
+    <meta property="article:modified_time" content="2019-12-16T22:53:53">
   
   
   
@@ -53,6 +49,12 @@ Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인 및 설치합�
       <meta property="article:tag" content="Hugo">
     
       <meta property="article:tag" content="Install">
+    
+      <meta property="article:tag" content="Theme">
+    
+      <meta property="article:tag" content="hugo-tranquilpeak-theme">
+    
+      <meta property="article:tag" content="tranquilpeak">
     
       <meta property="article:tag" content="Windows">
     
@@ -75,14 +77,14 @@ Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인 및 설치합�
   <meta property="twitter:image" content="https://010000.github.io/galaga_t.png">
 
 
-    <title>Installing Hugo on Windows</title>
+    <title>md 파일 생성을 위한 template 수정과 new doc 생성</title>
 
     <link rel="icon" href="https://010000.github.io/favicon.ico">
     
 
     
 
-    <link rel="canonical" href="https://010000.github.io/2019/12/installing-hugo-on-windows/">
+    <link rel="canonical" href="https://010000.github.io/2019/12/md-%ED%8C%8C%EC%9D%BC-%EC%83%9D%EC%84%B1%EC%9D%84-%EC%9C%84%ED%95%9C-template-%EC%88%98%EC%A0%95%EA%B3%BC-new-doc-%EC%83%9D%EC%84%B1/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -90,7 +92,7 @@ Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인 및 설치합�
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
     
     
-    <link rel="stylesheet" href="https://010000.github.io/css/style-cnslfhtugqadax9aas2fommajymrswzejd8e4xfvspeigvkpf1sri9anvd.min.css" />
+    <link rel="stylesheet" href="https://010000.github.io/css/style-bnmxmkabgj3wbfhk7bzdszt831khgkssiheb7qz65kbwnxsqu7aawafl9o.min.css" />
     
     
 
@@ -144,7 +146,7 @@ if (!doNotTrack) {
         <a href="https://010000.github.io/#about">
           <img class="sidebar-profile-picture" src="https://010000.github.io/galaga_t.png" alt="Author&#39;s picture" />
         </a>
-        <h4 class="sidebar-profile-name">Jeffrey Y. Jo</h4>
+        <h4 class="sidebar-profile-name">Jeffrey YM. Jo</h4>
         
           <h5 class="sidebar-profile-bio">Will step every day because of alive.</h5>
         
@@ -277,15 +279,15 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      Installing Hugo on Windows
+      md 파일 생성을 위한 template 수정과 new doc 생성
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2019-12-14T23:57:15&#43;09:00">
+      <time itemprop="datePublished" datetime="2019-12-16T22:53:53&#43;09:00">
         
-  December 14, 2019
+  December 16, 2019
 
       </time>
     
@@ -307,8 +309,7 @@ if (!doNotTrack) {
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
               <ul>
-<li>Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인 및 설치합니다</li>
-<li>윈도우즈 환경설정(path) 과정은 생략했습니다. <em>Update: Dec 15, 2019</em></li>
+<li>.md 문서가 생성될 때 사용되는 template을 수정하고 테스트 글을 작성합니다. <em>Update: Dec 16, 2019</em></li>
 </ul>
 <h2 id="configuration">Configuration</h2>
 <ul>
@@ -317,56 +318,83 @@ if (!doNotTrack) {
 <li>Hugo version: v0.61.0 (windows/amd64 BuildDate: 2019-12-11T08:29:13Z)</li>
 <li>Hugo theme: hugo-tranquilpeak-theme (0.4.7-BETA)</li>
 </ul>
-<h2 id="install-go-git-and-hugo">Install Go, Git and Hugo</h2>
+<h2 id="edit-template-defaultmd--compose-the-new-document">Edit template, default.md &amp; compose the new document</h2>
 <ol>
 <li>
-<p>Install Go lang</p>
-<p>Download: <a href="https://golang.org/dl/">golang.org</a><br>
-File: go1.13.5.windows-amd64.msi</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">C<span style="color:#960050;background-color:#1e0010">:</span>\&gt; go version
-go version go 1.13.5 windows/amd64
+<p>Hugo new {filename}.md 파일을 생성할 때 참조되는 template을 수정합니다<br>
+아래 default.md 내용을 그대로 사용해도 되고 필요한 것만 선택하여 작성해도 됩니다</p>
+<p>수정 파일: \Hugo\blog\archetypes\default.md<br>
+참조 파일: \Hugo\blog\themes\hugo-tranquilpeak-theme\archetypes\post.md</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S:\Hugo\blog&gt; more archetypes\<span style="color:#66d9ef">default</span>.md
+---
+title<span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;{{ replace .TranslationBaseName &#34;</span>-<span style="color:#e6db74">&#34; &#34;</span> <span style="color:#e6db74">&#34; | title }}&#34;</span>
+date<span style="color:#960050;background-color:#1e0010">:</span> {{ .Date }}
+draft<span style="color:#960050;background-color:#1e0010">:</span> true
+categories<span style="color:#960050;background-color:#1e0010">:</span>
+- category
+- subcategory
+tags<span style="color:#960050;background-color:#1e0010">:</span>
+- tag1
+- tag2
+keywords<span style="color:#960050;background-color:#1e0010">:</span>
+- tech
+<span style="color:#75715e">#thumbnailImage: //example.com/image.jpg</span>
+---
+    
+&lt;!--more--&gt;
 </code></pre></div></li>
 <li>
-<p>Install Git</p>
-<p>Download: <a href="https://gitforwindows.org/">gitforwindows.org</a><br>
-File: Git-2.24.1.2-64-bit.exe<br>
-;1번 Go lang 과 Git 설치가 되면 아래 3번 hugo.exe가 있는 /Hugo/bin 폴더를 포함하여<br>
-어느 경로에서든 실행될 수 있도록 Windows 환경설정 path에 등록해줍니다</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">C<span style="color:#960050;background-color:#1e0010">:</span>\&gt; git version
-git version 2.24.1.windows.2
-</code></pre></div></li>
+<p>Hugo new {filename}.md  또는 기존 md 파일 복사해서 작성하는 방법</p>
+<p>2.1. hugo new 로 template 를 이용해 새로운 md 파일을 생성하고 작성할 수 있습니다<br>
+md 파일의 위치는 blog\content 폴더로, 초안이 아닌 공개할 문서는 하위 post 폴더에 작성하면 됩니다<br>
+비공개와 같은 (작성중)초안 문서를 draft 폴더로 분류하는 경우도 볼 수 있지만 md 파일내 &lsquo;draft: true&rsquo; 로 명시되어 있으면 그 md 문서는 public 폴더에 반영되지 않습는다</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S:\Hugo\blog&gt; hugo new post/test1.md
+Hugo\blog\content\post\test1.md created
+</code></pre></div><p>2.2. blog\content 폴더 내 기존 md파일을 복사, 수정하여 사용해도 됩니다<br>
+단, 파일명은 중복되면 안되며, md 파일 내 생성시간을 원하는 값으로 바꾸면 됩니다</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S:\Hugo\blog\content\post&gt; cp test1.md test2.md
+S:\Hugo\blog\content\post&gt; notepad test2.md
+(...)
+title<span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;Editing template and Posting first&#34;</span>
+date<span style="color:#960050;background-color:#1e0010">:</span> 2019-12-16T00<span style="color:#960050;background-color:#1e0010">:</span>03<span style="color:#960050;background-color:#1e0010">:</span>15+09<span style="color:#960050;background-color:#1e0010">:</span>00
+draft<span style="color:#960050;background-color:#1e0010">:</span> true
+(...)
+</code></pre></div><p>2.3. hugo 의 문서 삭제는 content 폴더와 html로 변환 저장된 public 폴더에서 파일을 삭제하면 됩니다</p>
+<p>2.4. notepad와 같은 편집기로 md 파일을 저장할 때 인코딩을 반드시 UTF-8 로 저장해야 합니다<br>
+흔히 메모장 앱에서 옵션 변경없이 저장되는 ANSI 일 경우 html 변환시 오류가 발생됩니다</p>
+</li>
 <li>
-<p>Install Hugo</p>
-<p>Download: <a href="https://github.com/gohugoio/hugo/releases">https://github.com/gohugoio/hugo/releases</a><br>
-File: hugo_0.61.0_Windows-64bit.zip</p>
-<p>Step.1: Unzip the hugo_zip file in \Hugo\bin folder<br>
-*{Local drive}\Hugo\bin<br>
-;bin 폴더를 만들어서 압축을 풀어도 되고, Hugo/ 폴더 아래 hugo_zip 압축 파일을 풀고 bin으로 rename 해도 됩니다</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">C<span style="color:#960050;background-color:#1e0010">:</span>\&gt; dir s<span style="color:#960050;background-color:#1e0010">:</span>\Hugo\bin
-12/13/2019  00<span style="color:#960050;background-color:#1e0010">:</span>10    &lt;DIR&gt;          .
-12/13/2019  00<span style="color:#960050;background-color:#1e0010">:</span>10    &lt;DIR&gt;          ..
-12/11/2019  17<span style="color:#960050;background-color:#1e0010">:</span>30        41,070,080 hugo.exe
-12/11/2019  17<span style="color:#960050;background-color:#1e0010">:</span>15            11,357 LICENSE
-12/11/2019  17<span style="color:#960050;background-color:#1e0010">:</span>15            11,227 README.md
+<p>Run hugo on local drive</p>
+<p>; hugo server -D<br>
+*display also draft documents with -D option</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">s:\0_GithubPages\Hugo\blog&gt; hugo server -D
+Building sites <span style="color:#960050;background-color:#1e0010">…</span> WARNING<span style="color:#960050;background-color:#1e0010">:</span> calling IsSet with unsupported type <span style="color:#e6db74">&#34;string&#34;</span> (string) will always <span style="color:#66d9ef">return</span> false.
    
-C<span style="color:#960050;background-color:#1e0010">:</span>\&gt;hugo version
-Hugo Static Site Generator v0.61.0-9B445B9D windows/amd64 BuildDate<span style="color:#960050;background-color:#1e0010">:</span> 2019-12-11T08<span style="color:#960050;background-color:#1e0010">:</span>29<span style="color:#960050;background-color:#1e0010">:</span>13Z
+                   | EN-US
++------------------+-------+
+  Pages            |    48
+  Paginator pages  |     0
+  Non-page files   |     0
+  Static files     |    11
+  Processed images |     0
+  Aliases          |    17
+  Sitemaps         |     1
+  Cleaned          |     0
+   
+Built <span style="color:#66d9ef">in</span> 207 ms
+Watching <span style="color:#66d9ef">for</span> changes <span style="color:#66d9ef">in</span> s:\Hugo\blog\{archetypes,content,data,layouts,static,themes}
+Watching <span style="color:#66d9ef">for</span> config changes <span style="color:#66d9ef">in</span> s:\Hugo\blog\config.toml
+Environment<span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;development&#34;</span>
+Serving pages from memory
+Running <span style="color:#66d9ef">in</span> Fast Render Mode. <span style="color:#66d9ef">For</span> full rebuilds on change<span style="color:#960050;background-color:#1e0010">:</span> hugo server --disableFastRender
+Web Server is available at http<span style="color:#960050;background-color:#1e0010">:</span>//localhost<span style="color:#960050;background-color:#1e0010">:</span>1313/ (bind address 127.0.0.1)
+Press Ctrl+C to stop
 </code></pre></div></li>
 <li>
-<p>Create new site<br>
-;Hugo 테마와 작성된 글, 이미지 등의 Local 저장소 위치로 blog 란 이름의 폴더를 생성했습니다<br>
-;blog 폴더는 {id}.github.io 로 시작하는 url 상에 노출되는 경로가 아닙니다</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S<span style="color:#960050;background-color:#1e0010">:</span>\Hugo&gt; hugo new site blog
-Congratulations! Your new Hugo site is created <span style="color:#66d9ef">in</span> S<span style="color:#960050;background-color:#1e0010">:</span>\Hugo\blog.
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S<span style="color:#960050;background-color:#1e0010">:</span>\Hugo&gt; dir
-   
-12/13/2019  11<span style="color:#960050;background-color:#1e0010">:</span>04    &lt;DIR&gt;          .
-12/13/2019  11<span style="color:#960050;background-color:#1e0010">:</span>04    &lt;DIR&gt;          ..
-12/13/2019  00<span style="color:#960050;background-color:#1e0010">:</span>10    &lt;DIR&gt;          bin
-12/13/2019  14<span style="color:#960050;background-color:#1e0010">:</span>36    &lt;DIR&gt;          blog
-               1개 파일         120,885,701 바이트
-            6개 디렉터리  63,021,146,112 바이트 남음
-</code></pre></div></li>
+<p>Browse with the Chrome</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">http://localhost:1313/
+</code></pre></div><p>​</p>
+</li>
 </ol>
               
             </div>
@@ -383,6 +411,12 @@ Congratulations! Your new Hugo site is created <span style="color:#66d9ef">in</s
 
   <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/install/">Install</a>
 
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/theme/">Theme</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/hugo-tranquilpeak-theme/">hugo-tranquilpeak-theme</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/tranquilpeak/">tranquilpeak</a>
+
   <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/windows/">Windows</a>
 
                   </div>
@@ -396,7 +430,7 @@ Congratulations! Your new Hugo site is created <span style="color:#66d9ef">in</s
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/2019/12/installing-hugo-theme-on-windows/" data-tooltip="Installing Hugo theme on Windows">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/2019/12/web-page-%EC%83%9D%EC%84%B1%EA%B3%BC-github-upload/" data-tooltip="Web page 생성과 Github upload">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -404,7 +438,7 @@ Congratulations! Your new Hugo site is created <span style="color:#66d9ef">in</s
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/2019/12/windows-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-hugo-theme-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/" data-tooltip="Windows 환경에서 Hugo theme 설치하기">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -422,19 +456,19 @@ Congratulations! Your new Hugo site is created <span style="color:#66d9ef">in</s
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/2019/12/installing-hugo-on-windows/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/2019/12/md-%ED%8C%8C%EC%9D%BC-%EC%83%9D%EC%84%B1%EC%9D%84-%EC%9C%84%ED%95%9C-template-%EC%88%98%EC%A0%95%EA%B3%BC-new-doc-%EC%83%9D%EC%84%B1/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/2019/12/installing-hugo-on-windows/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/2019/12/md-%ED%8C%8C%EC%9D%BC-%EC%83%9D%EC%84%B1%EC%9D%84-%EC%9C%84%ED%95%9C-template-%EC%88%98%EC%A0%95%EA%B3%BC-new-doc-%EC%83%9D%EC%84%B1/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/2019/12/installing-hugo-on-windows/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/2019/12/md-%ED%8C%8C%EC%9D%BC-%EC%83%9D%EC%84%B1%EC%9D%84-%EC%9C%84%ED%95%9C-template-%EC%88%98%EC%A0%95%EA%B3%BC-new-doc-%EC%83%9D%EC%84%B1/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -476,7 +510,7 @@ Congratulations! Your new Hugo site is created <span style="color:#66d9ef">in</s
 
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2019 <a href="https://github.com/010000">010000 Logbook</a>. All Rights Reserved
+    &copy; 2020 <a href="https://github.com/010000">010000 Logbook</a>. All Rights Reserved
   </span>
 </footer>
 
@@ -489,7 +523,7 @@ Congratulations! Your new Hugo site is created <span style="color:#66d9ef">in</s
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/2019/12/installing-hugo-theme-on-windows/" data-tooltip="Installing Hugo theme on Windows">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/2019/12/web-page-%EC%83%9D%EC%84%B1%EA%B3%BC-github-upload/" data-tooltip="Web page 생성과 Github upload">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -497,7 +531,7 @@ Congratulations! Your new Hugo site is created <span style="color:#66d9ef">in</s
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/2019/12/windows-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-hugo-theme-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/" data-tooltip="Windows 환경에서 Hugo theme 설치하기">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -515,19 +549,19 @@ Congratulations! Your new Hugo site is created <span style="color:#66d9ef">in</s
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/2019/12/installing-hugo-on-windows/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/2019/12/md-%ED%8C%8C%EC%9D%BC-%EC%83%9D%EC%84%B1%EC%9D%84-%EC%9C%84%ED%95%9C-template-%EC%88%98%EC%A0%95%EA%B3%BC-new-doc-%EC%83%9D%EC%84%B1/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/2019/12/installing-hugo-on-windows/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/2019/12/md-%ED%8C%8C%EC%9D%BC-%EC%83%9D%EC%84%B1%EC%9D%84-%EC%9C%84%ED%95%9C-template-%EC%88%98%EC%A0%95%EA%B3%BC-new-doc-%EC%83%9D%EC%84%B1/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/2019/12/installing-hugo-on-windows/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/2019/12/md-%ED%8C%8C%EC%9D%BC-%EC%83%9D%EC%84%B1%EC%9D%84-%EC%9C%84%ED%95%9C-template-%EC%88%98%EC%A0%95%EA%B3%BC-new-doc-%EC%83%9D%EC%84%B1/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -557,19 +591,19 @@ Congratulations! Your new Hugo site is created <span style="color:#66d9ef">in</s
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F010000.github.io%2F2019%2F12%2Finstalling-hugo-on-windows%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F010000.github.io%2F2019%2F12%2Fmd-%25ED%258C%258C%25EC%259D%25BC-%25EC%2583%259D%25EC%2584%25B1%25EC%259D%2584-%25EC%259C%2584%25ED%2595%259C-template-%25EC%2588%2598%25EC%25A0%2595%25EA%25B3%25BC-new-doc-%25EC%2583%259D%25EC%2584%25B1%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2F010000.github.io%2F2019%2F12%2Finstalling-hugo-on-windows%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2F010000.github.io%2F2019%2F12%2Fmd-%25ED%258C%258C%25EC%259D%25BC-%25EC%2583%259D%25EC%2584%25B1%25EC%259D%2584-%25EC%259C%2584%25ED%2595%259C-template-%25EC%2588%2598%25EC%25A0%2595%25EA%25B3%25BC-new-doc-%25EC%2583%259D%25EC%2584%25B1%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2F010000.github.io%2F2019%2F12%2Finstalling-hugo-on-windows%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2F010000.github.io%2F2019%2F12%2Fmd-%25ED%258C%258C%25EC%259D%25BC-%25EC%2583%259D%25EC%2584%25B1%25EC%259D%2584-%25EC%259C%2584%25ED%2595%259C-template-%25EC%2588%2598%25EC%25A0%2595%25EA%25B3%25BC-new-doc-%25EC%2583%259D%25EC%2584%25B1%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -587,7 +621,7 @@ Congratulations! Your new Hugo site is created <span style="color:#66d9ef">in</s
     
       <img id="about-card-picture" src="https://010000.github.io/galaga_t.png" alt="Author&#39;s picture" />
     
-    <h4 id="about-card-name">Jeffrey Y. Jo</h4>
+    <h4 id="about-card-name">Jeffrey YM. Jo</h4>
     
       <div id="about-card-bio">Will step every day because of alive.</div>
     
@@ -624,7 +658,7 @@ Congratulations! Your new Hugo site is created <span style="color:#66d9ef">in</s
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
 
 
-<script src="https://010000.github.io/js/script-cu2nqxloqh6pj857kgcwusfqvafucihmdkx4afhvxmknseqlp1yb5xwyf8p.min.js"></script>
+<script src="https://010000.github.io/js/script-hbrooqldibnofclonhyp3yhblzuaun3xxi1sil4yfzg6uezaawa3wd2fvp.min.js"></script>
 
 
 <script lang="javascript">
@@ -659,9 +693,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/010000.github.io\/2019\/12\/installing-hugo-on-windows\/';
+          this.page.url = 'https:\/\/010000.github.io\/2019\/12\/md-%ED%8C%8C%EC%9D%BC-%EC%83%9D%EC%84%B1%EC%9D%84-%EC%9C%84%ED%95%9C-template-%EC%88%98%EC%A0%95%EA%B3%BC-new-doc-%EC%83%9D%EC%84%B1\/';
           
-            this.page.identifier = '\/2019\/12\/installing-hugo-on-windows\/'
+            this.page.identifier = '\/2019\/12\/md-%ED%8C%8C%EC%9D%BC-%EC%83%9D%EC%84%B1%EC%9D%84-%EC%9C%84%ED%95%9C-template-%EC%88%98%EC%A0%95%EA%B3%BC-new-doc-%EC%83%9D%EC%84%B1\/'
           
         };
         (function() {
