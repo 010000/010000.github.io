@@ -8,13 +8,13 @@
     <language>ko-kr</language>
     <lastBuildDate>Thu, 19 Dec 2019 10:10:18 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/highlight/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Font 와 Highlight color 수정 후 theme rebuild1</title>
-      <link>https://010000.github.io/2019/12/font-%EC%99%80-highlight-color-%EC%88%98%EC%A0%95-%ED%9B%84-theme-rebuild1/</link>
+      <title>Font 와 Highlight color 수정 후 theme rebuild</title>
+      <link>https://010000.github.io/2019/12/font-%EC%99%80-highlight-color-%EC%88%98%EC%A0%95-%ED%9B%84-theme-rebuild/</link>
       <pubDate>Thu, 19 Dec 2019 10:10:18 +0900</pubDate>
       
-      <guid>https://010000.github.io/2019/12/font-%EC%99%80-highlight-color-%EC%88%98%EC%A0%95-%ED%9B%84-theme-rebuild1/</guid>
+      <guid>https://010000.github.io/2019/12/font-%EC%99%80-highlight-color-%EC%88%98%EC%A0%95-%ED%9B%84-theme-rebuild/</guid>
       <description>&lt;ul&gt;
-&lt;li&gt;Hugo / hugo-tranquilpeak-theme 테마의 font를 변경합니다.111&lt;/li&gt;
+&lt;li&gt;Hugo / hugo-tranquilpeak-theme 테마의 font를 변경합니다.&lt;/li&gt;
 &lt;li&gt;수정한 값을 적용하기 위해 테마 rebuild 과정이 포함되어 있습니다. &lt;em&gt;Update: Dec 19, 2019&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
