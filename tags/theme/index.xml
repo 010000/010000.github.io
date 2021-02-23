@@ -6,11 +6,7 @@
     <description>Recent content in Theme on 010000 logbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Mon, 16 Dec 2019 22:53:53 +0900</lastBuildDate>
-    
-	<atom:link href="https://010000.github.io/tags/theme/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 16 Dec 2019 22:53:53 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/theme/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>md 파일 생성을 위한 template 수정과 new doc 생성</title>
       <link>https://010000.github.io/2019/12/md-%ED%8C%8C%EC%9D%BC-%EC%83%9D%EC%84%B1%EC%9D%84-%EC%9C%84%ED%95%9C-template-%EC%88%98%EC%A0%95%EA%B3%BC-new-doc-%EC%83%9D%EC%84%B1/</link>

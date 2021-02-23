@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.72.0 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="generator" content="Hugo 0.80.0 with theme Tranquilpeak 0.4.8-BETA">
 <meta name="author" content="Jeffrey YM. Jo">
 <meta name="keywords" content="tech">
 <meta name="description" content="
@@ -323,7 +323,7 @@ if (!doNotTrack) {
 <p>Hugo\content 폴더 내 md 파일 작성이 완료됐다면 hugo 실행으로 정적 페이지를 생성합니다</p>
 <p>2.1. 사용중인 hugo 테마명 확인<br>
 2.2. 정적 페이지 생성<br>
-*주의 - Hugo\content 폴더 내 md 파일의 인코딩이 UTF-8이 아니면 오류가 발생할 수 있습니다</p>
+*주의 - Hugo\content 폴더 내 (md)문서 파일이 UTF-8 인코딩이 아니면 오류가 발생할 수 있습니다</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S:\Hugo\blog&gt; dir themes
 12/13/2019  13<span style="color:#960050;background-color:#1e0010">:</span>20    &lt;DIR&gt;          .
 12/13/2019  13<span style="color:#960050;background-color:#1e0010">:</span>20    &lt;DIR&gt;          ..
@@ -349,14 +349,14 @@ Total <span style="color:#66d9ef">in</span> 119 ms
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S:\Hugo\blog&gt; cd public
 S:\Hugo\blog\public&gt; git add .
 S:\Hugo\blog\public&gt; git commit -m <span style="color:#e6db74">&#34;first commit pages&#34;</span>
-S:\Hugo\blog\public&gt; git git push origin master
+S:\Hugo\blog\public&gt; git push origin master
 </code></pre></div><p>*Github 이 처음이라면&hellip;  <a href="https://rogerdudler.github.io/git-guide/index.ko.html">Git간편안내서</a><br>
 *<a href="https://git-scm.com/book/ko/v2">Pro Git ebook</a></p>
 </li>
 <li>
 <p>Submodule 로 Hugo repository 관리하기</p>
 <blockquote>
-<p>hugo는 jekyll과 달리 github에서 자동으로 빌드를 해주는 것이 아니라 내가 빌드해서 만든 파일을 github page 기능으로 띄우는 것이다. 
+<p>hugo는 jekyll과 달리 github에서 자동으로 빌드를 해주는 것이 아니라 내가 빌드해서 만든 파일을 github page 기능으로 띄우는 것이다.
 따라서 전체 컨텐츠를 저장할 곳과 빌드 결과로 github page를 띄울 곳, 이렇게 두개의 git repository가 필요하다.<br>
 <a href="https://ialy1595.github.io/post/blog-construct-1/">https://ialy1595.github.io/post/blog-construct-1/</a></p>
 </blockquote>
@@ -381,9 +381,9 @@ S:\Hugo\blog&gt; hugo -t hugo-tranquilpeak-theme
    
 <span style="color:#75715e"># public 폴더에서 push 후 blog 폴더에서 push 한다.</span>
 S:\Hugo\blog&gt; cd public
-S:\Hugo\blog\public&gt; git add &amp;&amp; git commit -m <span style="color:#e6db74">&#34;커밋 메세지&#34;</span> &amp;&amp; git push origin master
+S:\Hugo\blog\public&gt; git add . &amp;&amp; git commit -m <span style="color:#e6db74">&#34;커밋 메세지&#34;</span> &amp;&amp; git push origin master
 S:\Hugo\blog\public&gt; cd ..
-S:\Hugo\blog&gt; git add &amp;&amp; git commit -m <span style="color:#e6db74">&#34;커밋 메세지&#34;</span> &amp;&amp; git push origin master
+S:\Hugo\blog&gt; git add . &amp;&amp; git commit -m <span style="color:#e6db74">&#34;커밋 메세지&#34;</span> &amp;&amp; git push origin master
    
 </code></pre></div></li>
 <li>
@@ -434,7 +434,7 @@ S:\Hugo\blog&gt; git add &amp;&amp; git commit -m <span style="color:#e6db74">&#
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/2019/12/font-%EC%99%80-highlight-color-%EC%88%98%EC%A0%95-%ED%9B%84-theme-rebuild/" data-tooltip="Font 와 Highlight color 수정 후 theme rebuild">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/2019/12/font-%EC%99%80-highlight-color-%EC%88%98%EC%A0%95-%ED%9B%84-theme-rebuild1/" data-tooltip="Font 와 Highlight color 수정 후 theme rebuild1">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -514,7 +514,7 @@ S:\Hugo\blog&gt; git add &amp;&amp; git commit -m <span style="color:#e6db74">&#
 
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2020 <a href="https://github.com/010000">010000 Logbook</a>. All Rights Reserved
+    &copy; 2021 <a href="https://github.com/010000">010000 Logbook</a>. All Rights Reserved
   </span>
 </footer>
 
@@ -527,7 +527,7 @@ S:\Hugo\blog&gt; git add &amp;&amp; git commit -m <span style="color:#e6db74">&#
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/2019/12/font-%EC%99%80-highlight-color-%EC%88%98%EC%A0%95-%ED%9B%84-theme-rebuild/" data-tooltip="Font 와 Highlight color 수정 후 theme rebuild">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/2019/12/font-%EC%99%80-highlight-color-%EC%88%98%EC%A0%95-%ED%9B%84-theme-rebuild1/" data-tooltip="Font 와 Highlight color 수정 후 theme rebuild1">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
