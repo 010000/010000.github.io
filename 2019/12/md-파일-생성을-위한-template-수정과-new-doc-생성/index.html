@@ -293,41 +293,44 @@ if (!doNotTrack) {
 아래 default.md 내용을 그대로 사용해도 되고 필요한 것만 선택하여 작성해도 됩니다</p>
 <p>수정 파일: \Hugo\blog\archetypes\default.md<br>
 참조 파일: \Hugo\blog\themes\hugo-tranquilpeak-theme\archetypes\post.md</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S:\Hugo\blog&gt; more archetypes\<span style="color:#66d9ef">default</span>.md
+<pre><code class="language-powershell">S:\Hugo\blog&gt; more archetypes\default.md
 ---
-title<span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;{{ replace .TranslationBaseName &#34;</span>-<span style="color:#e6db74">&#34; &#34;</span> <span style="color:#e6db74">&#34; | title }}&#34;</span>
-date<span style="color:#960050;background-color:#1e0010">:</span> {{ .Date }}
-draft<span style="color:#960050;background-color:#1e0010">:</span> true
-categories<span style="color:#960050;background-color:#1e0010">:</span>
+title: &quot;{{ replace .TranslationBaseName &quot;-&quot; &quot; &quot; | title }}&quot;
+date: {{ .Date }}
+draft: true
+categories:
 - category
 - subcategory
-tags<span style="color:#960050;background-color:#1e0010">:</span>
+tags:
 - tag1
 - tag2
-keywords<span style="color:#960050;background-color:#1e0010">:</span>
+keywords:
 - tech
-<span style="color:#75715e">#thumbnailImage: //example.com/image.jpg</span>
+#thumbnailImage: //example.com/image.jpg
 ---
     
 &lt;!--more--&gt;
-</code></pre></div></li>
+</code></pre>
+</li>
 <li>
 <p>Hugo new {filename}.md  또는 기존 md 파일 복사해서 작성하는 방법</p>
 <p>2.1. hugo new 로 template 를 이용해 새로운 md 파일을 생성하고 작성할 수 있습니다<br>
 md 파일의 위치는 blog\content 폴더로, 초안이 아닌 공개할 문서는 하위 post 폴더에 작성하면 됩니다<br>
 비공개와 같은 (작성중)초안 문서를 draft 폴더로 분류하는 경우도 볼 수 있지만 md 파일내 &lsquo;draft: true&rsquo; 로 명시되어 있으면 그 md 문서는 public 폴더에 반영되지 않습는다</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S:\Hugo\blog&gt; hugo new post/test1.md
+<pre><code class="language-powershell">S:\Hugo\blog&gt; hugo new post/test1.md
 Hugo\blog\content\post\test1.md created
-</code></pre></div><p>2.2. blog\content 폴더 내 기존 md파일을 복사, 수정하여 사용해도 됩니다<br>
+</code></pre>
+<p>2.2. blog\content 폴더 내 기존 md파일을 복사, 수정하여 사용해도 됩니다<br>
 단, 파일명은 중복되면 안되며, md 파일 내 생성시간을 원하는 값으로 바꾸면 됩니다</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S:\Hugo\blog\content\post&gt; cp test1.md test2.md
+<pre><code class="language-powershell">S:\Hugo\blog\content\post&gt; cp test1.md test2.md
 S:\Hugo\blog\content\post&gt; notepad test2.md
 (...)
-title<span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;Editing template and Posting first&#34;</span>
-date<span style="color:#960050;background-color:#1e0010">:</span> 2019-12-16T00<span style="color:#960050;background-color:#1e0010">:</span>03<span style="color:#960050;background-color:#1e0010">:</span>15+09<span style="color:#960050;background-color:#1e0010">:</span>00
-draft<span style="color:#960050;background-color:#1e0010">:</span> true
+title: &quot;Editing template and Posting first&quot;
+date: 2019-12-16T00:03:15+09:00
+draft: true
 (...)
-</code></pre></div><p>2.3. hugo 의 문서 삭제는 content 폴더와 html로 변환 저장된 public 폴더에서 파일을 삭제하면 됩니다</p>
+</code></pre>
+<p>2.3. hugo 의 문서 삭제는 content 폴더와 html로 변환 저장된 public 폴더에서 파일을 삭제하면 됩니다</p>
 <p>2.4. notepad와 같은 편집기로 md 파일을 저장할 때 인코딩을 반드시 UTF-8 로 저장해야 합니다<br>
 흔히 메모장 앱에서 옵션 변경없이 저장되는 ANSI 일 경우 html 변환시 오류가 발생됩니다</p>
 </li>
@@ -335,8 +338,8 @@ draft<span style="color:#960050;background-color:#1e0010">:</span> true
 <p>Run hugo on local drive</p>
 <p>; hugo server -D<br>
 *display also draft documents with -D option</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">s:\0_GithubPages\Hugo\blog&gt; hugo server -D
-Building sites <span style="color:#960050;background-color:#1e0010">…</span> WARNING<span style="color:#960050;background-color:#1e0010">:</span> calling IsSet with unsupported type <span style="color:#e6db74">&#34;string&#34;</span> (string) will always <span style="color:#66d9ef">return</span> false.
+<pre><code class="language-powershell">s:\0_GithubPages\Hugo\blog&gt; hugo server -D
+Building sites … WARNING: calling IsSet with unsupported type &quot;string&quot; (string) will always return false.
    
                    | EN-US
 +------------------+-------+
@@ -349,19 +352,21 @@ Building sites <span style="color:#960050;background-color:#1e0010">…</span> W
   Sitemaps         |     1
   Cleaned          |     0
    
-Built <span style="color:#66d9ef">in</span> 207 ms
-Watching <span style="color:#66d9ef">for</span> changes <span style="color:#66d9ef">in</span> s:\Hugo\blog\{archetypes,content,data,layouts,static,themes}
-Watching <span style="color:#66d9ef">for</span> config changes <span style="color:#66d9ef">in</span> s:\Hugo\blog\config.toml
-Environment<span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;development&#34;</span>
+Built in 207 ms
+Watching for changes in s:\Hugo\blog\{archetypes,content,data,layouts,static,themes}
+Watching for config changes in s:\Hugo\blog\config.toml
+Environment: &quot;development&quot;
 Serving pages from memory
-Running <span style="color:#66d9ef">in</span> Fast Render Mode. <span style="color:#66d9ef">For</span> full rebuilds on change<span style="color:#960050;background-color:#1e0010">:</span> hugo server --disableFastRender
-Web Server is available at http<span style="color:#960050;background-color:#1e0010">:</span>//localhost<span style="color:#960050;background-color:#1e0010">:</span>1313/ (bind address 127.0.0.1)
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
 Press Ctrl+C to stop
-</code></pre></div></li>
+</code></pre>
+</li>
 <li>
 <p>Browse with the Chrome</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">http://localhost:1313/
-</code></pre></div><p>​</p>
+<pre><code class="language-html">http://localhost:1313/
+</code></pre>
+<p>​</p>
 </li>
 </ol>
               
