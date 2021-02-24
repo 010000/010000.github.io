@@ -6,7 +6,43 @@
     <description>Recent content in Tags on 010000 logbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Thu, 19 Dec 2019 10:10:18 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 19 Dec 2019 10:12:18 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>add</title>
+      <link>https://010000.github.io/tags/add/</link>
+      <pubDate>Thu, 19 Dec 2019 10:12:18 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/add/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>blog</title>
+      <link>https://010000.github.io/tags/blog/</link>
+      <pubDate>Thu, 19 Dec 2019 10:12:18 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>https://010000.github.io/tags/hugo/</link>
+      <pubDate>Thu, 19 Dec 2019 10:12:18 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>images</title>
+      <link>https://010000.github.io/tags/images/</link>
+      <pubDate>Thu, 19 Dec 2019 10:12:18 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/images/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>code</title>
       <link>https://010000.github.io/tags/code/</link>
@@ -40,15 +76,6 @@
       <pubDate>Thu, 19 Dec 2019 10:10:18 +0900</pubDate>
       
       <guid>https://010000.github.io/tags/highlight/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hugo</title>
-      <link>https://010000.github.io/tags/hugo/</link>
-      <pubDate>Thu, 19 Dec 2019 10:10:18 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/hugo/</guid>
       <description></description>
     </item>
     
@@ -112,33 +139,6 @@
       <pubDate>Mon, 16 Dec 2019 22:53:53 +0900</pubDate>
       
       <guid>https://010000.github.io/tags/theme/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>add</title>
-      <link>https://010000.github.io/tags/add/</link>
-      <pubDate>Tue, 26 Nov 2019 17:28:23 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/add/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>blog</title>
-      <link>https://010000.github.io/tags/blog/</link>
-      <pubDate>Tue, 26 Nov 2019 17:28:23 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/blog/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>images</title>
-      <link>https://010000.github.io/tags/images/</link>
-      <pubDate>Tue, 26 Nov 2019 17:28:23 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/images/</guid>
       <description></description>
     </item>
     
