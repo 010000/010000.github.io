@@ -54,6 +54,8 @@ Hugo에서 외부 링크가 target=&quot;_blank&quot;로 열리도록 수정하�
     
       <meta property="article:tag" content="code">
     
+      <meta property="article:tag" content="_blank">
+    
   
 
 
@@ -284,7 +286,7 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cat <span style="color:#f92672">{</span>Blog<span style="color:#f92672">}</span>/layouts/_default/_markup/render-link.html
 
  &lt;a href<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ .Destination | safeURL }}&#34;</span><span style="color:#f92672">{{</span> with .Title<span style="color:#f92672">}}</span> title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ . }}&#34;</span><span style="color:#f92672">{{</span> end <span style="color:#f92672">}}{{</span> <span style="color:#66d9ef">if</span> strings.HasPrefix .Destination <span style="color:#e6db74">&#34;http&#34;</span> <span style="color:#f92672">}}</span> target<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;_blank&#34;</span> rel<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;noopener&#34;</span><span style="color:#f92672">{{</span> end <span style="color:#f92672">}}</span>&gt;<span style="color:#f92672">{{</span> .Text | safeHTML <span style="color:#f92672">}}</span>&lt;/a&gt;
-</code></pre></div><h3 id="2-페이지-재생성-후-git-push">2. 페이지 재생성 후 git push. <a href="#2-%ed%8e%98%ec%9d%b4%ec%a7%80-%ec%9e%ac%ec%83%9d%ec%84%b1-%ed%9b%84-git-push">¶</a></h3>
+</code></pre></div><h3 id="2-페이지-재-생성-후-git-push">2. 페이지 재 생성 후 git push. <a href="#2-%ed%8e%98%ec%9d%b4%ec%a7%80-%ec%9e%ac-%ec%83%9d%ec%84%b1-%ed%9b%84-git-push">¶</a></h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ hugo -t <span style="color:#f92672">{</span>theme name<span style="color:#f92672">}</span> 
 $    <span style="color:#f92672">(</span>...<span style="color:#f92672">)</span> 
 $ git push
@@ -311,6 +313,8 @@ $ git push
   <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/tranquilpeak/">tranquilpeak</a>
 
   <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/code/">code</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/_blank/">_blank</a>
 
                   </div>
                 
