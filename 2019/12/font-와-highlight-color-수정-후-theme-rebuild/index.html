@@ -379,14 +379,14 @@ $font-families<span style="color:#960050;background-color:#1e0010">:</span> (
 <span style="color:#f92672">(...)</span>
 </code></pre></div></li>
 <li>
-<p>themes\hugo-tranquilpeak-theme 폴더로 이동 후 rebuild 합니다</p>
-<p>;rebuild 가 실패하거나 실행이 안될경우 아래 3번 과정을 진행합니다</p>
+<p>themes\hugo-tranquilpeak-theme 폴더로 이동 후 rebuild 합니다<br>
+;rebuild 가 실패하거나 실행이 안될경우 아래 3번 과정을 진행합니다</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S:\&gt; cd Hugo\blog\themes\hugo-tranquilpeak-theme
 S:\Hugo\blog\themes\hugo-tranquilpeak-theme&gt; npm run prod
 </code></pre></div></li>
 <li>
-<p>hugo-tranquilpeak-theme 수정 후 필요한 rebuild 환경구성</p>
-<p>; node.js v8.x 버전까지의 하위 버전이 필요합니다<br>
+<p>hugo-tranquilpeak-theme 수정 후 필요한 rebuild 환경구성<br>
+; node.js v8.x 버전까지의 하위 버전이 필요합니다<br>
 다운받고 설치 후 어느 경로든 실행할 수 있도록 윈도 path도 설정합니다<br>
 (Download: <a href="https://nodejs.org/dist/latest-v8.x/" target="_blank">node-v8.16.2-x64.msi
 )</p>
@@ -403,8 +403,8 @@ S:\&gt; npm -v
 6.4.1
 </code></pre></div></li>
 <li>
-<p>설치가 완료되면 다시 rebuild 합니다</p>
-<p>*rebuild 를 위한 구성 중  node_modules 이름의 폴더와 하위 파일들이 생성됩니다<br>
+<p>설치가 완료되면 다시 rebuild 합니다<br>
+*rebuild 를 위한 구성 중  node_modules 이름의 폴더와 하위 파일들이 생성됩니다<br>
 *build 실행 위치: \Hugo\blog\themes\hugo-tranquilpeak-theme</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S:\&gt; cd Hugo\blog\themes\hugo-tranquilpeak-theme
 S:\Hugo\blog\themes\hugo-tranquilpeak-theme&gt; npm install grunt-cli -g
@@ -427,9 +427,9 @@ Running <span style="color:#e6db74">&#34;replace:linker&#34;</span> (replace) ta
 Done
 </code></pre></div></li>
 <li>
-<p>Rebuild 후 페이지가 깨진다면&hellip;</p>
-<p>*build가 완료되면 themes\hugo-tranquilpeak-theme\layouts\partials\script.html 파일과 head.html 파일이 업데이트 됩니다. 따라서 두 파일을 blog\layouts\partials 에 복사 및 수정하여 사용중이라면 업데이트 된 부분을 비교 후 별도로 반영해줘야 합니다.<br>
-; theme rebuild로 style-(&hellip;).min.css 파일이 업데이트 되었습니다.</p>
+<p>Rebuild 후 페이지가 깨진다면&hellip;<br>
+*build가 완료되면 themes\hugo-tranquilpeak-theme\layouts\partials\script.html 파일과 head.html 파일이 업데이트 됩니다. 따라서 두 파일을 blog\layouts\partials 에 복사 및 수정하여 사용중이라면 업데이트 된 부분을 비교 후 별도로 반영해줘야 합니다.</p>
+<p>; theme rebuild로 style-(&hellip;).min.css 파일이 업데이트 되었습니다.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S:\Hugo\blog\themes\hugo-tranquilpeak-theme\static\css&gt; dir
    
 12/18/2019  10<span style="color:#960050;background-color:#1e0010">:</span>26    &lt;DIR&gt;          .
@@ -453,6 +453,8 @@ Done
 </code></pre></div></li>
 <li>
 <p>Ref.</p>
+</li>
+</ol>
 <ul>
 <li><a href="https://wotjd.github.io/2019/05/blogging-hugo-%eb%a1%9c-github-%eb%b8%94%eb%a1%9c%ea%b7%b8-%ec%8b%9c%ec%9e%91%ed%95%98%ea%b8%b0-3.-%ed%85%8c%eb%a7%88-%ec%84%a0%ec%a0%95-%eb%b0%8f-%ec%bb%a4%ec%8a%a4%ed%84%b0%eb%a7%88%ec%9d%b4%ec%a7%95/" target="_blank">엉망진창 Swift 코딩 | Hugo로 github 블로그 시작하기 -3.테마선정 및 커스터마이징
 </li>
@@ -461,8 +463,6 @@ Done
 <li><a href="https://fonts.google.com/" target="_blank">Google Fonts
 </li>
 </ul>
-</li>
-</ol>
               
             </div>
           </div>
