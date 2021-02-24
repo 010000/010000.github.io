@@ -276,21 +276,22 @@ if (!doNotTrack) {
 <li>내부 저장소와 외부 저장소의 이미지를 추가합니다. <em>Update: Dec 19, 2019</em></li>
 </ul>
 <h3 id="1-md-파일에-아래-정보를-참고하여-이미지를-추가합니다">1. md 파일에 아래 정보를 참고하여 이미지를 추가합니다.</h3>
-<p>e.g. (내부 저장소)<br>
-{Blog} /static/_images\addingImages-hugo\lemmings_01.png<br>
-<p class="md__image">
-  <img src="https://010000.github.io/_images/addingImages-hugo/lemmings_01.png" alt="로컬 이미지"  />
+<p>e.g. (내부 저장소)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">저장</span><span style="color:#f92672">:</span> {<span style="color:#960050;background-color:#1e0010">Blog</span>}<span style="color:#f92672">/</span><span style="color:#f92672">static</span><span style="color:#f92672">/</span><span style="color:#f92672">_images</span><span style="color:#f92672">/</span><span style="color:#f92672">addingImages-hugo</span><span style="color:#f92672">/</span><span style="color:#f92672">lemmings_01</span>.<span style="color:#a6e22e">png</span>
+<span style="color:#f92672">호출</span><span style="color:#f92672">:</span> <span style="color:#f92672">![</span><span style="color:#f92672">로컬</span> <span style="color:#f92672">이미지</span><span style="color:#f92672">](/</span><span style="color:#f92672">images</span><span style="color:#f92672">/</span><span style="color:#f92672">addingImages-hugo</span><span style="color:#f92672">/</span><span style="color:#f92672">lemmings_01</span>.<span style="color:#a6e22e">png</span><span style="color:#f92672">)</span> 
+</code></pre></div><p><p class="md__image">
+  <img src="https://010000.github.io/images/addingImages-hugo/lemmings_01.png" alt="로컬 이미지"  />
 </p>
 </p>
-<p>e.g. (외부 저장소)<br>
-<a href="https://s.yimg.com/rz/p/yahoo_homepage_en-US_s_f_p_bestfit_homepage_2x.png">https://s.yimg.com/rz/p/yahoo_homepage_en-US_s_f_p_bestfit_homepage_2x.png</a>
-<p class="md__image">
+<p>e.g. (외부 저장소)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">![</span><span style="color:#f92672">외부</span> <span style="color:#f92672">이미지</span><span style="color:#f92672">](</span><span style="color:#f92672">https</span><span style="color:#f92672">://</span><span style="color:#f92672">s</span>.<span style="color:#a6e22e">yimg</span>.<span style="color:#a6e22e">com</span><span style="color:#f92672">/</span><span style="color:#f92672">rz</span><span style="color:#f92672">/</span><span style="color:#f92672">p</span><span style="color:#f92672">/</span><span style="color:#f92672">yahoo_homepage_en-US_s_f_p_bestfit_homepage_2x</span>.<span style="color:#a6e22e">png</span><span style="color:#f92672">)</span>  
+</code></pre></div><p><p class="md__image">
   <img src="https://s.yimg.com/rz/p/yahoo_homepage_en-US_s_f_p_bestfit_homepage_2x.png" alt="외부 이미지"  />
 </p>
 <br>
 image (내부 저장소) 위치: blog\static\images\<br>
 md파일을 작성할 때 아래와 같이 추가하면 됩니다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">![](/_images/관리 목적의 폴더명/이미지 파일.png)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">![](/images/관리 목적의 폴더명/이미지 파일.png)
 ![](https:// ... 이미지 URL ... )
 </code></pre></div><h3 id="2-hugo-server--d-로-테스트-후-git-push">2. hugo server -D 로 테스트 후 git push.</h3>
 <p>참고 글:</p>
