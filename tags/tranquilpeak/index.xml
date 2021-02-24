@@ -6,7 +6,18 @@
     <description>Recent content in tranquilpeak on 010000 logbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Thu, 19 Dec 2019 10:10:18 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/tranquilpeak/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 19 Dec 2019 10:15:18 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/tranquilpeak/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>외부 링크를 새 창에서 열기</title>
+      <link>https://010000.github.io/2019/12/%EC%99%B8%EB%B6%80-%EB%A7%81%ED%81%AC%EB%A5%BC-%EC%83%88-%EC%B0%BD%EC%97%90%EC%84%9C-%EC%97%B4%EA%B8%B0/</link>
+      <pubDate>Thu, 19 Dec 2019 10:15:18 +0900</pubDate>
+      
+      <guid>https://010000.github.io/2019/12/%EC%99%B8%EB%B6%80-%EB%A7%81%ED%81%AC%EB%A5%BC-%EC%83%88-%EC%B0%BD%EC%97%90%EC%84%9C-%EC%97%B4%EA%B8%B0/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;Hugo에서 외부 링크가 target=&amp;quot;_blank&amp;quot;로 열리도록 수정하기. &lt;em&gt;Update: Dec 19, 2019&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
     <item>
       <title>Font 와 Highlight color 수정 후 theme rebuild</title>
       <link>https://010000.github.io/2019/12/font-%EC%99%80-highlight-color-%EC%88%98%EC%A0%95-%ED%9B%84-theme-rebuild/</link>
