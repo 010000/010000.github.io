@@ -277,9 +277,9 @@ if (!doNotTrack) {
 </ul>
 <h3 id="1-md-파일에-아래-정보를-참고하여-이미지를-추가합니다">1. md 파일에 아래 정보를 참고하여 이미지를 추가합니다.</h3>
 <p>e.g. (내부 저장소)<br>
-blog\static\images\addingImages-hugo\lemmings_01.png<br>
+{Blog} /static/_images\addingImages-hugo\lemmings_01.png<br>
 <p class="md__image">
-  <img src="https://010000.github.io/images/addingImages-hugo/lemmings_01.png" alt="로컬 이미지"  />
+  <img src="https://010000.github.io/_images/addingImages-hugo/lemmings_01.png" alt="로컬 이미지"  />
 </p>
 </p>
 <p>e.g. (외부 저장소)<br>
@@ -290,7 +290,7 @@ blog\static\images\addingImages-hugo\lemmings_01.png<br>
 <br>
 image (내부 저장소) 위치: blog\static\images\<br>
 md파일을 작성할 때 아래와 같이 추가하면 됩니다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">![](/images/blog_construct/imagefile01.png)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">![](/_images/관리 목적의 폴더명/이미지 파일.png)
 ![](https:// ... 이미지 URL ... )
 </code></pre></div><h3 id="2-hugo-server--d-로-테스트-후-git-push">2. hugo server -D 로 테스트 후 git push.</h3>
 <p>참고 글:</p>
