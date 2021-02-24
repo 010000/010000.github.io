@@ -9,36 +9,32 @@
 <meta name="author" content="Jeffrey YM. Jo">
 <meta name="keywords" content="tech">
 <meta name="description" content="
-md파일을 html 정적 페이지로 변환하고 github 에 올립니다.
-github repository 생성 및 git 사용법은 생략됐습니다. Update: Dec 17, 2019
+.md 문서가 생성될 때 사용되는 template을 수정하고 테스트 글을 작성합니다. Update: Dec 16, 2019
 ">
 
 
 <meta property="og:description" content="
-md파일을 html 정적 페이지로 변환하고 github 에 올립니다.
-github repository 생성 및 git 사용법은 생략됐습니다. Update: Dec 17, 2019
+.md 문서가 생성될 때 사용되는 template을 수정하고 테스트 글을 작성합니다. Update: Dec 16, 2019
 ">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Web page 생성과 Github upload">
-<meta name="twitter:title" content="Web page 생성과 Github upload">
-<meta property="og:url" content="https://010000.github.io/2019/12/web-page-%EC%83%9D%EC%84%B1%EA%B3%BC-github-upload/">
-<meta property="twitter:url" content="https://010000.github.io/2019/12/web-page-%EC%83%9D%EC%84%B1%EA%B3%BC-github-upload/">
+<meta property="og:title" content="md 파일 생성을 위한 template 수정과 새로운 문서 생성">
+<meta name="twitter:title" content="md 파일 생성을 위한 template 수정과 새로운 문서 생성">
+<meta property="og:url" content="https://010000.github.io/2019/12/md-%ED%8C%8C%EC%9D%BC-%EC%83%9D%EC%84%B1%EC%9D%84-%EC%9C%84%ED%95%9C-template-%EC%88%98%EC%A0%95%EA%B3%BC-%EC%83%88%EB%A1%9C%EC%9A%B4-%EB%AC%B8%EC%84%9C-%EC%83%9D%EC%84%B1/">
+<meta property="twitter:url" content="https://010000.github.io/2019/12/md-%ED%8C%8C%EC%9D%BC-%EC%83%9D%EC%84%B1%EC%9D%84-%EC%9C%84%ED%95%9C-template-%EC%88%98%EC%A0%95%EA%B3%BC-%EC%83%88%EB%A1%9C%EC%9A%B4-%EB%AC%B8%EC%84%9C-%EC%83%9D%EC%84%B1/">
 <meta property="og:site_name" content="010000 logbook">
 <meta property="og:description" content="
-md파일을 html 정적 페이지로 변환하고 github 에 올립니다.
-github repository 생성 및 git 사용법은 생략됐습니다. Update: Dec 17, 2019
+.md 문서가 생성될 때 사용되는 template을 수정하고 테스트 글을 작성합니다. Update: Dec 16, 2019
 ">
 <meta name="twitter:description" content="
-md파일을 html 정적 페이지로 변환하고 github 에 올립니다.
-github repository 생성 및 git 사용법은 생략됐습니다. Update: Dec 17, 2019
+.md 문서가 생성될 때 사용되는 template을 수정하고 테스트 글을 작성합니다. Update: Dec 16, 2019
 ">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2019-12-16T23:05:05">
+    <meta property="article:published_time" content="2019-12-16T22:53:53">
   
   
-    <meta property="article:modified_time" content="2019-12-16T23:05:05">
+    <meta property="article:modified_time" content="2019-12-16T22:53:53">
   
   
   
@@ -54,11 +50,9 @@ github repository 생성 및 git 사용법은 생략됐습니다. Update: Dec 17
     
       <meta property="article:tag" content="Install">
     
+      <meta property="article:tag" content="Theme">
+    
       <meta property="article:tag" content="hugo-tranquilpeak-theme">
-    
-      <meta property="article:tag" content="git">
-    
-      <meta property="article:tag" content="submodule">
     
       <meta property="article:tag" content="Windows">
     
@@ -81,14 +75,14 @@ github repository 생성 및 git 사용법은 생략됐습니다. Update: Dec 17
   <meta property="twitter:image" content="https://010000.github.io/galaga_t.png">
 
 
-    <title>Web page 생성과 Github upload</title>
+    <title>md 파일 생성을 위한 template 수정과 새로운 문서 생성</title>
 
     <link rel="icon" href="https://010000.github.io/favicon.ico">
     
 
     
 
-    <link rel="canonical" href="https://010000.github.io/2019/12/web-page-%EC%83%9D%EC%84%B1%EA%B3%BC-github-upload/">
+    <link rel="canonical" href="https://010000.github.io/2019/12/md-%ED%8C%8C%EC%9D%BC-%EC%83%9D%EC%84%B1%EC%9D%84-%EC%9C%84%ED%95%9C-template-%EC%88%98%EC%A0%95%EA%B3%BC-%EC%83%88%EB%A1%9C%EC%9A%B4-%EB%AC%B8%EC%84%9C-%EC%83%9D%EC%84%B1/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -251,13 +245,13 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      Web page 생성과 Github upload
+      md 파일 생성을 위한 template 수정과 새로운 문서 생성
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2019-12-16T23:05:05&#43;09:00">
+      <time itemprop="datePublished" datetime="2019-12-16T22:53:53&#43;09:00">
         
   December 16, 2019
 
@@ -281,8 +275,7 @@ if (!doNotTrack) {
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
               <ul>
-<li>md파일을 html 정적 페이지로 변환하고 github 에 올립니다.</li>
-<li>github repository 생성 및 git 사용법은 생략됐습니다. <em>Update: Dec 17, 2019</em></li>
+<li>.md 문서가 생성될 때 사용되는 template을 수정하고 테스트 글을 작성합니다. <em>Update: Dec 16, 2019</em></li>
 </ul>
 <h2 id="configurations">Configurations <a href="#configurations">¶</a></h2>
 <ul>
@@ -290,104 +283,75 @@ if (!doNotTrack) {
 <li>Browser version: Google Chrome</li>
 <li>Hugo version: v0.61.0</li>
 <li>Hugo theme: hugo-tranquilpeak-theme (0.4.7-BETA)</li>
-<li>Github repositories: BlogHugoContents, 010000.github.io</li>
 </ul>
-<h2 id="generate-static-pages--upload-it-on-github">Generate static pages &amp; Upload it on Github <a href="#generate-static-pages--upload-it-on-github">¶</a></h2>
-<h3 id="1-hugoblog-내-생성된-폴더와-파일을-github-push할-때-3개의-폴더로-구분하면-이해가-쉽습니다">1. Hugo\blog 내 생성된 폴더와 파일을 github push할 때 3개의 폴더로 구분하면 이해가 쉽습니다 <a href="#1-hugoblog-%eb%82%b4-%ec%83%9d%ec%84%b1%eb%90%9c-%ed%8f%b4%eb%8d%94%ec%99%80-%ed%8c%8c%ec%9d%bc%ec%9d%84-github-push%ed%95%a0-%eb%95%8c-3%ea%b0%9c%ec%9d%98-%ed%8f%b4%eb%8d%94%eb%a1%9c-%ea%b5%ac%eb%b6%84%ed%95%98%eb%a9%b4-%ec%9d%b4%ed%95%b4%ea%b0%80-%ec%89%bd%ec%8a%b5%eb%8b%88%eb%8b%a4">¶</a></h3>
-<p>1.1. public 폴더 내 파일들은 {userid}.github.io 에 올려져 (공개된)실제 웹페이지로 노출됩니다<br>
-1.2. hugo 테마가 저장된 themes 폴더는 별도 git 설정을 하지 않으면 github에 업로드 되지 않습니다<br>
-1.3. 1.1~1.2를 제외한 나머지는 소스관리 목적상 별도 github repository에 업로드하는 것이 좋습니다<br>
-(즉, 1.1 public 폴더에 객체들만 업로드되어도 원하는 정적 페이지 웹서비스가 가능합니다)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"> S:\Hugo\blog&gt; dir
+<h2 id="edit-template-defaultmd--compose-the-new-document">Edit template, default.md &amp; compose the new document <a href="#edit-template-defaultmd--compose-the-new-document">¶</a></h2>
+<h3 id="1--hugo-new-filenamemd-파일을-생성할-때-참조되는-template을-수정합니다">1.  Hugo new {filename}.md 파일을 생성할 때 참조되는 template을 수정합니다 <a href="#1--hugo-new-filenamemd-%ed%8c%8c%ec%9d%bc%ec%9d%84-%ec%83%9d%ec%84%b1%ed%95%a0-%eb%95%8c-%ec%b0%b8%ec%a1%b0%eb%90%98%eb%8a%94-template%ec%9d%84-%ec%88%98%ec%a0%95%ed%95%a9%eb%8b%88%eb%8b%a4">¶</a></h3>
+<p>; 아래 default.md 내용을 그대로 사용해도 되고 필요한 것만 선택하여 작성해도 됩니다<br>
+수정 파일: \Hugo\blog\archetypes\default.md<br>
+참조 파일: \Hugo\blog\themes\hugo-tranquilpeak-theme\archetypes\post.md</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"> S:\Hugo\blog&gt; more archetypes\<span style="color:#66d9ef">default</span>.md
+ ---
+ title<span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;{{ replace .TranslationBaseName &#34;</span>-<span style="color:#e6db74">&#34; &#34;</span> <span style="color:#e6db74">&#34; | title }}&#34;</span>
+ date<span style="color:#960050;background-color:#1e0010">:</span> {{ .Date }}
+ draft<span style="color:#960050;background-color:#1e0010">:</span> true
+ categories<span style="color:#960050;background-color:#1e0010">:</span>
+ - category
+ - subcategory
+ tags<span style="color:#960050;background-color:#1e0010">:</span>
+ - tag1
+ - tag2
+ keywords<span style="color:#960050;background-color:#1e0010">:</span>
+ - tech
+ <span style="color:#75715e">#thumbnailImage: //example.com/image.jpg</span>
+ ---
+ 
+ &lt;!--more--&gt;
+</code></pre></div><h3 id="2-hugo-new-filenamemd--또는-기존-md-파일-복사해서-작성하는-방법">2. Hugo new {filename}.md  또는 기존 md 파일 복사해서 작성하는 방법 <a href="#2-hugo-new-filenamemd--%eb%98%90%eb%8a%94-%ea%b8%b0%ec%a1%b4-md-%ed%8c%8c%ec%9d%bc-%eb%b3%b5%ec%82%ac%ed%95%b4%ec%84%9c-%ec%9e%91%ec%84%b1%ed%95%98%eb%8a%94-%eb%b0%a9%eb%b2%95">¶</a></h3>
+<p>2.1. hugo new 로 template 를 이용해 새로운 md 파일을 생성하고 작성할 수 있습니다<br>
+md 파일의 위치는 blog\content 폴더로, 초안이 아닌 공개할 문서는 하위 post 폴더에 작성하면 됩니다<br>
+비공개와 같은 (작성중)초안 문서를 draft 폴더로 분류하는 경우도 볼 수 있지만 md 파일내 &lsquo;draft: true&rsquo; 로 명시되어 있으면 그 md 문서는 public 폴더에 반영되지 않습는다</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S:\Hugo\blog&gt; hugo new post/test1.md
+Hugo\blog\content\post\test1.md created
+</code></pre></div><p>2.2. blog\content 폴더 내 기존 md파일을 복사, 수정하여 사용해도 됩니다<br>
+단, 파일명은 중복되면 안되며, md 파일 내 생성시간을 원하는 값으로 바꾸면 됩니다</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S:\Hugo\blog\content\post&gt; cp test1.md test2.md
+S:\Hugo\blog\content\post&gt; notepad test2.md
+(...)
+title<span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;Editing template and Posting first&#34;</span>
+date<span style="color:#960050;background-color:#1e0010">:</span> 2019-12-16T00<span style="color:#960050;background-color:#1e0010">:</span>03<span style="color:#960050;background-color:#1e0010">:</span>15+09<span style="color:#960050;background-color:#1e0010">:</span>00
+draft<span style="color:#960050;background-color:#1e0010">:</span> true
+(...)
+</code></pre></div><p>2.3. hugo 의 문서 삭제는 content 폴더와 html로 변환 저장된 public 폴더에서 파일을 삭제하면 됩니다</p>
+<p>2.4. notepad와 같은 편집기로 md 파일을 저장할 때 인코딩을 반드시 UTF-8 로 저장해야 합니다<br>
+흔히 메모장 앱에서 옵션 변경없이 저장되는 ANSI 일 경우 html 변환시 오류가 발생됩니다</p>
+<h3 id="3-run-hugo-on-local">3. Run hugo on local <a href="#3-run-hugo-on-local">¶</a></h3>
+<p>; hugo server -D<br>
+*display also draft documents with -D option</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">s:\0_GithubPages\Hugo\blog&gt; hugo server -D
+Building sites <span style="color:#960050;background-color:#1e0010">…</span> WARNING<span style="color:#960050;background-color:#1e0010">:</span> calling IsSet with unsupported type <span style="color:#e6db74">&#34;string&#34;</span> (string) will always <span style="color:#66d9ef">return</span> false.
 
- 12/15/2019  01<span style="color:#960050;background-color:#1e0010">:</span>19    &lt;DIR&gt;          .
- 12/15/2019  01<span style="color:#960050;background-color:#1e0010">:</span>19    &lt;DIR&gt;          ..
- 08/31/1754  07<span style="color:#960050;background-color:#1e0010">:</span>43    &lt;DIR&gt;          public     1) html로 변환 저장. {userid}.github.io 로 업로드
- 12/13/2019  13<span style="color:#960050;background-color:#1e0010">:</span>20    &lt;DIR&gt;          themes     2) hugo 테마
- 12/13/2019  11<span style="color:#960050;background-color:#1e0010">:</span>04    &lt;DIR&gt;          archetypes 3) 나머지 md 문서, css, js 등의 contents 로
- 12/13/2019  13<span style="color:#960050;background-color:#1e0010">:</span>42    &lt;DIR&gt;          content       별도의 github repository 로 관리
- 12/13/2019  11<span style="color:#960050;background-color:#1e0010">:</span>04    &lt;DIR&gt;          data
- 12/13/2019  13<span style="color:#960050;background-color:#1e0010">:</span>53    &lt;DIR&gt;          layouts
- 12/13/2019  13<span style="color:#960050;background-color:#1e0010">:</span>40    &lt;DIR&gt;          resources
- 12/13/2019  13<span style="color:#960050;background-color:#1e0010">:</span>48    &lt;DIR&gt;          static
- 12/16/2019  14<span style="color:#960050;background-color:#1e0010">:</span>32             9,254 config.toml
-
-              2개 파일               9,361 바이트
-           10개 디렉터리  63,018,098,688 바이트 남음
-</code></pre></div><h3 id="2-hugocontent-폴더-내-md-파일-작성이-완료됐다면-hugo-실행으로-정적-페이지를-생성합니다">2. Hugo\content 폴더 내 md 파일 작성이 완료됐다면 hugo 실행으로 정적 페이지를 생성합니다 <a href="#2-hugocontent-%ed%8f%b4%eb%8d%94-%eb%82%b4-md-%ed%8c%8c%ec%9d%bc-%ec%9e%91%ec%84%b1%ec%9d%b4-%ec%99%84%eb%a3%8c%eb%90%90%eb%8b%a4%eb%a9%b4-hugo-%ec%8b%a4%ed%96%89%ec%9c%bc%eb%a1%9c-%ec%a0%95%ec%a0%81-%ed%8e%98%ec%9d%b4%ec%a7%80%eb%a5%bc-%ec%83%9d%ec%84%b1%ed%95%a9%eb%8b%88%eb%8b%a4">¶</a></h3>
-<p>2.1. 사용중인 hugo 테마명 확인<br>
-2.2. 정적 페이지 생성<br>
-*주의 - Hugo\content 폴더 내 (md)문서 파일이 UTF-8 인코딩이 아니면 오류가 발생할 수 있습니다</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S:\Hugo\blog&gt; dir themes
-12/13/2019  13<span style="color:#960050;background-color:#1e0010">:</span>20    &lt;DIR&gt;          .
-12/13/2019  13<span style="color:#960050;background-color:#1e0010">:</span>20    &lt;DIR&gt;          ..
-12/13/2019  13<span style="color:#960050;background-color:#1e0010">:</span>37    &lt;DIR&gt;          hugo-tranquilpeak-theme
-               0개 파일                   0 바이트
-               
-S:\Hugo\blog&gt; hugo -t hugo-tranquilpeak-theme
-Building sites (<span style="color:#960050;background-color:#1e0010">…</span>)
                    | EN-US
 +------------------+-------+
-  Pages            |    22
+  Pages            |    48
   Paginator pages  |     0
   Non-page files   |     0
-  Static files     |     8
+  Static files     |    11
   Processed images |     0
-  Aliases          |     7
+  Aliases          |    17
   Sitemaps         |     1
   Cleaned          |     0
 
-Total <span style="color:#66d9ef">in</span> 119 ms
-</code></pre></div><p>2.3. blog\public 폴더 이동 후 git push 하면 {userid}.github.io url로 생성된 페이지를 볼 수 있습니다<br>
-*Github repository 생성과 git 설정이 선행되어야 아래 git push 가능합니다</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S:\Hugo\blog&gt; cd public
-S:\Hugo\blog\public&gt; git add .
-S:\Hugo\blog\public&gt; git commit -m <span style="color:#e6db74">&#34;first commit pages&#34;</span>
-S:\Hugo\blog\public&gt; git push origin master
-</code></pre></div><p>*Github 이 처음이라면&hellip;  <a href="https://rogerdudler.github.io/git-guide/index.ko.html" target="_blank" rel="noopener">Git간편안내서</a>
-<br>
-*<a href="https://git-scm.com/book/ko/v2" target="_blank" rel="noopener">Pro Git ebook</a>
-</p>
-<h3 id="3-submodule-로-hugo-repository-관리하기">3. Submodule 로 Hugo repository 관리하기 <a href="#3-submodule-%eb%a1%9c-hugo-repository-%ea%b4%80%eb%a6%ac%ed%95%98%ea%b8%b0">¶</a></h3>
-<blockquote>
-<p>hugo는 jekyll과 달리 github에서 자동으로 빌드를 해주는 것이 아니라 내가 빌드해서 만든 파일을 github page 기능으로 띄우는 것이다.
-따라서 전체 컨텐츠를 저장할 곳과 빌드 결과로 github page를 띄울 곳, 이렇게 두개의 git repository가 필요하다.<br>
-<a href="https://ialy1595.github.io/post/blog-construct-1/">https://ialy1595.github.io/post/blog-construct-1/</a></p>
-</blockquote>
-<p>; 위의 2번과정까지만 완료해도 원하는 웹서비스가 되지만 관리 목적상 submodule 를 이용한 repository 구성도 참고로 남긴다. <del>지나고 나면 잊어버리도해서&hellip; :-)</del></p>
-<p>*Contents 관리용 repository 이름은 자유롭게 생성해도 됩니다<br>
-*{userid}.github.io 의 repository는 github 계정과 동일하게 생성해야 합니다<br>
-임의로 생성시 다른 계정에서 사용중일 경우 페이지가 안뜨거나 관계없는 페이지가 뜨는 현상이 보일 수 있습니다</p>
-<p>*Repositories<br>
-Contents용 - BlogHugoContents<br>
-Public 웹서비스용 - {userid}.github.io</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S:\Hugo\blog&gt; git init
-<span style="color:#75715e"># $ git remote add origin &lt;contents용 repository url&gt;</span>
-S:\Hugo\blog&gt; git remote add origin https<span style="color:#960050;background-color:#1e0010">:</span>//github.com/0l0000/BlogHugoContents.git
-
-<span style="color:#75715e"># git submodule add -b master &lt;public용 repository url&gt; public</span>
-<span style="color:#75715e"># S:\Hugo\blog 폴더에 public 폴더가 있으며 오류가 발생하니 삭제할 것 </span>
-S:\Hugo\blog&gt; git submodule add -b master https<span style="color:#960050;background-color:#1e0010">:</span>//github.com/0l000/0l0000.github.io.git public
-<span style="color:#e6db74">&#39;public&#39;</span> does not have a commit checked out
-
-<span style="color:#75715e"># $ hugo -t &lt;테마 이름&gt;</span>
-S:\Hugo\blog&gt; hugo -t hugo-tranquilpeak-theme
-
-<span style="color:#75715e"># public 폴더에서 push 후 blog 폴더에서 push 한다.</span>
-S:\Hugo\blog&gt; cd public
-S:\Hugo\blog\public&gt; git add . &amp;&amp; git commit -m <span style="color:#e6db74">&#34;커밋 메세지&#34;</span> &amp;&amp; git push origin master
-S:\Hugo\blog\public&gt; cd ..
-S:\Hugo\blog&gt; git add . &amp;&amp; git commit -m <span style="color:#e6db74">&#34;커밋 메세지&#34;</span> &amp;&amp; git push origin master
-
+Built <span style="color:#66d9ef">in</span> 207 ms
+Watching <span style="color:#66d9ef">for</span> changes <span style="color:#66d9ef">in</span> s:\Hugo\blog\{archetypes,content,data,layouts,static,themes}
+Watching <span style="color:#66d9ef">for</span> config changes <span style="color:#66d9ef">in</span> s:\Hugo\blog\config.toml
+Environment<span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;development&#34;</span>
+Serving pages from memory
+Running <span style="color:#66d9ef">in</span> Fast Render Mode. <span style="color:#66d9ef">For</span> full rebuilds on change<span style="color:#960050;background-color:#1e0010">:</span> hugo server --disableFastRender
+Web Server is available at http<span style="color:#960050;background-color:#1e0010">:</span>//localhost<span style="color:#960050;background-color:#1e0010">:</span>1313/ (bind address 127.0.0.1)
+Press Ctrl+C to stop
 </code></pre></div><h3 id="4-브라우저에서-확인">4. 브라우저에서 확인 <a href="#4-%eb%b8%8c%eb%9d%bc%ec%9a%b0%ec%a0%80%ec%97%90%ec%84%9c-%ed%99%95%ec%9d%b8">¶</a></h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">https://{userid}.github.io/
-</code></pre></div><p>참고 글</p>
-<ul>
-<li><a href="https://ohgyun.com/711" target="_blank" rel="noopener">Git: 서브모듈 이해하기</a>
-</li>
-<li><a href="https://ialy1595.github.io/post/blog-construct-1/" target="_blank" rel="noopener">블로그 구축기1 (Hugo + github.io)</a>
-</li>
-</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">http://localhost:1313/
+</code></pre></div>
               
             </div>
           </div>
@@ -403,11 +367,9 @@ S:\Hugo\blog&gt; git add . &amp;&amp; git commit -m <span style="color:#e6db74">
 
   <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/install/">Install</a>
 
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/theme/">Theme</a>
+
   <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/hugo-tranquilpeak-theme/">hugo-tranquilpeak-theme</a>
-
-  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/git/">git</a>
-
-  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/submodule/">submodule</a>
 
   <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/windows/">Windows</a>
 
@@ -422,7 +384,7 @@ S:\Hugo\blog&gt; git add . &amp;&amp; git commit -m <span style="color:#e6db74">
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/2019/12/font-%EC%99%80-highlight-color-%EC%88%98%EC%A0%95-%ED%9B%84-theme-rebuild/" data-tooltip="Font 와 Highlight color 수정 후 theme rebuild">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/2019/12/web-page-%EC%83%9D%EC%84%B1%EA%B3%BC-github-upload/" data-tooltip="Web page 생성과 Github upload">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -430,7 +392,7 @@ S:\Hugo\blog&gt; git add . &amp;&amp; git commit -m <span style="color:#e6db74">
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/2019/12/md-%ED%8C%8C%EC%9D%BC-%EC%83%9D%EC%84%B1%EC%9D%84-%EC%9C%84%ED%95%9C-template-%EC%88%98%EC%A0%95%EA%B3%BC-%EC%83%88%EB%A1%9C%EC%9A%B4-%EB%AC%B8%EC%84%9C-%EC%83%9D%EC%84%B1/" data-tooltip="md 파일 생성을 위한 template 수정과 새로운 문서 생성">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/2019/12/windows-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-hugo-theme-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/" data-tooltip="Windows 환경에서 Hugo theme 설치하기">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -448,19 +410,19 @@ S:\Hugo\blog&gt; git add . &amp;&amp; git commit -m <span style="color:#e6db74">
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/2019/12/web-page-%EC%83%9D%EC%84%B1%EA%B3%BC-github-upload/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/2019/12/md-%ED%8C%8C%EC%9D%BC-%EC%83%9D%EC%84%B1%EC%9D%84-%EC%9C%84%ED%95%9C-template-%EC%88%98%EC%A0%95%EA%B3%BC-%EC%83%88%EB%A1%9C%EC%9A%B4-%EB%AC%B8%EC%84%9C-%EC%83%9D%EC%84%B1/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/2019/12/web-page-%EC%83%9D%EC%84%B1%EA%B3%BC-github-upload/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/2019/12/md-%ED%8C%8C%EC%9D%BC-%EC%83%9D%EC%84%B1%EC%9D%84-%EC%9C%84%ED%95%9C-template-%EC%88%98%EC%A0%95%EA%B3%BC-%EC%83%88%EB%A1%9C%EC%9A%B4-%EB%AC%B8%EC%84%9C-%EC%83%9D%EC%84%B1/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/2019/12/web-page-%EC%83%9D%EC%84%B1%EA%B3%BC-github-upload/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/2019/12/md-%ED%8C%8C%EC%9D%BC-%EC%83%9D%EC%84%B1%EC%9D%84-%EC%9C%84%ED%95%9C-template-%EC%88%98%EC%A0%95%EA%B3%BC-%EC%83%88%EB%A1%9C%EC%9A%B4-%EB%AC%B8%EC%84%9C-%EC%83%9D%EC%84%B1/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -515,7 +477,7 @@ S:\Hugo\blog&gt; git add . &amp;&amp; git commit -m <span style="color:#e6db74">
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/2019/12/font-%EC%99%80-highlight-color-%EC%88%98%EC%A0%95-%ED%9B%84-theme-rebuild/" data-tooltip="Font 와 Highlight color 수정 후 theme rebuild">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/2019/12/web-page-%EC%83%9D%EC%84%B1%EA%B3%BC-github-upload/" data-tooltip="Web page 생성과 Github upload">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -523,7 +485,7 @@ S:\Hugo\blog&gt; git add . &amp;&amp; git commit -m <span style="color:#e6db74">
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/2019/12/md-%ED%8C%8C%EC%9D%BC-%EC%83%9D%EC%84%B1%EC%9D%84-%EC%9C%84%ED%95%9C-template-%EC%88%98%EC%A0%95%EA%B3%BC-%EC%83%88%EB%A1%9C%EC%9A%B4-%EB%AC%B8%EC%84%9C-%EC%83%9D%EC%84%B1/" data-tooltip="md 파일 생성을 위한 template 수정과 새로운 문서 생성">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/2019/12/windows-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-hugo-theme-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/" data-tooltip="Windows 환경에서 Hugo theme 설치하기">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -541,19 +503,19 @@ S:\Hugo\blog&gt; git add . &amp;&amp; git commit -m <span style="color:#e6db74">
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/2019/12/web-page-%EC%83%9D%EC%84%B1%EA%B3%BC-github-upload/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/2019/12/md-%ED%8C%8C%EC%9D%BC-%EC%83%9D%EC%84%B1%EC%9D%84-%EC%9C%84%ED%95%9C-template-%EC%88%98%EC%A0%95%EA%B3%BC-%EC%83%88%EB%A1%9C%EC%9A%B4-%EB%AC%B8%EC%84%9C-%EC%83%9D%EC%84%B1/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/2019/12/web-page-%EC%83%9D%EC%84%B1%EA%B3%BC-github-upload/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/2019/12/md-%ED%8C%8C%EC%9D%BC-%EC%83%9D%EC%84%B1%EC%9D%84-%EC%9C%84%ED%95%9C-template-%EC%88%98%EC%A0%95%EA%B3%BC-%EC%83%88%EB%A1%9C%EC%9A%B4-%EB%AC%B8%EC%84%9C-%EC%83%9D%EC%84%B1/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/2019/12/web-page-%EC%83%9D%EC%84%B1%EA%B3%BC-github-upload/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/2019/12/md-%ED%8C%8C%EC%9D%BC-%EC%83%9D%EC%84%B1%EC%9D%84-%EC%9C%84%ED%95%9C-template-%EC%88%98%EC%A0%95%EA%B3%BC-%EC%83%88%EB%A1%9C%EC%9A%B4-%EB%AC%B8%EC%84%9C-%EC%83%9D%EC%84%B1/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -583,19 +545,19 @@ S:\Hugo\blog&gt; git add . &amp;&amp; git commit -m <span style="color:#e6db74">
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F010000.github.io%2F2019%2F12%2Fweb-page-%25EC%2583%259D%25EC%2584%25B1%25EA%25B3%25BC-github-upload%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F010000.github.io%2F2019%2F12%2Fmd-%25ED%258C%258C%25EC%259D%25BC-%25EC%2583%259D%25EC%2584%25B1%25EC%259D%2584-%25EC%259C%2584%25ED%2595%259C-template-%25EC%2588%2598%25EC%25A0%2595%25EA%25B3%25BC-%25EC%2583%2588%25EB%25A1%259C%25EC%259A%25B4-%25EB%25AC%25B8%25EC%2584%259C-%25EC%2583%259D%25EC%2584%25B1%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2F010000.github.io%2F2019%2F12%2Fweb-page-%25EC%2583%259D%25EC%2584%25B1%25EA%25B3%25BC-github-upload%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2F010000.github.io%2F2019%2F12%2Fmd-%25ED%258C%258C%25EC%259D%25BC-%25EC%2583%259D%25EC%2584%25B1%25EC%259D%2584-%25EC%259C%2584%25ED%2595%259C-template-%25EC%2588%2598%25EC%25A0%2595%25EA%25B3%25BC-%25EC%2583%2588%25EB%25A1%259C%25EC%259A%25B4-%25EB%25AC%25B8%25EC%2584%259C-%25EC%2583%259D%25EC%2584%25B1%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2F010000.github.io%2F2019%2F12%2Fweb-page-%25EC%2583%259D%25EC%2584%25B1%25EA%25B3%25BC-github-upload%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2F010000.github.io%2F2019%2F12%2Fmd-%25ED%258C%258C%25EC%259D%25BC-%25EC%2583%259D%25EC%2584%25B1%25EC%259D%2584-%25EC%259C%2584%25ED%2595%259C-template-%25EC%2588%2598%25EC%25A0%2595%25EA%25B3%25BC-%25EC%2583%2588%25EB%25A1%259C%25EC%259A%25B4-%25EB%25AC%25B8%25EC%2584%259C-%25EC%2583%259D%25EC%2584%25B1%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -683,9 +645,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/010000.github.io\/2019\/12\/web-page-%EC%83%9D%EC%84%B1%EA%B3%BC-github-upload\/';
+          this.page.url = 'https:\/\/010000.github.io\/2019\/12\/md-%ED%8C%8C%EC%9D%BC-%EC%83%9D%EC%84%B1%EC%9D%84-%EC%9C%84%ED%95%9C-template-%EC%88%98%EC%A0%95%EA%B3%BC-%EC%83%88%EB%A1%9C%EC%9A%B4-%EB%AC%B8%EC%84%9C-%EC%83%9D%EC%84%B1\/';
           
-            this.page.identifier = '\/2019\/12\/web-page-%EC%83%9D%EC%84%B1%EA%B3%BC-github-upload\/'
+            this.page.identifier = '\/2019\/12\/md-%ED%8C%8C%EC%9D%BC-%EC%83%9D%EC%84%B1%EC%9D%84-%EC%9C%84%ED%95%9C-template-%EC%88%98%EC%A0%95%EA%B3%BC-%EC%83%88%EB%A1%9C%EC%9A%B4-%EB%AC%B8%EC%84%9C-%EC%83%9D%EC%84%B1\/'
           
         };
         (function() {
