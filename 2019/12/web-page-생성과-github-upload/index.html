@@ -284,7 +284,7 @@ if (!doNotTrack) {
 <li>md파일을 html 정적 페이지로 변환하고 github 에 올립니다.</li>
 <li>github repository 생성 및 git 사용법은 생략됐습니다. <em>Update: Dec 17, 2019</em></li>
 </ul>
-<h2 id="configurations">Configurations <a href="#configurations">¶</a></h2>
+<h2 id="configurations">Configurations</h2>
 <ul>
 <li>OS version: Windows 10 (x64)</li>
 <li>Browser version: Google Chrome</li>
@@ -292,8 +292,8 @@ if (!doNotTrack) {
 <li>Hugo theme: hugo-tranquilpeak-theme (0.4.7-BETA)</li>
 <li>Github repositories: BlogHugoContents, 010000.github.io</li>
 </ul>
-<h2 id="generate-static-pages--upload-it-on-github">Generate static pages &amp; Upload it on Github <a href="#generate-static-pages--upload-it-on-github">¶</a></h2>
-<h3 id="1-hugoblog-내-생성된-폴더와-파일을-github-push할-때-3개의-폴더로-구분하면-이해가-쉽습니다">1. Hugo\blog 내 생성된 폴더와 파일을 github push할 때 3개의 폴더로 구분하면 이해가 쉽습니다 <a href="#1-hugoblog-%eb%82%b4-%ec%83%9d%ec%84%b1%eb%90%9c-%ed%8f%b4%eb%8d%94%ec%99%80-%ed%8c%8c%ec%9d%bc%ec%9d%84-github-push%ed%95%a0-%eb%95%8c-3%ea%b0%9c%ec%9d%98-%ed%8f%b4%eb%8d%94%eb%a1%9c-%ea%b5%ac%eb%b6%84%ed%95%98%eb%a9%b4-%ec%9d%b4%ed%95%b4%ea%b0%80-%ec%89%bd%ec%8a%b5%eb%8b%88%eb%8b%a4">¶</a></h3>
+<h2 id="generate-static-pages--upload-it-on-github">Generate static pages &amp; Upload it on Github</h2>
+<h3 id="1-hugoblog-내-생성된-폴더와-파일을-github-push할-때-3개의-폴더로-구분하면-이해가-쉽습니다">1. Hugo\blog 내 생성된 폴더와 파일을 github push할 때 3개의 폴더로 구분하면 이해가 쉽습니다</h3>
 <p>1.1. public 폴더 내 파일들은 {userid}.github.io 에 올려져 (공개된)실제 웹페이지로 노출됩니다<br>
 1.2. hugo 테마가 저장된 themes 폴더는 별도 git 설정을 하지 않으면 github에 업로드 되지 않습니다<br>
 1.3. 1.1~1.2를 제외한 나머지는 소스관리 목적상 별도 github repository에 업로드하는 것이 좋습니다<br>
@@ -314,7 +314,7 @@ if (!doNotTrack) {
 
               2개 파일               9,361 바이트
            10개 디렉터리  63,018,098,688 바이트 남음
-</code></pre></div><h3 id="2-hugocontent-폴더-내-md-파일-작성이-완료됐다면-hugo-실행으로-정적-페이지를-생성합니다">2. Hugo\content 폴더 내 md 파일 작성이 완료됐다면 hugo 실행으로 정적 페이지를 생성합니다 <a href="#2-hugocontent-%ed%8f%b4%eb%8d%94-%eb%82%b4-md-%ed%8c%8c%ec%9d%bc-%ec%9e%91%ec%84%b1%ec%9d%b4-%ec%99%84%eb%a3%8c%eb%90%90%eb%8b%a4%eb%a9%b4-hugo-%ec%8b%a4%ed%96%89%ec%9c%bc%eb%a1%9c-%ec%a0%95%ec%a0%81-%ed%8e%98%ec%9d%b4%ec%a7%80%eb%a5%bc-%ec%83%9d%ec%84%b1%ed%95%a9%eb%8b%88%eb%8b%a4">¶</a></h3>
+</code></pre></div><h3 id="2-hugocontent-폴더-내-md-파일-작성이-완료됐다면-hugo-실행으로-정적-페이지를-생성합니다">2. Hugo\content 폴더 내 md 파일 작성이 완료됐다면 hugo 실행으로 정적 페이지를 생성합니다</h3>
 <p>2.1. 사용중인 hugo 테마명 확인<br>
 2.2. 정적 페이지 생성<br>
 *주의 - Hugo\content 폴더 내 (md)문서 파일이 UTF-8 인코딩이 아니면 오류가 발생할 수 있습니다</p>
@@ -348,7 +348,7 @@ S:\Hugo\blog\public&gt; git push origin master
 <br>
 *<a href="https://git-scm.com/book/ko/v2" target="_blank" rel="noopener">Pro Git ebook</a>
 </p>
-<h3 id="3-submodule-로-hugo-repository-관리하기">3. Submodule 로 Hugo repository 관리하기 <a href="#3-submodule-%eb%a1%9c-hugo-repository-%ea%b4%80%eb%a6%ac%ed%95%98%ea%b8%b0">¶</a></h3>
+<h3 id="3-submodule-로-hugo-repository-관리하기">3. Submodule 로 Hugo repository 관리하기</h3>
 <blockquote>
 <p>hugo는 jekyll과 달리 github에서 자동으로 빌드를 해주는 것이 아니라 내가 빌드해서 만든 파일을 github page 기능으로 띄우는 것이다.
 따라서 전체 컨텐츠를 저장할 곳과 빌드 결과로 github page를 띄울 곳, 이렇게 두개의 git repository가 필요하다.<br>
@@ -379,7 +379,7 @@ S:\Hugo\blog\public&gt; git add . &amp;&amp; git commit -m <span style="color:#e
 S:\Hugo\blog\public&gt; cd ..
 S:\Hugo\blog&gt; git add . &amp;&amp; git commit -m <span style="color:#e6db74">&#34;커밋 메세지&#34;</span> &amp;&amp; git push origin master
 
-</code></pre></div><h3 id="4-브라우저에서-확인">4. 브라우저에서 확인 <a href="#4-%eb%b8%8c%eb%9d%bc%ec%9a%b0%ec%a0%80%ec%97%90%ec%84%9c-%ed%99%95%ec%9d%b8">¶</a></h3>
+</code></pre></div><h3 id="4-브라우저에서-확인">4. 브라우저에서 확인</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">https://{userid}.github.io/
 </code></pre></div><p>참고 글</p>
 <ul>

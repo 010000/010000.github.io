@@ -286,7 +286,7 @@ if (!doNotTrack) {
 <li>Hugo / hugo-tranquilpeak-theme 테마의 font를 변경합니다.</li>
 <li>수정한 값을 적용하기 위해 테마 rebuild 과정이 포함되어 있습니다. <em>Update: Dec 19, 2019</em></li>
 </ul>
-<h2 id="configurations">Configurations <a href="#configurations">¶</a></h2>
+<h2 id="configurations">Configurations</h2>
 <ul>
 <li>OS version: Windows 10 (x64)</li>
 <li>Browser version: Google Chrome</li>
@@ -294,8 +294,8 @@ if (!doNotTrack) {
 <li>Hugo theme: hugo-tranquilpeak-theme (0.4.7-BETA)</li>
 <li>Fonts: Noto sans kr, IBM Plex mono</li>
 </ul>
-<h2 id="edit-fontsscss-variablesscss--rebuild-theme">Edit fonts.scss, variables.scss &amp; Rebuild theme <a href="#edit-fontsscss-variablesscss--rebuild-theme">¶</a></h2>
-<h3 id="1-_fontsscss-_variablesscss-두-파일을-아래를-참고하여-수정합니다">1. _fonts.scss, _variables.scss 두 파일을 아래를 참고하여 수정합니다 <a href="#1-_fontsscss-_variablesscss-%eb%91%90-%ed%8c%8c%ec%9d%bc%ec%9d%84-%ec%95%84%eb%9e%98%eb%a5%bc-%ec%b0%b8%ea%b3%a0%ed%95%98%ec%97%ac-%ec%88%98%ec%a0%95%ed%95%a9%eb%8b%88%eb%8b%a4">¶</a></h3>
+<h2 id="edit-fontsscss-variablesscss--rebuild-theme">Edit fonts.scss, variables.scss &amp; Rebuild theme</h2>
+<h3 id="1-_fontsscss-_variablesscss-두-파일을-아래를-참고하여-수정합니다">1. _fonts.scss, _variables.scss 두 파일을 아래를 참고하여 수정합니다</h3>
 <p>_fonts.scss 파일을 열고 마지막 라인에 구글 웹폰트를 추가합니다</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S:\Hugo\blog\themes\hugo-tranquilpeak-theme\src\scss\utils&gt; more _fonts.scss
 (...)
@@ -373,11 +373,11 @@ $font-families<span style="color:#960050;background-color:#1e0010">:</span> (
     <span style="color:#e6db74">&#39;egyptian-blue&#39;</span><span style="color:#f92672">:</span>   #1662ff<span style="color:#f92672">,</span>
     <span style="color:#f92672">//</span> <span style="color:#f92672">Deletion</span> <span style="color:#f92672">color</span> <span style="color:#f92672">for</span> .<span style="color:#a6e22e">diff</span> <span style="color:#f92672">file</span>
 <span style="color:#f92672">(...)</span>
-</code></pre></div><h3 id="2-themeshugo-tranquilpeak-theme-폴더로-이동-후-rebuild-합니다">2. themes\hugo-tranquilpeak-theme 폴더로 이동 후 rebuild 합니다 <a href="#2-themeshugo-tranquilpeak-theme-%ed%8f%b4%eb%8d%94%eb%a1%9c-%ec%9d%b4%eb%8f%99-%ed%9b%84-rebuild-%ed%95%a9%eb%8b%88%eb%8b%a4">¶</a></h3>
+</code></pre></div><h3 id="2-themeshugo-tranquilpeak-theme-폴더로-이동-후-rebuild-합니다">2. themes\hugo-tranquilpeak-theme 폴더로 이동 후 rebuild 합니다</h3>
 <p>;rebuild 가 실패하거나 실행이 안될경우 아래 3번 과정을 진행합니다</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S:\&gt; cd Hugo\blog\themes\hugo-tranquilpeak-theme
 S:\Hugo\blog\themes\hugo-tranquilpeak-theme&gt; npm run prod
-</code></pre></div><h3 id="3-hugo-tranquilpeak-theme-수정-후-필요한-rebuild-환경구성">3. hugo-tranquilpeak-theme 수정 후 필요한 rebuild 환경구성 <a href="#3-hugo-tranquilpeak-theme-%ec%88%98%ec%a0%95-%ed%9b%84-%ed%95%84%ec%9a%94%ed%95%9c-rebuild-%ed%99%98%ea%b2%bd%ea%b5%ac%ec%84%b1">¶</a></h3>
+</code></pre></div><h3 id="3-hugo-tranquilpeak-theme-수정-후-필요한-rebuild-환경구성">3. hugo-tranquilpeak-theme 수정 후 필요한 rebuild 환경구성</h3>
 <p>;node.js v8.x 버전까지의 하위 버전이 필요합니다<br>
 다운받고 설치 후 어느 경로든 실행할 수 있도록 윈도 path도 설정합니다<br>
 파일: <a href="https://nodejs.org/dist/latest-v8.x/" target="_blank" rel="noopener">nodejs.org/dist/latest-v8.x/</a>
@@ -393,7 +393,7 @@ S:\&gt; node -v
 v8.16.2
 S:\&gt; npm -v
 6.4.1
-</code></pre></div><h3 id="4-설치가-완료되면-다시-rebuild-합니다">4. 설치가 완료되면 다시 rebuild 합니다 <a href="#4-%ec%84%a4%ec%b9%98%ea%b0%80-%ec%99%84%eb%a3%8c%eb%90%98%eb%a9%b4-%eb%8b%a4%ec%8b%9c-rebuild-%ed%95%a9%eb%8b%88%eb%8b%a4">¶</a></h3>
+</code></pre></div><h3 id="4-설치가-완료되면-다시-rebuild-합니다">4. 설치가 완료되면 다시 rebuild 합니다</h3>
 <p>*rebuild 를 위한 구성 중  node_modules 이름의 폴더와 하위 파일들이 생성됩니다<br>
 *build 실행 위치: \Hugo\blog\themes\hugo-tranquilpeak-theme</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S:\&gt; cd Hugo\blog\themes\hugo-tranquilpeak-theme
@@ -415,7 +415,7 @@ File <span style="color:#e6db74">&#34;layouts/partials/head.html&#34;</span> upd
 
 Running <span style="color:#e6db74">&#34;replace:linker&#34;</span> (replace) task
 Done
-</code></pre></div><h3 id="5-rebuild-후-페이지가-깨진다면">5. Rebuild 후 페이지가 깨진다면&hellip; <a href="#5-rebuild-%ed%9b%84-%ed%8e%98%ec%9d%b4%ec%a7%80%ea%b0%80-%ea%b9%a8%ec%a7%84%eb%8b%a4%eb%a9%b4">¶</a></h3>
+</code></pre></div><h3 id="5-rebuild-후-페이지가-깨진다면">5. Rebuild 후 페이지가 깨진다면&hellip;</h3>
 <p>*build가 완료되면 themes\hugo-tranquilpeak-theme\layouts\partials\script.html 파일과 head.html 파일이 업데이트 됩니다. 따라서 두 파일을 blog\layouts\partials 에 복사 및 수정하여 사용중이라면 업데이트 된 부분을 비교 후 별도로 반영해줘야 합니다.</p>
 <p>theme rebuild로 style-(&hellip;).min.css 파일이 업데이트 되었습니다.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S:\Hugo\blog\themes\hugo-tranquilpeak-theme\static\css&gt; dir
@@ -434,9 +434,9 @@ Done
     &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/css/style-geg01wgs4obts5g7vfuj9friotgndu90dxpl4byfnmoii24z6hq3yn8g.min.css&#34;</span> /&gt;
     <span style="color:#75715e">&lt;!--STYLES END--&gt;</span>
 (...)
-</code></pre></div><h3 id="6-브라우저-테스트-후-git-push">6. 브라우저 테스트 후 git push <a href="#6-%eb%b8%8c%eb%9d%bc%ec%9a%b0%ec%a0%80-%ed%85%8c%ec%8a%a4%ed%8a%b8-%ed%9b%84-git-push">¶</a></h3>
+</code></pre></div><h3 id="6-브라우저-테스트-후-git-push">6. 브라우저 테스트 후 git push</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">http://localhost:1313/  
-</code></pre></div><h3 id="참고-글">참고 글 <a href="#%ec%b0%b8%ea%b3%a0-%ea%b8%80">¶</a></h3>
+</code></pre></div><h3 id="참고-글">참고 글</h3>
 <ul>
 <li><a href="https://wotjd.github.io/2019/05/blogging-hugo-%eb%a1%9c-github-%eb%b8%94%eb%a1%9c%ea%b7%b8-%ec%8b%9c%ec%9e%91%ed%95%98%ea%b8%b0-3.-%ed%85%8c%eb%a7%88-%ec%84%a0%ec%a0%95-%eb%b0%8f-%ec%bb%a4%ec%8a%a4%ed%84%b0%eb%a7%88%ec%9d%b4%ec%a7%95/" target="_blank" rel="noopener">엉망진창 Swift 코딩 | Hugo로 github 블로그 시작하기 -3.테마선정 및 커스터마이징</a>
 </li>

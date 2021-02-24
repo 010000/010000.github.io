@@ -275,20 +275,20 @@ if (!doNotTrack) {
               <ul>
 <li>Hugo에서 외부 링크가 target=&quot;_blank&quot;로 열리도록 수정하기. <em>Update: Dec 19, 2019</em></li>
 </ul>
-<h2 id="configurations">Configurations <a href="#configurations">¶</a></h2>
+<h2 id="configurations">Configurations</h2>
 <ul>
 <li>OS version: CentOS</li>
 <li>Hugo theme: hugo-tranquilpeak-theme (0.4.7-BETA)</li>
 </ul>
-<h3 id="1-render-linkhtml-파일을-생성하고-아래-코드를-넣습니다">1. render-link.html 파일을 생성하고 아래 코드를 넣습니다. <a href="#1-render-linkhtml-%ed%8c%8c%ec%9d%bc%ec%9d%84-%ec%83%9d%ec%84%b1%ed%95%98%ea%b3%a0-%ec%95%84%eb%9e%98-%ec%bd%94%eb%93%9c%eb%a5%bc-%eb%84%a3%ec%8a%b5%eb%8b%88%eb%8b%a4">¶</a></h3>
+<h3 id="1-render-linkhtml-파일을-생성하고-아래-코드를-넣습니다">1. render-link.html 파일을 생성하고 아래 코드를 넣습니다.</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cat <span style="color:#f92672">{</span>Blog<span style="color:#f92672">}</span>/layouts/_default/_markup/render-link.html
 
  &lt;a href<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ .Destination | safeURL }}&#34;</span><span style="color:#f92672">{{</span> with .Title<span style="color:#f92672">}}</span> title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ . }}&#34;</span><span style="color:#f92672">{{</span> end <span style="color:#f92672">}}{{</span> <span style="color:#66d9ef">if</span> strings.HasPrefix .Destination <span style="color:#e6db74">&#34;http&#34;</span> <span style="color:#f92672">}}</span> target<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;_blank&#34;</span> rel<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;noopener&#34;</span><span style="color:#f92672">{{</span> end <span style="color:#f92672">}}</span>&gt;<span style="color:#f92672">{{</span> .Text | safeHTML <span style="color:#f92672">}}</span>&lt;/a&gt;
-</code></pre></div><h3 id="2-페이지-재-생성-후-git-push">2. 페이지 재 생성 후 git push. <a href="#2-%ed%8e%98%ec%9d%b4%ec%a7%80-%ec%9e%ac-%ec%83%9d%ec%84%b1-%ed%9b%84-git-push">¶</a></h3>
+</code></pre></div><h3 id="2-페이지-재-생성-후-git-push">2. 페이지 재 생성 후 git push.</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ hugo -t <span style="color:#f92672">{</span>theme name<span style="color:#f92672">}</span> 
 $    <span style="color:#f92672">(</span>...<span style="color:#f92672">)</span> 
 $ git push
-</code></pre></div><h3 id="3-참고">3. 참고 <a href="#3-%ec%b0%b8%ea%b3%a0">¶</a></h3>
+</code></pre></div><h3 id="3-참고">3. 참고</h3>
 <ul>
 <li><a href="https://gohugo.io/getting-started/configuration-markup#link-with-title-markdown-example-" target="_blank" rel="noopener">Hugo - Configure Markup</a>
 </li>

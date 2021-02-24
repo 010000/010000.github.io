@@ -277,15 +277,15 @@ if (!doNotTrack) {
               <ul>
 <li>.md 문서가 생성될 때 사용되는 template을 수정하고 테스트 글을 작성합니다. <em>Update: Dec 16, 2019</em></li>
 </ul>
-<h2 id="configurations">Configurations <a href="#configurations">¶</a></h2>
+<h2 id="configurations">Configurations</h2>
 <ul>
 <li>OS version: Windows 10 (x64)</li>
 <li>Browser version: Google Chrome</li>
 <li>Hugo version: v0.61.0</li>
 <li>Hugo theme: hugo-tranquilpeak-theme (0.4.7-BETA)</li>
 </ul>
-<h2 id="edit-template-defaultmd--compose-the-new-document">Edit template, default.md &amp; compose the new document <a href="#edit-template-defaultmd--compose-the-new-document">¶</a></h2>
-<h3 id="1--hugo-new-filenamemd-파일을-생성할-때-참조되는-template을-수정합니다">1.  Hugo new {filename}.md 파일을 생성할 때 참조되는 template을 수정합니다 <a href="#1--hugo-new-filenamemd-%ed%8c%8c%ec%9d%bc%ec%9d%84-%ec%83%9d%ec%84%b1%ed%95%a0-%eb%95%8c-%ec%b0%b8%ec%a1%b0%eb%90%98%eb%8a%94-template%ec%9d%84-%ec%88%98%ec%a0%95%ed%95%a9%eb%8b%88%eb%8b%a4">¶</a></h3>
+<h2 id="edit-template-defaultmd--compose-the-new-document">Edit template, default.md &amp; compose the new document</h2>
+<h3 id="1--hugo-new-filenamemd-파일을-생성할-때-참조되는-template을-수정합니다">1.  Hugo new {filename}.md 파일을 생성할 때 참조되는 template을 수정합니다</h3>
 <p>; 아래 default.md 내용을 그대로 사용해도 되고 필요한 것만 선택하여 작성해도 됩니다<br>
 수정 파일: \Hugo\blog\archetypes\default.md<br>
 참조 파일: \Hugo\blog\themes\hugo-tranquilpeak-theme\archetypes\post.md</p>
@@ -306,7 +306,7 @@ if (!doNotTrack) {
  ---
  
  &lt;!--more--&gt;
-</code></pre></div><h3 id="2-hugo-new-filenamemd--또는-기존-md-파일-복사해서-작성하는-방법">2. Hugo new {filename}.md  또는 기존 md 파일 복사해서 작성하는 방법 <a href="#2-hugo-new-filenamemd--%eb%98%90%eb%8a%94-%ea%b8%b0%ec%a1%b4-md-%ed%8c%8c%ec%9d%bc-%eb%b3%b5%ec%82%ac%ed%95%b4%ec%84%9c-%ec%9e%91%ec%84%b1%ed%95%98%eb%8a%94-%eb%b0%a9%eb%b2%95">¶</a></h3>
+</code></pre></div><h3 id="2-hugo-new-filenamemd--또는-기존-md-파일-복사해서-작성하는-방법">2. Hugo new {filename}.md  또는 기존 md 파일 복사해서 작성하는 방법</h3>
 <p>2.1. hugo new 로 template 를 이용해 새로운 md 파일을 생성하고 작성할 수 있습니다<br>
 md 파일의 위치는 blog\content 폴더로, 초안이 아닌 공개할 문서는 하위 post 폴더에 작성하면 됩니다<br>
 비공개와 같은 (작성중)초안 문서를 draft 폴더로 분류하는 경우도 볼 수 있지만 md 파일내 &lsquo;draft: true&rsquo; 로 명시되어 있으면 그 md 문서는 public 폴더에 반영되지 않습는다</p>
@@ -324,7 +324,7 @@ draft<span style="color:#960050;background-color:#1e0010">:</span> true
 </code></pre></div><p>2.3. hugo 의 문서 삭제는 content 폴더와 html로 변환 저장된 public 폴더에서 파일을 삭제하면 됩니다</p>
 <p>2.4. notepad와 같은 편집기로 md 파일을 저장할 때 인코딩을 반드시 UTF-8 로 저장해야 합니다<br>
 흔히 메모장 앱에서 옵션 변경없이 저장되는 ANSI 일 경우 html 변환시 오류가 발생됩니다</p>
-<h3 id="3-run-hugo-on-local">3. Run hugo on local <a href="#3-run-hugo-on-local">¶</a></h3>
+<h3 id="3-run-hugo-on-local">3. Run hugo on local</h3>
 <p>; hugo server -D<br>
 *display also draft documents with -D option</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">s:\0_GithubPages\Hugo\blog&gt; hugo server -D
@@ -349,7 +349,7 @@ Serving pages from memory
 Running <span style="color:#66d9ef">in</span> Fast Render Mode. <span style="color:#66d9ef">For</span> full rebuilds on change<span style="color:#960050;background-color:#1e0010">:</span> hugo server --disableFastRender
 Web Server is available at http<span style="color:#960050;background-color:#1e0010">:</span>//localhost<span style="color:#960050;background-color:#1e0010">:</span>1313/ (bind address 127.0.0.1)
 Press Ctrl+C to stop
-</code></pre></div><h3 id="4-브라우저에서-확인">4. 브라우저에서 확인 <a href="#4-%eb%b8%8c%eb%9d%bc%ec%9a%b0%ec%a0%80%ec%97%90%ec%84%9c-%ed%99%95%ec%9d%b8">¶</a></h3>
+</code></pre></div><h3 id="4-브라우저에서-확인">4. 브라우저에서 확인</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">http://localhost:1313/
 </code></pre></div>
               
