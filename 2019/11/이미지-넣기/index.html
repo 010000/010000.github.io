@@ -309,10 +309,15 @@ if (!doNotTrack) {
 <p>.md 파일을 아래 정보를 참고하여 이미지를 추가한다.<br>
 e.g. (Local저장소) blog\static\images\addingImages-hugo\lemmings_01.png<br>
 <p class="md__image">
-  <img src="https://010000.github.io/images/addingImages-hugo/lemmings_01.png#center25" alt="Text"  />
+  <img src="https://010000.github.io/images/addingImages-hugo/lemmings_01.png" alt="Text"  />
 </p>
 <br>
-image 저장 위치: (Local저장소) blog\static\images\<br>
+<p class="md__image">
+  <img src="https://s.yimg.com/rz/p/yahoo_homepage_en-US_s_f_p_bestfit_homepage_2x.png" alt=""  />
+</p>
+<br>
+image (내부) 위치: blog\static\images\<br>
+image (외부) 위치: https:// &hellip;이미지 URL&hellip;<br>
 md파일을 작성할 때 아래와 같이 추가하면 된다.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">//         이미지 파일 경로와 파일명         #css style
 ![](/images/blog_construct/imagefile01.png#center75)
