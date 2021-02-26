@@ -6,7 +6,25 @@
     <description>Recent content in Tags on 010000 logbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Thu, 19 Dec 2019 10:15:18 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 25 Feb 2021 14:57:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>jira</title>
+      <link>https://010000.github.io/tags/jira/</link>
+      <pubDate>Thu, 25 Feb 2021 14:57:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/jira/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>search</title>
+      <link>https://010000.github.io/tags/search/</link>
+      <pubDate>Thu, 25 Feb 2021 14:57:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/search/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>_blank</title>
       <link>https://010000.github.io/tags/_blank/</link>
@@ -17,29 +35,11 @@
     </item>
     
     <item>
-      <title>code</title>
-      <link>https://010000.github.io/tags/code/</link>
+      <title>markdown</title>
+      <link>https://010000.github.io/tags/markdown/</link>
       <pubDate>Thu, 19 Dec 2019 10:15:18 +0900</pubDate>
       
-      <guid>https://010000.github.io/tags/code/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hugo</title>
-      <link>https://010000.github.io/tags/hugo/</link>
-      <pubDate>Thu, 19 Dec 2019 10:15:18 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hugo-tranquilpeak-theme</title>
-      <link>https://010000.github.io/tags/hugo-tranquilpeak-theme/</link>
-      <pubDate>Thu, 19 Dec 2019 10:15:18 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/hugo-tranquilpeak-theme/</guid>
+      <guid>https://010000.github.io/tags/markdown/</guid>
       <description></description>
     </item>
     
@@ -49,15 +49,6 @@
       <pubDate>Thu, 19 Dec 2019 10:13:18 +0900</pubDate>
       
       <guid>https://010000.github.io/tags/images/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>markdown</title>
-      <link>https://010000.github.io/tags/markdown/</link>
-      <pubDate>Thu, 19 Dec 2019 10:13:18 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/markdown/</guid>
       <description></description>
     </item>
     
@@ -89,11 +80,11 @@
     </item>
     
     <item>
-      <title>Windows</title>
-      <link>https://010000.github.io/tags/windows/</link>
+      <title>hugo-tranquilpeak-theme</title>
+      <link>https://010000.github.io/tags/hugo-tranquilpeak-theme/</link>
       <pubDate>Thu, 19 Dec 2019 10:10:18 +0900</pubDate>
       
-      <guid>https://010000.github.io/tags/windows/</guid>
+      <guid>https://010000.github.io/tags/hugo-tranquilpeak-theme/</guid>
       <description></description>
     </item>
     
@@ -107,15 +98,6 @@
     </item>
     
     <item>
-      <title>Install</title>
-      <link>https://010000.github.io/tags/install/</link>
-      <pubDate>Mon, 16 Dec 2019 23:05:05 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/install/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>submodule</title>
       <link>https://010000.github.io/tags/submodule/</link>
       <pubDate>Mon, 16 Dec 2019 23:05:05 +0900</pubDate>
@@ -125,11 +107,29 @@
     </item>
     
     <item>
-      <title>Theme</title>
-      <link>https://010000.github.io/tags/theme/</link>
+      <title>template</title>
+      <link>https://010000.github.io/tags/template/</link>
       <pubDate>Mon, 16 Dec 2019 22:53:53 +0900</pubDate>
       
-      <guid>https://010000.github.io/tags/theme/</guid>
+      <guid>https://010000.github.io/tags/template/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>install</title>
+      <link>https://010000.github.io/tags/install/</link>
+      <pubDate>Sat, 14 Dec 2019 23:58:15 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/install/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>https://010000.github.io/tags/hugo/</link>
+      <pubDate>Sat, 14 Dec 2019 23:57:15 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/hugo/</guid>
       <description></description>
     </item>
     
