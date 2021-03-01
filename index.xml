@@ -6,7 +6,19 @@
     <description>Recent content on 010000 logbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Thu, 25 Feb 2021 14:57:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Mar 2021 20:45:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Synology NAS, PHP 7.4 update 후 변경</title>
+      <link>https://010000.github.io/2021/03/synology-nas-php-7.4-update-%ED%9B%84-%EB%B3%80%EA%B2%BD/</link>
+      <pubDate>Mon, 01 Mar 2021 20:45:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/2021/03/synology-nas-php-7.4-update-%ED%9B%84-%EB%B3%80%EA%B2%BD/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;Synology DS216+, PHP 5.6 에서 7.4로 적용&lt;/li&gt;
+&lt;li&gt;Wordpress, phpMyadmin 7.4 적용을 위한 수정 &lt;em&gt;Update: Mar 01, 2021&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
     <item>
       <title>Jira search 예제</title>
       <link>https://010000.github.io/2021/02/jira-search-%EC%98%88%EC%A0%9C/</link>
