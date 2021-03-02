@@ -270,11 +270,12 @@ if (!doNotTrack) {
 <li>내부 저장소와 외부 저장소의 이미지를 추가합니다. <em>Update: Dec 19, 2019</em></li>
 </ul>
 <h3 id="1-md-파일에-아래-정보를-참고하여-이미지를-추가합니다">1. md 파일에 아래 정보를 참고하여 이미지를 추가합니다.</h3>
+<p>; static/_images 로 되어있다면 (관리상 동일하게) static/images 로 rename 후 테스트해보세요.</p>
 <p>e.g. (내부 저장소)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">저장: <span style="color:#f92672">{</span>Blog<span style="color:#f92672">}</span>/static/_images/addingImages-hugo/lemmings_01.png
-호출: !<span style="color:#f92672">[</span>로컬 이미지<span style="color:#f92672">](</span>/images/addingImages-hugo/lemmings_01.png<span style="color:#f92672">)</span> 
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">저장: <span style="color:#f92672">{</span>Blog<span style="color:#f92672">}</span>/static/images/20191219_add_images_md/lemmings_01.png
+호출: !<span style="color:#f92672">[</span>로컬 이미지<span style="color:#f92672">](</span>/images/20191219_add_images_md/lemmings_01.png<span style="color:#f92672">)</span> 
 </code></pre></div><p><p class="md__image">
-  <img src="https://010000.github.io/images/addingImages-hugo/lemmings_01.png" alt="로컬 이미지"  />
+  <img src="https://010000.github.io/images/20191219_add_images_md/lemmings_01.png" alt="로컬 이미지"  />
 </p>
 </p>
 <p>e.g. (외부 저장소)</p>
@@ -284,8 +285,8 @@ if (!doNotTrack) {
 </p>
 </p>
 <p>요약</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">![ {생략가능} ](/images/관리 목적의 폴더명/이미지 파일.png)
-![ {생략가능} ](https:// ... 이미지 URL ... )
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">![ {Alt text 생략가능} ](/images/관리 목적의 폴더명/이미지 파일.png)
+![ {Alt text 생략가능} ](https:// ... 이미지 URL ... )
 </code></pre></div><h3 id="2-hugo-server--d-로-테스트-후-git-push">2. hugo server -D 로 테스트 후 git push.</h3>
 <p>참고 글:</p>
 <ul>
