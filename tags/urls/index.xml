@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>urls on 010000 logbook</title>
+    <link>https://010000.github.io/tags/urls/</link>
+    <description>Recent content in urls on 010000 logbook</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Wed, 03 Mar 2021 22:47:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/urls/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>url을 title에서 파일명 등 다른 타입으로 변경하기</title>
+      <link>https://010000.github.io/20210303_change_urls/</link>
+      <pubDate>Wed, 03 Mar 2021 22:47:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/20210303_change_urls/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;URL을 md 문서내 title(한글)에서 파일명으로 변경하기. &lt;em&gt;Update: Mar 03, 2021&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

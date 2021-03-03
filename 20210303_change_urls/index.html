@@ -9,32 +9,32 @@
 <meta name="author" content="Jeffrey YM. Jo">
 <meta name="keywords" content="tech">
 <meta name="description" content="
-Hugo에서 외부 링크가 target=&quot;_blank&quot;로 열리도록 수정하기. Update: Dec 19, 2019
+URL을 md 문서내 title(한글)에서 파일명으로 변경하기. Update: Mar 03, 2021
 ">
 
 
 <meta property="og:description" content="
-Hugo에서 외부 링크가 target=&quot;_blank&quot;로 열리도록 수정하기. Update: Dec 19, 2019
+URL을 md 문서내 title(한글)에서 파일명으로 변경하기. Update: Mar 03, 2021
 ">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hugo, 외부 링크를 새 창에서 열기">
-<meta name="twitter:title" content="Hugo, 외부 링크를 새 창에서 열기">
-<meta property="og:url" content="https://010000.github.io/20191219_open_link_newtab/">
-<meta property="twitter:url" content="https://010000.github.io/20191219_open_link_newtab/">
+<meta property="og:title" content="url을 title에서 파일명 등 다른 타입으로 변경하기">
+<meta name="twitter:title" content="url을 title에서 파일명 등 다른 타입으로 변경하기">
+<meta property="og:url" content="https://010000.github.io/20210303_change_urls/">
+<meta property="twitter:url" content="https://010000.github.io/20210303_change_urls/">
 <meta property="og:site_name" content="010000 logbook">
 <meta property="og:description" content="
-Hugo에서 외부 링크가 target=&quot;_blank&quot;로 열리도록 수정하기. Update: Dec 19, 2019
+URL을 md 문서내 title(한글)에서 파일명으로 변경하기. Update: Mar 03, 2021
 ">
 <meta name="twitter:description" content="
-Hugo에서 외부 링크가 target=&quot;_blank&quot;로 열리도록 수정하기. Update: Dec 19, 2019
+URL을 md 문서내 title(한글)에서 파일명으로 변경하기. Update: Mar 03, 2021
 ">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2019-12-19T10:15:18">
+    <meta property="article:published_time" content="2021-03-03T22:47:00">
   
   
-    <meta property="article:modified_time" content="2019-12-19T10:15:18">
+    <meta property="article:modified_time" content="2021-03-03T22:47:00">
   
   
   
@@ -44,9 +44,7 @@ Hugo에서 외부 링크가 target=&quot;_blank&quot;로 열리도록 수정하�
   
   
     
-      <meta property="article:tag" content="markdown">
-    
-      <meta property="article:tag" content="_blank">
+      <meta property="article:tag" content="urls">
     
   
 
@@ -67,14 +65,14 @@ Hugo에서 외부 링크가 target=&quot;_blank&quot;로 열리도록 수정하�
   <meta property="twitter:image" content="https://010000.github.io/galaga_t.png">
 
 
-    <title>Hugo, 외부 링크를 새 창에서 열기</title>
+    <title>url을 title에서 파일명 등 다른 타입으로 변경하기</title>
 
     <link rel="icon" href="https://010000.github.io/favicon.ico">
     
 
     
 
-    <link rel="canonical" href="https://010000.github.io/20191219_open_link_newtab/">
+    <link rel="canonical" href="https://010000.github.io/20210303_change_urls/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -243,15 +241,15 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      Hugo, 외부 링크를 새 창에서 열기
+      url을 title에서 파일명 등 다른 타입으로 변경하기
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2019-12-19T10:15:18&#43;09:00">
+      <time itemprop="datePublished" datetime="2021-03-03T22:47:00&#43;09:00">
         
-  December 19, 2019
+  March 3, 2021
 
       </time>
     
@@ -271,24 +269,24 @@ if (!doNotTrack) {
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
               <ul>
-<li>Hugo에서 외부 링크가 target=&quot;_blank&quot;로 열리도록 수정하기. <em>Update: Dec 19, 2019</em></li>
+<li>URL을 md 문서내 title(한글)에서 파일명으로 변경하기. <em>Update: Mar 03, 2021</em></li>
 </ul>
-<h2 id="configurations">Configurations</h2>
+<h3 id="configtom-에서-참고-링크를-확인하여-원하는-url-타입으로-변경하면-됩니다">config.tom 에서 참고 링크를 확인하여 원하는 url 타입으로 변경하면 됩니다.</h3>
 <ul>
-<li>OS: CentOS</li>
-<li>Hugo theme: hugo-tranquilpeak-theme (0.4.7-BETA)</li>
+<li>
+<p>변경할 파일 {Blog}/config.toml</p>
+</li>
+<li>
+<p>config.toml은 사용중인 {Blog}/thmes/ 하위에 theme sample에 따라 다를 수 있습니다.</p>
+<p>e.g. md 확장자만 빠진 파일명으로 url 생성하기</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>permalinks<span style="color:#f92672">]</span>
+변경 전: post <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/:year/:month/:slug/&#34;</span>
+변경 후: post <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/:filename/&#34;</span>
+</code></pre></div></li>
 </ul>
-<h3 id="1-render-linkhtml-파일을-생성하고-아래-코드를-넣습니다">1. render-link.html 파일을 생성하고 아래 코드를 넣습니다.</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cat <span style="color:#f92672">{</span>Blog<span style="color:#f92672">}</span>/layouts/_default/_markup/render-link.html
-
- &lt;a href<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ .Destination | safeURL }}&#34;</span><span style="color:#f92672">{{</span> with .Title<span style="color:#f92672">}}</span> title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ . }}&#34;</span><span style="color:#f92672">{{</span> end <span style="color:#f92672">}}{{</span> <span style="color:#66d9ef">if</span> strings.HasPrefix .Destination <span style="color:#e6db74">&#34;http&#34;</span> <span style="color:#f92672">}}</span> target<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;_blank&#34;</span> rel<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;noopener&#34;</span><span style="color:#f92672">{{</span> end <span style="color:#f92672">}}</span>&gt;<span style="color:#f92672">{{</span> .Text | safeHTML <span style="color:#f92672">}}</span>&lt;/a&gt;
-</code></pre></div><h3 id="2-페이지-재-생성-후-git-push">2. 페이지 재 생성 후 git push.</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ hugo -t <span style="color:#f92672">{</span>theme name<span style="color:#f92672">}</span> 
-$    <span style="color:#f92672">(</span>...<span style="color:#f92672">)</span> 
-$ git push
-</code></pre></div><h3 id="참고-글">참고 글</h3>
+<p>참고 글:</p>
 <ul>
-<li><a href="https://gohugo.io/getting-started/configuration-markup#link-with-title-markdown-example-" target="_blank" rel="noopener">Hugo - Configure Markup</a>
+<li><a href="https://gohugo.io/content-management/urls/" target="_blank" rel="noopener">URL Management</a>
 </li>
 </ul>
               
@@ -302,9 +300,7 @@ $ git push
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">TAGGED IN</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/markdown/">markdown</a>
-
-  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/_blank/">_blank</a>
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/urls/">urls</a>
 
                   </div>
                 
@@ -317,7 +313,7 @@ $ git push
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/20210225_search_jira/" data-tooltip="Jira search 예제">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -325,7 +321,7 @@ $ git push
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/20191219_add_images_md/" data-tooltip="md 문서에 이미지 넣기">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/20210301_update_php74_synology/" data-tooltip="Synology NAS, PHP 7.4 update 후 변경">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -343,19 +339,19 @@ $ git push
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/20191219_open_link_newtab/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/20210303_change_urls/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/20191219_open_link_newtab/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/20210303_change_urls/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/20191219_open_link_newtab/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/20210303_change_urls/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -410,7 +406,7 @@ $ git push
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/20210225_search_jira/" data-tooltip="Jira search 예제">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -418,7 +414,7 @@ $ git push
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/20191219_add_images_md/" data-tooltip="md 문서에 이미지 넣기">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/20210301_update_php74_synology/" data-tooltip="Synology NAS, PHP 7.4 update 후 변경">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -436,19 +432,19 @@ $ git push
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/20191219_open_link_newtab/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/20210303_change_urls/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/20191219_open_link_newtab/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/20210303_change_urls/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/20191219_open_link_newtab/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/20210303_change_urls/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -478,19 +474,19 @@ $ git push
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F010000.github.io%2F20191219_open_link_newtab%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F010000.github.io%2F20210303_change_urls%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2F010000.github.io%2F20191219_open_link_newtab%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2F010000.github.io%2F20210303_change_urls%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2F010000.github.io%2F20191219_open_link_newtab%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2F010000.github.io%2F20210303_change_urls%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -580,9 +576,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/010000.github.io\/20191219_open_link_newtab\/';
+          this.page.url = 'https:\/\/010000.github.io\/20210303_change_urls\/';
           
-            this.page.identifier = '\/20191219_open_link_newtab\/'
+            this.page.identifier = '\/20210303_change_urls\/'
           
         };
         (function() {
