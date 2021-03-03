@@ -288,77 +288,74 @@ if (!doNotTrack) {
 </ul>
 <h2 id="edit-fontsscss-variablesscss--rebuild-theme">Edit fonts.scss, variables.scss &amp; Rebuild theme</h2>
 <h3 id="1-_fontsscss-_variablesscss-두-파일을-아래를-참고하여-수정합니다">1. _fonts.scss, _variables.scss 두 파일을 아래를 참고하여 수정합니다</h3>
-<p>_fonts.scss 파일을 열고 마지막 라인에 구글 웹폰트를 추가합니다</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S:\Hugo\blog\themes\hugo-tranquilpeak-theme\src\scss\utils&gt; more _fonts.scss
-(...)
-@import
-    url(<span style="color:#e6db74">&#39;https://fonts.googleapis.com/css?family=Noto+Sans+KR&amp;display=swap&#39;</span>),
-    url(<span style="color:#e6db74">&#39;https://fonts.googleapis.com/css?family=IBM+Plex+Mono&amp;display=swap&#39;</span>);
-</code></pre></div><p>_variables.scss 파일을 열고 아래 내용을 참고하여 폰트를 변경 합니다</p>
+<p>_fonts.scss 파일을 열고 마지막 라인에 구글 웹폰트를 추가합니다<br>
+S:\Hugo\blog\themes\hugo-tranquilpeak-theme\src\scss\utils_fonts.scss</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>(...)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>@import
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>    url(<span style="color:#e6db74">&#39;https://fonts.googleapis.com/css?family=Noto+Sans+KR&amp;display=swap&#39;</span>),
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>    url(<span style="color:#e6db74">&#39;https://fonts.googleapis.com/css?family=IBM+Plex+Mono&amp;display=swap&#39;</span>);
+</code></pre></div><p>_variables.scss 파일을 열고 아래 내용을 참고하여 폰트를 변경 합니다<br>
+S:\Hugo\blog\themes\hugo-tranquilpeak-theme\src\scss\utils_variables.scss</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">199
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">200
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">201
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">202
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">203
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">204
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">205
-</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">206
-</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">207
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">208
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">209
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">210
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">211
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">212
-</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">213
-</span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">214
-</span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">215
-</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">216
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">217
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">218
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">219
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">220
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">221
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">222
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">223
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">224
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">225
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">226
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">227
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">228
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 0
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S:\Hugo\blog\themes\hugo-tranquilpeak-theme\src\scss\utils&gt; more _variables.scss
-
-// Global settings
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">// Global settings
 // --------------------------------------------
 // Font families
 $open-sans<span style="color:#960050;background-color:#1e0010">:</span>            <span style="color:#e6db74">&#39;Open Sans&#39;</span>;
-$open-sans-sans-serif<span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#39;Open Sans&#39;</span>, sans-serif;
-<span style="display:block;width:100%;background-color:#3c3d38">$merriweather-serif<span style="color:#960050;background-color:#1e0010">:</span>   <span style="color:#e6db74">&#39;Merriweather&#39;</span>, serif;
-</span>$menlo<span style="color:#960050;background-color:#1e0010">:</span>                 Menlo, Consolas, monospace;
-$noto-sans-kr<span style="color:#960050;background-color:#1e0010">:</span>         <span style="color:#e6db74">&#39;Noto Sans KR&#39;</span>, sans-serif;
-$ibm-plex-mono<span style="color:#960050;background-color:#1e0010">:</span>        <span style="color:#e6db74">&#39;IBM Plex Mono&#39;</span>, monospace;
-
-$font-family-base<span style="color:#960050;background-color:#1e0010">:</span> $noto-sans-kr;
-
-<span style="display:block;width:100%;background-color:#3c3d38">$font-families<span style="color:#960050;background-color:#1e0010">:</span> (
-</span><span style="display:block;width:100%;background-color:#3c3d38">   // base
-</span><span style="display:block;width:100%;background-color:#3c3d38">   <span style="color:#e6db74">&#39;headings&#39;</span><span style="color:#960050;background-color:#1e0010">:</span>          $noto-sans-kr,
-</span>   // components
-   <span style="color:#e6db74">&#39;code&#39;</span><span style="color:#960050;background-color:#1e0010">:</span>              $ibm-plex-mono,
-   <span style="color:#e6db74">&#39;caption&#39;</span><span style="color:#960050;background-color:#1e0010">:</span>           $noto-sans-kr,
-   <span style="color:#e6db74">&#39;image-gallery&#39;</span><span style="color:#960050;background-color:#1e0010">:</span>     $noto-sans-kr,
-   <span style="color:#e6db74">&#39;post-header-cover&#39;</span><span style="color:#960050;background-color:#1e0010">:</span> $noto-sans-kr,
-   <span style="color:#e6db74">&#39;post-meta&#39;</span><span style="color:#960050;background-color:#1e0010">:</span>         $noto-sans-kr,
-   <span style="color:#e6db74">&#39;post-content&#39;</span><span style="color:#960050;background-color:#1e0010">:</span>      $noto-sans-kr,
-   <span style="color:#e6db74">&#39;post-excerpt-link&#39;</span><span style="color:#960050;background-color:#1e0010">:</span> $noto-sans-kr,
-   <span style="color:#e6db74">&#39;highlight&#39;</span><span style="color:#960050;background-color:#1e0010">:</span>         $ibm-plex-mono,
-   // layout
-   <span style="color:#e6db74">&#39;sidebar&#39;</span><span style="color:#960050;background-color:#1e0010">:</span>           $noto-sans-kr
-);
-(...)
+<span style="display:block;width:100%;background-color:#3c3d38">$open-sans-sans-serif<span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#39;Open Sans&#39;</span>, sans-serif;
+</span><span style="display:block;width:100%;background-color:#3c3d38">$merriweather-serif<span style="color:#960050;background-color:#1e0010">:</span>   <span style="color:#e6db74">&#39;Merriweather&#39;</span>, serif;
+</span><span style="display:block;width:100%;background-color:#3c3d38">$menlo<span style="color:#960050;background-color:#1e0010">:</span>                 Menlo, Consolas, monospace;
+</span><span style="display:block;width:100%;background-color:#3c3d38">$noto-sans-kr<span style="color:#960050;background-color:#1e0010">:</span>         <span style="color:#e6db74">&#39;Noto Sans KR&#39;</span>, sans-serif;
+</span><span style="display:block;width:100%;background-color:#3c3d38">$ibm-plex-mono<span style="color:#960050;background-color:#1e0010">:</span>        <span style="color:#e6db74">&#39;IBM Plex Mono&#39;</span>, monospace;
+</span><span style="display:block;width:100%;background-color:#3c3d38">
+</span>$font-family-base<span style="color:#960050;background-color:#1e0010">:</span> $noto-sans-kr;
+<span style="display:block;width:100%;background-color:#3c3d38">
+</span>$font-families<span style="color:#960050;background-color:#1e0010">:</span> (
+   // base
+   <span style="color:#e6db74">&#39;headings&#39;</span><span style="color:#960050;background-color:#1e0010">:</span>          $noto-sans-kr,
+<span style="display:block;width:100%;background-color:#3c3d38">   // components
+</span><span style="display:block;width:100%;background-color:#3c3d38">   <span style="color:#e6db74">&#39;code&#39;</span><span style="color:#960050;background-color:#1e0010">:</span>              $ibm-plex-mono,
+</span><span style="display:block;width:100%;background-color:#3c3d38">   <span style="color:#e6db74">&#39;caption&#39;</span><span style="color:#960050;background-color:#1e0010">:</span>           $noto-sans-kr,
+</span><span style="display:block;width:100%;background-color:#3c3d38">   <span style="color:#e6db74">&#39;image-gallery&#39;</span><span style="color:#960050;background-color:#1e0010">:</span>     $noto-sans-kr,
+</span><span style="display:block;width:100%;background-color:#3c3d38">   <span style="color:#e6db74">&#39;post-header-cover&#39;</span><span style="color:#960050;background-color:#1e0010">:</span> $noto-sans-kr,
+</span><span style="display:block;width:100%;background-color:#3c3d38">   <span style="color:#e6db74">&#39;post-meta&#39;</span><span style="color:#960050;background-color:#1e0010">:</span>         $noto-sans-kr,
+</span><span style="display:block;width:100%;background-color:#3c3d38">   <span style="color:#e6db74">&#39;post-content&#39;</span><span style="color:#960050;background-color:#1e0010">:</span>      $noto-sans-kr,
+</span><span style="display:block;width:100%;background-color:#3c3d38">   <span style="color:#e6db74">&#39;post-excerpt-link&#39;</span><span style="color:#960050;background-color:#1e0010">:</span> $noto-sans-kr,
+</span><span style="display:block;width:100%;background-color:#3c3d38">   <span style="color:#e6db74">&#39;highlight&#39;</span><span style="color:#960050;background-color:#1e0010">:</span>         $ibm-plex-mono,
+</span><span style="display:block;width:100%;background-color:#3c3d38">   // layout
+</span><span style="display:block;width:100%;background-color:#3c3d38">   <span style="color:#e6db74">&#39;sidebar&#39;</span><span style="color:#960050;background-color:#1e0010">:</span>           $noto-sans-kr
+</span><span style="display:block;width:100%;background-color:#3c3d38">);
+</span>(...)
 </code></pre></td></tr></table>
 </div>
 </div><p>_variables.scss 파일에서 background, font color, size 등도 수정할 수 있습니다<br>
@@ -455,14 +452,25 @@ Done
 12/18/2019  10<span style="color:#960050;background-color:#1e0010">:</span>26           108,677 tranquilpeak.css
                3개 파일             304,571 바이트
                2개 디렉터리  63,016,673,280 바이트 남음
-</code></pre></div><p>head.html 을 열어서 업데이트된 style-(&hellip;).min.css 파일명으로 수정합니다</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">S:\Hugo\blog&gt; notepad layouts\partials\head.html
-(...)
+</code></pre></div><p>head.html 을 열어서 업데이트된 style-(&hellip;).min.css 파일명으로 수정합니다<br>
+S:\Hugo\blog&gt; notepad layouts\partials\head.html</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">(...)
     <span style="color:#75715e">&lt;!--STYLES--&gt;</span>
-    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/css/style-geg01wgs4obts5g7vfuj9friotgndu90dxpl4byfnmoii24z6hq3yn8g.min.css&#34;</span> /&gt;
-    <span style="color:#75715e">&lt;!--STYLES END--&gt;</span>
+<span style="display:block;width:100%;background-color:#3c3d38">    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/css/style-geg01wgs4obts5g7vfuj9friotgndu90dxpl4byfnmoii24z6hq3yn8g.min.css&#34;</span> /&gt;
+</span>    <span style="color:#75715e">&lt;!--STYLES END--&gt;</span>
 (...)
-</code></pre></div><h3 id="6-브라우저-테스트-후-git-push">6. 브라우저 테스트 후 git push</h3>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="6-브라우저-테스트-후-git-push">6. 브라우저 테스트 후 git push</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">http://localhost:1313/  
 </code></pre></div><h3 id="참고-글">참고 글</h3>
 <ul>
