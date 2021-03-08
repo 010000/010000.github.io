@@ -8,15 +8,14 @@
     <language>ko-kr</language>
     <lastBuildDate>Sun, 07 Mar 2021 21:53:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Code-server 설치와 설정 on Linux</title>
+      <title>Code-server 설치와 활용 on Linux</title>
       <link>https://010000.github.io/20210307_install_code-server_linux/</link>
       <pubDate>Sun, 07 Mar 2021 21:53:00 +0900</pubDate>
       
       <guid>https://010000.github.io/20210307_install_code-server_linux/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;VS-Code 앱 설치없이 어디에서든 브라우저에서 python 코드를 실행합니다.&lt;/li&gt;
-&lt;li&gt;필요에 따라 Cloud VM에서 실행중인 code-server로 MD문서를 작성 및 수정하고&lt;br&gt;
-find cronjob 으로 새문서를 모니터링해 자동 git push 되도록 구성할 수 있습니다. &lt;em&gt;Update: Mar 07, 2021&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;필요에 따라 Cloud VM에서 실행중인 code-server로 MD문서를 작성 및 수정하고 find cronjob 으로 새문서를 모니터링해 자동 git push 되도록 구성할 수 있습니다. &lt;em&gt;Update: Mar 07, 2021&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
     
