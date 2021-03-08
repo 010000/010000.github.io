@@ -55,6 +55,17 @@
     </item>
     
     <item>
+      <title>PHP 예제 실습 노트</title>
+      <link>https://010000.github.io/draft_20210209_php_study_note/</link>
+      <pubDate>Tue, 09 Feb 2021 08:01:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/draft_20210209_php_study_note/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;PHP 기본 예제를 실습하며 기억하기 위한 개인적인 노트 정리 &lt;em&gt;(Update: Feb 02, 2021)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
       <title>Hugo, 외부 링크를 새 창에서 열기</title>
       <link>https://010000.github.io/20191219_open_link_newtab/</link>
       <pubDate>Thu, 19 Dec 2019 10:15:18 +0900</pubDate>

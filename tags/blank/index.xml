@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>_blank on 010000 logbook</title>
-    <link>https://010000.github.io/tags/_blank/</link>
-    <description>Recent content in _blank on 010000 logbook</description>
+    <title>blank on 010000 logbook</title>
+    <link>https://010000.github.io/tags/blank/</link>
+    <description>Recent content in blank on 010000 logbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Thu, 19 Dec 2019 10:15:18 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/_blank/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 19 Dec 2019 10:15:18 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/blank/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo, 외부 링크를 새 창에서 열기</title>
       <link>https://010000.github.io/20191219_open_link_newtab/</link>

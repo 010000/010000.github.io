@@ -6,18 +6,7 @@
     <description>Recent content in markdown on 010000 logbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Thu, 19 Dec 2019 10:15:18 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Hugo, 외부 링크를 새 창에서 열기</title>
-      <link>https://010000.github.io/20191219_open_link_newtab/</link>
-      <pubDate>Thu, 19 Dec 2019 10:15:18 +0900</pubDate>
-      
-      <guid>https://010000.github.io/20191219_open_link_newtab/</guid>
-      <description>&lt;ul&gt;
-&lt;li&gt;Hugo에서 외부 링크가 target=&amp;quot;_blank&amp;quot;로 열리도록 수정하기. &lt;em&gt;(Update: Dec 19, 2019)&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    
+    <lastBuildDate>Mon, 16 Dec 2019 22:53:53 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>md 파일 생성을 위한 template 수정과 새로운 문서 생성</title>
       <link>https://010000.github.io/20191216_edit_template_new_md/</link>

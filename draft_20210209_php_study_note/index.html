@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.80.0 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="author" content="Jeffrey YM. Jo">
+<meta name="keywords" content="tech">
+<meta name="description" content="
+PHP 기본 예제를 실습하며 기억하기 위한 개인적인 노트 정리 (Update: Feb 02, 2021)
+">
+
+
+<meta property="og:description" content="
+PHP 기본 예제를 실습하며 기억하기 위한 개인적인 노트 정리 (Update: Feb 02, 2021)
+">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP 예제 실습 노트">
+<meta name="twitter:title" content="PHP 예제 실습 노트">
+<meta property="og:url" content="https://010000.github.io/draft_20210209_php_study_note/">
+<meta property="twitter:url" content="https://010000.github.io/draft_20210209_php_study_note/">
+<meta property="og:site_name" content="010000 logbook">
+<meta property="og:description" content="
+PHP 기본 예제를 실습하며 기억하기 위한 개인적인 노트 정리 (Update: Feb 02, 2021)
+">
+<meta name="twitter:description" content="
+PHP 기본 예제를 실습하며 기억하기 위한 개인적인 노트 정리 (Update: Feb 02, 2021)
+">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2021-02-09T08:01:00">
+  
+  
+    <meta property="article:modified_time" content="2021-02-09T08:01:00">
+  
+  
+  
+    
+      <meta property="article:section" content="Language">
+    
+      <meta property="article:section" content="PHP">
+    
+  
+  
+    
+      <meta property="article:tag" content="php">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://res.cloudinary.com/oloooo/image/upload/v1614951872/githubpages/netscape_wcocsw.gif">
+  <meta property="twitter:image" content="https://res.cloudinary.com/oloooo/image/upload/v1614951872/githubpages/netscape_wcocsw.gif">
+
+
+    <title>PHP 예제 실습 노트</title>
+
+    <link rel="icon" href="https://010000.github.io/favicon.ico">
+    
+
+    
+
+    <link rel="canonical" href="https://010000.github.io/draft_20210209_php_study_note/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://010000.github.io/css/style-s8xlgnopppjrvgff3zxwbooca3paivectafco2acr0hxdpldmmx7q5e8xki.min.css" />
+    
+    
+      
+        <link rel="stylesheet"  href="https://010000.github.io/css/syntax.css">
+      
+    
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-154694083-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    
+    
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.7.1/gist-embed.min.js"></script>
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="1">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://010000.github.io/">010000 logbook</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://010000.github.io/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://res.cloudinary.com/oloooo/image/upload/v1614951872/githubpages/netscape_wcocsw.gif" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="1">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://010000.github.io/#about">
+          <img class="sidebar-profile-picture" src="https://res.cloudinary.com/oloooo/image/upload/v1614951872/githubpages/netscape_wcocsw.gif" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Jeffrey YM. Jo</h4>
+        
+          <h5 class="sidebar-profile-bio">경험과 생각들을 정리하며 기억하고, 다시 찾는 시간을 아끼기 위해 모아놓는 블로그입니다.</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://010000.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://010000.github.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://010000.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-hashtag"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://010000.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://010000.github.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-address-card"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="mailto:010000c@gmail.com" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-envelope"></i>
+      
+      <span class="sidebar-button-desc">Email</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://010000.github.io/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="1"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      PHP 예제 실습 노트
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2021-02-09T08:01:00&#43;09:00">
+        
+  February 9, 2021
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://010000.github.io/categories/language">Language</a>, 
+    
+      <a class="category-link" href="https://010000.github.io/categories/php">PHP</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <ul>
+<li>PHP 기본 예제를 실습하며 기억하기 위한 개인적인 노트 정리 <em>(Update: Feb 02, 2021)</em></li>
+</ul>
+<h1 id="php-200제-실습-노트">PHP 200제 실습 노트</h1>
+<p>Update: Jan 22, 2021</p>
+<h3 id="php-문법-기본-규칙">PHP 문법 기본 규칙</h3>
+<ol>
+<li>PHP 시작과 끝
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span> <span style="color:#a6e22e">php</span>
+<span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div></li>
+<li>PHP 코드의 끝임을 명시하도록 반드시 라인마다 ; 를 붙인다.</li>
+</ol>
+<h3 id="출력">출력</h3>
+<ol>
+<li>문자 echo &lsquo;Hello&rsquo; 또는 echo &ldquo;world&rdquo;</li>
+<li>숫자 echo 1234</li>
+<li>태그 echo '&lt;br&gt;' 또는 echo &ldquo;&amp;nbsp&rdquo;</li>
+<li>echo 대신 print 문으로도 출력 된다.</li>
+<li>print 는 변수명 출력에 사용할 수 없다.</li>
+</ol>
+<h3 id="주석">주석</h3>
+<ol>
+<li>한개 라인 또는 멀티 라인
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// 한개라인
+</span><span style="color:#75715e"></span><span style="color:#75715e">/* 멀티 라인 */</span>
+</code></pre></div></li>
+</ol>
+<h3 id="변수명-사용과-규칙">변수명 사용과 규칙</h3>
+<ol>
+<li>변수명은 $문자로만 시작할 수 있다.</li>
+<li>특수문자는 _만 가능하며 -도 불가능하다.</li>
+<li>대소문자구분 포함, 일반적인 변수명 규칙과 동일하다.</li>
+<li>변수를 호출할 때
+1개의 변수만 호출이면 변수명만 쓰면 되며<br>
+1개 이상의 변수명을 호출할 때는 &quot;&quot; 또는 &lsquo;&lsquo;로 묶고 {변수명1} {변수명2}..로 한다<br>
+echo 출력문 내 변수의 값을 출력할 때는 &ldquo;&ldquo;만 가능하다
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">//echo &#34;변수명으로 출력하기&#34;;
+</span><span style="color:#75715e"></span>$a <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;안녕하세요&#34;</span>;
+$c <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1234&lt;br&gt;&#34;</span>;
+$b_ <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;. 반갑습니다&#39;</span>;
+$str <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;문자열 내 쿼테이션 표기는 </span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74"> 백슬레쉬로 시작..</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">&#34;</span>;
+$str <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;문자열 내 어퍼스트로피 표기는 \&#39; 역슬레쉬로..\&#39;&#39;</span>;
+<span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>$a<span style="color:#e6db74">}</span><span style="color:#e6db74"> </span><span style="color:#e6db74">{</span>$b_<span style="color:#e6db74">}</span><span style="color:#e6db74"> </span><span style="color:#e6db74">{</span>$c<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>;
+<span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;출력할 for문 </span><span style="color:#ae81ff">\$</span><span style="color:#e6db74">i의 값 변화는 </span><span style="color:#e6db74">{</span>$i<span style="color:#e6db74">}</span><span style="color:#e6db74"> 입니다.&lt;br&gt;&#34;</span>;   <span style="color:#75715e">//&#34;&#34;만 가능
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">echo</span> $c;
+</code></pre></div></li>
+</ol>
+<h3 id="연산자">연산자</h3>
+<ol>
+<li>
+<p>연산자<br>
+;+ sum, - minus, * mul, / division, // rest (일반적인 연산자들)</p>
+</li>
+<li>
+<p>연결 연산자<br>
+;변수명 사이를 . 풀스탑으로 문자 더하기</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$a <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;안녕하세요&#34;</span>;
+$b <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;*. 반갑습니다&#39;</span>;
+<span style="color:#66d9ef">echo</span> $a<span style="color:#f92672">.</span>$b;
+</code></pre></div></li>
+<li>
+<p>대입 연산자<br>
+; = 이퀄 연산자 외 대입 연산자들<br>
+; (변수명) += , -= , /= , %=, .=</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$num<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>; $num <span style="color:#f92672">%=</span> <span style="color:#ae81ff">3</span>; (<span style="color:#a6e22e">결과는</span> <span style="color:#ae81ff">1</span>)
+$city<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;경기&#39;</span>; $city<span style="color:#f92672">.=</span><span style="color:#e6db74">&#39;도&#39;</span>; (<span style="color:#a6e22e">결과는</span> <span style="color:#a6e22e">경기도</span>)
+</code></pre></div></li>
+<li>
+<p>증감연산자<br>
+;대입 연산자를 사용하지 않고 가감하기<br>
+;변수++, 변수&ndash;  (변수의 현재값을 반환 후 1 더하거나 빼기)<br>
+;++변수, &ndash;변수  (변수의 현재값에서 1 더하거나 빼고서 반환)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$num <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>; <span style="color:#66d9ef">echo</span> $num<span style="color:#f92672">++</span>;  (<span style="color:#a6e22e">결과는</span> <span style="color:#ae81ff">10</span><span style="color:#a6e22e">을</span> <span style="color:#a6e22e">출력</span> <span style="color:#a6e22e">후</span> <span style="color:#ae81ff">11</span><span style="color:#a6e22e">을</span> <span style="color:#a6e22e">갖게됨</span>)
+</code></pre></div></li>
+</ol>
+<h3 id="상수">상수</h3>
+<ol>
+<li>define(상수명, 상수값)</li>
+<li>상수명은 관례적으로 대문자로 쓴다</li>
+<li>변수와 다르게 상수명을 선언하거나 호출할 때도 $ 달러를 쓰지 않는다
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#a6e22e">define</span>(<span style="color:#a6e22e">A_NAME</span>,<span style="color:#e6db74">&#34;aaa&lt;br&gt;+&#34;</span>);
+<span style="color:#a6e22e">define</span>(<span style="color:#e6db74">&#39;B&#39;</span>,<span style="color:#e6db74">&#34;123&#34;</span>);
+<span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">A_NAME</span><span style="color:#f92672">.</span><span style="color:#a6e22e">B</span>;
+</code></pre></div></li>
+</ol>
+<h3 id="배열">배열</h3>
+<ol>
+<li>
+<p>변수명 = array();</p>
+</li>
+<li>
+<p>변수명[index 번호] = &lsquo;값&rsquo;;</p>
+</li>
+<li>
+<p>변수명[index 이름] = &lsquo;값&rsquo;;</p>
+</li>
+<li>
+<p>변수명 = array(&lsquo;키1&rsquo; =&gt; &lsquo;값1&rsquo;, &lsquo;키2&rsquo; =&gt; &lsquo;값2&rsquo;);</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$space <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>();
+$space[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Sun&#39;</span>;
+$space[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Earth&#39;</span>;
+$space[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Mars&#39;</span>;
+$space[<span style="color:#e6db74">&#39;nation&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Korea&#39;</span>;
+$space[<span style="color:#e6db74">&#39;code&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">82</span>;
+$space <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;city&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;Seoul&#39;</span>);
+$space <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(<span style="color:#ae81ff">3</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;Jupiter&#39;</span>, <span style="color:#ae81ff">4</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;Saturn&#39;</span>);	
+<span style="color:#75715e">//중간에 이렇게 배열 값을 넣으면 앞에 있던 $space 변수의 배열값들이 이 값으로 덮어쓰기가 된다.
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">echo</span> $space[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span><span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;
+<span style="color:#66d9ef">echo</span> $space[<span style="color:#ae81ff">4</span>]<span style="color:#f92672">.</span><span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;
+<span style="color:#66d9ef">echo</span> $space[<span style="color:#e6db74">&#39;nation&#39;</span>]<span style="color:#f92672">.</span><span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;
+<span style="color:#66d9ef">echo</span> $space[<span style="color:#e6db74">&#39;city&#39;</span>];
+</code></pre></div></li>
+<li>
+<p>다중 배열 - 배열의 인덱스나 인덱스 이름을 배열로 다시 지정하면 된다</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$double <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>();
+$double[<span style="color:#e6db74">&#39;city&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>();
+$double[<span style="color:#e6db74">&#39;city&#39;</span>][<span style="color:#e6db74">&#39;korea&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>();  <span style="color:#75715e">//인덱스이름마다 array() 선언을 해야하지만 실제 실행에서는 선언없이 새로운 인덱스나 인덱스이름이 배열로 인식됐음
+</span><span style="color:#75715e"></span>$double[<span style="color:#e6db74">&#39;city&#39;</span>][<span style="color:#e6db74">&#39;korea&#39;</span>][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Seoul&#39;</span>;
+$double[<span style="color:#e6db74">&#39;city&#39;</span>][<span style="color:#e6db74">&#39;korea&#39;</span>][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Daejeon&#39;</span>;
+$double[<span style="color:#e6db74">&#39;city&#39;</span>][<span style="color:#e6db74">&#39;korea&#39;</span>][<span style="color:#ae81ff">2</span>]	<span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Busan&#39;</span>;
+<span style="color:#66d9ef">echo</span> $double[<span style="color:#e6db74">&#39;city&#39;</span>][<span style="color:#e6db74">&#39;korea&#39;</span>][<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span><span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;	<span style="color:#75715e">//출력: Seoul
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">echo</span> $double[<span style="color:#e6db74">&#39;city&#39;</span>][<span style="color:#e6db74">&#39;korea&#39;</span>][<span style="color:#ae81ff">2</span>];			<span style="color:#75715e">//출력: Busan
+</span></code></pre></div></li>
+<li>
+<p>배열의 구조 보기 ( &lt;pre&gt; 태그를 사용해야 보기 쉽다 )<br>
+; json 포멧과 유사하게 배열이 출력된다</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;&lt;pre&gt;&#34;</span>;
+<span style="color:#a6e22e">var_dump</span>($double);
+<span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;&lt;/pre&gt;&#34;</span>;
+</code></pre></div></li>
+<li>
+<p>Array_push 배열 푸쉬, []이용한 인덱스0번부터 순차 입력,</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$city <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>();
+<span style="color:#75715e">// array_push 사용
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">array_push</span>($city, <span style="color:#e6db74">&#39;Seoul&#39;</span>, <span style="color:#e6db74">&#39;Busan&#39;</span>, <span style="color:#e6db74">&#39;Daegoo&#39;</span>, <span style="color:#e6db74">&#39;Daejeon&#39;</span>);  
+<span style="color:#75715e">// [ ] 사용
+</span><span style="color:#75715e"></span>$city <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;Seoul&#39;</span>, <span style="color:#e6db74">&#39;Busan&#39;</span>, <span style="color:#e6db74">&#39;Daegoo&#39;</span>, <span style="color:#e6db74">&#39;Daejeon&#39;</span>];            
+<span style="color:#66d9ef">echo</span> $city[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span><span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;
+<span style="color:#66d9ef">echo</span> $city[<span style="color:#ae81ff">3</span>]<span style="color:#f92672">.</span><span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;
+<span style="color:#66d9ef">echo</span> $city[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span><span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;
+<span style="color:#66d9ef">echo</span> $city[<span style="color:#ae81ff">2</span>]<span style="color:#f92672">.</span><span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;
+</code></pre></div></li>
+<li>
+<p>범위의 수 입력하기, 배열의 값의 수 count()함수,<br>
+; range() 함수를 이용하여 변수에 넣으면 배열구조로 저장된다.<br>
+; count() 함수를 이용하면 배열 변수의 값의 수를 세어준다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$city <span style="color:#f92672">=</span> <span style="color:#a6e22e">range</span>(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">20</span>);      <span style="color:#75715e">// range(시작하는 수, 끝나는 수)
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">echo</span> $city[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span><span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;       <span style="color:#75715e">//결과: 10
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">echo</span> $city[<span style="color:#ae81ff">2</span>]<span style="color:#f92672">.</span><span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;       <span style="color:#75715e">//결과: 12
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">echo</span> $city[<span style="color:#ae81ff">10</span>]<span style="color:#f92672">.</span><span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;      <span style="color:#75715e">//결과: 20
+</span><span style="color:#75715e"></span>$city <span style="color:#f92672">=</span> <span style="color:#a6e22e">range</span>(<span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">10</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">3</span>);  <span style="color:#75715e">// range(시작하는 수, 끝나는 수, 증감 수)
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">echo</span> $city[<span style="color:#ae81ff">0</span>]; <span style="color:#75715e">// 그리고 [2],[3] 의 출력: 20, 14, 11
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;배열 city의 배열 값의 수는 &#39;</span><span style="color:#f92672">.</span><span style="color:#a6e22e">count</span>($city)<span style="color:#f92672">.</span><span style="color:#e6db74">&#39; 개&lt;br&gt;&#39;</span>;  <span style="color:#75715e">//결과: 4
+</span></code></pre></div></li>
+<li>
+<p>출력 - list()함수로 배열의 인덱스 0번부터 순차적으로 값을 받아서 출력</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$city <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>();
+$city <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;Seoul&#39;</span>, <span style="color:#e6db74">&#39;Busan&#39;</span>, <span style="color:#e6db74">&#39;Daegoo&#39;</span>, <span style="color:#e6db74">&#39;Daejeon&#39;</span>];
+<span style="color:#66d9ef">list</span>($first, $second, $third, $fourth) <span style="color:#f92672">=</span> $city;
+<span style="color:#66d9ef">echo</span> $first<span style="color:#f92672">.</span><span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;     <span style="color:#75715e">//출력: Seoul
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">echo</span> $fourth<span style="color:#f92672">.</span><span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;    <span style="color:#75715e">//출력: Daejeon
+</span></code></pre></div></li>
+</ol>
+<h3 id="함수">함수</h3>
+<ol>
+<li>round()함수 - 반올림 (이유는 모르겠지만 잠깐 나옴)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">print</span> <span style="color:#a6e22e">round</span>(<span style="color:#ae81ff">1234</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);	<span style="color:#75715e">//출력: 1230
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">print</span> <span style="color:#a6e22e">round</span>(<span style="color:#ae81ff">1234</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">3</span>);	<span style="color:#75715e">//출력: 1000
+</span></code></pre></div></li>
+</ol>
+<h3 id="자료형">자료형</h3>
+<ol>
+<li>int 또는 integer, double, string, boolean, NULL, array</li>
+<li>값을 자료형을 알아보기 위한 gettype() 함수
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$city <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>();
+$city <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;Seoul&#39;</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.1</span>, <span style="color:#e6db74">&#39;2&#39;</span>, <span style="color:#66d9ef">true</span>, <span style="color:#66d9ef">NULL</span>];
+<span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">gettype</span>($city)<span style="color:#f92672">.</span><span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;         <span style="color:#75715e">//결과: array
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">gettype</span>($city[<span style="color:#ae81ff">0</span>])<span style="color:#f92672">.</span><span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;      <span style="color:#75715e">//결과: string
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">gettype</span>($city[<span style="color:#ae81ff">1</span>])<span style="color:#f92672">.</span><span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;      <span style="color:#75715e">//결과: integer
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">gettype</span>($city[<span style="color:#ae81ff">2</span>])<span style="color:#f92672">.</span><span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;      <span style="color:#75715e">//결과: double
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">gettype</span>($city[<span style="color:#ae81ff">3</span>])<span style="color:#f92672">.</span><span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;      <span style="color:#75715e">//결과: string
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">gettype</span>($city[<span style="color:#ae81ff">4</span>])<span style="color:#f92672">.</span><span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;      <span style="color:#75715e">//결과: boolean
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">gettype</span>($city[<span style="color:#ae81ff">5</span>])<span style="color:#f92672">.</span><span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;      <span style="color:#75715e">//결과: NULL
+</span></code></pre></div></li>
+<li>자료형 변환
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$city <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>();
+$city <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;Seoul 02&#39;</span>, <span style="color:#e6db74">&#39;02598 Seoul&#39;</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">10.1</span>, <span style="color:#ae81ff">5</span>, <span style="color:#66d9ef">true</span>, <span style="color:#66d9ef">false</span>, <span style="color:#66d9ef">NULL</span>];
+<span style="color:#66d9ef">echo</span> (<span style="color:#a6e22e">int</span>)$city[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span><span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;      <span style="color:#75715e">//결과: 0
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">echo</span> (<span style="color:#a6e22e">int</span>)$city[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span><span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;      <span style="color:#75715e">//결과: 2598
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">echo</span> (<span style="color:#a6e22e">int</span>)$city[<span style="color:#ae81ff">2</span>]<span style="color:#f92672">.</span><span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;      <span style="color:#75715e">//결과: -10
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">echo</span> (<span style="color:#a6e22e">double</span>)$city[<span style="color:#ae81ff">3</span>]<span style="color:#f92672">.</span><span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;   <span style="color:#75715e">//결과: 5
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">echo</span> (<span style="color:#a6e22e">str</span>)$city[<span style="color:#ae81ff">3</span>]<span style="color:#f92672">.</span><span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;  <span style="color:#75715e">// 숫자의 (str)형변환은 error
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">echo</span> (<span style="color:#a6e22e">int</span>)$city[<span style="color:#ae81ff">4</span>]<span style="color:#f92672">.</span><span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;  <span style="color:#75715e">// 결과:1, boolean의 (str)형변환은 error
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">echo</span> (<span style="color:#a6e22e">int</span>)$city[<span style="color:#ae81ff">5</span>]<span style="color:#f92672">.</span><span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;  <span style="color:#75715e">// 결과:0, boolean의 (str)형변환은 error
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">echo</span> (<span style="color:#a6e22e">int</span>)$city[<span style="color:#ae81ff">6</span>]<span style="color:#f92672">.</span><span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;	<span style="color:#75715e">// 결과:0, NULL의 (str)형변환은 error
+</span></code></pre></div></li>
+</ol>
+<h3 id="조건문과-반복문">조건문과 반복문</h3>
+<ol>
+<li>
+<p>if 조건문:  &gt;, &gt;=, &lt;, &lt;=, ==, !=, &amp;&amp; (AND조건), ||(OR조건)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$num1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+$num2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
+$num3 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;10&#39;</span>;
+
+<span style="color:#66d9ef">if</span>(($num1 <span style="color:#f92672">!=</span> $num2) <span style="color:#f92672">&amp;&amp;</span> (<span style="color:#a6e22e">gettype</span>($num1) <span style="color:#f92672">==</span> <span style="color:#a6e22e">gettype</span>($num1))) {
+    <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;자료형은 &#34;</span><span style="color:#f92672">.</span><span style="color:#a6e22e">gettype</span>($num1)<span style="color:#f92672">.</span><span style="color:#e6db74">&#34; 로 같지만, 값은 다릅니다.&#34;</span>;
+    <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;&lt;br&gt;&#34;</span>;
+    <span style="color:#75715e">//결과: 자료형은 integer 로 같지만, 값은 다릅니다.
+</span><span style="color:#75715e"></span>}
+<span style="color:#66d9ef">if</span>(($num1 <span style="color:#f92672">!=</span> $num2) <span style="color:#f92672">||</span> (<span style="color:#a6e22e">gettype</span>($num2) <span style="color:#f92672">!=</span> <span style="color:#a6e22e">gettype</span>($num3))) {
+    <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;값 또는 자료형은 &#34;</span><span style="color:#f92672">.</span><span style="color:#a6e22e">gettype</span>($num3)<span style="color:#f92672">.</span><span style="color:#e6db74">&#34;와 &#34;</span><span style="color:#f92672">.</span><span style="color:#a6e22e">gettype</span>($num2)<span style="color:#f92672">.</span><span style="color:#e6db74">&#34; 로 다릅니다.&#34;</span>;
+    <span style="color:#75715e">//결과: 값 또는 자료형은 string와 integer 로 다릅니다.
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>if else / else if 조건문 - 참, 거짓 조건으로 실행
+-참: true와 1을 포함한 이상의 값,<br>
+-거짓: false, 0, null</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$num1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+$num2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
+$num3 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;10&#39;</span>;
+   
+<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">gettype</span>($num1) <span style="color:#f92672">==</span> <span style="color:#a6e22e">gettype</span>($num3)) {
+    <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;네. 자료형이 같습니다.&#34;</span>;
+} <span style="color:#66d9ef">else</span> {
+    <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;아니요. 자료형이 &#34;</span><span style="color:#f92672">.</span> <span style="color:#a6e22e">gettype</span>($num3)<span style="color:#f92672">.</span><span style="color:#e6db74">&#34; 으로 다릅니다.&#34;</span>;
+    <span style="color:#75715e">//결과: 아니요. 자료형이 string 으로 다릅니다.
+</span><span style="color:#75715e"></span>}
+<span style="color:#75715e">// else if 를 더 사용한 조건문
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">gettype</span>($num1) <span style="color:#f92672">==</span> <span style="color:#a6e22e">gettype</span>($num3)) {
+    <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;네. 자료형이 같습니다.&#34;</span>;
+} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">gettype</span>($num1) <span style="color:#f92672">!=</span> <span style="color:#a6e22e">gettype</span>($num2)) {
+    <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;네. 자료형이 다릅니다.&#34;</span>;	
+} <span style="color:#66d9ef">else</span> {
+    <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;num1과 num3은 자료형이 다르고, num1과 num2 같은 자료형이지만 값이 다릅니다.&#34;</span>;
+    <span style="color:#75715e">//결과는 마지막 else 조건의 echo 문자열
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>switch 조건문 - 여러개의 조건으로 실행</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$city <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>();
+$city <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;Seoul&#39;</span>, <span style="color:#e6db74">&#39;Busan&#39;</span>, <span style="color:#e6db74">&#39;Daejeon&#39;</span>, <span style="color:#e6db74">&#39;02589&#39;</span>];
+   
+<span style="color:#66d9ef">switch</span> ($city[<span style="color:#ae81ff">3</span>]) {
+    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;Seoul&#39;</span><span style="color:#f92672">:</span>
+        <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;서울&#34;</span>;
+        <span style="color:#66d9ef">break</span>;
+           
+    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;02589&#39;</span><span style="color:#f92672">:</span>
+        <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;자료형은 &#39;</span><span style="color:#f92672">.</span><span style="color:#a6e22e">gettype</span>($city[<span style="color:#ae81ff">3</span>]);
+        <span style="color:#66d9ef">break</span>;
+           
+    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;Busan&#39;</span><span style="color:#f92672">:</span>
+        <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;부산&#34;</span>;
+        <span style="color:#66d9ef">break</span>;
+           
+    <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
+        <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;어느 것도 해당안되어 대전&#34;</span>;
+        <span style="color:#66d9ef">break</span>;
+    <span style="color:#75715e">// 배열의 값이 case 없다면 default 값이 출력
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// break 가 없으며 case에 맞는(true) 이후 모두 실행된다.
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>if 조건문의 else 문에 switch 조건문을 함께 사용</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$city <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>();
+$city <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;Seoul&#39;</span>, <span style="color:#e6db74">&#39;Busan&#39;</span>, <span style="color:#e6db74">&#39;Daejeon&#39;</span>, <span style="color:#e6db74">&#39;02589&#39;</span>, <span style="color:#ae81ff">2589</span>];
+<span style="color:#75715e">// !!참고!! 정수값은 0으로 시작하면 error
+</span><span style="color:#75715e"></span>   
+<span style="color:#66d9ef">if</span> ($city[<span style="color:#ae81ff">3</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">2500</span>) {
+    <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;두 값은 같습니다&#34;</span>;
+} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">switch</span> ($city[<span style="color:#ae81ff">3</span>]) {	<span style="color:#75715e">// else문에서 switch 조건문 실행
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;Seoul&#39;</span><span style="color:#f92672">:</span>
+        <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;서울&#34;</span>;
+        <span style="color:#66d9ef">break</span>;
+           
+    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;02589&#39;</span><span style="color:#f92672">:</span>
+        <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;값은 &#39;</span><span style="color:#f92672">.</span>$city[<span style="color:#ae81ff">3</span>]<span style="color:#f92672">.</span><span style="color:#e6db74">&#39;, 자료형은 &#39;</span><span style="color:#f92672">.</span><span style="color:#a6e22e">gettype</span>($city[<span style="color:#ae81ff">3</span>]);
+        <span style="color:#66d9ef">break</span>;
+           
+    <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
+        <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;어느 것도 해당안되어 대전&#34;</span>;
+        <span style="color:#66d9ef">break</span>;
+    <span style="color:#75715e">// 결과: 값은 02589, 자료형은 string
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>switch 문의 case 문에도 조건 가능. 여러개의 조건에서는 if문 보다 효과적이다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$age <span style="color:#f92672">=</span> <span style="color:#ae81ff">24</span>;	<span style="color:#75715e">//정수값은 0으로 시작하면 error
+</span><span style="color:#75715e"></span>   
+<span style="color:#66d9ef">switch</span> ($age) {
+    <span style="color:#66d9ef">case</span> ($age <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">&amp;&amp;</span> $age <span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">19</span>)<span style="color:#f92672">:</span>
+        <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;10대&#34;</span>;
+        <span style="color:#66d9ef">break</span>;
+    <span style="color:#66d9ef">case</span> ($age <span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">20</span> <span style="color:#f92672">&amp;&amp;</span> $age <span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">29</span>)<span style="color:#f92672">:</span>
+        <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;20대&#34;</span>;
+        <span style="color:#66d9ef">break</span>;
+    <span style="color:#66d9ef">case</span> ($age <span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">30</span> <span style="color:#f92672">&amp;&amp;</span> $age <span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">39</span>)<span style="color:#f92672">:</span>
+        <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;30대&#34;</span>;
+        <span style="color:#66d9ef">break</span>;
+}
+</code></pre></div></li>
+<li>
+<p>for 반복문<br>
+규칙: for (초기값, 조건식, 증감식) {실행문}</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">for</span> ($i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $i <span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">10</span>; $i<span style="color:#f92672">++</span>) {   <span style="color:#75715e">//구분자가 ,가 아니고 ; 입니다
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">echo</span> $i<span style="color:#f92672">.</span><span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;
+    }
+   
+</code></pre></div><p>짝수들의 합을 구하는 반복 조건문</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$sum <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+<span style="color:#66d9ef">for</span> ($i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $i <span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">10</span>; $i<span style="color:#f92672">++</span>) {
+    <span style="color:#66d9ef">if</span> ($i <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) {
+        <span style="color:#75715e">// $sum = $i + $i;  //착각주의. 출력: 20 (순서 0 4 8 12 16 20) 
+</span><span style="color:#75715e"></span>        $sum <span style="color:#f92672">+=</span> $i;			<span style="color:#75715e">//출력: 30 (순서 0 2 6 12 20)
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">echo</span> $sum<span style="color:#f92672">.</span><span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;
+    }
+}
+<span style="color:#66d9ef">echo</span> $sum;
+</code></pre></div><p>반복문에서 break 로 중지하기와 생략하기 continue;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">for</span> ($i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; $i <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">20</span>; $i<span style="color:#f92672">++</span>) {
+    <span style="color:#75715e">// if ($i &gt; 10) {  //break 조건문이 있다면 결과: 1, 3, 5, 7, 9,
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//  break;
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// } 
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> ($i <span style="color:#f92672">%</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) {
+        <span style="color:#66d9ef">continue</span>;   <span style="color:#75715e">//짝수는 생략하고 다음 $i++ 값에서 반복문 실행
+</span><span style="color:#75715e"></span>    }
+    <span style="color:#66d9ef">echo</span> $i<span style="color:#f92672">.</span><span style="color:#e6db74">&#39;, &#39;</span>;	<span style="color:#75715e">//결과: 1, 3, 5, 7, 9, 11, 13, 15, 17, 19,
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>이중 for문을 이용한 구구단 (2~3단)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">for</span> ($i <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>; $i <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">3</span>; $i<span style="color:#f92672">++</span>) {
+<span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;구구단 </span><span style="color:#e6db74">{</span>$i<span style="color:#e6db74">}</span><span style="color:#e6db74"> 단&lt;br&gt;&#34;</span>;
+   
+<span style="color:#66d9ef">for</span> ($j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; $j <span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">9</span>; $j<span style="color:#f92672">++</span>) {	<span style="color:#75715e">// $j =9 조건이면 9값에서 무한 반복
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>$i<span style="color:#e6db74">}</span><span style="color:#e6db74"> * </span><span style="color:#e6db74">{</span>$j<span style="color:#e6db74">}</span><span style="color:#e6db74"> = &#34;</span><span style="color:#f92672">.</span>$i<span style="color:#f92672">*</span>$j<span style="color:#f92672">.</span><span style="color:#e6db74">&#34;&lt;br&gt;&#34;</span>;
+}
+<span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;&lt;br&gt;&#34;</span>;
+}
+</code></pre></div></li>
+</ol>
+<p>// 2/9, 33장 foreach()문 보는 중에 수민이 나옴&hellip;</p>
+<h2 id="-코드---httpside-rungoormioworkspacec-devphplanguagekor">&mdash; 2/6일 끝 &mdash;
+-코드&ndash; <a href="https://ide-run.goorm.io/workspace/C-DevPHP?language=kor">https://ide-run.goorm.io/workspace/C-DevPHP?language=kor</a></h2>
+<h2 id="-실행---httpsc-devphp-rtnaqrungoormioc-devphp">-실행&ndash; <a href="https://c-devphp-rtnaq.run.goorm.io/C-DevPHP/">https://c-devphp-rtnaq.run.goorm.io/C-DevPHP/</a></h2>
+<p>구름 폰트 키우기 CMD + =키</p>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/php/">php</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/20210225_search_jira/" data-tooltip="Jira search 예제">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/20191219_open_link_newtab/" data-tooltip="Hugo, 외부 링크를 새 창에서 열기">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/draft_20210209_php_study_note/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/draft_20210209_php_study_note/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/draft_20210209_php_study_note/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+
+              
+            
+          </div>
+        </article>
+
+	<script src="https://utteranc.es/client.js"
+      	  repo="010000/blog-comments"
+       	 issue-term="pathname"
+       	 theme="github-light"
+       	 crossorigin="anonymous"
+       	 async>
+	</script>
+
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2021 <a href="https://github.com/010000">010000 Logbook</a>. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="1">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/20210225_search_jira/" data-tooltip="Jira search 예제">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/20191219_open_link_newtab/" data-tooltip="Hugo, 외부 링크를 새 창에서 열기">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/draft_20210209_php_study_note/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/draft_20210209_php_study_note/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/draft_20210209_php_study_note/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="1">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F010000.github.io%2Fdraft_20210209_php_study_note%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2F010000.github.io%2Fdraft_20210209_php_study_note%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2F010000.github.io%2Fdraft_20210209_php_study_note%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://res.cloudinary.com/oloooo/image/upload/v1614951872/githubpages/netscape_wcocsw.gif" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Jeffrey YM. Jo</h4>
+    
+      <div id="about-card-bio">경험과 생각들을 정리하며 기억하고, 다시 찾는 시간을 아끼기 위해 모아놓는 블로그입니다.</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Public
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        South Korea
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    <div id="cover" style="background-image:url('https://res.cloudinary.com/oloooo/image/upload/v1614216485/githubpages/cover_2560px_oemeya.jpg');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://010000.github.io/js/script-n8mqrxp8rsufxtye69p9ch2uxowamnju45qdhlzy3r6bzgixdxhhwaa9zgxf.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/010000.github.io\/draft_20210209_php_study_note\/';
+          
+            this.page.identifier = '\/draft_20210209_php_study_note\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = '010000';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+
