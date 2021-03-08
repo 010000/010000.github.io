@@ -355,14 +355,15 @@ USER1@ ~<span style="color:#f92672">]</span>$ pip --version
 pip 9.0.3 from /usr/lib/python3.6/site-packages <span style="color:#f92672">(</span>python 3.6<span style="color:#f92672">)</span>
 
 USER1@ ~<span style="color:#f92672">]</span>$ cd download
-USER1@ ~<span style="color:#f92672">]</span>$ curl -fOL https://github.com/microsoft/vscode-python/releases/download/2020.5.86806/ms-python-release.vsix
+USER1@ download<span style="color:#f92672">]</span>$ curl -fOL https://github.com/microsoft/vscode-python/releases/download/2020.5.86806/ms-python-release.vsix
+
 USER1@ download<span style="color:#f92672">]</span>$ sudo code-server --install-extension ms-python-release.vsix
 
 USER1@ ~<span style="color:#f92672">]</span>$ sudo cp -a /root/.local/share/code-server/extensions/ms-python.python-2020.5.86806 /home/USER1/.local/share/code-server/extensions/
 
-USER1@ extensions<span style="color:#f92672">]</span>$ sudo chown USER1:USER1 -R /home/USER1/.local/share/code-server/
+USER1@ ~<span style="color:#f92672">]</span>$ sudo chown USER1:USER1 -R /home/USER1/.local/share/code-server/
 
-USER1@ extensions<span style="color:#f92672">]</span>$ python /home/USER1/.local/share/code-server/extensions/ms-python.python-2020.5.86806/pythonFiles/pyvsc-run-isolated.py pip install -U pylint --user
+USER1@ ~<span style="color:#f92672">]</span>$ python /home/USER1/.local/share/code-server/extensions/ms-python.python-2020.5.86806/pythonFiles/pyvsc-run-isolated.py pip install -U pylint --user
 
 </code></pre></div><p>4-3. extension 설치, 제거의 반복으로 남은 파일을 수동 삭제할 경우</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ rm -rf /home/USER1/.local/share/code-server/extensions/*
