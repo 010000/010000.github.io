@@ -9,32 +9,36 @@
 <meta name="author" content="Jeffrey YM. Jo">
 <meta name="keywords" content="tech">
 <meta name="description" content="
-Hugo에서 외부 링크가 target=&quot;_blank&quot;로 열리도록 수정하기. (Update: Dec 19, 2019)
+Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인 및 설치합니다
+Hugo 설명과 윈도우즈 환경설정(path) 과정은 생략했습니다. (Update: Dec 14, 2019)
 ">
 
 
 <meta property="og:description" content="
-Hugo에서 외부 링크가 target=&quot;_blank&quot;로 열리도록 수정하기. (Update: Dec 19, 2019)
+Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인 및 설치합니다
+Hugo 설명과 윈도우즈 환경설정(path) 과정은 생략했습니다. (Update: Dec 14, 2019)
 ">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hugo, 외부 링크를 새 창에서 열기">
-<meta name="twitter:title" content="Hugo, 외부 링크를 새 창에서 열기">
-<meta property="og:url" content="https://010000.github.io/20191219_open_link_newtab/">
-<meta property="twitter:url" content="https://010000.github.io/20191219_open_link_newtab/">
+<meta property="og:title" content="Windows 환경에서 Hugo 설치하기">
+<meta name="twitter:title" content="Windows 환경에서 Hugo 설치하기">
+<meta property="og:url" content="https://010000.github.io/post/20191214_install_hugo_windows/">
+<meta property="twitter:url" content="https://010000.github.io/post/20191214_install_hugo_windows/">
 <meta property="og:site_name" content="010000 logbook">
 <meta property="og:description" content="
-Hugo에서 외부 링크가 target=&quot;_blank&quot;로 열리도록 수정하기. (Update: Dec 19, 2019)
+Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인 및 설치합니다
+Hugo 설명과 윈도우즈 환경설정(path) 과정은 생략했습니다. (Update: Dec 14, 2019)
 ">
 <meta name="twitter:description" content="
-Hugo에서 외부 링크가 target=&quot;_blank&quot;로 열리도록 수정하기. (Update: Dec 19, 2019)
+Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인 및 설치합니다
+Hugo 설명과 윈도우즈 환경설정(path) 과정은 생략했습니다. (Update: Dec 14, 2019)
 ">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2019-12-19T10:15:18">
+    <meta property="article:published_time" content="2019-12-14T13:55:00">
   
   
-    <meta property="article:modified_time" content="2019-12-19T10:15:18">
+    <meta property="article:modified_time" content="2019-12-14T13:55:00">
   
   
   
@@ -44,7 +48,9 @@ Hugo에서 외부 링크가 target=&quot;_blank&quot;로 열리도록 수정하�
   
   
     
-      <meta property="article:tag" content="blank">
+      <meta property="article:tag" content="hugo">
+    
+      <meta property="article:tag" content="install">
     
   
 
@@ -65,14 +71,14 @@ Hugo에서 외부 링크가 target=&quot;_blank&quot;로 열리도록 수정하�
   <meta property="twitter:image" content="https://res.cloudinary.com/oloooo/image/upload/v1614951872/githubpages/netscape_wcocsw.gif">
 
 
-    <title>Hugo, 외부 링크를 새 창에서 열기</title>
+    <title>Windows 환경에서 Hugo 설치하기</title>
 
     <link rel="icon" href="https://010000.github.io/favicon.ico">
     
 
     
 
-    <link rel="canonical" href="https://010000.github.io/20191219_open_link_newtab/">
+    <link rel="canonical" href="https://010000.github.io/post/20191214_install_hugo_windows/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -241,15 +247,15 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      Hugo, 외부 링크를 새 창에서 열기
+      Windows 환경에서 Hugo 설치하기
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2019-12-19T10:15:18&#43;09:00">
+      <time itemprop="datePublished" datetime="2019-12-14T13:55:00&#43;09:00">
         
-  December 19, 2019
+  December 14, 2019
 
       </time>
     
@@ -269,26 +275,69 @@ if (!doNotTrack) {
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
               <ul>
-<li>Hugo에서 외부 링크가 target=&quot;_blank&quot;로 열리도록 수정하기. <em>(Update: Dec 19, 2019)</em></li>
+<li>Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인 및 설치합니다</li>
+<li>Hugo 설명과 윈도우즈 환경설정(path) 과정은 생략했습니다. <em>(Update: Dec 14, 2019)</em></li>
 </ul>
-<h2 id="configurations">Configurations</h2>
+<h2 id="configuration">Configuration</h2>
 <ul>
-<li>OS: CentOS</li>
+<li>OS: Windows 10 (x64)</li>
+<li>Browser: Google Chrome</li>
+<li>Hugo: v0.61.0 (windows/amd64 BuildDate: 2019-12-11T08:29:13Z)</li>
 <li>Hugo theme: hugo-tranquilpeak-theme (0.4.7-BETA)</li>
 </ul>
-<h3 id="1-render-linkhtml-파일을-생성하고-아래-코드를-넣습니다">1. render-link.html 파일을 생성하고 아래 코드를 넣습니다.</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cat <span style="color:#f92672">{</span>Blog<span style="color:#f92672">}</span>/layouts/_default/_markup/render-link.html
-
- &lt;a href<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ .Destination | safeURL }}&#34;</span><span style="color:#f92672">{{</span> with .Title<span style="color:#f92672">}}</span> title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ . }}&#34;</span><span style="color:#f92672">{{</span> end <span style="color:#f92672">}}{{</span> <span style="color:#66d9ef">if</span> strings.HasPrefix .Destination <span style="color:#e6db74">&#34;http&#34;</span> <span style="color:#f92672">}}</span> target<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;_blank&#34;</span> rel<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;noopener&#34;</span><span style="color:#f92672">{{</span> end <span style="color:#f92672">}}</span>&gt;<span style="color:#f92672">{{</span> .Text | safeHTML <span style="color:#f92672">}}</span>&lt;/a&gt;
-</code></pre></div><h3 id="2-페이지-재-생성-후-git-push">2. 페이지 재 생성 후 git push.</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ hugo -t <span style="color:#f92672">{</span>theme name<span style="color:#f92672">}</span> 
-$    <span style="color:#f92672">(</span>...<span style="color:#f92672">)</span> 
-$ git push
-</code></pre></div><h3 id="참고-글">참고 글</h3>
-<ul>
-<li><a href="https://gohugo.io/getting-started/configuration-markup#link-with-title-markdown-example-" target="_blank" rel="noopener">Hugo - Configure Markup</a>
-</li>
-</ul>
+<h2 id="install-go-git-and-hugo">Install Go, Git and Hugo</h2>
+<ol>
+<li>
+<p>Install Go lang</p>
+<p>Download: <a href="https://golang.org/dl/" target="_blank" rel="noopener">golang.org</a>
+<br>
+File: go1.13.5.windows-amd64.msi</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">C:\&gt; go version
+go version go 1.13.5 windows/amd64
+</code></pre></div></li>
+<li>
+<p>Install Git</p>
+<p>Download: <a href="https://gitforwindows.org/" target="_blank" rel="noopener">gitforwindows.org</a>
+<br>
+File: Git-2.24.1.2-64-bit.exe<br>
+;1번 Go lang 과 Git 설치가 되면 아래 3번 hugo.exe가 있는 /Hugo/bin 폴더를 포함하여<br>
+어느 경로에서든 실행될 수 있도록 Windows 환경설정 path에 등록해줍니다</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">C:\&gt; git version
+git version 2.24.1.windows.2
+</code></pre></div></li>
+<li>
+<p>Install Hugo</p>
+<p>Download: <a href="https://github.com/gohugoio/hugo/releases">https://github.com/gohugoio/hugo/releases</a><br>
+File: hugo_0.61.0_Windows-64bit.zip</p>
+<p>Step.1: Unzip the hugo_zip file in \Hugo\bin folder<br>
+*{Local drive}\Hugo\bin<br>
+;bin 폴더를 만들어서 압축을 풀어도 되고, Hugo/ 폴더 아래 hugo_zip 압축 파일을 풀고 bin으로 rename 해도 됩니다</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">C:\&gt; dir s:\Hugo\bin
+12/13/2019  00<span style="color:#960050;background-color:#1e0010">:</span>10    &lt;DIR&gt;          .
+12/13/2019  00<span style="color:#960050;background-color:#1e0010">:</span>10    &lt;DIR&gt;          ..
+12/11/2019  17<span style="color:#960050;background-color:#1e0010">:</span>30        41,070,080 hugo.exe
+12/11/2019  17<span style="color:#960050;background-color:#1e0010">:</span>15            11,357 LICENSE
+12/11/2019  17<span style="color:#960050;background-color:#1e0010">:</span>15            11,227 README.md
+   
+C:\&gt;hugo version
+Hugo Static Site Generator v0.61.0-9B445B9D windows/amd64 BuildDate<span style="color:#960050;background-color:#1e0010">:</span> 2019-12-11T08<span style="color:#960050;background-color:#1e0010">:</span>29<span style="color:#960050;background-color:#1e0010">:</span>13Z
+</code></pre></div></li>
+<li>
+<p>Create new site<br>
+;Hugo 테마와 작성된 글, 이미지 등의 Local 저장소 위치로 blog 란 이름의 폴더를 생성했습니다<br>
+;blog 폴더는 {id}.github.io 로 시작하는 url 상에 노출되는 경로가 아닙니다</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S:\Hugo&gt; hugo new site blog
+Congratulations! Your new Hugo site is created <span style="color:#66d9ef">in</span> S:\Hugo\blog.
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S:\Hugo&gt; dir
+   
+12/13/2019  11<span style="color:#960050;background-color:#1e0010">:</span>04    &lt;DIR&gt;          .
+12/13/2019  11<span style="color:#960050;background-color:#1e0010">:</span>04    &lt;DIR&gt;          ..
+12/13/2019  00<span style="color:#960050;background-color:#1e0010">:</span>10    &lt;DIR&gt;          bin
+12/13/2019  14<span style="color:#960050;background-color:#1e0010">:</span>36    &lt;DIR&gt;          blog
+               1개 파일         120,885,701 바이트
+            6개 디렉터리  63,021,146,112 바이트 남음
+</code></pre></div></li>
+</ol>
               
             </div>
           </div>
@@ -300,7 +349,9 @@ $ git push
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">TAGGED IN</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/blank/">blank</a>
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/hugo/">hugo</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/install/">install</a>
 
                   </div>
                 
@@ -313,7 +364,7 @@ $ git push
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/draft_20210209_php_study_note/" data-tooltip="PHP 예제 실습 노트">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/post/20191214_install_hugo_tranquilpeak_theme_windows/" data-tooltip="Windows 환경에서 Hugo theme 설치하기">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -321,7 +372,7 @@ $ git push
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/20191219_add_images_md/" data-tooltip="md 문서에 이미지 넣기">
+                <a class="post-action-btn btn btn--disabled">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -339,19 +390,19 @@ $ git push
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/20191219_open_link_newtab/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/post/20191214_install_hugo_windows/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/20191219_open_link_newtab/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/post/20191214_install_hugo_windows/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/20191219_open_link_newtab/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/post/20191214_install_hugo_windows/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -406,7 +457,7 @@ $ git push
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/draft_20210209_php_study_note/" data-tooltip="PHP 예제 실습 노트">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/post/20191214_install_hugo_tranquilpeak_theme_windows/" data-tooltip="Windows 환경에서 Hugo theme 설치하기">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -414,7 +465,7 @@ $ git push
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/20191219_add_images_md/" data-tooltip="md 문서에 이미지 넣기">
+                <a class="post-action-btn btn btn--disabled">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -432,19 +483,19 @@ $ git push
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/20191219_open_link_newtab/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/post/20191214_install_hugo_windows/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/20191219_open_link_newtab/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/post/20191214_install_hugo_windows/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/20191219_open_link_newtab/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/post/20191214_install_hugo_windows/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -474,19 +525,19 @@ $ git push
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F010000.github.io%2F20191219_open_link_newtab%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F010000.github.io%2Fpost%2F20191214_install_hugo_windows%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2F010000.github.io%2F20191219_open_link_newtab%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2F010000.github.io%2Fpost%2F20191214_install_hugo_windows%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2F010000.github.io%2F20191219_open_link_newtab%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2F010000.github.io%2Fpost%2F20191214_install_hugo_windows%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -576,9 +627,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/010000.github.io\/20191219_open_link_newtab\/';
+          this.page.url = 'https:\/\/010000.github.io\/post\/20191214_install_hugo_windows\/';
           
-            this.page.identifier = '\/20191219_open_link_newtab\/'
+            this.page.identifier = '\/post\/20191214_install_hugo_windows\/'
           
         };
         (function() {

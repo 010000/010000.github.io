@@ -9,32 +9,32 @@
 <meta name="author" content="Jeffrey YM. Jo">
 <meta name="keywords" content="tech">
 <meta name="description" content="
-Windows  OS에서 Hugo / hugo-tranquilpeak-theme 테마를 설치합니다. (Update: Dec 15, 2019)
+.md 문서가 생성될 때 사용되는 template을 수정하고 테스트 글을 작성합니다. (Update: Dec 16, 2019)
 ">
 
 
 <meta property="og:description" content="
-Windows  OS에서 Hugo / hugo-tranquilpeak-theme 테마를 설치합니다. (Update: Dec 15, 2019)
+.md 문서가 생성될 때 사용되는 template을 수정하고 테스트 글을 작성합니다. (Update: Dec 16, 2019)
 ">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Windows 환경에서 Hugo theme 설치하기">
-<meta name="twitter:title" content="Windows 환경에서 Hugo theme 설치하기">
-<meta property="og:url" content="https://010000.github.io/20191214_install_hugo_tranquilpeak_theme_windows/">
-<meta property="twitter:url" content="https://010000.github.io/20191214_install_hugo_tranquilpeak_theme_windows/">
+<meta property="og:title" content="md 파일 생성을 위한 template 수정과 새로운 문서 생성">
+<meta name="twitter:title" content="md 파일 생성을 위한 template 수정과 새로운 문서 생성">
+<meta property="og:url" content="https://010000.github.io/post/20191216_edit_template_new_md/">
+<meta property="twitter:url" content="https://010000.github.io/post/20191216_edit_template_new_md/">
 <meta property="og:site_name" content="010000 logbook">
 <meta property="og:description" content="
-Windows  OS에서 Hugo / hugo-tranquilpeak-theme 테마를 설치합니다. (Update: Dec 15, 2019)
+.md 문서가 생성될 때 사용되는 template을 수정하고 테스트 글을 작성합니다. (Update: Dec 16, 2019)
 ">
 <meta name="twitter:description" content="
-Windows  OS에서 Hugo / hugo-tranquilpeak-theme 테마를 설치합니다. (Update: Dec 15, 2019)
+.md 문서가 생성될 때 사용되는 template을 수정하고 테스트 글을 작성합니다. (Update: Dec 16, 2019)
 ">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2019-12-15T23:58:15">
+    <meta property="article:published_time" content="2019-12-16T22:53:53">
   
   
-    <meta property="article:modified_time" content="2019-12-15T23:58:15">
+    <meta property="article:modified_time" content="2019-12-16T22:53:53">
   
   
   
@@ -44,9 +44,9 @@ Windows  OS에서 Hugo / hugo-tranquilpeak-theme 테마를 설치합니다. (Upd
   
   
     
-      <meta property="article:tag" content="install">
+      <meta property="article:tag" content="template">
     
-      <meta property="article:tag" content="hugo-tranquilpeak-theme">
+      <meta property="article:tag" content="markdown">
     
   
 
@@ -67,14 +67,14 @@ Windows  OS에서 Hugo / hugo-tranquilpeak-theme 테마를 설치합니다. (Upd
   <meta property="twitter:image" content="https://res.cloudinary.com/oloooo/image/upload/v1614951872/githubpages/netscape_wcocsw.gif">
 
 
-    <title>Windows 환경에서 Hugo theme 설치하기</title>
+    <title>md 파일 생성을 위한 template 수정과 새로운 문서 생성</title>
 
     <link rel="icon" href="https://010000.github.io/favicon.ico">
     
 
     
 
-    <link rel="canonical" href="https://010000.github.io/20191214_install_hugo_tranquilpeak_theme_windows/">
+    <link rel="canonical" href="https://010000.github.io/post/20191216_edit_template_new_md/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -243,15 +243,15 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      Windows 환경에서 Hugo theme 설치하기
+      md 파일 생성을 위한 template 수정과 새로운 문서 생성
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2019-12-15T23:58:15&#43;09:00">
+      <time itemprop="datePublished" datetime="2019-12-16T22:53:53&#43;09:00">
         
-  December 15, 2019
+  December 16, 2019
 
       </time>
     
@@ -271,55 +271,61 @@ if (!doNotTrack) {
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
               <ul>
-<li>Windows  OS에서 Hugo / hugo-tranquilpeak-theme 테마를 설치합니다. <em>(Update: Dec 15, 2019)</em></li>
+<li>.md 문서가 생성될 때 사용되는 template을 수정하고 테스트 글을 작성합니다. <em>(Update: Dec 16, 2019)</em></li>
 </ul>
-<h2 id="configuration">Configuration</h2>
+<h2 id="configurations">Configurations</h2>
 <ul>
 <li>OS: Windows 10 (x64)</li>
 <li>Browser: Google Chrome</li>
-<li>Hugo: v0.61.0 (windows/amd64 BuildDate: 2019-12-11T08:29:13Z)</li>
+<li>Hugo: v0.61.0</li>
 <li>Hugo theme: hugo-tranquilpeak-theme (0.4.7-BETA)</li>
 </ul>
-<h2 id="install-hugo-theme">Install Hugo theme</h2>
-<ol>
-<li>
-<p>Install Hugo theme, hugo-tranquilpeak-theme</p>
-<p>Git clone: <a href="https://github.com/kakawait/hugo-tranquilpeak-theme.git" target="_blank" rel="noopener">hugo-tranquilpeak-theme.git</a>
-</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S:\Hugo\blog&gt; cd themes
-S:\Hugo\blog\themes&gt; git clone https<span style="color:#960050;background-color:#1e0010">:</span>//github.com/kakawait/hugo-tranquilpeak-theme.git
-Cloning into <span style="color:#e6db74">&#39;hugo-tranquilpeak-theme&#39;</span>...
-remote<span style="color:#960050;background-color:#1e0010">:</span> Enumerating objects<span style="color:#960050;background-color:#1e0010">:</span> 5026, done.
-remote<span style="color:#960050;background-color:#1e0010">:</span> Total 5026 (delta 0), reused 0 (delta 0), pack-reused 5026
-Receiving objects<span style="color:#960050;background-color:#1e0010">:</span> 100% (5026/5026), 17.10 MiB | 1.28 MiB/s, done.
-Resolving deltas<span style="color:#960050;background-color:#1e0010">:</span> 100% (2721/2721), done.
-Updating files<span style="color:#960050;background-color:#1e0010">:</span> 100% (197/197), done.
-</code></pre></div></li>
-<li>
-<p>Copy &amp; edit config.toml file</p>
-<p>; Hugo\blog\theme 폴더 하위에서 example file(config.toml) 을 Hugo\blog 로 복사하여 수정합니다<br>
-*need to edit the languageCode for Korean</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S:\Hugo\blog&gt;cp themes\hugo-tranquilpeak-theme\exampleSite\config.toml config.toml
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S:\Hugo\blog&gt; more config.toml
+<h2 id="edit-template-defaultmd--compose-the-new-document">Edit template, default.md &amp; compose the new document</h2>
+<h3 id="1--hugo-new-filenamemd-파일을-생성할-때-참조되는-template을-수정합니다">1.  Hugo new {filename}.md 파일을 생성할 때 참조되는 template을 수정합니다</h3>
+<p>; 아래 default.md 내용을 그대로 사용해도 되고 필요한 것만 선택하여 작성해도 됩니다<br>
+수정 파일: \Hugo\blog\archetypes\default.md<br>
+참조 파일: \Hugo\blog\themes\hugo-tranquilpeak-theme\archetypes\post.md</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"> S:\Hugo\blog&gt; more archetypes\<span style="color:#66d9ef">default</span>.md
+ ---
+ title<span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;{{ replace .TranslationBaseName &#34;</span>-<span style="color:#e6db74">&#34; &#34;</span> <span style="color:#e6db74">&#34; | title }}&#34;</span>
+ date<span style="color:#960050;background-color:#1e0010">:</span> {{ .Date }}
+ draft<span style="color:#960050;background-color:#1e0010">:</span> true
+ categories<span style="color:#960050;background-color:#1e0010">:</span>
+ - category
+ - subcategory
+ tags<span style="color:#960050;background-color:#1e0010">:</span>
+ - tag1
+ - tag2
+ keywords<span style="color:#960050;background-color:#1e0010">:</span>
+ - tech
+ <span style="color:#75715e">#thumbnailImage: //example.com/image.jpg</span>
+ ---
+ 
+ &lt;!--more--&gt;
+</code></pre></div><h3 id="2-hugo-new-filenamemd--또는-기존-md-파일-복사해서-작성하는-방법">2. Hugo new {filename}.md  또는 기존 md 파일 복사해서 작성하는 방법</h3>
+<p>2.1. hugo new 로 template 를 이용해 새로운 md 파일을 생성하고 작성할 수 있습니다<br>
+md 파일의 위치는 blog\content 폴더로, 초안이 아닌 공개할 문서는 하위 post 폴더에 작성하면 됩니다<br>
+비공개와 같은 (작성중)초안 문서를 draft 폴더로 분류하는 경우도 볼 수 있지만 md 파일내 &lsquo;draft: true&rsquo; 로 명시되어 있으면 그 md 문서는 public 폴더에 반영되지 않습는다</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S:\Hugo\blog&gt; hugo new post/test1.md
+Hugo\blog\content\post\test1.md created
+</code></pre></div><p>2.2. blog\content 폴더 내 기존 md파일을 복사, 수정하여 사용해도 됩니다<br>
+단, 파일명은 중복되면 안되며, md 파일 내 생성시간을 원하는 값으로 바꾸면 됩니다</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S:\Hugo\blog\content\post&gt; cp test1.md test2.md
+S:\Hugo\blog\content\post&gt; notepad test2.md
 (...)
-baseURL = <span style="color:#e6db74">&#34;https://010000.github.io/&#34;</span>
-languageCode = <span style="color:#e6db74">&#34;ko-kr&#34;</span>
-defaultContentLanguage = <span style="color:#e6db74">&#34;en-us&#34;</span>
-title = <span style="color:#e6db74">&#34;010000 logbook&#34;</span>
-theme = <span style="color:#e6db74">&#34;hugo-tranquilpeak-theme&#34;</span>
-disqusShortname = <span style="color:#e6db74">&#34;010000&#34;</span>
-<span style="color:#75715e"># googleAnalytics = &#34;UA-123-45&#34;</span>
-paginate = 7
-canonifyurls = true
+title<span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;Editing template and Posting first&#34;</span>
+date<span style="color:#960050;background-color:#1e0010">:</span> 2019-12-16T00<span style="color:#960050;background-color:#1e0010">:</span>03<span style="color:#960050;background-color:#1e0010">:</span>15+09<span style="color:#960050;background-color:#1e0010">:</span>00
+draft<span style="color:#960050;background-color:#1e0010">:</span> true
 (...)
-</code></pre></div></li>
-<li>
-<p>Run hugo on local drive</p>
+</code></pre></div><p>2.3. hugo 의 문서 삭제는 content 폴더와 html로 변환 저장된 public 폴더에서 파일을 삭제하면 됩니다</p>
+<p>2.4. notepad와 같은 편집기로 md 파일을 저장할 때 인코딩을 반드시 UTF-8 로 저장해야 합니다<br>
+흔히 메모장 앱에서 옵션 변경없이 저장되는 ANSI 일 경우 html 변환시 오류가 발생됩니다</p>
+<h3 id="3-run-hugo-on-local">3. Run hugo on local</h3>
 <p>; hugo server -D<br>
 *display also draft documents with -D option</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">s:\Hugo\blog&gt; hugo server -D
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">s:\0_GithubPages\Hugo\blog&gt; hugo server -D
 Building sites <span style="color:#960050;background-color:#1e0010">…</span> WARNING<span style="color:#960050;background-color:#1e0010">:</span> calling IsSet with unsupported type <span style="color:#e6db74">&#34;string&#34;</span> (string) will always <span style="color:#66d9ef">return</span> false.
-   
+
                    | EN-US
 +------------------+-------+
   Pages            |    48
@@ -330,7 +336,7 @@ Building sites <span style="color:#960050;background-color:#1e0010">…</span> W
   Aliases          |    17
   Sitemaps         |     1
   Cleaned          |     0
-   
+
 Built <span style="color:#66d9ef">in</span> 207 ms
 Watching <span style="color:#66d9ef">for</span> changes <span style="color:#66d9ef">in</span> s:\Hugo\blog\{archetypes,content,data,layouts,static,themes}
 Watching <span style="color:#66d9ef">for</span> config changes <span style="color:#66d9ef">in</span> s:\Hugo\blog\config.toml
@@ -339,13 +345,9 @@ Serving pages from memory
 Running <span style="color:#66d9ef">in</span> Fast Render Mode. <span style="color:#66d9ef">For</span> full rebuilds on change<span style="color:#960050;background-color:#1e0010">:</span> hugo server --disableFastRender
 Web Server is available at http<span style="color:#960050;background-color:#1e0010">:</span>//localhost<span style="color:#960050;background-color:#1e0010">:</span>1313/ (bind address 127.0.0.1)
 Press Ctrl+C to stop
-</code></pre></div></li>
-<li>
-<p>브라우저에서 확인</p>
+</code></pre></div><h3 id="4-브라우저에서-확인">4. 브라우저에서 확인</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">http://localhost:1313/
-</code></pre></div><p>​</p>
-</li>
-</ol>
+</code></pre></div>
               
             </div>
           </div>
@@ -357,9 +359,9 @@ Press Ctrl+C to stop
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">TAGGED IN</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/install/">install</a>
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/template/">template</a>
 
-  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/hugo-tranquilpeak-theme/">hugo-tranquilpeak-theme</a>
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/markdown/">markdown</a>
 
                   </div>
                 
@@ -372,7 +374,7 @@ Press Ctrl+C to stop
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/20191216_edit_template_new_md/" data-tooltip="md 파일 생성을 위한 template 수정과 새로운 문서 생성">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/post/20191216_gen_pages_git_push/" data-tooltip="Web page 생성과 Github upload">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -380,7 +382,7 @@ Press Ctrl+C to stop
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/20191214_install_hugo_windows/" data-tooltip="Windows 환경에서 Hugo 설치하기">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/post/20191214_install_hugo_tranquilpeak_theme_windows/" data-tooltip="Windows 환경에서 Hugo theme 설치하기">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -398,19 +400,19 @@ Press Ctrl+C to stop
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/20191214_install_hugo_tranquilpeak_theme_windows/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/post/20191216_edit_template_new_md/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/20191214_install_hugo_tranquilpeak_theme_windows/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/post/20191216_edit_template_new_md/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/20191214_install_hugo_tranquilpeak_theme_windows/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/post/20191216_edit_template_new_md/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -465,7 +467,7 @@ Press Ctrl+C to stop
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/20191216_edit_template_new_md/" data-tooltip="md 파일 생성을 위한 template 수정과 새로운 문서 생성">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/post/20191216_gen_pages_git_push/" data-tooltip="Web page 생성과 Github upload">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -473,7 +475,7 @@ Press Ctrl+C to stop
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/20191214_install_hugo_windows/" data-tooltip="Windows 환경에서 Hugo 설치하기">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/post/20191214_install_hugo_tranquilpeak_theme_windows/" data-tooltip="Windows 환경에서 Hugo theme 설치하기">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -491,19 +493,19 @@ Press Ctrl+C to stop
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/20191214_install_hugo_tranquilpeak_theme_windows/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/post/20191216_edit_template_new_md/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/20191214_install_hugo_tranquilpeak_theme_windows/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/post/20191216_edit_template_new_md/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/20191214_install_hugo_tranquilpeak_theme_windows/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/post/20191216_edit_template_new_md/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -533,19 +535,19 @@ Press Ctrl+C to stop
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F010000.github.io%2F20191214_install_hugo_tranquilpeak_theme_windows%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F010000.github.io%2Fpost%2F20191216_edit_template_new_md%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2F010000.github.io%2F20191214_install_hugo_tranquilpeak_theme_windows%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2F010000.github.io%2Fpost%2F20191216_edit_template_new_md%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2F010000.github.io%2F20191214_install_hugo_tranquilpeak_theme_windows%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2F010000.github.io%2Fpost%2F20191216_edit_template_new_md%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -635,9 +637,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/010000.github.io\/20191214_install_hugo_tranquilpeak_theme_windows\/';
+          this.page.url = 'https:\/\/010000.github.io\/post\/20191216_edit_template_new_md\/';
           
-            this.page.identifier = '\/20191214_install_hugo_tranquilpeak_theme_windows\/'
+            this.page.identifier = '\/post\/20191216_edit_template_new_md\/'
           
         };
         (function() {

@@ -9,10 +9,10 @@
     <lastBuildDate>Mon, 01 Mar 2021 20:45:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/php7/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Synology NAS, PHP 7.4 update 후 변경</title>
-      <link>https://010000.github.io/20210301_update_php74_synology/</link>
+      <link>https://010000.github.io/post/20210301_update_php74_synology/</link>
       <pubDate>Mon, 01 Mar 2021 20:45:00 +0900</pubDate>
       
-      <guid>https://010000.github.io/20210301_update_php74_synology/</guid>
+      <guid>https://010000.github.io/post/20210301_update_php74_synology/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;Synology DS216+, PHP 5.6 에서 7.4로 적용&lt;/li&gt;
 &lt;li&gt;Wordpress, phpMyadmin 7.4 적용을 위한 수정 &lt;em&gt;(Update: Mar 01, 2021)&lt;/em&gt;&lt;/li&gt;
