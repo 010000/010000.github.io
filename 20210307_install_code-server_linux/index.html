@@ -9,42 +9,48 @@
 <meta name="author" content="Jeffrey YM. Jo">
 <meta name="keywords" content="tech">
 <meta name="description" content="
-URL을 md 문서내 title(한글)에서 파일명으로 변경하기. Update: Mar 03, 2021
+Linux OS 환경에서 code-server 설치와 설정
+VS Code 앱에서와 같이 선호하는 font를 설치하고 python 코드를 실행합니다. Update: Mar 07, 2021
 ">
 
 
 <meta property="og:description" content="
-URL을 md 문서내 title(한글)에서 파일명으로 변경하기. Update: Mar 03, 2021
+Linux OS 환경에서 code-server 설치와 설정
+VS Code 앱에서와 같이 선호하는 font를 설치하고 python 코드를 실행합니다. Update: Mar 07, 2021
 ">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hugo, url을 title에서 파일명 등 다른 타입으로 변경하기">
-<meta name="twitter:title" content="Hugo, url을 title에서 파일명 등 다른 타입으로 변경하기">
-<meta property="og:url" content="https://010000.github.io/20210303_change_urls/">
-<meta property="twitter:url" content="https://010000.github.io/20210303_change_urls/">
+<meta property="og:title" content="Code-server 설치와 설정 on Linux">
+<meta name="twitter:title" content="Code-server 설치와 설정 on Linux">
+<meta property="og:url" content="https://010000.github.io/20210307_install_code-server_linux/">
+<meta property="twitter:url" content="https://010000.github.io/20210307_install_code-server_linux/">
 <meta property="og:site_name" content="010000 logbook">
 <meta property="og:description" content="
-URL을 md 문서내 title(한글)에서 파일명으로 변경하기. Update: Mar 03, 2021
+Linux OS 환경에서 code-server 설치와 설정
+VS Code 앱에서와 같이 선호하는 font를 설치하고 python 코드를 실행합니다. Update: Mar 07, 2021
 ">
 <meta name="twitter:description" content="
-URL을 md 문서내 title(한글)에서 파일명으로 변경하기. Update: Mar 03, 2021
+Linux OS 환경에서 code-server 설치와 설정
+VS Code 앱에서와 같이 선호하는 font를 설치하고 python 코드를 실행합니다. Update: Mar 07, 2021
 ">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2021-03-03T22:47:00">
+    <meta property="article:published_time" content="2021-03-07T21:53:00">
   
   
-    <meta property="article:modified_time" content="2021-03-03T22:47:00">
+    <meta property="article:modified_time" content="2021-03-07T21:53:00">
   
-  
-  
-    
-      <meta property="article:section" content="Blog w/Hugo">
-    
   
   
     
-      <meta property="article:tag" content="urls">
+      <meta property="article:section" content="Software">
+    
+  
+  
+    
+      <meta property="article:tag" content="code-server">
+    
+      <meta property="article:tag" content="linux">
     
   
 
@@ -65,14 +71,14 @@ URL을 md 문서내 title(한글)에서 파일명으로 변경하기. Update: Ma
   <meta property="twitter:image" content="https://res.cloudinary.com/oloooo/image/upload/v1614951872/githubpages/netscape_wcocsw.gif">
 
 
-    <title>Hugo, url을 title에서 파일명 등 다른 타입으로 변경하기</title>
+    <title>Code-server 설치와 설정 on Linux</title>
 
     <link rel="icon" href="https://010000.github.io/favicon.ico">
     
 
     
 
-    <link rel="canonical" href="https://010000.github.io/20210303_change_urls/">
+    <link rel="canonical" href="https://010000.github.io/20210307_install_code-server_linux/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -241,15 +247,15 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      Hugo, url을 title에서 파일명 등 다른 타입으로 변경하기
+      Code-server 설치와 설정 on Linux
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2021-03-03T22:47:00&#43;09:00">
+      <time itemprop="datePublished" datetime="2021-03-07T21:53:00&#43;09:00">
         
-  March 3, 2021
+  March 7, 2021
 
       </time>
     
@@ -258,7 +264,7 @@ if (!doNotTrack) {
   
     <span>in</span>
     
-      <a class="category-link" href="https://010000.github.io/categories/blog-w/hugo">Blog w/Hugo</a>
+      <a class="category-link" href="https://010000.github.io/categories/software">Software</a>
     
   
 
@@ -269,26 +275,111 @@ if (!doNotTrack) {
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
               <ul>
-<li>URL을 md 문서내 title(한글)에서 파일명으로 변경하기. <em>Update: Mar 03, 2021</em></li>
+<li>Linux OS 환경에서 code-server 설치와 설정</li>
+<li>VS Code 앱에서와 같이 선호하는 font를 설치하고 python 코드를 실행합니다. <em>Update: Mar 07, 2021</em></li>
 </ul>
-<h3 id="configtom-에서-참고-링크를-확인하여-원하는-url-타입으로-변경하면-됩니다">config.tom 에서 참고 링크를 확인하여 원하는 url 타입으로 변경하면 됩니다.</h3>
+<h3 id="환경-구성">환경 구성</h3>
 <ul>
-<li>
-<p>변경할 파일 {Blog}/config.toml</p>
-</li>
-<li>
-<p>config.toml은 사용중인 {Blog}/thmes/ 하위에 theme sample에 따라 다를 수 있습니다.</p>
-<p>e.g. md 확장자만 빠진 파일명으로 url 생성하기</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>permalinks<span style="color:#f92672">]</span>
-변경 전: post <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/:year/:month/:slug/&#34;</span>
-변경 후: post <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/:filename/&#34;</span>
-</code></pre></div></li>
+<li>OS: CentOS 8.3.2011 (on Oracle cloud VM)</li>
+<li>Code-server: 3.9.0-amd64.rpm</li>
+<li>Python: v3.6.8</li>
 </ul>
-<p>참고 글:</p>
-<ul>
-<li><a href="https://gohugo.io/content-management/urls/" target="_blank" rel="noopener">URL Management</a>
+<h3 id="1-code-server-설치와-실행">1. Code-server 설치와 실행</h3>
+<p>Download: <a href="https://github.com/cdr/code-server/releases" target="_blank" rel="noopener">code-server</a>
+</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ pwd ; id -un
+/home/USER1
+USER1
+
+USER1@ ~<span style="color:#f92672">]</span>$ mkdir download ;cd download
+
+USER1@ ~<span style="color:#f92672">]</span>$ curl -fOL https://github.com/cdr/code-server/releases/download/v3.9.0/code-server-3.9.0-amd64.rpm
+
+USER1@ ~<span style="color:#f92672">]</span>$ sudo rpm -ivh ./code-server-3.9.0-amd64.rpm
+</code></pre></div><p>(Ubuntu 참고용)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ curl -fOL https://github.com/cdr/code-server/releases/download/v3.9.0/code-server_3.9.0_amd64.deb
+$ sudo dpkg -i code-server_3.9.0_amd64.deb
+</code></pre></div><p>; 사용자 id를 그냥 입력해도 되지만 사용자마다 다르기에 id를 찾아서 실행하는 것으로 했습니다.<br>
+; 개인적인 편의에 따라 .bashrc에 alias 추가로 간단히 사용</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ CURRENTUSER<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>id -un<span style="color:#e6db74">`</span> ; sudo systemctl start code-server@$CURRENTUSER
+
+USER1@ ~<span style="color:#f92672">]</span>$ CURRENTUSER<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>id -un<span style="color:#e6db74">`</span> ; sudo systemctl stop code-server@$CURRENTUSER
+
+USER1@ ~<span style="color:#f92672">]</span>$ CURRENTUSER<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>id -un<span style="color:#e6db74">`</span> ; sudo systemctl status code-server@$CURRENTUSER
+
+USER1@ ~<span style="color:#f92672">]</span>$ CURRENTUSER<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>id -un<span style="color:#e6db74">`</span> ; sudo systemctl enable code-server@$CURRENTUSER
+</code></pre></div><h3 id="2-code-server-암호-설정">2. Code-server 암호 설정</h3>
+<p>;pasword 와 함께 기본 localhost에서 어디에서든 접근할 수 있도록 bind address 수정</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ vi /home/USER1/.config/code-server/config.yaml
+
+<span style="color:#f92672">[</span>변경 전<span style="color:#f92672">]</span>
+bind-addr: 127.0.0.1:8080
+auth: password
+password: a999b6d198687e7064f9c451
+cert: false
+
+<span style="color:#f92672">[</span>변경 후<span style="color:#f92672">]</span>
+bind-addr: 0.0.0.0:8080
+auth: password
+password: $myNewPassword
+cert: false
+</code></pre></div><h3 id="3-폰트-추가">3. 폰트 추가</h3>
+<p>; 개인적으로 선호하는 bitstream-vera-sans 폰트 추가 설치<br>
+; code-server 로그인 후 settings - font 에서 &lsquo;Bitstream Vera Sans Mono&rsquo;, monospace 로 변경</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ download<span style="color:#f92672">]</span>$ curl -fOL https://li.nux.ro/download/nux/dextop/el7/x86_64/bitstream-vera-sans-fonts-1.10-19.el7.nux.noarch.rpm
+
+USER1@ download<span style="color:#f92672">]</span>$ curl -fOL https://li.nux.ro/download/nux/dextop/el7/x86_64/bitstream-vera-fonts-common-1.10-19.el7.nux.noarch.rpm
+
+USER1@ download<span style="color:#f92672">]</span>$ sudo rpm -ivh bitstream*.rpm
+
+USER1@ download<span style="color:#f92672">]</span>$ sudo mkfontscale <span style="color:#f92672">&amp;&amp;</span> mkfontdir <span style="color:#f92672">&amp;&amp;</span> fc-cache -fv
+</code></pre></div><p>(Ubuntu 참고용)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo apt install ttf-mscorefonts-installer ttf-bitstream-vera
+$ sudo apt install fontconfig
+$ sudo mkfontscale <span style="color:#f92672">&amp;&amp;</span> mkfontdir <span style="color:#f92672">&amp;&amp;</span> fc-cache -fv
+</code></pre></div><h3 id="4-python-실행-환경-구성">4. python 실행 환경 구성</h3>
+<p>;code-server 에서 python 코드 실행시 아래 오류를 보게되면 ms-python.python-2020.5.86806 extension 설치로 해결 가능합니다. 아래 2가지 방법 중 하나로 적용</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Command <span style="color:#e6db74">&#39;Python: Select Interpreter&#39;</span> resulted in an error <span style="color:#f92672">(</span>command <span style="color:#e6db74">&#39;python.setInterpreter&#39;</span> not found<span style="color:#f92672">)</span>
+</code></pre></div><p>4-1. code-server 로그인 후 extensions 에서 설치 후 변경하는 방법</p>
+<ol>
+<li>왼쪽 메뉴에 extensions 선택, python 검색 후 설치</li>
+<li>설치가 완료되면 설치된 python 의 다른 버전 설치로 2020.5.86806 버전으로 변경 설치<br>
+<a href="https://hoing.io/archives/4615" target="_blank" rel="noopener">참고 글</a>
 </li>
-</ul>
+</ol>
+<p>4-2. extensions 파일을 다운받아 설치하는 방법</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ python --version
+Python 3.6.8
+
+USER1@ ~<span style="color:#f92672">]</span>$ pip --version
+pip 9.0.3 from /usr/lib/python3.6/site-packages <span style="color:#f92672">(</span>python 3.6<span style="color:#f92672">)</span>
+
+USER1@ ~<span style="color:#f92672">]</span>$ cd download
+USER1@ ~<span style="color:#f92672">]</span>$ curl -fOL https://github.com/microsoft/vscode-python/releases/download/2020.5.86806/ms-python-release.vsix
+USER1@ download<span style="color:#f92672">]</span>$ sudo code-server --install-extension ms-python-release.vsix
+
+USER1@ ~<span style="color:#f92672">]</span>$ sudo cp -a /root/.local/share/code-server/extensions/ms-python.python-2020.5.86806 /home/USER1/.local/share/code-server/extensions/
+
+USER1@ extensions<span style="color:#f92672">]</span>$ sudo chown USER1:USER1 -R /home/USER1/.local/share/code-server/
+
+USER1@ extensions<span style="color:#f92672">]</span>$ python /home/USER1/.local/share/code-server/extensions/ms-python.python-2020.5.86806/pythonFiles/pyvsc-run-isolated.py pip install -U pylint --user
+
+</code></pre></div><p>4-3. extension 설치, 제거의 반복으로 남은 파일을 수동 삭제할 경우</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ rm -rf /home/USER1/.local/share/code-server/extensions/*
+USER1@ ~<span style="color:#f92672">]</span>$ rm -rf /home/USER1/.local/lib/python3.6/site-packages/*
+</code></pre></div><h3 id="5-python-실행-결과를-terminal이-아닌-debug-console에-출력하기">5. python 실행 결과를 terminal이 아닌 debug console에 출력하기</h3>
+<p><a href="https://code.visualstudio.com/docs/python/debugging" target="_blank" rel="noopener">Python debug configurations in Visual Studio Code</a>
+ 를 참고하여 왼쪽 세로 메뉴의 Run and Debug 에서 바로 아래 &lsquo;create a launch.json file&rsquo; 링크를 클릭하여 파일을 생성 후 수정.</p>
+<p>launch.json 생성 위치 참고</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ find /home/USER1/* -name launch.json
+/home/USER1/workspace/python/.vscode/launch.json
+
+<span style="color:#f92672">[</span>변경 전<span style="color:#f92672">]</span>  
+<span style="color:#e6db74">&#34;console&#34;</span>: <span style="color:#e6db74">&#34;integratedTerminal&#34;</span>
+
+<span style="color:#f92672">[</span>변경 후<span style="color:#f92672">]</span>  
+<span style="color:#e6db74">&#34;console&#34;</span>: <span style="color:#e6db74">&#34;internalConsole&#34;</span>
+</code></pre></div><p>-끝-</p>
               
             </div>
           </div>
@@ -300,7 +391,9 @@ if (!doNotTrack) {
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">TAGGED IN</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/urls/">urls</a>
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/code-server/">code-server</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/linux/">linux</a>
 
                   </div>
                 
@@ -313,7 +406,7 @@ if (!doNotTrack) {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/20210307_install_code-server_linux/" data-tooltip="Code-server 설치와 설정 on Linux">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -321,7 +414,7 @@ if (!doNotTrack) {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/20210301_update_php74_synology/" data-tooltip="Synology NAS, PHP 7.4 update 후 변경">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/20210303_change_urls/" data-tooltip="Hugo, url을 title에서 파일명 등 다른 타입으로 변경하기">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -339,19 +432,19 @@ if (!doNotTrack) {
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/20210303_change_urls/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/20210307_install_code-server_linux/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/20210303_change_urls/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/20210307_install_code-server_linux/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/20210303_change_urls/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/20210307_install_code-server_linux/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -406,7 +499,7 @@ if (!doNotTrack) {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/20210307_install_code-server_linux/" data-tooltip="Code-server 설치와 설정 on Linux">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -414,7 +507,7 @@ if (!doNotTrack) {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/20210301_update_php74_synology/" data-tooltip="Synology NAS, PHP 7.4 update 후 변경">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/20210303_change_urls/" data-tooltip="Hugo, url을 title에서 파일명 등 다른 타입으로 변경하기">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -432,19 +525,19 @@ if (!doNotTrack) {
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/20210303_change_urls/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/20210307_install_code-server_linux/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/20210303_change_urls/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/20210307_install_code-server_linux/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/20210303_change_urls/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/20210307_install_code-server_linux/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -474,19 +567,19 @@ if (!doNotTrack) {
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F010000.github.io%2F20210303_change_urls%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F010000.github.io%2F20210307_install_code-server_linux%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2F010000.github.io%2F20210303_change_urls%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2F010000.github.io%2F20210307_install_code-server_linux%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2F010000.github.io%2F20210303_change_urls%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2F010000.github.io%2F20210307_install_code-server_linux%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -576,9 +669,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/010000.github.io\/20210303_change_urls\/';
+          this.page.url = 'https:\/\/010000.github.io\/20210307_install_code-server_linux\/';
           
-            this.page.identifier = '\/20210303_change_urls\/'
+            this.page.identifier = '\/20210307_install_code-server_linux\/'
           
         };
         (function() {
