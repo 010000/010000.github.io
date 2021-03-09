@@ -178,6 +178,11 @@
   </url>
   
   <url>
+    <loc>https://010000.github.io/categories/markdown/</loc>
+    <lastmod>2019-12-19T10:13:18+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://010000.github.io/tags/markdown/</loc>
     <lastmod>2019-12-19T10:13:18+09:00</lastmod>
   </url>
@@ -267,11 +272,7 @@
   </url>
   
   <url>
-    <loc>https://010000.github.io/categories/blog-w/hugo/</loc>
-  </url>
-  
-  <url>
-    <loc>https://010000.github.io/categories/blog-w/markdown/</loc>
+    <loc>https://010000.github.io/categories/blog_w/hugo/</loc>
   </url>
   
 </urlset>
