@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>window on 010000 logbook</title>
+    <link>https://010000.github.io/tags/window/</link>
+    <description>Recent content in window on 010000 logbook</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Thu, 19 Dec 2019 10:15:18 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/window/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo, 외부 링크를 새 창에서 열기</title>
+      <link>https://010000.github.io/post/20191219_open_link_newtab/</link>
+      <pubDate>Thu, 19 Dec 2019 10:15:18 +0900</pubDate>
+      
+      <guid>https://010000.github.io/post/20191219_open_link_newtab/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;Hugo에서 외부 링크가 target=&amp;quot;_blank&amp;quot;로 열리도록 수정하기. &lt;em&gt;(Update: Dec 19, 2019)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

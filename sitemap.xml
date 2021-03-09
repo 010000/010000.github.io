@@ -13,12 +13,22 @@
   </url>
   
   <url>
+    <loc>https://010000.github.io/tags/code/</loc>
+    <lastmod>2021-03-07T21:53:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://010000.github.io/tags/code-server/</loc>
     <lastmod>2021-03-07T21:53:00+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://010000.github.io/post/20210307_install_code-server_linux/</loc>
+    <lastmod>2021-03-07T21:53:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://010000.github.io/tags/install/</loc>
     <lastmod>2021-03-07T21:53:00+09:00</lastmod>
   </url>
   
@@ -33,6 +43,11 @@
   </url>
   
   <url>
+    <loc>https://010000.github.io/tags/server/</loc>
+    <lastmod>2021-03-07T21:53:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://010000.github.io/categories/software/</loc>
     <lastmod>2021-03-07T21:53:00+09:00</lastmod>
   </url>
@@ -43,17 +58,42 @@
   </url>
   
   <url>
+    <loc>https://010000.github.io/tags/change/</loc>
+    <lastmod>2021-03-03T22:47:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://010000.github.io/tags/hugo/</loc>
+    <lastmod>2021-03-03T22:47:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://010000.github.io/post/20210303_change_urls/</loc>
     <lastmod>2021-03-03T22:47:00+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://010000.github.io/tags/urls/</loc>
+    <loc>https://010000.github.io/tags/url/</loc>
     <lastmod>2021-03-03T22:47:00+09:00</lastmod>
   </url>
   
   <url>
+    <loc>https://010000.github.io/tags/apply/</loc>
+    <lastmod>2021-03-01T20:45:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://010000.github.io/tags/nas/</loc>
+    <lastmod>2021-03-01T20:45:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://010000.github.io/tags/php7/</loc>
+    <lastmod>2021-03-01T20:45:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://010000.github.io/tags/phpmyadmin/</loc>
     <lastmod>2021-03-01T20:45:00+09:00</lastmod>
   </url>
   
@@ -73,6 +113,11 @@
   </url>
   
   <url>
+    <loc>https://010000.github.io/tags/example/</loc>
+    <lastmod>2021-02-25T14:57:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://010000.github.io/tags/jira/</loc>
     <lastmod>2021-02-25T14:57:00+09:00</lastmod>
   </url>
@@ -88,7 +133,17 @@
   </url>
   
   <url>
+    <loc>https://010000.github.io/tags/syntax/</loc>
+    <lastmod>2021-02-25T14:57:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://010000.github.io/tags/blank/</loc>
+    <lastmod>2019-12-19T10:15:18+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://010000.github.io/tags/href/</loc>
     <lastmod>2019-12-19T10:15:18+09:00</lastmod>
   </url>
   
@@ -98,7 +153,27 @@
   </url>
   
   <url>
-    <loc>https://010000.github.io/tags/images/</loc>
+    <loc>https://010000.github.io/tags/new/</loc>
+    <lastmod>2019-12-19T10:15:18+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://010000.github.io/tags/tab/</loc>
+    <lastmod>2019-12-19T10:15:18+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://010000.github.io/tags/window/</loc>
+    <lastmod>2019-12-19T10:15:18+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://010000.github.io/tags/image/</loc>
+    <lastmod>2019-12-19T10:13:18+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://010000.github.io/tags/insert/</loc>
     <lastmod>2019-12-19T10:13:18+09:00</lastmod>
   </url>
   
@@ -108,8 +183,23 @@
   </url>
   
   <url>
+    <loc>https://010000.github.io/tags/markdown/</loc>
+    <lastmod>2019-12-19T10:13:18+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://010000.github.io/post/20191219_add_images_md/</loc>
     <lastmod>2019-12-19T10:13:18+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://010000.github.io/tags/color/</loc>
+    <lastmod>2019-12-19T10:10:18+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://010000.github.io/tags/edit/</loc>
+    <lastmod>2019-12-19T10:10:18+09:00</lastmod>
   </url>
   
   <url>
@@ -128,18 +218,28 @@
   </url>
   
   <url>
+    <loc>https://010000.github.io/tags/theme/</loc>
+    <lastmod>2019-12-19T10:10:18+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://010000.github.io/tags/git/</loc>
+    <lastmod>2019-12-16T23:05:05+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://010000.github.io/tags/md/</loc>
+    <lastmod>2019-12-16T23:05:05+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://010000.github.io/tags/upload/</loc>
     <lastmod>2019-12-16T23:05:05+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://010000.github.io/post/20191216_gen_pages_git_push/</loc>
     <lastmod>2019-12-16T23:05:05+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://010000.github.io/tags/markdown/</loc>
-    <lastmod>2019-12-16T22:53:53+09:00</lastmod>
   </url>
   
   <url>
@@ -153,18 +253,13 @@
   </url>
   
   <url>
-    <loc>https://010000.github.io/tags/install/</loc>
+    <loc>https://010000.github.io/tags/windows/</loc>
     <lastmod>2019-12-15T23:58:15+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://010000.github.io/post/20191214_install_hugo_tranquilpeak_theme_windows/</loc>
     <lastmod>2019-12-15T23:58:15+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://010000.github.io/tags/hugo/</loc>
-    <lastmod>2019-12-14T13:55:00+09:00</lastmod>
   </url>
   
   <url>

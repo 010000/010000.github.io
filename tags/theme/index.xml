@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>theme on 010000 logbook</title>
+    <link>https://010000.github.io/tags/theme/</link>
+    <description>Recent content in theme on 010000 logbook</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Thu, 19 Dec 2019 10:10:18 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/theme/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Font 와 Highlight color 수정 후 theme rebuild</title>
+      <link>https://010000.github.io/post/20191219_chane_font_theme/</link>
+      <pubDate>Thu, 19 Dec 2019 10:10:18 +0900</pubDate>
+      
+      <guid>https://010000.github.io/post/20191219_chane_font_theme/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;Hugo / hugo-tranquilpeak-theme 테마의 font를 변경합니다.&lt;/li&gt;
+&lt;li&gt;수정한 값을 적용하기 위해 테마 rebuild 과정이 포함되어 있습니다. &lt;em&gt;(Update: Dec 19, 2019)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Windows 환경에서 Hugo theme 설치하기</title>
+      <link>https://010000.github.io/post/20191214_install_hugo_tranquilpeak_theme_windows/</link>
+      <pubDate>Sun, 15 Dec 2019 23:58:15 +0900</pubDate>
+      
+      <guid>https://010000.github.io/post/20191214_install_hugo_tranquilpeak_theme_windows/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;Windows  OS에서 Hugo / hugo-tranquilpeak-theme 테마를 설치합니다. &lt;em&gt;(Update: Dec 15, 2019)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
