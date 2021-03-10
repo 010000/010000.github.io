@@ -378,7 +378,26 @@ USER1@ ~<span style="color:#f92672">]</span>$ rm -rf /home/USER1/.local/lib/pyth
 
 <span style="color:#f92672">[</span>변경 후<span style="color:#f92672">]</span>  
 <span style="color:#e6db74">&#34;console&#34;</span>: <span style="color:#e6db74">&#34;internalConsole&#34;</span>
-</code></pre></div><p>-끝-</p>
+</code></pre></div><h3 id="6-로그인-페이지의-설정-파일-위치-숨기기">6. 로그인 페이지의 설정 파일 위치 숨기기</h3>
+<p>;로그인 화면에 아래처럼 config.yaml 경로가 불필요하게 보여 삭제해줍니다</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Welcome to code-server
+Please log in below. Check the config file at ~/.config/code-server/config.yaml for the password.
+</code></pre></div><p>; 27번 라인에 <del>{{PASSWORD_MSG}}</del> 삭제</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;header&#34;</span>&gt;
+   &lt;<span style="color:#f92672">h1</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;main&#34;</span>&gt;Welcome to code-server&lt;/<span style="color:#f92672">h1</span>&gt;
+<span style="display:block;width:100%;background-color:#3c3d38">   &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sub&#34;</span>&gt;Please log in below. {{PASSWORD_MSG}}&lt;/<span style="color:#f92672">div</span>&gt;
+</span>&lt;/<span style="color:#f92672">div</span>&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>-끝-</p>
               
             </div>
           </div>
