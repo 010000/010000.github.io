@@ -367,7 +367,7 @@ USER1@ ~<span style="color:#f92672">]</span>$ python /home/USER1/.local/share/co
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ rm -rf /home/USER1/.local/share/code-server/extensions/*
 USER1@ ~<span style="color:#f92672">]</span>$ rm -rf /home/USER1/.local/lib/python3.6/site-packages/*
 </code></pre></div><h3 id="5-python-실행-결과를-terminal이-아닌-debug-console에-출력하기">5. python 실행 결과를 terminal이 아닌 debug console에 출력하기</h3>
-<p><a href="https://code.visualstudio.com/docs/python/debugging" target="_blank" rel="noopener">Python debug configurations in Visual Studio Code</a>
+<p>; <a href="https://code.visualstudio.com/docs/python/debugging" target="_blank" rel="noopener">Python debug configurations in Visual Studio Code</a>
  를 참고하여 왼쪽 세로 메뉴의 Run and Debug 에서 바로 아래 &lsquo;create a launch.json file&rsquo; 링크를 클릭하여 파일을 생성 후 수정.</p>
 <p>launch.json 생성 위치 참고</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ find /home/USER1/* -name launch.json
@@ -381,7 +381,7 @@ USER1@ ~<span style="color:#f92672">]</span>$ rm -rf /home/USER1/.local/lib/pyth
 </code></pre></div><h3 id="6-로그인-페이지의-설정-파일-위치-숨기기">6. 로그인 페이지의 설정 파일 위치 숨기기</h3>
 <p>;로그인 화면에 아래처럼 config.yaml 파일 경로가 불필요하게 보여 수정해줍니다</p>
 <blockquote>
-<h2 id="welcome-to-code-server">Welcome to code-server</h2>
+<p><strong>Welcome to code-server</strong></p>
 <p>Please log in below. Check the config file at ~/.config/code-server/config.yaml for the password.</p>
 </blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ sudo vi /usr/lib/code-server/src/browser/pages/login.html
