@@ -8,20 +8,29 @@
     <language>ko-kr</language>
     <lastBuildDate>Fri, 12 Mar 2021 17:52:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>502</title>
+      <link>https://010000.github.io/tags/502/</link>
+      <pubDate>Fri, 12 Mar 2021 17:52:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/502/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bad Gateway</title>
+      <link>https://010000.github.io/tags/bad-gateway/</link>
+      <pubDate>Fri, 12 Mar 2021 17:52:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/bad-gateway/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>centos</title>
       <link>https://010000.github.io/tags/centos/</link>
       <pubDate>Fri, 12 Mar 2021 17:52:00 +0900</pubDate>
       
       <guid>https://010000.github.io/tags/centos/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>cert</title>
-      <link>https://010000.github.io/tags/cert/</link>
-      <pubDate>Fri, 12 Mar 2021 17:52:00 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/cert/</guid>
       <description></description>
     </item>
     
@@ -53,6 +62,15 @@
     </item>
     
     <item>
+      <title>login</title>
+      <link>https://010000.github.io/tags/login/</link>
+      <pubDate>Fri, 12 Mar 2021 17:52:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/login/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>nginx</title>
       <link>https://010000.github.io/tags/nginx/</link>
       <pubDate>Fri, 12 Mar 2021 17:52:00 +0900</pubDate>
@@ -76,15 +94,6 @@
       <pubDate>Fri, 12 Mar 2021 17:52:00 +0900</pubDate>
       
       <guid>https://010000.github.io/tags/server/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ssl</title>
-      <link>https://010000.github.io/tags/ssl/</link>
-      <pubDate>Fri, 12 Mar 2021 17:52:00 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/ssl/</guid>
       <description></description>
     </item>
     

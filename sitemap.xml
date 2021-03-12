@@ -8,17 +8,22 @@
   </url>
   
   <url>
+    <loc>https://010000.github.io/tags/502/</loc>
+    <lastmod>2021-03-12T17:52:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://010000.github.io/tags/bad-gateway/</loc>
+    <lastmod>2021-03-12T17:52:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://010000.github.io/categories/</loc>
     <lastmod>2021-03-12T17:52:00+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://010000.github.io/tags/centos/</loc>
-    <lastmod>2021-03-12T17:52:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://010000.github.io/tags/cert/</loc>
     <lastmod>2021-03-12T17:52:00+09:00</lastmod>
   </url>
   
@@ -34,6 +39,11 @@
   
   <url>
     <loc>https://010000.github.io/tags/install/</loc>
+    <lastmod>2021-03-12T17:52:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://010000.github.io/tags/login/</loc>
     <lastmod>2021-03-12T17:52:00+09:00</lastmod>
   </url>
   
@@ -59,11 +69,6 @@
   
   <url>
     <loc>https://010000.github.io/categories/software/</loc>
-    <lastmod>2021-03-12T17:52:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://010000.github.io/tags/ssl/</loc>
     <lastmod>2021-03-12T17:52:00+09:00</lastmod>
   </url>
   
