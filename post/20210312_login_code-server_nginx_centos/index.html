@@ -9,14 +9,14 @@
 <meta name="author" content="Jeffrey YM. Jo">
 <meta name="keywords" content="tech">
 <meta name="description" content="
-이번에는 오픈된 cloud 인터넷 망에 설치된 code-server 를 계속 열어놓고 사용하기엔 불안한 부분도 있고, 어느 기기에서나 좀 더 간편하고 언제든지 인터넷망에서 code-server 접근을 위해 nginx proxy를 앞에 두고 로그인도 가능하도록 구성해봅니다.
-centos 7 에서 nignx proxy 구성을 하며 겪었던 이슈도 기록했습니다. (Update: Mar 12, 2021)
+이번에는 오픈된 cloud 인터넷 망에 설치된 code-server 를 계속 열어놓고 사용하기엔 불안한 부분도 있고, 어느 기기에서나 좀 더 간편하게 언제든지 code-server 접근이 되도록 nginx proxy를 앞에 두고 로그인도 가능하도록 구성해봅니다.
+centos 7 에서 nignx proxy 구성을 하며 겪었던 어이 없는 이슈도 기록했습니다. (Update: Mar 12, 2021)
 ">
 
 
 <meta property="og:description" content="
-이번에는 오픈된 cloud 인터넷 망에 설치된 code-server 를 계속 열어놓고 사용하기엔 불안한 부분도 있고, 어느 기기에서나 좀 더 간편하고 언제든지 인터넷망에서 code-server 접근을 위해 nginx proxy를 앞에 두고 로그인도 가능하도록 구성해봅니다.
-centos 7 에서 nignx proxy 구성을 하며 겪었던 이슈도 기록했습니다. (Update: Mar 12, 2021)
+이번에는 오픈된 cloud 인터넷 망에 설치된 code-server 를 계속 열어놓고 사용하기엔 불안한 부분도 있고, 어느 기기에서나 좀 더 간편하게 언제든지 code-server 접근이 되도록 nginx proxy를 앞에 두고 로그인도 가능하도록 구성해봅니다.
+centos 7 에서 nignx proxy 구성을 하며 겪었던 어이 없는 이슈도 기록했습니다. (Update: Mar 12, 2021)
 ">
 <meta property="og:type" content="article">
 <meta property="og:title" content="인터넷망 오픈과 로그인을 위한 Code-server 와 Nginx 구성">
@@ -25,12 +25,12 @@ centos 7 에서 nignx proxy 구성을 하며 겪었던 이슈도 기록했습니
 <meta property="twitter:url" content="https://010000.github.io/post/20210312_login_code-server_nginx_centos/">
 <meta property="og:site_name" content="010000 logbook">
 <meta property="og:description" content="
-이번에는 오픈된 cloud 인터넷 망에 설치된 code-server 를 계속 열어놓고 사용하기엔 불안한 부분도 있고, 어느 기기에서나 좀 더 간편하고 언제든지 인터넷망에서 code-server 접근을 위해 nginx proxy를 앞에 두고 로그인도 가능하도록 구성해봅니다.
-centos 7 에서 nignx proxy 구성을 하며 겪었던 이슈도 기록했습니다. (Update: Mar 12, 2021)
+이번에는 오픈된 cloud 인터넷 망에 설치된 code-server 를 계속 열어놓고 사용하기엔 불안한 부분도 있고, 어느 기기에서나 좀 더 간편하게 언제든지 code-server 접근이 되도록 nginx proxy를 앞에 두고 로그인도 가능하도록 구성해봅니다.
+centos 7 에서 nignx proxy 구성을 하며 겪었던 어이 없는 이슈도 기록했습니다. (Update: Mar 12, 2021)
 ">
 <meta name="twitter:description" content="
-이번에는 오픈된 cloud 인터넷 망에 설치된 code-server 를 계속 열어놓고 사용하기엔 불안한 부분도 있고, 어느 기기에서나 좀 더 간편하고 언제든지 인터넷망에서 code-server 접근을 위해 nginx proxy를 앞에 두고 로그인도 가능하도록 구성해봅니다.
-centos 7 에서 nignx proxy 구성을 하며 겪었던 이슈도 기록했습니다. (Update: Mar 12, 2021)
+이번에는 오픈된 cloud 인터넷 망에 설치된 code-server 를 계속 열어놓고 사용하기엔 불안한 부분도 있고, 어느 기기에서나 좀 더 간편하게 언제든지 code-server 접근이 되도록 nginx proxy를 앞에 두고 로그인도 가능하도록 구성해봅니다.
+centos 7 에서 nignx proxy 구성을 하며 겪었던 어이 없는 이슈도 기록했습니다. (Update: Mar 12, 2021)
 ">
 <meta property="og:locale" content="en-us">
 
@@ -281,8 +281,8 @@ if (!doNotTrack) {
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
               <ul>
-<li>이번에는 오픈된 cloud 인터넷 망에 설치된 code-server 를 계속 열어놓고 사용하기엔 불안한 부분도 있고, 어느 기기에서나 좀 더 간편하고 언제든지 인터넷망에서 code-server 접근을 위해 nginx proxy를 앞에 두고 로그인도 가능하도록 구성해봅니다.</li>
-<li>centos 7 에서 nignx proxy 구성을 하며 겪었던 이슈도 기록했습니다. <em>(Update: Mar 12, 2021)</em></li>
+<li>이번에는 오픈된 cloud 인터넷 망에 설치된 code-server 를 계속 열어놓고 사용하기엔 불안한 부분도 있고, 어느 기기에서나 좀 더 간편하게 언제든지 code-server 접근이 되도록 nginx proxy를 앞에 두고 로그인도 가능하도록 구성해봅니다.</li>
+<li>centos 7 에서 nignx proxy 구성을 하며 겪었던 <del>어이 없는</del> 이슈도 기록했습니다. <em>(Update: Mar 12, 2021)</em></li>
 </ul>
 <h3 id="환경-구성">환경 구성</h3>
 <ul>
