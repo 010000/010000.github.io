@@ -6,7 +6,20 @@
     <description>Recent content in code on 010000 logbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Sun, 07 Mar 2021 21:53:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/code/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 12 Mar 2021 17:52:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/code/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Code-server with Nginx로 외부에서 접근</title>
+      <link>https://010000.github.io/post/20210312_login_code-server_nginx_centos/</link>
+      <pubDate>Fri, 12 Mar 2021 17:52:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/post/20210312_login_code-server_nginx_centos/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;이전 글의 code-server 설치로 localhost 외 다른 client에서도 접근이 가능하며, 사설망이라면 VPN연결로 인터넷 망에서도 사용에 문제가 없습니다.&lt;/li&gt;
+&lt;li&gt;이번에는 오픈된 cloud 인터넷 망에 설치된 code-server 를 계속 열어놓고 사용하기엔 불안한 부분도 있고, 어느 기기에서나 좀 더 간편하고 언제든지 인터넷망에서 code-server 접근을 위해 nginx proxy를 앞에 두고 로그인도 가능하도록 구성해봅니다.&lt;/li&gt;
+&lt;li&gt;centos 7 에서 nignx proxy 구성을 하며 겪었던 이슈도 기록했습니다. &lt;em&gt;(Update: Mar 12, 2021)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
     <item>
       <title>Code-server 설치와 활용 on Linux</title>
       <link>https://010000.github.io/post/20210307_install_code-server_linux/</link>
