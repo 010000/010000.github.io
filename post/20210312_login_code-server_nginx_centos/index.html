@@ -9,30 +9,26 @@
 <meta name="author" content="Jeffrey YM. Jo">
 <meta name="keywords" content="tech">
 <meta name="description" content="
-이전 글의 code-server 설치로 localhost 외 다른 client에서도 접근이 가능하며, 사설망이라면 VPN연결로 인터넷 망에서도 사용에 문제가 없습니다.
 이번에는 오픈된 cloud 인터넷 망에 설치된 code-server 를 계속 열어놓고 사용하기엔 불안한 부분도 있고, 어느 기기에서나 좀 더 간편하고 언제든지 인터넷망에서 code-server 접근을 위해 nginx proxy를 앞에 두고 로그인도 가능하도록 구성해봅니다.
 centos 7 에서 nignx proxy 구성을 하며 겪었던 이슈도 기록했습니다. (Update: Mar 12, 2021)
 ">
 
 
 <meta property="og:description" content="
-이전 글의 code-server 설치로 localhost 외 다른 client에서도 접근이 가능하며, 사설망이라면 VPN연결로 인터넷 망에서도 사용에 문제가 없습니다.
 이번에는 오픈된 cloud 인터넷 망에 설치된 code-server 를 계속 열어놓고 사용하기엔 불안한 부분도 있고, 어느 기기에서나 좀 더 간편하고 언제든지 인터넷망에서 code-server 접근을 위해 nginx proxy를 앞에 두고 로그인도 가능하도록 구성해봅니다.
 centos 7 에서 nignx proxy 구성을 하며 겪었던 이슈도 기록했습니다. (Update: Mar 12, 2021)
 ">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Code-server with Nginx로 외부에서 접근">
-<meta name="twitter:title" content="Code-server with Nginx로 외부에서 접근">
+<meta property="og:title" content="인터넷망 오픈과 로그인을 위한 Code-server 와 Nginx 구성">
+<meta name="twitter:title" content="인터넷망 오픈과 로그인을 위한 Code-server 와 Nginx 구성">
 <meta property="og:url" content="https://010000.github.io/post/20210312_login_code-server_nginx_centos/">
 <meta property="twitter:url" content="https://010000.github.io/post/20210312_login_code-server_nginx_centos/">
 <meta property="og:site_name" content="010000 logbook">
 <meta property="og:description" content="
-이전 글의 code-server 설치로 localhost 외 다른 client에서도 접근이 가능하며, 사설망이라면 VPN연결로 인터넷 망에서도 사용에 문제가 없습니다.
 이번에는 오픈된 cloud 인터넷 망에 설치된 code-server 를 계속 열어놓고 사용하기엔 불안한 부분도 있고, 어느 기기에서나 좀 더 간편하고 언제든지 인터넷망에서 code-server 접근을 위해 nginx proxy를 앞에 두고 로그인도 가능하도록 구성해봅니다.
 centos 7 에서 nignx proxy 구성을 하며 겪었던 이슈도 기록했습니다. (Update: Mar 12, 2021)
 ">
 <meta name="twitter:description" content="
-이전 글의 code-server 설치로 localhost 외 다른 client에서도 접근이 가능하며, 사설망이라면 VPN연결로 인터넷 망에서도 사용에 문제가 없습니다.
 이번에는 오픈된 cloud 인터넷 망에 설치된 code-server 를 계속 열어놓고 사용하기엔 불안한 부분도 있고, 어느 기기에서나 좀 더 간편하고 언제든지 인터넷망에서 code-server 접근을 위해 nginx proxy를 앞에 두고 로그인도 가능하도록 구성해봅니다.
 centos 7 에서 nignx proxy 구성을 하며 겪었던 이슈도 기록했습니다. (Update: Mar 12, 2021)
 ">
@@ -91,7 +87,7 @@ centos 7 에서 nignx proxy 구성을 하며 겪었던 이슈도 기록했습니
   <meta property="twitter:image" content="https://res.cloudinary.com/oloooo/image/upload/v1614951872/githubpages/netscape_wcocsw.gif">
 
 
-    <title>Code-server with Nginx로 외부에서 접근</title>
+    <title>인터넷망 오픈과 로그인을 위한 Code-server 와 Nginx 구성</title>
 
     <link rel="icon" href="https://010000.github.io/favicon.ico">
     
@@ -257,7 +253,7 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      Code-server with Nginx로 외부에서 접근
+      인터넷망 오픈과 로그인을 위한 Code-server 와 Nginx 구성
     </h1>
   
   
@@ -285,7 +281,6 @@ if (!doNotTrack) {
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
               <ul>
-<li>이전 글의 code-server 설치로 localhost 외 다른 client에서도 접근이 가능하며, 사설망이라면 VPN연결로 인터넷 망에서도 사용에 문제가 없습니다.</li>
 <li>이번에는 오픈된 cloud 인터넷 망에 설치된 code-server 를 계속 열어놓고 사용하기엔 불안한 부분도 있고, 어느 기기에서나 좀 더 간편하고 언제든지 인터넷망에서 code-server 접근을 위해 nginx proxy를 앞에 두고 로그인도 가능하도록 구성해봅니다.</li>
 <li>centos 7 에서 nignx proxy 구성을 하며 겪었던 이슈도 기록했습니다. <em>(Update: Mar 12, 2021)</em></li>
 </ul>
