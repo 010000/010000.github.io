@@ -416,40 +416,40 @@ server <span style="color:#f92672">{</span>
 <span style="color:#f92672">}</span>
 
 server <span style="color:#f92672">{</span>
-     <span style="color:#75715e">#listen 7788;</span>
-     <span style="color:#75715e">#listen [::]:7788;</span>
-     server_name vm2.mydomain.com;
+        <span style="color:#75715e">#listen 7788;</span>
+        <span style="color:#75715e">#listen [::]:7788;</span>
+        server_name vm2.mydomain.com;
 
-     location / <span style="color:#f92672">{</span>
-             proxy_pass http://vm2-code-server;
-             proxy_set_header Host $host;
-             proxy_set_header Upgrade $http_upgrade;
-             proxy_set_header Connection upgrade;
-             proxy_set_header Accept-Encoding gzip;
-             auth_basic <span style="color:#e6db74">&#34;Authentication Page&#34;</span>;
-             auth_basic_user_file /etc/nginx/.htpasswd;
-             proxy_buffering off;
-     <span style="color:#f92672">}</span>
+        location / <span style="color:#f92672">{</span>
+                proxy_pass http://vm2-code-server;
+                proxy_set_header Host $host;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection upgrade;
+                proxy_set_header Accept-Encoding gzip;
+                auth_basic <span style="color:#e6db74">&#34;Authentication Page&#34;</span>;
+                auth_basic_user_file /etc/nginx/.htpasswd;
+                proxy_buffering off;
+        <span style="color:#f92672">}</span>
 
- listen <span style="color:#f92672">[</span>::<span style="color:#f92672">]</span>:443 ssl ipv6only<span style="color:#f92672">=</span>on; <span style="color:#75715e"># managed by Certbot</span>
- listen <span style="color:#ae81ff">443</span> ssl; <span style="color:#75715e"># managed by Certbot</span>
- ssl_certificate /etc/letsencrypt/live/vm2.mydomain.com/fullchain.pem; <span style="color:#75715e"># managed by Certbot</span>
- ssl_certificate_key /etc/letsencrypt/live/vm2.mydomain.com/privkey.pem; <span style="color:#75715e"># managed by Certbot</span>
- include /etc/letsencrypt/options-ssl-nginx.conf; <span style="color:#75715e"># managed by Certbot</span>
- ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; <span style="color:#75715e"># managed by Certbot</span>
+    listen <span style="color:#f92672">[</span>::<span style="color:#f92672">]</span>:443 ssl ipv6only<span style="color:#f92672">=</span>on; <span style="color:#75715e"># managed by Certbot</span>
+    listen <span style="color:#ae81ff">443</span> ssl; <span style="color:#75715e"># managed by Certbot</span>
+    ssl_certificate /etc/letsencrypt/live/vm2.mydomain.com/fullchain.pem; <span style="color:#75715e"># managed by Certbot</span>
+    ssl_certificate_key /etc/letsencrypt/live/vm2.mydomain.com/privkey.pem; <span style="color:#75715e"># managed by Certbot</span>
+    include /etc/letsencrypt/options-ssl-nginx.conf; <span style="color:#75715e"># managed by Certbot</span>
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; <span style="color:#75715e"># managed by Certbot</span>
 
 <span style="color:#f92672">}</span>
 
 <span style="color:#75715e"># Redirection http to https</span>
 server <span style="color:#f92672">{</span>
- <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>$host <span style="color:#f92672">=</span> vm2.mydomain.com<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-     <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">301</span> https://$host$request_uri;
- <span style="color:#f92672">}</span>
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>$host <span style="color:#f92672">=</span> vm2.mydomain.com<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">301</span> https://$host$request_uri;
+    <span style="color:#f92672">}</span>
 
-     listen <span style="color:#ae81ff">80</span> ;
-     listen <span style="color:#f92672">[</span>::<span style="color:#f92672">]</span>:80 ;
- server_name vm2.mydomain.com;
- <span style="color:#66d9ef">return</span> 404;
+        listen <span style="color:#ae81ff">80</span> ;
+        listen <span style="color:#f92672">[</span>::<span style="color:#f92672">]</span>:80 ;
+    server_name vm2.mydomain.com;
+    <span style="color:#66d9ef">return</span> 404;
 <span style="color:#f92672">}</span>
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ sudo systemctl restart nginx.service
 </code></pre></div><h3 id="3-인증서-자동-갱신">3. 인증서 자동 갱신</h3>
