@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ssl on 010000 logbook</title>
-    <link>https://010000.github.io/tags/ssl/</link>
-    <description>Recent content in ssl on 010000 logbook</description>
+    <title>Let&#39;s Encrypt on 010000 logbook</title>
+    <link>https://010000.github.io/tags/lets-encrypt/</link>
+    <description>Recent content in Let&#39;s Encrypt on 010000 logbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Sat, 13 Mar 2021 16:07:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/ssl/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 13 Mar 2021 16:07:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/lets-encrypt/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Code-server with Nginx, SSL 인증서 적용</title>
       <link>https://010000.github.io/post/20210313_ssl_cert_code-server_nginx_centos/</link>

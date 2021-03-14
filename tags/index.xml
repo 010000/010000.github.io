@@ -6,7 +6,97 @@
     <description>Recent content in Tags on 010000 logbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Fri, 12 Mar 2021 17:52:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 13 Mar 2021 16:07:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>centos</title>
+      <link>https://010000.github.io/tags/centos/</link>
+      <pubDate>Sat, 13 Mar 2021 16:07:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/centos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>certbot</title>
+      <link>https://010000.github.io/tags/certbot/</link>
+      <pubDate>Sat, 13 Mar 2021 16:07:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/certbot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>code</title>
+      <link>https://010000.github.io/tags/code/</link>
+      <pubDate>Sat, 13 Mar 2021 16:07:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/code/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>code-server</title>
+      <link>https://010000.github.io/tags/code-server/</link>
+      <pubDate>Sat, 13 Mar 2021 16:07:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/code-server/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>install</title>
+      <link>https://010000.github.io/tags/install/</link>
+      <pubDate>Sat, 13 Mar 2021 16:07:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/install/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Let&#39;s Encrypt</title>
+      <link>https://010000.github.io/tags/lets-encrypt/</link>
+      <pubDate>Sat, 13 Mar 2021 16:07:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/lets-encrypt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nginx</title>
+      <link>https://010000.github.io/tags/nginx/</link>
+      <pubDate>Sat, 13 Mar 2021 16:07:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/nginx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>renew</title>
+      <link>https://010000.github.io/tags/renew/</link>
+      <pubDate>Sat, 13 Mar 2021 16:07:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/renew/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>server</title>
+      <link>https://010000.github.io/tags/server/</link>
+      <pubDate>Sat, 13 Mar 2021 16:07:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/server/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ssl</title>
+      <link>https://010000.github.io/tags/ssl/</link>
+      <pubDate>Sat, 13 Mar 2021 16:07:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/ssl/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>502</title>
       <link>https://010000.github.io/tags/502/</link>
@@ -26,42 +116,6 @@
     </item>
     
     <item>
-      <title>centos</title>
-      <link>https://010000.github.io/tags/centos/</link>
-      <pubDate>Fri, 12 Mar 2021 17:52:00 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/centos/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>code</title>
-      <link>https://010000.github.io/tags/code/</link>
-      <pubDate>Fri, 12 Mar 2021 17:52:00 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/code/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>code-server</title>
-      <link>https://010000.github.io/tags/code-server/</link>
-      <pubDate>Fri, 12 Mar 2021 17:52:00 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/code-server/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>install</title>
-      <link>https://010000.github.io/tags/install/</link>
-      <pubDate>Fri, 12 Mar 2021 17:52:00 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/install/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>login</title>
       <link>https://010000.github.io/tags/login/</link>
       <pubDate>Fri, 12 Mar 2021 17:52:00 +0900</pubDate>
@@ -71,29 +125,11 @@
     </item>
     
     <item>
-      <title>nginx</title>
-      <link>https://010000.github.io/tags/nginx/</link>
-      <pubDate>Fri, 12 Mar 2021 17:52:00 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/nginx/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>proxy</title>
       <link>https://010000.github.io/tags/proxy/</link>
       <pubDate>Fri, 12 Mar 2021 17:52:00 +0900</pubDate>
       
       <guid>https://010000.github.io/tags/proxy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>server</title>
-      <link>https://010000.github.io/tags/server/</link>
-      <pubDate>Fri, 12 Mar 2021 17:52:00 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/server/</guid>
       <description></description>
     </item>
     
