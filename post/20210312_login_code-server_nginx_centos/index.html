@@ -405,7 +405,8 @@ http_port_t                    tcp      7777, 80, 81, 443, 488, 8008, 8009, 8443
 USER1@ ~<span style="color:#f92672">]</span>$ sudo systemctl restart nginx.service
 </code></pre></div><p>3-2. 웹 브라우저로 http:// {mydomain}:{port} 접근할 때 &ldquo;502 Bad Gateway&rdquo; 오류<br>
 조치 - selinux disabled<br>
-;selinux 는 사용하지 않기에 disabled 수정하고 리부팅 후 재확인</p>
+;selinux 는 사용하지 않기에 disabled 수정하고 리부팅 후 재확인<br>
+;selinux 안쓰면 미리 변경해줍시다 ㅠ.ㅠ</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ sudo vi /etc/selinux/config
 
 <span style="color:#f92672">[</span>변경 전<span style="color:#f92672">]</span>
