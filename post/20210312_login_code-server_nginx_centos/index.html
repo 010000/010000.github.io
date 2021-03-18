@@ -442,16 +442,16 @@ server <span style="color:#f92672">{</span>
         server_name vm2.mydomain.com;  <span style="color:#75715e">#외부에서 호출할 도메인 or VM ip</span>
 
         location / <span style="color:#f92672">{</span>
-                proxy_pass http://vm2-code-server;
+                proxy_pass http://vm2-code-server;   <span style="color:#75715e">#upstream group name</span>
                 proxy_set_header Upgrade $http_upgrade;
                 proxy_set_header Connection upgrade;
                 proxy_set_header Accept-Encoding gzip;
 <span style="display:block;width:100%;background-color:#3c3d38">                auth_basic <span style="color:#e6db74">&#34;Authentication Page&#34;</span>;
 </span><span style="display:block;width:100%;background-color:#3c3d38">                auth_basic_user_file /etc/nginx/.htpasswd;
 </span>                proxy_buffering off;
-                proxy_buffer_size          128k;
-                proxy_buffers              <span style="color:#ae81ff">4</span> 256k;
-                proxy_busy_buffers_size    256k;   
+                <span style="color:#75715e">#proxy_buffer_size          128k;</span>
+                <span style="color:#75715e">#proxy_buffers              4 256k;</span>
+                <span style="color:#75715e">#proxy_busy_buffers_size    256k;   </span>
         <span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
 </code></pre></div><p>; nginx 재시작 후 브라우저에서 암호 설정한 계정으로 로그인 테스트</p>
