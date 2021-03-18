@@ -11,14 +11,14 @@
 <meta name="description" content="
 이번에는 오픈된 cloud 인터넷 망에 설치된 code-server 를 계속 열어놓고 사용하기엔 불안한 부분도 있고, 어느 기기에서나 좀 더 간편하게 언제든지 code-server 접근이 되도록 nginx proxy를 앞에 두고 로그인도 가능하도록 구성해봅니다.
 Centos에서 구성하며 겪었던 다른 부분도 기록했습니다.
-Safari 브라우저에서 nginx 로그인 뒤 code-server 로그인 후에 blank screen 이슈가 있네요. 해결되면 업데이트하겠습니다. (Update: Mar 12, 2021)
+Safari 브라우저에서 nginx 로그인 뒤 code-server 로그인 후에 (blank) white screen 이슈가 있네요. 해결되면 업데이트하겠습니다. (Update: Mar 12, 2021)
 ">
 
 
 <meta property="og:description" content="
 이번에는 오픈된 cloud 인터넷 망에 설치된 code-server 를 계속 열어놓고 사용하기엔 불안한 부분도 있고, 어느 기기에서나 좀 더 간편하게 언제든지 code-server 접근이 되도록 nginx proxy를 앞에 두고 로그인도 가능하도록 구성해봅니다.
 Centos에서 구성하며 겪었던 다른 부분도 기록했습니다.
-Safari 브라우저에서 nginx 로그인 뒤 code-server 로그인 후에 blank screen 이슈가 있네요. 해결되면 업데이트하겠습니다. (Update: Mar 12, 2021)
+Safari 브라우저에서 nginx 로그인 뒤 code-server 로그인 후에 (blank) white screen 이슈가 있네요. 해결되면 업데이트하겠습니다. (Update: Mar 12, 2021)
 ">
 <meta property="og:type" content="article">
 <meta property="og:title" content="인터넷망 오픈과 로그인을 위한 Code-server 와 Nginx 구성">
@@ -29,12 +29,12 @@ Safari 브라우저에서 nginx 로그인 뒤 code-server 로그인 후에 blank
 <meta property="og:description" content="
 이번에는 오픈된 cloud 인터넷 망에 설치된 code-server 를 계속 열어놓고 사용하기엔 불안한 부분도 있고, 어느 기기에서나 좀 더 간편하게 언제든지 code-server 접근이 되도록 nginx proxy를 앞에 두고 로그인도 가능하도록 구성해봅니다.
 Centos에서 구성하며 겪었던 다른 부분도 기록했습니다.
-Safari 브라우저에서 nginx 로그인 뒤 code-server 로그인 후에 blank screen 이슈가 있네요. 해결되면 업데이트하겠습니다. (Update: Mar 12, 2021)
+Safari 브라우저에서 nginx 로그인 뒤 code-server 로그인 후에 (blank) white screen 이슈가 있네요. 해결되면 업데이트하겠습니다. (Update: Mar 12, 2021)
 ">
 <meta name="twitter:description" content="
 이번에는 오픈된 cloud 인터넷 망에 설치된 code-server 를 계속 열어놓고 사용하기엔 불안한 부분도 있고, 어느 기기에서나 좀 더 간편하게 언제든지 code-server 접근이 되도록 nginx proxy를 앞에 두고 로그인도 가능하도록 구성해봅니다.
 Centos에서 구성하며 겪었던 다른 부분도 기록했습니다.
-Safari 브라우저에서 nginx 로그인 뒤 code-server 로그인 후에 blank screen 이슈가 있네요. 해결되면 업데이트하겠습니다. (Update: Mar 12, 2021)
+Safari 브라우저에서 nginx 로그인 뒤 code-server 로그인 후에 (blank) white screen 이슈가 있네요. 해결되면 업데이트하겠습니다. (Update: Mar 12, 2021)
 ">
 <meta property="og:locale" content="en-us">
 
@@ -287,7 +287,7 @@ if (!doNotTrack) {
               <ul>
 <li>이번에는 오픈된 cloud 인터넷 망에 설치된 code-server 를 계속 열어놓고 사용하기엔 불안한 부분도 있고, 어느 기기에서나 좀 더 간편하게 언제든지 code-server 접근이 되도록 nginx proxy를 앞에 두고 로그인도 가능하도록 구성해봅니다.</li>
 <li>Centos에서 구성하며 겪었던 다른 부분도 기록했습니다.</li>
-<li>Safari 브라우저에서 nginx 로그인 뒤 code-server 로그인 후에 blank screen 이슈가 있네요. 해결되면 업데이트하겠습니다. <em>(Update: Mar 12, 2021)</em></li>
+<li>Safari 브라우저에서 nginx 로그인 뒤 code-server 로그인 후에 (blank) white screen 이슈가 있네요. 해결되면 업데이트하겠습니다. <em>(Update: Mar 12, 2021)</em></li>
 </ul>
 <h3 id="환경-구성">환경 구성</h3>
 <ul>
@@ -434,7 +434,7 @@ New password:
 Re-type new password: 
 Adding password for user {myID}
 </code></pre><p>;auth_basic 인증 설정 추가<br>
-;MacOS, iPAD Safari 브라우저에서 nginx 로그인 후 code-server 로그인 뒤에 blank screen 이슈가 있네요. 해결되면 업데이트하겠습니다.ㅠ_ㅠ</p>
+;MacOS/iPAD Safari 브라우저에서 nginx 로그인 후 code-server 로그인 뒤에 blank white screen 이슈가 있네요. 해결되면 업데이트하겠습니다 ㅠ.ㅠ</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ sudo vi /etc/nginx/sites-available/code-server.conf
 
 upstream vm2-code-server <span style="color:#f92672">{</span>             <span style="color:#75715e">#upstream group name</span>
