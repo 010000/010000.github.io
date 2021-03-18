@@ -348,14 +348,14 @@ server <span style="color:#f92672">{</span>
         server_name vm2.mydomain.com;  <span style="color:#75715e">#외부에서 호출하는 도메인 or VM ip</span>
 
         location / <span style="color:#f92672">{</span>
-                proxy_pass http://vm2-code-server;
+                proxy_pass http://vm2-code-server;  <span style="color:#75715e">#upstream group name</span>
                 proxy_set_header Upgrade $http_upgrade;
                 proxy_set_header Connection upgrade;
                 proxy_set_header Accept-Encoding gzip;
                 proxy_buffering off;
-                proxy_buffer_size          128k;
-                proxy_buffers              <span style="color:#ae81ff">4</span> 256k;
-                proxy_busy_buffers_size    256k;   
+                <span style="color:#75715e">#proxy_buffer_size          128k;</span>
+                <span style="color:#75715e">#proxy_buffers              4 256k;</span>
+                <span style="color:#75715e">#proxy_busy_buffers_size    256k;   </span>
         <span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ sudo ln -s /etc/nginx/sites-available/code-server.conf /etc/nginx/sites-enabled/code-server.conf
@@ -372,7 +372,7 @@ USER1@ ~<span style="color:#f92672">]</span>$ sudo systemctl start nginx.service
 USER1@ ~<span style="color:#f92672">]</span>$ sudo systemctl status nginx.service
 USER1@ ~<span style="color:#f92672">]</span>$ sudo systemctl enable nginx.service
 USER1@ ~<span style="color:#f92672">]</span>$ sudo systemctl -t service list-unit-files |grep -i nginx
-nginx.service              enabled 
+nginx.service         enabled 
 </code></pre></div><h3 id="3-nginx-구성-중-오류">3. Nginx 구성 중 오류</h3>
 <p>3-1. (인터넷)외부에서 접근할 포트를 7777 등으로 설정하면 nginx 시작이 안되는 오류</p>
 <p>오류 - [emerg] bind() to 0.0.0.0:7777 failed (13: Permission denied)</p>
@@ -401,7 +401,7 @@ USER1@ ~<span style="color:#f92672">]</span>$ sudo systemctl restart nginx.servi
 </code></pre></div><p>3-2. 웹 브라우저로 http:// {mydomain}:{port} 접근할 때 &ldquo;502 Bad Gateway&rdquo; 오류<br>
 조치 - selinux disabled<br>
 ;selinux 는 사용하지 않기에 disabled 수정하고 리부팅 후 재확인<br>
-;selinux 안쓰면 미리 변경해줍시다 ㅠ.ㅠ</p>
+;selinux 안쓰면 미리 변경해줍시다. ㅠ.ㅠ</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ sudo vi /etc/selinux/config
 
 <span style="color:#f92672">[</span>변경 전<span style="color:#f92672">]</span>
@@ -429,7 +429,7 @@ New password:
 Re-type new password: 
 Adding password for user {myID}
 </code></pre><p>;auth_basic 인증 설정 추가<br>
-;MacOS/iPAD Safari 브라우저에서 nginx 로그인 후 code-server 로그인 뒤에 blank white screen 이슈가 있네요. 해결되면 업데이트하겠습니다 ㅠ.ㅠ</p>
+;MacOS/iPAD Safari 브라우저에서 nginx 로그인 후 code-server 로그인 뒤에 blank white screen 이슈가 있네요. 해결되면 업데이트하겠습니다. ㅠ.ㅠ</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ sudo vi /etc/nginx/sites-available/code-server.conf
 
 upstream vm2-code-server <span style="color:#f92672">{</span>             <span style="color:#75715e">#upstream group name</span>
