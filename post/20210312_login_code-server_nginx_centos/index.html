@@ -306,9 +306,10 @@ auth: password
 password: $myNewPassword
 cert: false
 </code></pre></div><h3 id="2-install-nginx">2. Install Nginx</h3>
-<p>; CentOS에서 nginx 설치를 하니 Ubuntu 진행과 다르게 default.conf 파일이 없습니다.<br>
+<p>; CentOS에서 nginx 설치를 하니 Ubuntu 진행과 다르게 default.conf 파일과 폴더 등이 없습니다.<br>
 ; /etc/nginx/nginx.conf 파일을 복사하여 가능하지만 Ubuntu OS에서 재구성할 경우를 대비해 Ubuntu 구성 절차로 진행했습니다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ sudo mkdir /etc/nginx/sites-available
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ sudo yum install nginx
+USER1@ ~<span style="color:#f92672">]</span>$ sudo mkdir /etc/nginx/sites-available
 USER1@ ~<span style="color:#f92672">]</span>$ sudo mkdir /etc/nginx/sites-enabled
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ sudo vi /etc/nginx/nginx.conf
 
