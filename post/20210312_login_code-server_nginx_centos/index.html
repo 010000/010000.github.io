@@ -313,6 +313,7 @@ include /etc/nginx/conf.d/*.conf;
 <span style="color:#f92672">(</span>...이하 생략...<span style="color:#f92672">)</span>
 
 <span style="color:#f92672">[</span>변경 후<span style="color:#f92672">]</span>
+server_tokens off;      <span style="color:#75715e">#off로 설정하면 에러페이지의 nginx 버전 숨김  </span>
 include /etc/nginx/sites-enabled/*.conf;
 
 <span style="color:#75715e"># /etc/nginx/nginx.conf 파일 내 server {} 블록 주석처리</span>
