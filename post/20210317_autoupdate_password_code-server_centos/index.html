@@ -348,28 +348,28 @@ eval <span style="color:#e6db74">&#34;sudo systemctl restart code-server@USER1&#
 
 <span style="color:#f92672">(</span>...생략...<span style="color:#f92672">)</span>
 
-+ GENPASSWD<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;03-18!I_^^Hello&#39;</span>
-+ sleep <span style="color:#ae81ff">1</span>
+<span style="display:block;width:100%;background-color:#3c3d38">+ GENPASSWD<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;03-18!I_^^Hello&#39;</span>
+</span>+ sleep <span style="color:#ae81ff">1</span>
 + eval <span style="color:#e6db74">&#39;sed -i &#39;</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">&#39;s/myCurnPass20@!$#%..,/03-18!I^^Hello/g&#39;</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">&#39; /home/USER1/.config/code-server/config.yaml&#39;</span>
-++ sed -i <span style="color:#e6db74">&#39;s/myCurnPass20@!$#%..,/03-18!I_^^Hello/g&#39;</span> /home/USER1/.config/code-server/config.yaml
-+ sleep <span style="color:#ae81ff">1</span>
+<span style="display:block;width:100%;background-color:#3c3d38">++ sed -i <span style="color:#e6db74">&#39;s/myCurnPass20@!$#%..,/03-18!I_^^Hello/g&#39;</span> /home/USER1/.config/code-server/config.yaml
+</span>+ sleep <span style="color:#ae81ff">1</span>
 + eval <span style="color:#e6db74">&#39;sudo systemctl restart code-server@USER1/&#39;</span>
-++ sudo systemctl restart code-server@USER1/
-+ exit <span style="color:#ae81ff">0</span>
+<span style="display:block;width:100%;background-color:#3c3d38">++ sudo systemctl restart code-server@USER1/
+</span>+ exit <span style="color:#ae81ff">0</span>
 </code></pre></div><p>; 생성된 code-server의 pasword 비교</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#실행 전</span>
 USER1@ ~<span style="color:#f92672">]</span>$ cat /home/USER1/.config/code-server/config.yaml
 bind-addr: 127.0.0.1:8888
 auth: password
-password: myCurnPass20@!$#%..,
-cert: false
+<span style="display:block;width:100%;background-color:#3c3d38">password: myCurnPass20@!$#%..,
+</span>cert: false
 
 <span style="color:#75715e">#실행 후</span>
 USER1@ ~<span style="color:#f92672">]</span>$ cat /home/USER1/.config/code-server/config.yaml
 bind-addr: 127.0.0.1:8888
 auth: password
-password: 03-18!I_^^Hello
-cert: false
+<span style="display:block;width:100%;background-color:#3c3d38">password: 03-18!I_^^Hello
+</span>cert: false
 </code></pre></div><p>;cron에 등록하여 규칙적으로 실행</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ cat /etc/crontab 
 <span style="color:#ae81ff">00</span> <span style="color:#ae81ff">07</span>   * * <span style="color:#ae81ff">1</span>   USER1    /bin/sh /home/USER1/update-pass.sh &gt; /dev/null 2&gt;&amp;<span style="color:#ae81ff">1</span>
@@ -377,7 +377,7 @@ cert: false
 <li>위의 규칙없이 자주 사용하는 암호들을 랜덤하게 수시로 바꿔주는게 더 쉬울 수 있습니다.</li>
 <li>개인적으로 규칙을 갖고 암호를 만들면 기억할 필요가 없고</li>
 <li><del>(호기심으로 시작해서)</del> 규칙에 따라 자동으로 변경되게 해보자로 공부 겸 만들었네요</li>
-<li>연습삼아 작성하거라, 허접해도 양해부탁드려요^^;</li>
+<li>개인용으로 연습삼아 작성한거라, 허접해도 양해부탁드려요^^;</li>
 </ul>
 <h3 id="참고">참고</h3>
 <ul>
