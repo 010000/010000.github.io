@@ -343,7 +343,7 @@ MONTH2<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>ex
 GENPASSWD<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$MONTH2$MONTH1<span style="color:#e6db74">&#34;</span>-<span style="color:#e6db74">&#34;</span>$DATE1$DATE2$SPLCHAR_F$SPLCHAR_B<span style="color:#e6db74">&#34;</span>_<span style="color:#e6db74">&#34;</span>$MYWORD1<span style="color:#e6db74">&#34;</span>  
 eval <span style="color:#e6db74">&#34;sed -i &#39;s/</span>$CURPASSWD<span style="color:#e6db74">/</span>$GENPASSWD<span style="color:#e6db74">/g&#39; </span>$YAMLPATH<span style="color:#e6db74">/config.yaml&#34;</span> <span style="color:#f92672">&amp;&amp;</span> sleep <span style="color:#ae81ff">1</span>
 eval <span style="color:#e6db74">&#34;sudo systemctl restart code-server@USER1&#34;</span> <span style="color:#f92672">&amp;&amp;</span> exit <span style="color:#ae81ff">0</span>
-</code></pre></div><p>;실행해보면&hellip;</p>
+</code></pre></div><p>;실행해보면&hellip; (code-server 재시작 포함)</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ sh -x ./update-pass.sh 
 
 <span style="color:#f92672">(</span>...생략...<span style="color:#f92672">)</span>
@@ -352,9 +352,11 @@ eval <span style="color:#e6db74">&#34;sudo systemctl restart code-server@USER1&#
 + sleep <span style="color:#ae81ff">1</span>
 + eval <span style="color:#e6db74">&#39;sed -i &#39;</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">&#39;s/myCurnPass20@!$#%..,/03-18!I^^Hello/g&#39;</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">&#39; /home/USER1/.config/code-server/config.yaml&#39;</span>
 ++ sed -i <span style="color:#e6db74">&#39;s/myCurnPass20@!$#%..,/03-18!I_^^Hello/g&#39;</span> /home/USER1/.config/code-server/config.yaml
-
-</code></pre></div><p>; 생성된 code-server의 pasword 비교<br>
-; code-server 재시작도 포함되어 있습니다</p>
++ sleep <span style="color:#ae81ff">1</span>
++ eval <span style="color:#e6db74">&#39;sudo systemctl restart code-server@USER1/&#39;</span>
+++ sudo systemctl restart code-server@USER1/
++ exit <span style="color:#ae81ff">0</span>
+</code></pre></div><p>; 생성된 code-server의 pasword 비교</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#실행 전</span>
 USER1@ ~<span style="color:#f92672">]</span>$ cat /home/USER1/.config/code-server/config.yaml
 bind-addr: 127.0.0.1:8888
