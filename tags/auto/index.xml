@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>auto on 010000 logbook</title>
+    <link>https://010000.github.io/tags/auto/</link>
+    <description>Recent content in auto on 010000 logbook</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Wed, 17 Mar 2021 17:30:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/auto/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Code-server password 자동 갱신과 재시작</title>
+      <link>https://010000.github.io/post/20210317_autoupdate_password_code-server_centos/</link>
+      <pubDate>Wed, 17 Mar 2021 17:30:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/post/20210317_autoupdate_password_code-server_centos/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;Code-server에 날짜와 시간을 이용한 암호 규칙으로 규칙적으로 암호를 바꿔 사용해봅니다.&lt;/li&gt;
+&lt;li&gt;iPAD 에서도 계속 열어놓고 사용하기 위해 Nginx .htpasswd는 제거하고 code-server 암호를 규칙적으로 바꿔 사용중입니다. &lt;em&gt;(Update: Mar 17, 2021)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
