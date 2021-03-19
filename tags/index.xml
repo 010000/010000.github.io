@@ -6,76 +6,13 @@
     <description>Recent content in Tags on 010000 logbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Wed, 17 Mar 2021 17:30:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>auto</title>
-      <link>https://010000.github.io/tags/auto/</link>
-      <pubDate>Wed, 17 Mar 2021 17:30:00 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/auto/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Sat, 13 Mar 2021 16:07:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>centos</title>
       <link>https://010000.github.io/tags/centos/</link>
-      <pubDate>Wed, 17 Mar 2021 17:30:00 +0900</pubDate>
+      <pubDate>Sat, 13 Mar 2021 16:07:00 +0900</pubDate>
       
       <guid>https://010000.github.io/tags/centos/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>code</title>
-      <link>https://010000.github.io/tags/code/</link>
-      <pubDate>Wed, 17 Mar 2021 17:30:00 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/code/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>code-server</title>
-      <link>https://010000.github.io/tags/code-server/</link>
-      <pubDate>Wed, 17 Mar 2021 17:30:00 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/code-server/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>password</title>
-      <link>https://010000.github.io/tags/password/</link>
-      <pubDate>Wed, 17 Mar 2021 17:30:00 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/password/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>restart</title>
-      <link>https://010000.github.io/tags/restart/</link>
-      <pubDate>Wed, 17 Mar 2021 17:30:00 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/restart/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>server</title>
-      <link>https://010000.github.io/tags/server/</link>
-      <pubDate>Wed, 17 Mar 2021 17:30:00 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/server/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>update</title>
-      <link>https://010000.github.io/tags/update/</link>
-      <pubDate>Wed, 17 Mar 2021 17:30:00 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/update/</guid>
       <description></description>
     </item>
     
@@ -85,6 +22,24 @@
       <pubDate>Sat, 13 Mar 2021 16:07:00 +0900</pubDate>
       
       <guid>https://010000.github.io/tags/certbot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>code</title>
+      <link>https://010000.github.io/tags/code/</link>
+      <pubDate>Sat, 13 Mar 2021 16:07:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/code/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>code-server</title>
+      <link>https://010000.github.io/tags/code-server/</link>
+      <pubDate>Sat, 13 Mar 2021 16:07:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/code-server/</guid>
       <description></description>
     </item>
     
@@ -121,6 +76,15 @@
       <pubDate>Sat, 13 Mar 2021 16:07:00 +0900</pubDate>
       
       <guid>https://010000.github.io/tags/renew/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>server</title>
+      <link>https://010000.github.io/tags/server/</link>
+      <pubDate>Sat, 13 Mar 2021 16:07:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/server/</guid>
       <description></description>
     </item>
     
