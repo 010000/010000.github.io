@@ -10,13 +10,13 @@
 <meta name="keywords" content="tech">
 <meta name="description" content="
 VS-Code 앱 설치없이 어디에서든 브라우저에서 python 코드를 실행합니다.
-게을러서 Cloud VM에서 실행중인 code-server로 .md 포멧 문서를 작성 및 수정하고 find cronjob 으로 새문서를 모니터링해 자동 git push 되도록 구성하여 사용중입니다. (Update: Mar 07, 2021)
+게을러서 Cloud VM에서 실행중인 code-server로 .md 포멧 문서를 작성, 수정하고 cronjob 으로 새문서를 모니터링해 자동 git push 되도록 구성하여 사용중입니다. (Update: Mar 07, 2021)
 ">
 
 
 <meta property="og:description" content="
 VS-Code 앱 설치없이 어디에서든 브라우저에서 python 코드를 실행합니다.
-게을러서 Cloud VM에서 실행중인 code-server로 .md 포멧 문서를 작성 및 수정하고 find cronjob 으로 새문서를 모니터링해 자동 git push 되도록 구성하여 사용중입니다. (Update: Mar 07, 2021)
+게을러서 Cloud VM에서 실행중인 code-server로 .md 포멧 문서를 작성, 수정하고 cronjob 으로 새문서를 모니터링해 자동 git push 되도록 구성하여 사용중입니다. (Update: Mar 07, 2021)
 ">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Code-server 설치와 활용 on Linux">
@@ -26,11 +26,11 @@ VS-Code 앱 설치없이 어디에서든 브라우저에서 python 코드를 실
 <meta property="og:site_name" content="010000 logbook">
 <meta property="og:description" content="
 VS-Code 앱 설치없이 어디에서든 브라우저에서 python 코드를 실행합니다.
-게을러서 Cloud VM에서 실행중인 code-server로 .md 포멧 문서를 작성 및 수정하고 find cronjob 으로 새문서를 모니터링해 자동 git push 되도록 구성하여 사용중입니다. (Update: Mar 07, 2021)
+게을러서 Cloud VM에서 실행중인 code-server로 .md 포멧 문서를 작성, 수정하고 cronjob 으로 새문서를 모니터링해 자동 git push 되도록 구성하여 사용중입니다. (Update: Mar 07, 2021)
 ">
 <meta name="twitter:description" content="
 VS-Code 앱 설치없이 어디에서든 브라우저에서 python 코드를 실행합니다.
-게을러서 Cloud VM에서 실행중인 code-server로 .md 포멧 문서를 작성 및 수정하고 find cronjob 으로 새문서를 모니터링해 자동 git push 되도록 구성하여 사용중입니다. (Update: Mar 07, 2021)
+게을러서 Cloud VM에서 실행중인 code-server로 .md 포멧 문서를 작성, 수정하고 cronjob 으로 새문서를 모니터링해 자동 git push 되도록 구성하여 사용중입니다. (Update: Mar 07, 2021)
 ">
 <meta property="og:locale" content="en-us">
 
@@ -272,7 +272,7 @@ if (!doNotTrack) {
             <div class="main-content-wrap">
               <ul>
 <li>VS-Code 앱 설치없이 어디에서든 브라우저에서 python 코드를 실행합니다.</li>
-<li><del>게을러서</del> Cloud VM에서 실행중인 code-server로 .md 포멧 문서를 작성 및 수정하고 find cronjob 으로 새문서를 모니터링해 자동 git push 되도록 구성하여 사용중입니다. <em>(Update: Mar 07, 2021)</em></li>
+<li><del>게을러서</del> Cloud VM에서 실행중인 code-server로 .md 포멧 문서를 작성, 수정하고 cronjob 으로 새문서를 모니터링해 자동 git push 되도록 구성하여 사용중입니다. <em>(Update: Mar 07, 2021)</em></li>
 </ul>
 <h3 id="환경-구성">환경 구성</h3>
 <ul>
@@ -321,7 +321,7 @@ password: $myNewPassword
 cert: false
 </code></pre></div><h3 id="3-폰트-추가">3. 폰트 추가</h3>
 <p>; 개인적으로 선호하는 bitstream-vera-sans 폰트 추가 설치<br>
-; code-server 로그인 후 settings - font 에서 &lsquo;Bitstream Vera Sans Mono&rsquo;를 제일 앞으로 넣어서 변경</p>
+; code-server 로그인 후 settings - font 설정에서 &lsquo;Bitstream Vera Sans Mono&rsquo;를 제일 앞으로 추가해서 변경</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ download<span style="color:#f92672">]</span>$ curl -fOL https://li.nux.ro/download/nux/dextop/el7/x86_64/bitstream-vera-sans-fonts-1.10-19.el7.nux.noarch.rpm
 
 USER1@ download<span style="color:#f92672">]</span>$ curl -fOL https://li.nux.ro/download/nux/dextop/el7/x86_64/bitstream-vera-fonts-common-1.10-19.el7.nux.noarch.rpm
@@ -334,18 +334,9 @@ USER1@ download<span style="color:#f92672">]</span>$ sudo mkfontscale <span styl
 $ sudo apt install fontconfig
 $ sudo mkfontscale <span style="color:#f92672">&amp;&amp;</span> mkfontdir <span style="color:#f92672">&amp;&amp;</span> fc-cache -fv
 </code></pre></div><h3 id="4-python-실행-환경-구성">4. python 실행 환경 구성</h3>
-<p>;code-server 에서 python 코드 실행시 아래 오류를 보게되면 ms-python.python-2020.5.86806 extension 설치로 해결 가능합니다. 아래 2가지 방법 중 하나로 적용</p>
+<p>;code-server 에서 python 코드 실행시 아래 오류를 보게되면 ms-python.python-2020.5.86806 extension 설치로 해결 가능합니다.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Command <span style="color:#e6db74">&#39;Python: Select Interpreter&#39;</span> resulted in an error <span style="color:#f92672">(</span>command <span style="color:#e6db74">&#39;python.setInterpreter&#39;</span> not found<span style="color:#f92672">)</span>
-</code></pre></div><p>4-1. code-server 로그인 후 extensions 에서 설치 후 변경하는 방법</p>
-<ol>
-<li>왼쪽 메뉴에 extensions 선택, python 검색 후 설치</li>
-<li>설치가 완료되면 설치된 python 의 다른 버전 설치로 2020.5.86806 버전으로 변경 설치<br>
-<p class="md__image">
-  <img src="https://010000.github.io/images/20210307_install_code-server_linux/20210307_install_code-server_linux_img01.png" alt=""  />
-</p>
-</li>
-</ol>
-<p>4-2. extensions 파일을 다운받아 설치하는 방법</p>
+</code></pre></div><p>4-1. ms-python.python-2020.5.86806 파일을 다운받아 설치</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ python --version
 Python 3.6.8
 
@@ -363,7 +354,17 @@ USER1@ ~<span style="color:#f92672">]</span>$ sudo chown USER1:USER1 -R /home/US
 
 USER1@ ~<span style="color:#f92672">]</span>$ python /home/USER1/.local/share/code-server/extensions/ms-python.python-2020.5.86806/pythonFiles/pyvsc-run-isolated.py pip install -U pylint --user
 
-</code></pre></div><p>4-3. extension 설치, 제거의 반복으로 남은 파일을 수동 삭제할 경우</p>
+</code></pre></div><p>4-2. 설치 후에도 해결되지 않는다면 extensions 상위 버전으로 교체 설치</p>
+<ol>
+<li>웹브라우저에서 code-server 로그인 후 왼쪽 메뉴에 extensions 선택, 설치된 python 버전 확인</li>
+<li>설치된 python 의 다른 버전 설치로 2020.5.86806 버전 이상으로 변경 설치.</li>
+<li>현재 사용중인 버전은 2020.10.332292344 로 2020.으로 시작하는 최신 버전을 재설치. (2021.xxx버전 안됩니다)
+<p class="md__image">
+  <img src="https://010000.github.io/images/20210307_install_code-server_linux/20210307_install_code-server_linux_img01.png" alt=""  />
+</p>
+</li>
+</ol>
+<p>4-3. extension 설치, 제거의 반복으로 남은 파일을 수동 삭제할 경우</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ rm -rf /home/USER1/.local/share/code-server/extensions/*
 USER1@ ~<span style="color:#f92672">]</span>$ rm -rf /home/USER1/.local/lib/python3.6/site-packages/*
 </code></pre></div><h3 id="5-python-실행-결과를-terminal이-아닌-debug-console에-출력하기">5. python 실행 결과를 terminal이 아닌 debug console에 출력하기</h3>
