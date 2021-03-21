@@ -10,13 +10,13 @@
 <meta name="keywords" content="tech">
 <meta name="description" content="
 Code-server에 script로 날짜와 시간 값을 구해 암호를 바꿔 사용해봅니다.
-iPAD에서도 계속 열어놓고 사용하기 위해 Nginx .htpasswd는 제거하고 code-server의 암호를 규칙적으로 바꿔 사용중입니다. (Update: Mar 17, 2021)
+iPAD에서도 계속 열어놓고 사용하기 위해 Nginx .htpasswd는 제거하고 code-server의 암호를 규칙적으로 바꿔 사용중입니다. (Update: Mar 21, 2021)
 ">
 
 
 <meta property="og:description" content="
 Code-server에 script로 날짜와 시간 값을 구해 암호를 바꿔 사용해봅니다.
-iPAD에서도 계속 열어놓고 사용하기 위해 Nginx .htpasswd는 제거하고 code-server의 암호를 규칙적으로 바꿔 사용중입니다. (Update: Mar 17, 2021)
+iPAD에서도 계속 열어놓고 사용하기 위해 Nginx .htpasswd는 제거하고 code-server의 암호를 규칙적으로 바꿔 사용중입니다. (Update: Mar 21, 2021)
 ">
 <meta property="og:type" content="article">
 <meta property="og:title" content="쉘스크립트로 Code-server password 자동 갱신과 재시작">
@@ -26,11 +26,11 @@ iPAD에서도 계속 열어놓고 사용하기 위해 Nginx .htpasswd는 제거�
 <meta property="og:site_name" content="010000 logbook">
 <meta property="og:description" content="
 Code-server에 script로 날짜와 시간 값을 구해 암호를 바꿔 사용해봅니다.
-iPAD에서도 계속 열어놓고 사용하기 위해 Nginx .htpasswd는 제거하고 code-server의 암호를 규칙적으로 바꿔 사용중입니다. (Update: Mar 17, 2021)
+iPAD에서도 계속 열어놓고 사용하기 위해 Nginx .htpasswd는 제거하고 code-server의 암호를 규칙적으로 바꿔 사용중입니다. (Update: Mar 21, 2021)
 ">
 <meta name="twitter:description" content="
 Code-server에 script로 날짜와 시간 값을 구해 암호를 바꿔 사용해봅니다.
-iPAD에서도 계속 열어놓고 사용하기 위해 Nginx .htpasswd는 제거하고 code-server의 암호를 규칙적으로 바꿔 사용중입니다. (Update: Mar 17, 2021)
+iPAD에서도 계속 열어놓고 사용하기 위해 Nginx .htpasswd는 제거하고 code-server의 암호를 규칙적으로 바꿔 사용중입니다. (Update: Mar 21, 2021)
 ">
 <meta property="og:locale" content="en-us">
 
@@ -59,10 +59,6 @@ iPAD에서도 계속 열어놓고 사용하기 위해 Nginx .htpasswd는 제거�
       <meta property="article:tag" content="code">
     
       <meta property="article:tag" content="server">
-    
-      <meta property="article:tag" content="restart">
-    
-      <meta property="article:tag" content="centos">
     
   
 
@@ -278,7 +274,7 @@ if (!doNotTrack) {
             <div class="main-content-wrap">
               <ul>
 <li>Code-server에 script로 날짜와 시간 값을 구해 암호를 바꿔 사용해봅니다.</li>
-<li>iPAD에서도 계속 열어놓고 사용하기 위해 Nginx .htpasswd는 제거하고 code-server의 암호를 규칙적으로 바꿔 사용중입니다. <em>(Update: Mar 17, 2021)</em></li>
+<li>iPAD에서도 계속 열어놓고 사용하기 위해 Nginx .htpasswd는 제거하고 code-server의 암호를 규칙적으로 바꿔 사용중입니다. <em>(Update: Mar 21, 2021)</em></li>
 </ul>
 <h3 id="환경-구성">환경 구성</h3>
 <ul>
@@ -291,72 +287,55 @@ if (!doNotTrack) {
 <li>date 옵션을 이용해 스크립트가 실행될 시간과 날짜 등을 구합니다.</li>
 <li>실행된 시간과 날짜로 그 값들과 값에 해당하는 특수문자를 구합니다.</li>
 <li>특수문자는 1~5 숫자만 같은 키의 특수문자로 생성에 사용합니다.</li>
-<li>6~0키, 특히 7키(&amp;), 8키(*)키의 특수문자는 뒤에 어떤 특수 문자가 있냐에 따라 랜덤하게 오류가 발생되어 6~0키는 바로 아래 키의 알파벳 대문자로 입력하는 걸로 했습니다.</li>
+<li>6~0키, 특히 7키(&amp;), 8키(*)키의 특수문자는 뒤에 어떤 특수 문자가 오느냐에 따라 랜덤하게 오류가 발생되어 6~0키는 바로 아래 키의 알파벳 대문자로 입력하는 걸로 했습니다.</li>
 <li>마지막으로 개인이 자주 사용하는 문자열을 넣어서 원하는 배치로 나열해 전체 새로운 암호로 만듭니다.</li>
 </ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
 </span><span style="color:#75715e"></span>
-YAMLPATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/home/USER1/.config/code-server&#34;</span>
-CURPASSWD<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>grep password: $YAMLPATH/config.yaml |awk <span style="color:#e6db74">&#39;{print $2}&#39;</span><span style="color:#e6db74">`</span>    
+CODEPATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/home/USER1/.config/code-server&#34;</span>
+CURPASSWD<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>grep password: <span style="color:#e6db74">${</span>CODEPATH<span style="color:#e6db74">}</span>/config.yaml |awk <span style="color:#e6db74">&#39;{print $2}&#39;</span><span style="color:#e6db74">`</span>
 
 MYWORD1<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;^^Hello&#34;</span>
-GETDATE<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>date <span style="color:#e6db74">&#34;+%Y_%m%d_W%V_%H%M%S_%a_%B&#34;</span><span style="color:#e6db74">`</span>   <span style="color:#75715e">#GETDATE output--&gt;  2021_0317_W11_220825_Wed_March</span>
+GETDATE<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>date <span style="color:#e6db74">&#34;+%Y_%m%d_W%V_%H%M%S_%a_%B&#34;</span><span style="color:#e6db74">`</span>      <span style="color:#75715e">#GETDATE --&gt;  2021_0321_W11_222625_Sun_March</span>
 CURDATE<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>expr <span style="color:#e6db74">${</span>GETDATE:7:2<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>
 CURMONTH<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>expr <span style="color:#e6db74">${</span>GETDATE:5:2<span style="color:#e6db74">}</span> + 0<span style="color:#e6db74">`</span>
-
 <span style="color:#75715e">#SPLCHAR=( &#34;)&#34; &#34;!&#34; &#34;@&#34; &#34;#&#34; &#34;$&#34; &#34;%&#34; &#34;^&#34; &#34;&amp;&#34; &#34;arr_asterisk&#34; &#34;(&#34; )</span>
-SPLCHAR<span style="color:#f92672">=(</span> <span style="color:#e6db74">&#34;P&#34;</span> <span style="color:#e6db74">&#34;!&#34;</span> <span style="color:#e6db74">&#34;@&#34;</span> <span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#e6db74">&#34;</span>$<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;%&#34;</span> <span style="color:#e6db74">&#34;Y&#34;</span> <span style="color:#e6db74">&#34;U&#34;</span> <span style="color:#e6db74">&#34;I&#34;</span> <span style="color:#e6db74">&#34;O&#34;</span> <span style="color:#f92672">)</span> 
+SPLCHAR<span style="color:#f92672">=(</span> <span style="color:#e6db74">&#34;P&#34;</span> <span style="color:#e6db74">&#34;!&#34;</span> <span style="color:#e6db74">&#34;@&#34;</span> <span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#e6db74">&#34;</span>$<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;%&#34;</span> <span style="color:#e6db74">&#34;Y&#34;</span> <span style="color:#e6db74">&#34;U&#34;</span> <span style="color:#e6db74">&#34;I&#34;</span> <span style="color:#e6db74">&#34;O&#34;</span> <span style="color:#f92672">)</span>
+ARR_EXCH<span style="color:#f92672">=()</span>
 
-DATE1<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>expr $CURDATE / 10<span style="color:#e6db74">`</span>
-DATE2<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>expr $CURDATE % 10<span style="color:#e6db74">`</span>    
-MONTH1<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>expr $CURMONTH / 10<span style="color:#e6db74">`</span>
-MONTH2<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>expr $CURMONTH % 10<span style="color:#e6db74">`</span>    
+DATE1<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>expr <span style="color:#e6db74">${</span>CURDATE<span style="color:#e6db74">}</span> / 10<span style="color:#e6db74">`</span>
+DATE2<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>expr <span style="color:#e6db74">${</span>CURDATE<span style="color:#e6db74">}</span> % 10<span style="color:#e6db74">`</span>
 
-<span style="color:#66d9ef">case</span> $DATE1 in
-        0<span style="color:#f92672">)</span> SPLCHAR_F<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>SPLCHAR[0]<span style="color:#e6db74">}</span> ;;
-        1<span style="color:#f92672">)</span> SPLCHAR_F<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>SPLCHAR[1]<span style="color:#e6db74">}</span> ;;
-        2<span style="color:#f92672">)</span> SPLCHAR_F<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>SPLCHAR[2]<span style="color:#e6db74">}</span> ;;
-        3<span style="color:#f92672">)</span> SPLCHAR_F<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>SPLCHAR[3]<span style="color:#e6db74">}</span> ;;
-        4<span style="color:#f92672">)</span> SPLCHAR_F<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>SPLCHAR[4]<span style="color:#e6db74">}</span> ;;
-        5<span style="color:#f92672">)</span> SPLCHAR_F<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>SPLCHAR[5]<span style="color:#e6db74">}</span> ;;
-        6<span style="color:#f92672">)</span> SPLCHAR_F<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>SPLCHAR[6]<span style="color:#e6db74">}</span> ;;
-        7<span style="color:#f92672">)</span> SPLCHAR_F<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>SPLCHAR[7]<span style="color:#e6db74">}</span> ;;
-        8<span style="color:#f92672">)</span> SPLCHAR_F<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>SPLCHAR[8]<span style="color:#e6db74">}</span> ;;
-        9<span style="color:#f92672">)</span> SPLCHAR_F<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>SPLCHAR[9]<span style="color:#e6db74">}</span> ;;
-        *<span style="color:#f92672">)</span> exit -1 ;;
-<span style="color:#66d9ef">esac</span>      
+MONTH1<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>expr <span style="color:#e6db74">${</span>CURMONTH<span style="color:#e6db74">}</span> / 10<span style="color:#e6db74">`</span>
+MONTH2<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>expr <span style="color:#e6db74">${</span>CURMONTH<span style="color:#e6db74">}</span> % 10<span style="color:#e6db74">`</span>
 
-<span style="color:#66d9ef">case</span> $DATE2 in
-        0<span style="color:#f92672">)</span> SPLCHAR_B<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>SPLCHAR[0]<span style="color:#e6db74">}</span> ;;
-        1<span style="color:#f92672">)</span> SPLCHAR_B<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>SPLCHAR[1]<span style="color:#e6db74">}</span> ;;
-        2<span style="color:#f92672">)</span> SPLCHAR_B<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>SPLCHAR[2]<span style="color:#e6db74">}</span> ;;
-        3<span style="color:#f92672">)</span> SPLCHAR_B<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>SPLCHAR[3]<span style="color:#e6db74">}</span> ;;
-        4<span style="color:#f92672">)</span> SPLCHAR_B<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>SPLCHAR[4]<span style="color:#e6db74">}</span> ;;
-        5<span style="color:#f92672">)</span> SPLCHAR_B<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>SPLCHAR[5]<span style="color:#e6db74">}</span> ;;
-        6<span style="color:#f92672">)</span> SPLCHAR_B<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>SPLCHAR[6]<span style="color:#e6db74">}</span> ;;
-        7<span style="color:#f92672">)</span> SPLCHAR_B<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>SPLCHAR[7]<span style="color:#e6db74">}</span> ;;
-        8<span style="color:#f92672">)</span> SPLCHAR_B<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>SPLCHAR[8]<span style="color:#e6db74">}</span> ;;
-        9<span style="color:#f92672">)</span> SPLCHAR_B<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>SPLCHAR[9]<span style="color:#e6db74">}</span> ;;
-        *<span style="color:#f92672">)</span> exit -1 ;;
-<span style="color:#66d9ef">esac</span>      
+i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+<span style="color:#66d9ef">for</span> var in <span style="color:#e6db74">${</span>DATE1<span style="color:#e6db74">}</span> <span style="color:#e6db74">${</span>DATE2<span style="color:#e6db74">}</span>
+<span style="color:#66d9ef">do</span>
+        <span style="color:#66d9ef">case</span> <span style="color:#e6db74">${</span>var<span style="color:#e6db74">}</span> in
+                <span style="color:#e6db74">${</span>var<span style="color:#e6db74">}</span><span style="color:#f92672">)</span> ARR_EXCH<span style="color:#f92672">[</span><span style="color:#e6db74">${</span>i<span style="color:#e6db74">}</span><span style="color:#f92672">]=</span><span style="color:#e6db74">${</span>SPLCHAR[<span style="color:#e6db74">${</span>var<span style="color:#e6db74">}</span>]<span style="color:#e6db74">}</span> ;;
+                *<span style="color:#f92672">)</span> exit -1 ;;
+        <span style="color:#66d9ef">esac</span>
+i<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>expr <span style="color:#e6db74">${</span>i<span style="color:#e6db74">}</span> + 1<span style="color:#e6db74">`</span>
+<span style="color:#66d9ef">done</span>
 
-GENPASSWD<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$MONTH2$MONTH1<span style="color:#e6db74">&#34;</span>-<span style="color:#e6db74">&#34;</span>$DATE1$DATE2$SPLCHAR_F$SPLCHAR_B<span style="color:#e6db74">&#34;</span>_<span style="color:#e6db74">&#34;</span>$MYWORD1<span style="color:#e6db74">&#34;</span>  
-eval <span style="color:#e6db74">&#34;sed -i &#39;s/</span>$CURPASSWD<span style="color:#e6db74">/</span>$GENPASSWD<span style="color:#e6db74">/g&#39; </span>$YAMLPATH<span style="color:#e6db74">/config.yaml&#34;</span> <span style="color:#f92672">&amp;&amp;</span> sleep <span style="color:#ae81ff">1</span>
+GENPASSWD<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>MONTH1<span style="color:#e6db74">}${</span>MONTH2<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>-<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>DATE1<span style="color:#e6db74">}${</span>DATE2<span style="color:#e6db74">}</span><span style="color:#e6db74">_</span><span style="color:#e6db74">${</span>ARR_EXCH[0]<span style="color:#e6db74">}${</span>ARR_EXCH[1]<span style="color:#e6db74">}${</span>MYWORD1<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+
+eval <span style="color:#e6db74">&#34;sed -i &#39;s/</span><span style="color:#e6db74">${</span>CURPASSWD<span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">${</span>GENPASSWD<span style="color:#e6db74">}</span><span style="color:#e6db74">/g&#39; </span><span style="color:#e6db74">${</span>CODEPATH<span style="color:#e6db74">}</span><span style="color:#e6db74">/config.yaml&#34;</span> <span style="color:#f92672">&amp;&amp;</span> sleep <span style="color:#ae81ff">1</span>
 eval <span style="color:#e6db74">&#34;sudo systemctl restart code-server@USER1&#34;</span> <span style="color:#f92672">&amp;&amp;</span> exit <span style="color:#ae81ff">0</span>
 </code></pre></div><p>;실행해보면&hellip; (code-server 재시작 포함)</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ sh -x ./update-pass.sh 
 
 <span style="color:#f92672">(</span>...생략...<span style="color:#f92672">)</span>
 
-<span style="display:block;width:100%;background-color:#3c3d38">+ GENPASSWD<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;03-18!I_^^Hello&#39;</span>
-</span>+ sleep <span style="color:#ae81ff">1</span>
-+ eval <span style="color:#e6db74">&#39;sed -i &#39;</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">&#39;s/myCurnPass20@!$#%..,/03-18!I^^Hello/g&#39;</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">&#39; /home/USER1/.config/code-server/config.yaml&#39;</span>
-<span style="display:block;width:100%;background-color:#3c3d38">++ sed -i <span style="color:#e6db74">&#39;s/myCurnPass20@!$#%..,/03-18!I_^^Hello/g&#39;</span> /home/USER1/.config/code-server/config.yaml
-</span>+ sleep <span style="color:#ae81ff">1</span>
-+ eval <span style="color:#e6db74">&#39;sudo systemctl restart code-server@USER1/&#39;</span>
-<span style="display:block;width:100%;background-color:#3c3d38">++ sudo systemctl restart code-server@USER1/
-</span>+ exit <span style="color:#ae81ff">0</span>
-</code></pre></div><p>; 생성된 code-server의 pasword 비교</p>
+<span style="display:block;width:100%;background-color:#3c3d38">+ GENPASSWD<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;03-21_@!^^Hello&#39;</span>
+</span>+ eval <span style="color:#e6db74">&#39;sed -i &#39;</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">&#39;s/myCurnPass20@!$#%..,/03-21_@!^^Hello/g&#39;</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">&#39; /home/USER1/.config/code-server/config.yaml&#39;</span>
+++ sed -i <span style="color:#e6db74">&#39;s/myCurnPass20@!$#%..,/03-21_@!^^Hello/g&#39;</span> /home/USER1/.config/code-server/config.yaml
+<span style="display:block;width:100%;background-color:#3c3d38">+ sleep <span style="color:#ae81ff">1</span>
+</span>+ eval <span style="color:#e6db74">&#39;sudo systemctl restart code-server@USER1/&#39;</span>
+++ sudo systemctl restart code-server@USER1/
+<span style="display:block;width:100%;background-color:#3c3d38">+ exit <span style="color:#ae81ff">0</span>
+</span></code></pre></div><p>; 생성된 code-server의 pasword 비교</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#실행 전</span>
 USER1@ ~<span style="color:#f92672">]</span>$ cat /home/USER1/.config/code-server/config.yaml
 bind-addr: 127.0.0.1:8888
@@ -368,16 +347,19 @@ auth: password
 USER1@ ~<span style="color:#f92672">]</span>$ cat /home/USER1/.config/code-server/config.yaml
 bind-addr: 127.0.0.1:8888
 auth: password
-<span style="display:block;width:100%;background-color:#3c3d38">password: 03-18!I_^^Hello
+<span style="display:block;width:100%;background-color:#3c3d38">password: 03-21_@!^^Hello
 </span>cert: false
-</code></pre></div><p>;cron에 등록하여 규칙적으로 실행</p>
+</code></pre></div><p>;cron 등록으로 규칙적으로 실행</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ cat /etc/crontab 
 <span style="color:#ae81ff">00</span> <span style="color:#ae81ff">07</span>   * * <span style="color:#ae81ff">1</span>   USER1    /bin/sh /home/USER1/update-pass.sh &gt; /dev/null 2&gt;&amp;<span style="color:#ae81ff">1</span>
 </code></pre></div><ul>
-<li>암호 변환 등 생성하지 말고 자주 사용하는 암호들을 규칙적으로 바꿔주는게 더 쉬울 수 있습니다.</li>
-<li>개인적으로 규칙을 갖고 암호를 만들면 기억할 필요가 없고</li>
-<li><del>(호기심으로 시작해서)</del> 규칙에 따라 자동으로 변경되게 해보자로 공부 겸 만들었네요.</li>
-<li>개인용으로 연습삼아 작성한거라, 허접해도 양해부탁드려요. ^^;</li>
+<li>
+<p>개인적으로 사용하는 규칙성을 갖는 암호를 만들면 따로 기억하거나 잊어버릴 일도 적어서
+<del>(호기심으로)</del> 규칙에 따라 일정하게 변경되게 해보자로 공부 겸 작성했습니다.</p>
+</li>
+<li>
+<p>저처럼 값의 특수문자 변환없이 자주 사용하는 암호들로 규칙적으로만 바꿔줘도 충분합니다.</p>
+</li>
 </ul>
 <h3 id="참고">참고</h3>
 <ul>
@@ -406,10 +388,6 @@ auth: password
   <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/code/">code</a>
 
   <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/server/">server</a>
-
-  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/restart/">restart</a>
-
-  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/centos/">centos</a>
 
                   </div>
                 
