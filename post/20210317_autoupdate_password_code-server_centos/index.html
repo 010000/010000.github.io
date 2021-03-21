@@ -292,8 +292,8 @@ if (!doNotTrack) {
 </ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
 </span><span style="color:#75715e"></span>
-CODEPATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/home/USER1/.config/code-server&#34;</span>
-CURPASSWD<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>grep password: <span style="color:#e6db74">${</span>CODEPATH<span style="color:#e6db74">}</span>/config.yaml |awk <span style="color:#e6db74">&#39;{print $2}&#39;</span><span style="color:#e6db74">`</span>
+YAMLPATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/home/USER1/.config/code-server&#34;</span>
+CURPASSWD<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>grep password: <span style="color:#e6db74">${</span>YAMLPATH<span style="color:#e6db74">}</span>/config.yaml |awk <span style="color:#e6db74">&#39;{print $2}&#39;</span><span style="color:#e6db74">`</span>
 
 MYWORD1<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;^^Hello&#34;</span>
 GETDATE<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>date <span style="color:#e6db74">&#34;+%Y_%m%d_W%V_%H%M%S_%a_%B&#34;</span><span style="color:#e6db74">`</span>      <span style="color:#75715e">#GETDATE --&gt;  2021_0321_W11_222625_Sun_March</span>
@@ -303,14 +303,14 @@ CURMONTH<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>
 SPLCHAR<span style="color:#f92672">=(</span> <span style="color:#e6db74">&#34;P&#34;</span> <span style="color:#e6db74">&#34;!&#34;</span> <span style="color:#e6db74">&#34;@&#34;</span> <span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#e6db74">&#34;</span>$<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;%&#34;</span> <span style="color:#e6db74">&#34;Y&#34;</span> <span style="color:#e6db74">&#34;U&#34;</span> <span style="color:#e6db74">&#34;I&#34;</span> <span style="color:#e6db74">&#34;O&#34;</span> <span style="color:#f92672">)</span>
 ARR_EXCH<span style="color:#f92672">=()</span>
 
-DATE1<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>expr <span style="color:#e6db74">${</span>CURDAY<span style="color:#e6db74">}</span> / 10<span style="color:#e6db74">`</span>
-DATE2<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>expr <span style="color:#e6db74">${</span>CURDAY<span style="color:#e6db74">}</span> % 10<span style="color:#e6db74">`</span>
+DAY1<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>expr <span style="color:#e6db74">${</span>CURDAY<span style="color:#e6db74">}</span> / 10<span style="color:#e6db74">`</span>
+DAY2<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>expr <span style="color:#e6db74">${</span>CURDAY<span style="color:#e6db74">}</span> % 10<span style="color:#e6db74">`</span>
 
 MONTH1<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>expr <span style="color:#e6db74">${</span>CURMONTH<span style="color:#e6db74">}</span> / 10<span style="color:#e6db74">`</span>
 MONTH2<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>expr <span style="color:#e6db74">${</span>CURMONTH<span style="color:#e6db74">}</span> % 10<span style="color:#e6db74">`</span>
 
 i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
-<span style="color:#66d9ef">for</span> var in <span style="color:#e6db74">${</span>DATE1<span style="color:#e6db74">}</span> <span style="color:#e6db74">${</span>DATE2<span style="color:#e6db74">}</span>
+<span style="color:#66d9ef">for</span> var in <span style="color:#e6db74">${</span>DAY1<span style="color:#e6db74">}</span> <span style="color:#e6db74">${</span>DAY2<span style="color:#e6db74">}</span>
 <span style="color:#66d9ef">do</span>
         <span style="color:#66d9ef">case</span> <span style="color:#e6db74">${</span>var<span style="color:#e6db74">}</span> in
                 <span style="color:#e6db74">${</span>var<span style="color:#e6db74">}</span><span style="color:#f92672">)</span> ARR_EXCH<span style="color:#f92672">[</span><span style="color:#e6db74">${</span>i<span style="color:#e6db74">}</span><span style="color:#f92672">]=</span><span style="color:#e6db74">${</span>SPLCHAR[<span style="color:#e6db74">${</span>var<span style="color:#e6db74">}</span>]<span style="color:#e6db74">}</span> ;;
@@ -319,9 +319,9 @@ i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
 i<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>expr <span style="color:#e6db74">${</span>i<span style="color:#e6db74">}</span> + 1<span style="color:#e6db74">`</span>
 <span style="color:#66d9ef">done</span>
 
-GENPASSWD<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>MONTH1<span style="color:#e6db74">}${</span>MONTH2<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>-<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>DATE1<span style="color:#e6db74">}${</span>DATE2<span style="color:#e6db74">}</span><span style="color:#e6db74">_</span><span style="color:#e6db74">${</span>ARR_EXCH[0]<span style="color:#e6db74">}${</span>ARR_EXCH[1]<span style="color:#e6db74">}${</span>MYWORD1<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+GENPASSWD<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>MONTH1<span style="color:#e6db74">}${</span>MONTH2<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>-<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>DAY1<span style="color:#e6db74">}${</span>DAY2<span style="color:#e6db74">}</span><span style="color:#e6db74">_</span><span style="color:#e6db74">${</span>ARR_EXCH[0]<span style="color:#e6db74">}${</span>ARR_EXCH[1]<span style="color:#e6db74">}${</span>MYWORD1<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
 
-eval <span style="color:#e6db74">&#34;sed -i &#39;s/</span><span style="color:#e6db74">${</span>CURPASSWD<span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">${</span>GENPASSWD<span style="color:#e6db74">}</span><span style="color:#e6db74">/g&#39; </span><span style="color:#e6db74">${</span>CODEPATH<span style="color:#e6db74">}</span><span style="color:#e6db74">/config.yaml&#34;</span> <span style="color:#f92672">&amp;&amp;</span> sleep <span style="color:#ae81ff">1</span>
+eval <span style="color:#e6db74">&#34;sed -i &#39;s/</span><span style="color:#e6db74">${</span>CURPASSWD<span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">${</span>GENPASSWD<span style="color:#e6db74">}</span><span style="color:#e6db74">/g&#39; </span><span style="color:#e6db74">${</span>YAMLPATH<span style="color:#e6db74">}</span><span style="color:#e6db74">/config.yaml&#34;</span> <span style="color:#f92672">&amp;&amp;</span> sleep <span style="color:#ae81ff">1</span>
 eval <span style="color:#e6db74">&#34;sudo systemctl restart code-server@USER1&#34;</span> <span style="color:#f92672">&amp;&amp;</span> exit <span style="color:#ae81ff">0</span>
 </code></pre></div><p>;실행해보면&hellip; (code-server 재시작 포함)</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ sh -x ./update-pass.sh 
