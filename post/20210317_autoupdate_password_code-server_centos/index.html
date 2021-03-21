@@ -299,13 +299,13 @@ MYWORD1<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;^^He
 GETDATE<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>date <span style="color:#e6db74">&#34;+%Y_%m%d_W%V_%H%M%S_%a_%B&#34;</span><span style="color:#e6db74">`</span>      <span style="color:#75715e">#GETDATE --&gt;  2021_0321_W11_222625_Sun_March</span>
 CURDAY<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>expr <span style="color:#e6db74">${</span>GETDATE:7:2<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>
 CURMONTH<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>expr <span style="color:#e6db74">${</span>GETDATE:5:2<span style="color:#e6db74">}</span> + 0<span style="color:#e6db74">`</span>
+
 <span style="color:#75715e">#SPLCHAR=( &#34;)&#34; &#34;!&#34; &#34;@&#34; &#34;#&#34; &#34;$&#34; &#34;%&#34; &#34;^&#34; &#34;&amp;&#34; &#34;*&#34; &#34;(&#34; )</span>
 SPLCHAR<span style="color:#f92672">=(</span> <span style="color:#e6db74">&#34;P&#34;</span> <span style="color:#e6db74">&#34;!&#34;</span> <span style="color:#e6db74">&#34;@&#34;</span> <span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#e6db74">&#34;</span>$<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;%&#34;</span> <span style="color:#e6db74">&#34;Y&#34;</span> <span style="color:#e6db74">&#34;U&#34;</span> <span style="color:#e6db74">&#34;I&#34;</span> <span style="color:#e6db74">&#34;O&#34;</span> <span style="color:#f92672">)</span>
 ARR_EXCH<span style="color:#f92672">=()</span>
 
 DAY1<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>expr <span style="color:#e6db74">${</span>CURDAY<span style="color:#e6db74">}</span> / 10<span style="color:#e6db74">`</span>
 DAY2<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>expr <span style="color:#e6db74">${</span>CURDAY<span style="color:#e6db74">}</span> % 10<span style="color:#e6db74">`</span>
-
 MONTH1<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>expr <span style="color:#e6db74">${</span>CURMONTH<span style="color:#e6db74">}</span> / 10<span style="color:#e6db74">`</span>
 MONTH2<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>expr <span style="color:#e6db74">${</span>CURMONTH<span style="color:#e6db74">}</span> % 10<span style="color:#e6db74">`</span>
 
