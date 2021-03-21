@@ -299,7 +299,7 @@ MYWORD1<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;^^He
 GETDATE<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>date <span style="color:#e6db74">&#34;+%Y_%m%d_W%V_%H%M%S_%a_%B&#34;</span><span style="color:#e6db74">`</span>      <span style="color:#75715e">#GETDATE --&gt;  2021_0321_W11_222625_Sun_March</span>
 CURDATE<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>expr <span style="color:#e6db74">${</span>GETDATE:7:2<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>
 CURMONTH<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>expr <span style="color:#e6db74">${</span>GETDATE:5:2<span style="color:#e6db74">}</span> + 0<span style="color:#e6db74">`</span>
-<span style="color:#75715e">#SPLCHAR=( &#34;)&#34; &#34;!&#34; &#34;@&#34; &#34;#&#34; &#34;$&#34; &#34;%&#34; &#34;^&#34; &#34;&amp;&#34; &#34;arr_asterisk&#34; &#34;(&#34; )</span>
+<span style="color:#75715e">#SPLCHAR=( &#34;)&#34; &#34;!&#34; &#34;@&#34; &#34;#&#34; &#34;$&#34; &#34;%&#34; &#34;^&#34; &#34;&amp;&#34; &#34;*&#34; &#34;(&#34; )</span>
 SPLCHAR<span style="color:#f92672">=(</span> <span style="color:#e6db74">&#34;P&#34;</span> <span style="color:#e6db74">&#34;!&#34;</span> <span style="color:#e6db74">&#34;@&#34;</span> <span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#e6db74">&#34;</span>$<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;%&#34;</span> <span style="color:#e6db74">&#34;Y&#34;</span> <span style="color:#e6db74">&#34;U&#34;</span> <span style="color:#e6db74">&#34;I&#34;</span> <span style="color:#e6db74">&#34;O&#34;</span> <span style="color:#f92672">)</span>
 ARR_EXCH<span style="color:#f92672">=()</span>
 
@@ -330,12 +330,12 @@ eval <span style="color:#e6db74">&#34;sudo systemctl restart code-server@USER1&#
 
 <span style="display:block;width:100%;background-color:#3c3d38">+ GENPASSWD<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;03-21_@!^^Hello&#39;</span>
 </span>+ eval <span style="color:#e6db74">&#39;sed -i &#39;</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">&#39;s/myCurnPass20@!$#%..,/03-21_@!^^Hello/g&#39;</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">&#39; /home/USER1/.config/code-server/config.yaml&#39;</span>
-++ sed -i <span style="color:#e6db74">&#39;s/myCurnPass20@!$#%..,/03-21_@!^^Hello/g&#39;</span> /home/USER1/.config/code-server/config.yaml
-<span style="display:block;width:100%;background-color:#3c3d38">+ sleep <span style="color:#ae81ff">1</span>
-</span>+ eval <span style="color:#e6db74">&#39;sudo systemctl restart code-server@USER1/&#39;</span>
-++ sudo systemctl restart code-server@USER1/
-<span style="display:block;width:100%;background-color:#3c3d38">+ exit <span style="color:#ae81ff">0</span>
-</span></code></pre></div><p>; 생성된 code-server의 pasword 비교</p>
+<span style="display:block;width:100%;background-color:#3c3d38">++ sed -i <span style="color:#e6db74">&#39;s/myCurnPass20@!$#%..,/03-21_@!^^Hello/g&#39;</span> /home/USER1/.config/code-server/config.yaml
+</span>+ sleep <span style="color:#ae81ff">1</span>
++ eval <span style="color:#e6db74">&#39;sudo systemctl restart code-server@USER1/&#39;</span>
+<span style="display:block;width:100%;background-color:#3c3d38">++ sudo systemctl restart code-server@USER1/
+</span>+ exit <span style="color:#ae81ff">0</span>
+</code></pre></div><p>; 생성된 code-server의 pasword 비교</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#실행 전</span>
 USER1@ ~<span style="color:#f92672">]</span>$ cat /home/USER1/.config/code-server/config.yaml
 bind-addr: 127.0.0.1:8888
@@ -353,13 +353,9 @@ auth: password
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ cat /etc/crontab 
 <span style="color:#ae81ff">00</span> <span style="color:#ae81ff">07</span>   * * <span style="color:#ae81ff">1</span>   USER1    /bin/sh /home/USER1/update-pass.sh &gt; /dev/null 2&gt;&amp;<span style="color:#ae81ff">1</span>
 </code></pre></div><ul>
-<li>
-<p>개인적으로 사용하는 규칙성을 갖는 암호를 만들면 따로 기억하거나 잊어버릴 일도 적어서
-<del>(호기심으로)</del> 규칙에 따라 일정하게 변경되게 해보자로 공부 겸 작성했습니다.</p>
-</li>
-<li>
-<p>저처럼 값의 특수문자 변환없이 자주 사용하는 암호들로 규칙적으로만 바꿔줘도 충분합니다.</p>
-</li>
+<li>규칙성을 갖는 암호를 사용면 여러개의 암호를 기억하거나 잊어버릴 일이 적어서
+<del>(호기심으로 시작해)</del> 규칙에 따라 일정하게 변경되게 해보자로 공부 겸 작성했습니다.</li>
+<li>저처럼 값의 특수문자 변환없이 자주 사용하는 암호들로 규칙적으로만 바꿔줘도 충분합니다.</li>
 </ul>
 <h3 id="참고">참고</h3>
 <ul>
