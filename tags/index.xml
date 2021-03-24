@@ -6,7 +6,52 @@
     <description>Recent content in Tags on 010000 logbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Wed, 17 Mar 2021 17:30:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Mar 2021 09:02:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>enable</title>
+      <link>https://010000.github.io/tags/enable/</link>
+      <pubDate>Wed, 24 Mar 2021 09:02:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/enable/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://010000.github.io/tags/linux/</link>
+      <pubDate>Wed, 24 Mar 2021 09:02:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>redhat</title>
+      <link>https://010000.github.io/tags/redhat/</link>
+      <pubDate>Wed, 24 Mar 2021 09:02:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/redhat/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>repository</title>
+      <link>https://010000.github.io/tags/repository/</link>
+      <pubDate>Wed, 24 Mar 2021 09:02:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/repository/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>yum</title>
+      <link>https://010000.github.io/tags/yum/</link>
+      <pubDate>Wed, 24 Mar 2021 09:02:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/yum/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>auto</title>
       <link>https://010000.github.io/tags/auto/</link>
@@ -157,15 +202,6 @@
       <pubDate>Fri, 12 Mar 2021 17:52:00 +0900</pubDate>
       
       <guid>https://010000.github.io/tags/proxy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>linux</title>
-      <link>https://010000.github.io/tags/linux/</link>
-      <pubDate>Sun, 07 Mar 2021 21:53:00 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/linux/</guid>
       <description></description>
     </item>
     
