@@ -371,6 +371,13 @@ S:\Hugo\blog\public&gt; git add . &amp;&amp; git commit -m <span style="color:#e
 S:\Hugo\blog\public&gt; cd ..
 S:\Hugo\blog&gt; git add . &amp;&amp; git commit -m <span style="color:#e6db74">&#34;커밋 메세지&#34;</span> &amp;&amp; git push origin master
 
+</code></pre></div><p>;Linux OS에서 SSH key로 설정하는 경우<br>
+(ssh.key 생성과 github등록까지 완료된 환경에서 진행)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">~<span style="color:#f92672">]</span>$ cd ~/Hugo/Blog
+~<span style="color:#f92672">]</span>$ git remote add origin git@github.com:0l0000/BlogHugoContents.git
+~<span style="color:#f92672">]</span>$ cd ~/Hugo/Blog/public
+~<span style="color:#f92672">]</span>$ git submodule add -b master git@github.com:0l000/0l0000.github.io.git public
+
 </code></pre></div><h3 id="4-브라우저에서-확인">4. 브라우저에서 확인</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">https://{userid}.github.io/
 </code></pre></div><h3 id="참고-글">참고 글</h3>
