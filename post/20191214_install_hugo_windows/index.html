@@ -10,13 +10,13 @@
 <meta name="keywords" content="tech">
 <meta name="description" content="
 Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인 및 설치합니다
-Hugo 설명과 윈도우즈 환경설정(path) 과정은 생략했습니다. (Update: Dec 14, 2019)
+Hugo 설명과 윈도우즈 환경설정(path) 과정은 생략했습니다. (Update: Mar 24, 2021)
 ">
 
 
 <meta property="og:description" content="
 Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인 및 설치합니다
-Hugo 설명과 윈도우즈 환경설정(path) 과정은 생략했습니다. (Update: Dec 14, 2019)
+Hugo 설명과 윈도우즈 환경설정(path) 과정은 생략했습니다. (Update: Mar 24, 2021)
 ">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows 환경에서 Hugo 설치하기">
@@ -26,11 +26,11 @@ Hugo 설명과 윈도우즈 환경설정(path) 과정은 생략했습니다. (Up
 <meta property="og:site_name" content="010000 logbook">
 <meta property="og:description" content="
 Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인 및 설치합니다
-Hugo 설명과 윈도우즈 환경설정(path) 과정은 생략했습니다. (Update: Dec 14, 2019)
+Hugo 설명과 윈도우즈 환경설정(path) 과정은 생략했습니다. (Update: Mar 24, 2021)
 ">
 <meta name="twitter:description" content="
 Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인 및 설치합니다
-Hugo 설명과 윈도우즈 환경설정(path) 과정은 생략했습니다. (Update: Dec 14, 2019)
+Hugo 설명과 윈도우즈 환경설정(path) 과정은 생략했습니다. (Update: Mar 24, 2021)
 ">
 <meta property="og:locale" content="en-us">
 
@@ -268,7 +268,7 @@ if (!doNotTrack) {
             <div class="main-content-wrap">
               <ul>
 <li>Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인 및 설치합니다</li>
-<li>Hugo 설명과 윈도우즈 환경설정(path) 과정은 생략했습니다. <em>(Update: Dec 14, 2019)</em></li>
+<li>Hugo 설명과 윈도우즈 환경설정(path) 과정은 생략했습니다. <em>(Update: Mar 24, 2021)</em></li>
 </ul>
 <h2 id="configuration">Configuration</h2>
 <ul>
@@ -313,6 +313,14 @@ File: hugo_0.61.0_Windows-64bit.zip</p>
    
 C:\&gt;hugo version
 Hugo Static Site Generator v0.61.0-9B445B9D windows/amd64 BuildDate<span style="color:#960050;background-color:#1e0010">:</span> 2019-12-11T08<span style="color:#960050;background-color:#1e0010">:</span>29<span style="color:#960050;background-color:#1e0010">:</span>13Z
+</code></pre></div><p>참고용 - Linux에서 hugo 설치 (Install Hugo from Tarball)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">curl -fOL https://github.com/gohugoio/hugo/releases/download/v0.82.0/hugo_0.82.0_Linux-64bit.tar.gz
+
+curl -fOL https://github.com/gohugoio/hugo/releases/download/v0.82.0/hugo_0.82.0_Linux-64bit.deb
+   
+~<span style="color:#f92672">]</span>$ sudo mkdir -p /usr/local/hugo/bin
+~<span style="color:#f92672">]</span>$ sudo tar xvfz /home/opc/download/hugo_0.82.0_Linux-64bit.tar.gz -C /usr/local/hugo/bin/ 
+~<span style="color:#f92672">]</span>$ sudo ln -s /usr/local/hugo/bin/hugo /usr/bin/hugo
 </code></pre></div></li>
 <li>
 <p>Create new site<br>
@@ -330,6 +338,11 @@ Congratulations! Your new Hugo site is created <span style="color:#66d9ef">in</s
             6개 디렉터리  63,021,146,112 바이트 남음
 </code></pre></div></li>
 </ol>
+<h3 id="참고">참고</h3>
+<p>*<a href="https://github.com/gohugoio/hugo/releases" target="_blank" rel="noopener">github.com - hugo releases</a>
+<br>
+*<a href="https://gohugo.io/getting-started/installing/" target="_blank" rel="noopener">gohugo.io - getting-started installing</a>
+</p>
               
             </div>
           </div>
