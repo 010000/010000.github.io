@@ -6,22 +6,58 @@
     <description>Recent content in Tags on 010000 logbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Wed, 24 Mar 2021 09:02:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Mar 2021 11:02:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>enable</title>
-      <link>https://010000.github.io/tags/enable/</link>
-      <pubDate>Wed, 24 Mar 2021 09:02:00 +0900</pubDate>
+      <title>2.2</title>
+      <link>https://010000.github.io/tags/2.2/</link>
+      <pubDate>Wed, 24 Mar 2021 11:02:00 +0900</pubDate>
       
-      <guid>https://010000.github.io/tags/enable/</guid>
+      <guid>https://010000.github.io/tags/2.2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>2.8</title>
+      <link>https://010000.github.io/tags/2.8/</link>
+      <pubDate>Wed, 24 Mar 2021 11:02:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/2.8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://010000.github.io/tags/git/</link>
+      <pubDate>Wed, 24 Mar 2021 11:02:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/git/</guid>
       <description></description>
     </item>
     
     <item>
       <title>linux</title>
       <link>https://010000.github.io/tags/linux/</link>
-      <pubDate>Wed, 24 Mar 2021 09:02:00 +0900</pubDate>
+      <pubDate>Wed, 24 Mar 2021 11:02:00 +0900</pubDate>
       
       <guid>https://010000.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>update</title>
+      <link>https://010000.github.io/tags/update/</link>
+      <pubDate>Wed, 24 Mar 2021 11:02:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/update/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>enable</title>
+      <link>https://010000.github.io/tags/enable/</link>
+      <pubDate>Wed, 24 Mar 2021 09:02:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/enable/</guid>
       <description></description>
     </item>
     
@@ -94,15 +130,6 @@
       <pubDate>Wed, 17 Mar 2021 17:30:00 +0900</pubDate>
       
       <guid>https://010000.github.io/tags/server/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>update</title>
-      <link>https://010000.github.io/tags/update/</link>
-      <pubDate>Wed, 17 Mar 2021 17:30:00 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/update/</guid>
       <description></description>
     </item>
     
@@ -436,15 +463,6 @@
       <pubDate>Thu, 19 Dec 2019 10:10:18 +0900</pubDate>
       
       <guid>https://010000.github.io/tags/theme/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>git</title>
-      <link>https://010000.github.io/tags/git/</link>
-      <pubDate>Mon, 16 Dec 2019 23:05:05 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/git/</guid>
       <description></description>
     </item>
     
