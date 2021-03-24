@@ -300,12 +300,14 @@ Loaded plugins: product-id, search-disabled-repos, subscription-manager
 This system is not registered with an entitlement server. You can use subscription-manager to register.
 
 repolist: <span style="color:#ae81ff">0</span>
+
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>USER1@TESTSVR1 ~<span style="color:#f92672">]</span>$ sudo subscription-manager register
 Registering to: subscription.rhsm.redhat.com:443/subscription
 Username: USER1
 Password: 
 The system has been registered with ID: 22c847f8-748a-3ba2-715e-a2303bac20e1
 The registered system name is: TESTSVR1
+
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>USER1@TESTSVR1 ~<span style="color:#f92672">]</span>$ sudo subscription-manager list --available
 +-------------------------------------------+
     Available Subscriptions
@@ -375,7 +377,6 @@ Starts:              03/23/2021
 Ends:                03/23/2022
 Entitlement Type:    Physical
   
-<span style="color:#f92672">[</span>USER1@TESTSVR1 ~<span style="color:#f92672">]</span>$ sudo
 </code></pre></div><pre><code>[USER1@TESTSVR1 ~]$ sudo subscription-manager attach --auto
 Installed Product Current Status:
 Product Name: Red Hat Enterprise Linux Server
@@ -387,14 +388,13 @@ total 212
 drwxr-xr-x.  2 root root   4096 Mar 23 22:41 .
 drwxr-xr-x. 76 root root   4096 Mar 23 22:39 ..
 -rw-r--r--.  1 root root 205716 Mar 23 22:45 redhat.repo
+
 </code></pre><pre><code>[USER1@TESTSVR1 ~]$ sudo subscription-manager repos --enable=rhel-7-server-rpms
 Repository 'rhel-7-server-rpms' is enabled for this system.
-[USER1@TESTSVR1 ~]$ sudo 
-  
   
 [USER1@TESTSVR1 ~]$ sudo yum repolist all |grep -i enable
 rhel-7-server-rpms/7Server/   x86_64                                            enabled: 31,561
-[USER1@TESTSVR1 ~]$ sudo 
+
 </code></pre><pre><code>[USER1@TESTSVR1 ~]$ sudo yum list update
 Loaded plugins: product-id, search-disabled-repos,    subscription-manager
 rhel-7-server-rpms                                                                                     | 3.5 kB  00:00:00     
@@ -402,7 +402,7 @@ rhel-7-server-rpms                                                              
 (2/3): rhel-7-server-rpms/7Server/x86_64/   updateinfo                                                 | 4.0 MB     00:00:01     
 (3/3): rhel-7-server-rpms/7Server/x86_64/   primary_db                                                 |  79 MB     00:00:07     
 Error: No matching Packages to list
-[USER1@TESTSVR1 ~]$ sudo 
+  
 </code></pre></li>
 </ul>
 <h3 id="참고">참고</h3>
