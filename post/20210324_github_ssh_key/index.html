@@ -358,7 +358,7 @@ Receiving objects: 100% <span style="color:#f92672">(</span>8853/8853<span style
 Resolving deltas: 100% <span style="color:#f92672">(</span>5132/5132<span style="color:#f92672">)</span>, <span style="color:#66d9ef">done</span>.
 Checking connectivity... <span style="color:#66d9ef">done</span>.
 
-</code></pre></div><h3 id="4-hugo-블로그-git-재설정-중-이슈들">4. Hugo 블로그 git 재설정 중 이슈들</h3>
+</code></pre></div><h3 id="4-hugo-블로그-git-재설정-중-이슈들11">4. Hugo 블로그 git 재설정 중 이슈들11</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">USER1@SVR1 Blog<span style="color:#f92672">]</span>$ git submodule add -b master git@github.com:0l000/0l0000.github.io.git public
 <span style="color:#e6db74">&#39;public&#39;</span> already exists in the index
 
@@ -380,11 +380,30 @@ rm <span style="color:#e6db74">&#39;public&#39;</span>
 
 USER1@SVR1 Blog<span style="color:#f92672">]</span>$ rm -rf /home/USER1/Hugo/Blog/.gitmodules     <span style="color:#75715e">#./public만 남아있어 삭제</span>
 
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">USER1@SVR1 public<span style="color:#f92672">]</span>$ git add .
+fatal: Unable to create <span style="color:#e6db74">&#39;/home/USER1/Hugo/Blog/.git/index.lock&#39;</span>: File exists.
+
+USER1@SVR1 public<span style="color:#f92672">]</span>$ git add .
+git: pathspec.c:317: prefix_pathspec: Assertion <span style="color:#e6db74">`</span>item-&gt;nowildcard_len &lt;<span style="color:#f92672">=</span> item-&gt;len <span style="color:#f92672">&amp;&amp;</span> item-&gt;prefix &lt;<span style="color:#f92672">=</span> item-&gt;len<span style="color:#e6db74">&#39; failed.
+</span><span style="color:#e6db74">Aborted (core dumped)
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">USER1@SVR1 Blog]$ rm -rf /home/USER1/Hugo/Blog/.git/index.lock
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">USER1@SVR1 Blog]$ git ls-files --stage |grep public
+</span><span style="color:#e6db74">160000 881a2be2556ab336aadc57a25d256a5e87e60a8e 0       public
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">USER1@SVR1 Blog]$ git rm --cached public  
+</span><span style="color:#e6db74">rm &#39;</span>public<span style="color:#960050;background-color:#1e0010">&#39;</span>
+
 </code></pre></div><h3 id="참고">참고</h3>
 <ul>
 <li><a href="https://goddaehee.tistory.com/254" target="_blank" rel="noopener">Github 비밀번호 입력 없이 pull/push 하기</a>
 </li>
 <li><a href="https://www.lesstif.com/gitbook/github-two-factor-authentication-2fa-gitlab-bitbucket-71401744.html" target="_blank" rel="noopener">github 에 이중 인증(two factor authentication, 2FA) 적용해서 보안 강화하기</a>
+</li>
+<li><a href="https://webruden.tistory.com/529" target="_blank" rel="noopener">git/index.lock file exists 문제 해결하는 방법</a>
+</li>
+<li><a href="https://stackoverflow.com/questions/24472596/git-fatal-pathspec-is-in-submodule" target="_blank" rel="noopener">Git: fatal: Pathspec is in submodule</a>
 </li>
 </ul>
               
