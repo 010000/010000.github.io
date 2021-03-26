@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>large on 010000 logbook</title>
+    <link>https://010000.github.io/tags/large/</link>
+    <description>Recent content in large on 010000 logbook</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Fri, 26 Mar 2021 16:30:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/large/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Super big size syslog file on linux</title>
+      <link>https://010000.github.io/post/20210326_super_large_syslog_file_linux/</link>
+      <pubDate>Fri, 26 Mar 2021 16:30:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/post/20210326_super_large_syslog_file_linux/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;거대한 사이즈의 Syslog 파일을 이유를 모르고 보게되면 깜짝 놀라지만, 알고 보면 의도된 자연스러운 Sparse 파일  &lt;em&gt;(Update: Mar 26, 2021)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

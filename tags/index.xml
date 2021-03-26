@@ -6,13 +6,58 @@
     <description>Recent content in Tags on 010000 logbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Fri, 26 Mar 2021 13:40:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 26 Mar 2021 16:30:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>big</title>
+      <link>https://010000.github.io/tags/big/</link>
+      <pubDate>Fri, 26 Mar 2021 16:30:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/big/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>large</title>
+      <link>https://010000.github.io/tags/large/</link>
+      <pubDate>Fri, 26 Mar 2021 16:30:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/large/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>linux</title>
       <link>https://010000.github.io/tags/linux/</link>
-      <pubDate>Fri, 26 Mar 2021 13:40:00 +0900</pubDate>
+      <pubDate>Fri, 26 Mar 2021 16:30:00 +0900</pubDate>
       
       <guid>https://010000.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sparse</title>
+      <link>https://010000.github.io/tags/sparse/</link>
+      <pubDate>Fri, 26 Mar 2021 16:30:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/sparse/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>super</title>
+      <link>https://010000.github.io/tags/super/</link>
+      <pubDate>Fri, 26 Mar 2021 16:30:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/super/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>syslog</title>
+      <link>https://010000.github.io/tags/syslog/</link>
+      <pubDate>Fri, 26 Mar 2021 16:30:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/syslog/</guid>
       <description></description>
     </item>
     

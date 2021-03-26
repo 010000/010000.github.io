@@ -3,13 +3,40 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://010000.github.io/</loc>
-    <lastmod>2021-03-26T13:40:00+09:00</lastmod>
+    <lastmod>2021-03-26T16:30:00+09:00</lastmod>
+  </url><url>
+    <loc>https://010000.github.io/tags/big/</loc>
+    <lastmod>2021-03-26T16:30:00+09:00</lastmod>
   </url><url>
     <loc>https://010000.github.io/categories/</loc>
-    <lastmod>2021-03-26T13:40:00+09:00</lastmod>
+    <lastmod>2021-03-26T16:30:00+09:00</lastmod>
+  </url><url>
+    <loc>https://010000.github.io/tags/large/</loc>
+    <lastmod>2021-03-26T16:30:00+09:00</lastmod>
   </url><url>
     <loc>https://010000.github.io/tags/linux/</loc>
-    <lastmod>2021-03-26T13:40:00+09:00</lastmod>
+    <lastmod>2021-03-26T16:30:00+09:00</lastmod>
+  </url><url>
+    <loc>https://010000.github.io/categories/os_linux/</loc>
+    <lastmod>2021-03-26T16:30:00+09:00</lastmod>
+  </url><url>
+    <loc>https://010000.github.io/post/</loc>
+    <lastmod>2021-03-26T16:30:00+09:00</lastmod>
+  </url><url>
+    <loc>https://010000.github.io/tags/sparse/</loc>
+    <lastmod>2021-03-26T16:30:00+09:00</lastmod>
+  </url><url>
+    <loc>https://010000.github.io/tags/super/</loc>
+    <lastmod>2021-03-26T16:30:00+09:00</lastmod>
+  </url><url>
+    <loc>https://010000.github.io/post/20210326_super_large_syslog_file_linux/</loc>
+    <lastmod>2021-03-26T16:30:00+09:00</lastmod>
+  </url><url>
+    <loc>https://010000.github.io/tags/syslog/</loc>
+    <lastmod>2021-03-26T16:30:00+09:00</lastmod>
+  </url><url>
+    <loc>https://010000.github.io/tags/</loc>
+    <lastmod>2021-03-26T16:30:00+09:00</lastmod>
   </url><url>
     <loc>https://010000.github.io/post/20210326_message_logs_linux/</loc>
     <lastmod>2021-03-26T13:40:00+09:00</lastmod>
@@ -18,15 +45,6 @@
     <lastmod>2021-03-26T13:40:00+09:00</lastmod>
   </url><url>
     <loc>https://010000.github.io/tags/message/</loc>
-    <lastmod>2021-03-26T13:40:00+09:00</lastmod>
-  </url><url>
-    <loc>https://010000.github.io/categories/os_linux/</loc>
-    <lastmod>2021-03-26T13:40:00+09:00</lastmod>
-  </url><url>
-    <loc>https://010000.github.io/post/</loc>
-    <lastmod>2021-03-26T13:40:00+09:00</lastmod>
-  </url><url>
-    <loc>https://010000.github.io/tags/</loc>
     <lastmod>2021-03-26T13:40:00+09:00</lastmod>
   </url><url>
     <loc>https://010000.github.io/tags/authentication/</loc>
