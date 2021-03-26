@@ -6,7 +6,34 @@
     <description>Recent content in Tags on 010000 logbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Wed, 24 Mar 2021 15:26:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 26 Mar 2021 13:40:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>linux</title>
+      <link>https://010000.github.io/tags/linux/</link>
+      <pubDate>Fri, 26 Mar 2021 13:40:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>log</title>
+      <link>https://010000.github.io/tags/log/</link>
+      <pubDate>Fri, 26 Mar 2021 13:40:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/log/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>message</title>
+      <link>https://010000.github.io/tags/message/</link>
+      <pubDate>Fri, 26 Mar 2021 13:40:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/message/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>authentication</title>
       <link>https://010000.github.io/tags/authentication/</link>
@@ -85,15 +112,6 @@
       <pubDate>Wed, 24 Mar 2021 11:02:00 +0900</pubDate>
       
       <guid>https://010000.github.io/tags/2.8/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>linux</title>
-      <link>https://010000.github.io/tags/linux/</link>
-      <pubDate>Wed, 24 Mar 2021 11:02:00 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/linux/</guid>
       <description></description>
     </item>
     
