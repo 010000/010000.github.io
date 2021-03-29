@@ -8,13 +8,13 @@
     <language>ko-kr</language>
     <lastBuildDate>Fri, 26 Mar 2021 16:30:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Super big size syslog file on linux</title>
+      <title>Super big size lastlog file on linux</title>
       <link>https://010000.github.io/post/20210326_super_large_syslog_file_linux/</link>
       <pubDate>Fri, 26 Mar 2021 16:30:00 +0900</pubDate>
       
       <guid>https://010000.github.io/post/20210326_super_large_syslog_file_linux/</guid>
       <description>&lt;ul&gt;
-&lt;li&gt;거대한 사이즈의 Syslog 파일을 이유를 모르고 보게되면 깜짝 놀라지만&lt;br&gt;
+&lt;li&gt;거대한 사이즈의 lastlog 파일을 이유를 모르고 보게되면 깜짝 놀라지만&lt;br&gt;
 알고 보면 의도된 자연스러운 Sparse 파일  &lt;em&gt;(Update: Mar 26, 2021)&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>

@@ -9,27 +9,27 @@
 <meta name="author" content="Jeffrey YM. Jo">
 <meta name="keywords" content="tech">
 <meta name="description" content="
-거대한 사이즈의 Syslog 파일을 이유를 모르고 보게되면 깜짝 놀라지만
+거대한 사이즈의 lastlog 파일을 이유를 모르고 보게되면 깜짝 놀라지만
 알고 보면 의도된 자연스러운 Sparse 파일  (Update: Mar 26, 2021)
 ">
 
 
 <meta property="og:description" content="
-거대한 사이즈의 Syslog 파일을 이유를 모르고 보게되면 깜짝 놀라지만
+거대한 사이즈의 lastlog 파일을 이유를 모르고 보게되면 깜짝 놀라지만
 알고 보면 의도된 자연스러운 Sparse 파일  (Update: Mar 26, 2021)
 ">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Super big size syslog file on linux">
-<meta name="twitter:title" content="Super big size syslog file on linux">
+<meta property="og:title" content="Super big size lastlog file on linux">
+<meta name="twitter:title" content="Super big size lastlog file on linux">
 <meta property="og:url" content="https://010000.github.io/post/20210326_super_large_syslog_file_linux/">
 <meta property="twitter:url" content="https://010000.github.io/post/20210326_super_large_syslog_file_linux/">
 <meta property="og:site_name" content="010000 logbook">
 <meta property="og:description" content="
-거대한 사이즈의 Syslog 파일을 이유를 모르고 보게되면 깜짝 놀라지만
+거대한 사이즈의 lastlog 파일을 이유를 모르고 보게되면 깜짝 놀라지만
 알고 보면 의도된 자연스러운 Sparse 파일  (Update: Mar 26, 2021)
 ">
 <meta name="twitter:description" content="
-거대한 사이즈의 Syslog 파일을 이유를 모르고 보게되면 깜짝 놀라지만
+거대한 사이즈의 lastlog 파일을 이유를 모르고 보게되면 깜짝 놀라지만
 알고 보면 의도된 자연스러운 Sparse 파일  (Update: Mar 26, 2021)
 ">
 <meta property="og:locale" content="en-us">
@@ -54,7 +54,7 @@
     
       <meta property="article:tag" content="large">
     
-      <meta property="article:tag" content="syslog">
+      <meta property="article:tag" content="lastlog">
     
       <meta property="article:tag" content="sparse">
     
@@ -79,7 +79,7 @@
   <meta property="twitter:image" content="https://res.cloudinary.com/oloooo/image/upload/v1614951872/githubpages/netscape_wcocsw.gif">
 
 
-    <title>Super big size syslog file on linux</title>
+    <title>Super big size lastlog file on linux</title>
 
     <link rel="icon" href="https://010000.github.io/favicon.ico">
     
@@ -245,7 +245,7 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      Super big size syslog file on linux
+      Super big size lastlog file on linux
     </h1>
   
   
@@ -273,10 +273,10 @@ if (!doNotTrack) {
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
               <ul>
-<li>거대한 사이즈의 Syslog 파일을 이유를 모르고 보게되면 깜짝 놀라지만<br>
+<li>거대한 사이즈의 lastlog 파일을 이유를 모르고 보게되면 깜짝 놀라지만<br>
 알고 보면 의도된 자연스러운 Sparse 파일  <em>(Update: Mar 26, 2021)</em></li>
 </ul>
-<h3 id="1-super-big-size-syslog">1. Super big size Syslog</h3>
+<h3 id="1-super-big-size-lastlog">1. Super big size Lastlog</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">USER1@SVR1 ~<span style="color:#f92672">]</span>$ ls -alh /var/log/lastlog
 -rw-r--r--. <span style="color:#ae81ff">1</span> root root 583G Mar <span style="color:#ae81ff">25</span> 03:17 /var/log/lastlog
 
@@ -322,7 +322,7 @@ USER1@SVR1 log<span style="color:#f92672">]</span>$ ls -alhs lastlog
 
   <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/large/">large</a>
 
-  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/syslog/">syslog</a>
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/lastlog/">lastlog</a>
 
   <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/sparse/">sparse</a>
 
