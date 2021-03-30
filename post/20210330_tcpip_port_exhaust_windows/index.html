@@ -17,8 +17,8 @@ Windows OS에서 포트 고갈에 대한 이해와 확인에 대한 참고용 �
 Windows OS에서 포트 고갈에 대한 이해와 확인에 대한 참고용 메모 (Update: Mar 30, 2021)
 ">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Windows, tcpip 포트 고갈에 대한 참고용">
-<meta name="twitter:title" content="Windows, tcpip 포트 고갈에 대한 참고용">
+<meta property="og:title" content="Windows/Linux, tcpip 포트 고갈에 대한 참고용">
+<meta name="twitter:title" content="Windows/Linux, tcpip 포트 고갈에 대한 참고용">
 <meta property="og:url" content="https://010000.github.io/post/20210330_tcpip_port_exhaust_windows/">
 <meta property="twitter:url" content="https://010000.github.io/post/20210330_tcpip_port_exhaust_windows/">
 <meta property="og:site_name" content="010000 logbook">
@@ -39,7 +39,7 @@ Windows OS에서 포트 고갈에 대한 이해와 확인에 대한 참고용 �
   
   
     
-      <meta property="article:section" content="OS_Windows">
+      <meta property="article:section" content="OS">
     
   
   
@@ -60,6 +60,8 @@ Windows OS에서 포트 고갈에 대한 이해와 확인에 대한 참고용 �
     
       <meta property="article:tag" content="windows">
     
+      <meta property="article:tag" content="linux">
+    
   
 
 
@@ -79,7 +81,7 @@ Windows OS에서 포트 고갈에 대한 이해와 확인에 대한 참고용 �
   <meta property="twitter:image" content="https://res.cloudinary.com/oloooo/image/upload/v1614951872/githubpages/netscape_wcocsw.gif">
 
 
-    <title>Windows, tcpip 포트 고갈에 대한 참고용</title>
+    <title>Windows/Linux, tcpip 포트 고갈에 대한 참고용</title>
 
     <link rel="icon" href="https://010000.github.io/favicon.ico">
     
@@ -245,7 +247,7 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      Windows, tcpip 포트 고갈에 대한 참고용
+      Windows/Linux, tcpip 포트 고갈에 대한 참고용
     </h1>
   
   
@@ -262,7 +264,7 @@ if (!doNotTrack) {
   
     <span>in</span>
     
-      <a class="category-link" href="https://010000.github.io/categories/os_windows">OS_Windows</a>
+      <a class="category-link" href="https://010000.github.io/categories/os">OS</a>
     
   
 
@@ -301,6 +303,26 @@ C:\Users\USER1&gt; netsh int ipv4 show dynamicport udp
 시작 포트<span style="color:#960050;background-color:#1e0010">:</span> 49152
 포트 수<span style="color:#960050;background-color:#1e0010">:</span> 16384
 
+</code></pre></div><p>참고 글: <a href="https://www.cyberciti.biz/tips/linux-increase-outgoing-network-sockets-range.html" target="_blank" rel="noopener">Linux Increase TCP Port Range with net.ipv4.ip_local_port_range Kernel Parameter</a>
+</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">USER1@SVR1 ~<span style="color:#f92672">]</span>$ sudo sysctl -A |grep ip_local_port_range
+net.ipv4.ip_local_port_range <span style="color:#f92672">=</span> <span style="color:#ae81ff">32768</span>    <span style="color:#ae81ff">60999</span>
+
+USER1@SVR1 ~<span style="color:#f92672">]</span>$ sysctl net.ipv4.ip_local_port_range
+net.ipv4.ip_local_port_range <span style="color:#f92672">=</span> <span style="color:#ae81ff">32768</span>    <span style="color:#ae81ff">60999</span>
+
+USER1@SVR1 ~<span style="color:#f92672">]</span>$ ss -s
+Total: <span style="color:#ae81ff">1149</span> <span style="color:#f92672">(</span>kernel 1367<span style="color:#f92672">)</span>
+TCP:   <span style="color:#ae81ff">2582</span> <span style="color:#f92672">(</span>estab 608, closed 1952, orphaned 1, synrecv 0, timewait 1946/0<span style="color:#f92672">)</span>, ports <span style="color:#ae81ff">1080</span>
+
+Transport Total     IP        IPv6
+*         <span style="color:#ae81ff">1367</span>      -         -
+RAW       <span style="color:#ae81ff">1</span>         <span style="color:#ae81ff">1</span>         <span style="color:#ae81ff">0</span>
+UDP       <span style="color:#ae81ff">37</span>        <span style="color:#ae81ff">26</span>        <span style="color:#ae81ff">11</span>
+TCP       <span style="color:#ae81ff">630</span>       <span style="color:#ae81ff">385</span>       <span style="color:#ae81ff">245</span>
+INET      <span style="color:#ae81ff">668</span>       <span style="color:#ae81ff">412</span>       <span style="color:#ae81ff">256</span>
+FRAG      <span style="color:#ae81ff">0</span>         <span style="color:#ae81ff">0</span>         <span style="color:#ae81ff">0</span>
+
 </code></pre></div>
               
             </div>
@@ -328,6 +350,8 @@ C:\Users\USER1&gt; netsh int ipv4 show dynamicport udp
   <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/handles/">handles</a>
 
   <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/windows/">windows</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/linux/">linux</a>
 
                   </div>
                 
