@@ -9,12 +9,12 @@
 <meta name="author" content="Jeffrey YM. Jo">
 <meta name="keywords" content="tech">
 <meta name="description" content="
-Windows OS에서 포트 고갈에 대한 이해와 확인에 대한 참고용 메모 (Update: Mar 30, 2021)
+Windows/Linux OS에서 포트 고갈에 대한 이해와 확인에 대한 참고용 메모 (Update: Mar 30, 2021)
 ">
 
 
 <meta property="og:description" content="
-Windows OS에서 포트 고갈에 대한 이해와 확인에 대한 참고용 메모 (Update: Mar 30, 2021)
+Windows/Linux OS에서 포트 고갈에 대한 이해와 확인에 대한 참고용 메모 (Update: Mar 30, 2021)
 ">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows/Linux, tcpip 포트 고갈에 대한 참고용">
@@ -23,10 +23,10 @@ Windows OS에서 포트 고갈에 대한 이해와 확인에 대한 참고용 �
 <meta property="twitter:url" content="https://010000.github.io/post/20210330_tcpip_port_exhaust_windows/">
 <meta property="og:site_name" content="010000 logbook">
 <meta property="og:description" content="
-Windows OS에서 포트 고갈에 대한 이해와 확인에 대한 참고용 메모 (Update: Mar 30, 2021)
+Windows/Linux OS에서 포트 고갈에 대한 이해와 확인에 대한 참고용 메모 (Update: Mar 30, 2021)
 ">
 <meta name="twitter:description" content="
-Windows OS에서 포트 고갈에 대한 이해와 확인에 대한 참고용 메모 (Update: Mar 30, 2021)
+Windows/Linux OS에서 포트 고갈에 대한 이해와 확인에 대한 참고용 메모 (Update: Mar 30, 2021)
 ">
 <meta property="og:locale" content="en-us">
 
@@ -277,7 +277,7 @@ if (!doNotTrack) {
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
               <ul>
-<li>Windows OS에서 포트 고갈에 대한 이해와 확인에 대한 참고용 메모 <em>(Update: Mar 30, 2021)</em></li>
+<li>Windows/Linux OS에서 포트 고갈에 대한 이해와 확인에 대한 참고용 메모 <em>(Update: Mar 30, 2021)</em></li>
 </ul>
 <h3 id="1-포트-고갈">1. 포트 고갈</h3>
 <blockquote>
@@ -305,9 +305,7 @@ C:\Users\USER1&gt; netsh int ipv4 show dynamicport udp
 시작 포트<span style="color:#960050;background-color:#1e0010">:</span> 49152
 포트 수<span style="color:#960050;background-color:#1e0010">:</span> 16384
 
-</code></pre></div><p>참고 글: <a href="https://www.cyberciti.biz/tips/linux-increase-outgoing-network-sockets-range.html" target="_blank" rel="noopener">Linux Increase TCP Port Range with net.ipv4.ip_local_port_range Kernel Parameter</a>
-</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">USER1@SVR1 ~<span style="color:#f92672">]</span>$ sudo sysctl -A |grep ip_local_port_range
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">USER1@SVR1 ~<span style="color:#f92672">]</span>$ sudo sysctl -A |grep ip_local_port_range
 net.ipv4.ip_local_port_range <span style="color:#f92672">=</span> <span style="color:#ae81ff">32768</span>    <span style="color:#ae81ff">60999</span>
 
 USER1@SVR1 ~<span style="color:#f92672">]</span>$ sysctl net.ipv4.ip_local_port_range
@@ -325,7 +323,8 @@ TCP       <span style="color:#ae81ff">630</span>       <span style="color:#ae81f
 INET      <span style="color:#ae81ff">668</span>       <span style="color:#ae81ff">412</span>       <span style="color:#ae81ff">256</span>
 FRAG      <span style="color:#ae81ff">0</span>         <span style="color:#ae81ff">0</span>         <span style="color:#ae81ff">0</span>
 
-</code></pre></div>
+</code></pre></div><p>참고 글: <a href="https://www.cyberciti.biz/tips/linux-increase-outgoing-network-sockets-range.html" target="_blank" rel="noopener">Linux Increase TCP Port Range with net.ipv4.ip_local_port_range Kernel Parameter</a>
+</p>
               
             </div>
           </div>
