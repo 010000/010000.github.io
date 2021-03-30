@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>4227 on 010000 logbook</title>
+    <link>https://010000.github.io/tags/4227/</link>
+    <description>Recent content in 4227 on 010000 logbook</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Tue, 30 Mar 2021 15:21:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/4227/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows, tcpip 포트 고갈에 대한 참고용</title>
+      <link>https://010000.github.io/post/20210330_tcpip_port_exhaust_windows/</link>
+      <pubDate>Tue, 30 Mar 2021 15:21:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/post/20210330_tcpip_port_exhaust_windows/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;Windows OS에서 포트 고갈에 대한 이해와 확인에 대한 참고용 메모 &lt;em&gt;(Update: Mar 30, 2021)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
