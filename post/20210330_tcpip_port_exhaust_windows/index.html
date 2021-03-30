@@ -273,7 +273,7 @@ if (!doNotTrack) {
 </blockquote>
 <p>참고 글: <a href="https://docs.microsoft.com/ko-kr/windows/client-management/troubleshoot-tcpip-port-exhaust" target="_blank" rel="noopener">MS - 포트 소모 문제 해결</a>
 </p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">C:\Users\USER1&gt;netsh int ipv4 show dynamicport tcp
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">C:\Users\USER1&gt; netsh int ipv4 show dynamicport tcp1
 
 프로토콜 tcp 동적 포트 범위
 ---------------------------------
@@ -281,7 +281,7 @@ if (!doNotTrack) {
 포트 수<span style="color:#960050;background-color:#1e0010">:</span> 16384
 
 
-C:\Users\USER1&gt;netsh int ipv4 show dynamicport udp
+C:\Users\USER1&gt; netsh int ipv4 show dynamicport udp
 
 프로토콜 udp 동적 포트 범위
 ---------------------------------
