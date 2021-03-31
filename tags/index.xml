@@ -6,7 +6,61 @@
     <description>Recent content in Tags on 010000 logbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Tue, 30 Mar 2021 15:21:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 31 Mar 2021 15:29:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>bot</title>
+      <link>https://010000.github.io/tags/bot/</link>
+      <pubDate>Wed, 31 Mar 2021 15:29:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/bot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>message</title>
+      <link>https://010000.github.io/tags/message/</link>
+      <pubDate>Wed, 31 Mar 2021 15:29:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/message/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nginx</title>
+      <link>https://010000.github.io/tags/nginx/</link>
+      <pubDate>Wed, 31 Mar 2021 15:29:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/nginx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>start</title>
+      <link>https://010000.github.io/tags/start/</link>
+      <pubDate>Wed, 31 Mar 2021 15:29:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/start/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>stop</title>
+      <link>https://010000.github.io/tags/stop/</link>
+      <pubDate>Wed, 31 Mar 2021 15:29:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/stop/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>telegram</title>
+      <link>https://010000.github.io/tags/telegram/</link>
+      <pubDate>Wed, 31 Mar 2021 15:29:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/telegram/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>4227</title>
       <link>https://010000.github.io/tags/4227/</link>
@@ -148,15 +202,6 @@
       <pubDate>Fri, 26 Mar 2021 13:40:00 +0900</pubDate>
       
       <guid>https://010000.github.io/tags/log/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>message</title>
-      <link>https://010000.github.io/tags/message/</link>
-      <pubDate>Fri, 26 Mar 2021 13:40:00 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/message/</guid>
       <description></description>
     </item>
     
@@ -355,15 +400,6 @@
       <pubDate>Sat, 13 Mar 2021 16:07:00 +0900</pubDate>
       
       <guid>https://010000.github.io/tags/lets-encrypt/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>nginx</title>
-      <link>https://010000.github.io/tags/nginx/</link>
-      <pubDate>Sat, 13 Mar 2021 16:07:00 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/nginx/</guid>
       <description></description>
     </item>
     

@@ -6,7 +6,19 @@
     <description>Recent content in Posts on 010000 logbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Tue, 30 Mar 2021 15:21:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 31 Mar 2021 15:29:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Telegram message listener를 이용한 nginx start &amp; stop</title>
+      <link>https://010000.github.io/post/20210331_control_nginx_telegram_message/</link>
+      <pubDate>Wed, 31 Mar 2021 15:29:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/post/20210331_control_nginx_telegram_message/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;정각 알림용으로 메시지를 받고있는 Telegram bot을 이용해 메시지를 보내면 code-server에 사용중인 Nginx 서비스를 시작하고 중지되게 해봤습니다.&lt;/li&gt;
+&lt;li&gt;code-server를 혼자 사용중이라 안쓸 때 보안상 닫고 싶은데 좀 더 편한 방법일까 싶어 작성해봤네요.  &lt;em&gt;(Update: Mar 31, 2021)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
     <item>
       <title>Windows/Linux, tcpip 포트 고갈에 대한 참고용</title>
       <link>https://010000.github.io/post/20210330_tcpip_port_exhaust_windows/</link>
