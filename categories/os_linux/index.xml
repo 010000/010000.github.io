@@ -44,17 +44,6 @@
     </item>
     
     <item>
-      <title>Update git v2.22 to v2.8 with yum, rpm</title>
-      <link>https://010000.github.io/post/20210324_git_bin_update_linux/</link>
-      <pubDate>Wed, 24 Mar 2021 11:02:00 +0900</pubDate>
-      
-      <guid>https://010000.github.io/post/20210324_git_bin_update_linux/</guid>
-      <description>&lt;ul&gt;
-&lt;li&gt;rpm 파일을 사용해 yum update로 git 2.22 to 2.8 업데이트. &lt;em&gt;(Update: Mar 24, 2021)&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    
-    <item>
       <title>Enable Redhat subscription, redhat.repo</title>
       <link>https://010000.github.io/post/20210324_yum_repo_subscription_redhat/</link>
       <pubDate>Wed, 24 Mar 2021 09:02:00 +0900</pubDate>

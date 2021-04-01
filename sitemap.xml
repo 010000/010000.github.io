@@ -155,6 +155,9 @@
     <loc>https://010000.github.io/tags/2.8/</loc>
     <lastmod>2021-03-24T11:02:00+09:00</lastmod>
   </url><url>
+    <loc>https://010000.github.io/categories/linux/</loc>
+    <lastmod>2021-03-24T11:02:00+09:00</lastmod>
+  </url><url>
     <loc>https://010000.github.io/post/20210324_git_bin_update_linux/</loc>
     <lastmod>2021-03-24T11:02:00+09:00</lastmod>
   </url><url>
@@ -242,6 +245,9 @@
     <loc>https://010000.github.io/tags/apply/</loc>
     <lastmod>2021-03-01T20:45:00+09:00</lastmod>
   </url><url>
+    <loc>https://010000.github.io/categories/nas/</loc>
+    <lastmod>2021-03-01T20:45:00+09:00</lastmod>
+  </url><url>
     <loc>https://010000.github.io/tags/nas/</loc>
     <lastmod>2021-03-01T20:45:00+09:00</lastmod>
   </url><url>
@@ -249,9 +255,6 @@
     <lastmod>2021-03-01T20:45:00+09:00</lastmod>
   </url><url>
     <loc>https://010000.github.io/tags/phpmyadmin/</loc>
-    <lastmod>2021-03-01T20:45:00+09:00</lastmod>
-  </url><url>
-    <loc>https://010000.github.io/categories/software/</loc>
     <lastmod>2021-03-01T20:45:00+09:00</lastmod>
   </url><url>
     <loc>https://010000.github.io/tags/synology/</loc>
@@ -273,6 +276,9 @@
     <lastmod>2021-02-25T14:57:00+09:00</lastmod>
   </url><url>
     <loc>https://010000.github.io/tags/search/</loc>
+    <lastmod>2021-02-25T14:57:00+09:00</lastmod>
+  </url><url>
+    <loc>https://010000.github.io/categories/software/</loc>
     <lastmod>2021-02-25T14:57:00+09:00</lastmod>
   </url><url>
     <loc>https://010000.github.io/tags/syntax/</loc>
