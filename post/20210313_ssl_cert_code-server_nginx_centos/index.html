@@ -448,7 +448,7 @@ server <span style="color:#f92672">{</span>
 <span style="color:#f92672">}</span>
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ sudo systemctl restart nginx.service
 </code></pre></div><h3 id="3-인증서-자동-갱신">3. 인증서 자동 갱신</h3>
-<p>;root권한 cronjon으로 만료 2주전에 갱신되도록 설정합니다.</p>
+<p>;root권한 cronjob으로 만료 2주전에 갱신되도록 설정합니다.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ touch RenewCert.sh; chmod <span style="color:#ae81ff">700</span> RenewCert.sh
 
 USER1@ ~<span style="color:#f92672">]</span>$ vi RenewCert.sh
