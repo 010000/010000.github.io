@@ -8,20 +8,11 @@
     <language>ko-kr</language>
     <lastBuildDate>Thu, 01 Apr 2021 17:30:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Linux</title>
-      <link>https://010000.github.io/categories/linux/</link>
+      <title>OS_Linux</title>
+      <link>https://010000.github.io/categories/os_linux/</link>
       <pubDate>Thu, 01 Apr 2021 17:30:00 +0900</pubDate>
       
-      <guid>https://010000.github.io/categories/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>OS</title>
-      <link>https://010000.github.io/categories/os/</link>
-      <pubDate>Thu, 01 Apr 2021 17:30:00 +0900</pubDate>
-      
-      <guid>https://010000.github.io/categories/os/</guid>
+      <guid>https://010000.github.io/categories/os_linux/</guid>
       <description></description>
     </item>
     
@@ -35,11 +26,11 @@
     </item>
     
     <item>
-      <title>OS_Linux</title>
-      <link>https://010000.github.io/categories/os_linux/</link>
-      <pubDate>Fri, 26 Mar 2021 16:30:00 +0900</pubDate>
+      <title>OS</title>
+      <link>https://010000.github.io/categories/os/</link>
+      <pubDate>Tue, 30 Mar 2021 15:21:00 +0900</pubDate>
       
-      <guid>https://010000.github.io/categories/os_linux/</guid>
+      <guid>https://010000.github.io/categories/os/</guid>
       <description></description>
     </item>
     

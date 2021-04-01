@@ -17,10 +17,7 @@
     <loc>https://010000.github.io/post/20210401_apt_update_unable_connect_ubuntu/</loc>
     <lastmod>2021-04-01T17:30:00+09:00</lastmod>
   </url><url>
-    <loc>https://010000.github.io/categories/linux/</loc>
-    <lastmod>2021-04-01T17:30:00+09:00</lastmod>
-  </url><url>
-    <loc>https://010000.github.io/categories/os/</loc>
+    <loc>https://010000.github.io/categories/os_linux/</loc>
     <lastmod>2021-04-01T17:30:00+09:00</lastmod>
   </url><url>
     <loc>https://010000.github.io/post/</loc>
@@ -83,6 +80,9 @@
     <loc>https://010000.github.io/tags/linux/</loc>
     <lastmod>2021-03-30T15:21:00+09:00</lastmod>
   </url><url>
+    <loc>https://010000.github.io/categories/os/</loc>
+    <lastmod>2021-03-30T15:21:00+09:00</lastmod>
+  </url><url>
     <loc>https://010000.github.io/tags/port/</loc>
     <lastmod>2021-03-30T15:21:00+09:00</lastmod>
   </url><url>
@@ -105,9 +105,6 @@
     <lastmod>2021-03-26T16:30:00+09:00</lastmod>
   </url><url>
     <loc>https://010000.github.io/tags/lastlog/</loc>
-    <lastmod>2021-03-26T16:30:00+09:00</lastmod>
-  </url><url>
-    <loc>https://010000.github.io/categories/os_linux/</loc>
     <lastmod>2021-03-26T16:30:00+09:00</lastmod>
   </url><url>
     <loc>https://010000.github.io/tags/sparse/</loc>
