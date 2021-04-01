@@ -9,13 +9,13 @@
 <meta name="author" content="Jeffrey YM. Jo">
 <meta name="keywords" content="tech">
 <meta name="description" content="
-원인: 누군가 apt.conf에 과거 proxy ip를 남겨두고 계속 써와서 발생했던 오류
+누군가 apt.conf에 과거 proxy ip를 남겨두고 계속 써와서 발생했던 오류
 참고를 위해 기록 (Update: Apr 1, 2021)
 ">
 
 
 <meta property="og:description" content="
-원인: 누군가 apt.conf에 과거 proxy ip를 남겨두고 계속 써와서 발생했던 오류
+누군가 apt.conf에 과거 proxy ip를 남겨두고 계속 써와서 발생했던 오류
 참고를 위해 기록 (Update: Apr 1, 2021)
 ">
 <meta property="og:type" content="article">
@@ -25,11 +25,11 @@
 <meta property="twitter:url" content="https://010000.github.io/post/20210401_apt_update_unable_connect_ubuntu/">
 <meta property="og:site_name" content="010000 logbook">
 <meta property="og:description" content="
-원인: 누군가 apt.conf에 과거 proxy ip를 남겨두고 계속 써와서 발생했던 오류
+누군가 apt.conf에 과거 proxy ip를 남겨두고 계속 써와서 발생했던 오류
 참고를 위해 기록 (Update: Apr 1, 2021)
 ">
 <meta name="twitter:description" content="
-원인: 누군가 apt.conf에 과거 proxy ip를 남겨두고 계속 써와서 발생했던 오류
+누군가 apt.conf에 과거 proxy ip를 남겨두고 계속 써와서 발생했던 오류
 참고를 위해 기록 (Update: Apr 1, 2021)
 ">
 <meta property="og:locale" content="en-us">
@@ -277,7 +277,7 @@ if (!doNotTrack) {
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
               <ul>
-<li>원인: 누군가 apt.conf에 과거 proxy ip를 남겨두고 계속 써와서 발생했던 오류</li>
+<li>누군가 apt.conf에 과거 proxy ip를 남겨두고 계속 써와서 발생했던 오류</li>
 <li>참고를 위해 기록 <em>(Update: Apr 1, 2021)</em></li>
 </ul>
 <h3 id="환경-구성">환경 구성</h3>
@@ -313,19 +313,22 @@ N: Updating from such a repository can<span style="color:#e6db74">&#39;t be done
 </span><span style="color:#e6db74">N: Updating from such a repository can&#39;</span>t be <span style="color:#66d9ef">done</span> securely, and is therefore disabled by default.
 N: See apt-secure<span style="color:#f92672">(</span>8<span style="color:#f92672">)</span> manpage <span style="color:#66d9ef">for</span> repository creation and user configuration details.
 <span style="color:#f92672">(</span>...생략...<span style="color:#f92672">)</span>
+
 </code></pre></div><h3 id="2-문제-원인">2. 문제 원인</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">root@SVR1:/etc/apt# cat /etc/apt/apt.conf
 Acquire::http::Proxy <span style="color:#e6db74">&#34;http://192.168.0.111:3128&#34;</span>;
 Acquire::https::Proxy <span style="color:#e6db74">&#34;http://192.168.0.111:3128&#34;</span>;
+
 </code></pre></div><h3 id="3-문제-조치">3. 문제 조치</h3>
 <p>;원인의 설정을 주석처리</p>
-<h3 id="4-조치-확인">4. 조치 확인</h3>
+<h3 id="4-조치-후-확인">4. 조치 후 확인</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">root@SVR1:/etc/apt# apt update
 Get:1 http://kr.archive.ubuntu.com/ubuntu xenial InRelease <span style="color:#f92672">[</span><span style="color:#ae81ff">247</span> kB<span style="color:#f92672">]</span>
 Get:2 http://kr.archive.ubuntu.com/ubuntu xenial-updates InRelease <span style="color:#f92672">[</span><span style="color:#ae81ff">109</span> kB<span style="color:#f92672">]</span>
 Get:3 http://kr.archive.ubuntu.com/ubuntu xenial-backports InRelease <span style="color:#f92672">[</span><span style="color:#ae81ff">107</span> kB<span style="color:#f92672">]</span>
 Get:4 http://security.ubuntu.com/ubuntu xenial-security InRelease <span style="color:#f92672">[</span><span style="color:#ae81ff">109</span> kB<span style="color:#f92672">]</span>
 <span style="color:#f92672">(</span>...생략...<span style="color:#f92672">)</span>
+
 </code></pre></div>
               
             </div>

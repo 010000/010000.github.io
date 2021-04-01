@@ -14,7 +14,7 @@
       
       <guid>https://010000.github.io/post/20210401_apt_update_unable_connect_ubuntu/</guid>
       <description>&lt;ul&gt;
-&lt;li&gt;원인: 누군가 apt.conf에 과거 proxy ip를 남겨두고 계속 써와서 발생했던 오류&lt;/li&gt;
+&lt;li&gt;누군가 apt.conf에 과거 proxy ip를 남겨두고 계속 써와서 발생했던 오류&lt;/li&gt;
 &lt;li&gt;참고를 위해 기록 &lt;em&gt;(Update: Apr 1, 2021)&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
