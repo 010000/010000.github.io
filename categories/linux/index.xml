@@ -6,7 +6,43 @@
     <description>Recent content in Linux on 010000 logbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Wed, 24 Mar 2021 11:02:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Apr 2021 17:30:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Err: apt update error, Unable to connect to</title>
+      <link>https://010000.github.io/post/20210401_apt_update_unable_connect_ubuntu/</link>
+      <pubDate>Thu, 01 Apr 2021 17:30:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/post/20210401_apt_update_unable_connect_ubuntu/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;누군가 apt.conf에 과거 proxy ip를 남겨두고 계속 써와서 발생했던 오류&lt;/li&gt;
+&lt;li&gt;참고를 위해 기록 &lt;em&gt;(Update: Apr 1, 2021)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Super big size lastlog file on linux</title>
+      <link>https://010000.github.io/post/20210326_super_large_lastlog_file_linux/</link>
+      <pubDate>Fri, 26 Mar 2021 16:30:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/post/20210326_super_large_lastlog_file_linux/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;거대한 사이즈의 lastlog 파일을 이유를 모르고 보게되면 깜짝 놀라지만&lt;br&gt;
+알고 보면 의도된 자연스러운 Sparse 파일  &lt;em&gt;(Update: Mar 26, 2021)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Linux OS 사용중에 확인하게 된 로그들</title>
+      <link>https://010000.github.io/post/20210326_message_logs_linux/</link>
+      <pubDate>Fri, 26 Mar 2021 13:40:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/post/20210326_message_logs_linux/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;Linux OS를 사용하다 보게되는 log들을 확인하고 참고하기 위해 기록해둡니다.&lt;/li&gt;
+&lt;li&gt;특이사항 없는 내용은 링크 내용의 일부를 복붙했고 틈틈이 보게되는 로그들을 모을 예정입니다. &lt;em&gt;(Update: Mar 26, 2021)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
     <item>
       <title>Update git v2.22 to v2.8 with yum, rpm</title>
       <link>https://010000.github.io/post/20210324_git_bin_update_linux/</link>
@@ -15,6 +51,19 @@
       <guid>https://010000.github.io/post/20210324_git_bin_update_linux/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;rpm 파일을 사용해 yum update로 git 2.22 to 2.8 업데이트. &lt;em&gt;(Update: Mar 24, 2021)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Enable Redhat subscription, redhat.repo</title>
+      <link>https://010000.github.io/post/20210324_yum_repo_subscription_redhat/</link>
+      <pubDate>Wed, 24 Mar 2021 09:02:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/post/20210324_yum_repo_subscription_redhat/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;평소 사용할 일이 없었던 Redhat linux, 개인 개발자용(Red Hat Developer Subscription for Individuals)으로 redhat.repo 활성화를 진행하며 남깁니다.&lt;/li&gt;
+&lt;li&gt;Redhat Enterprise linux를 로컬 yum.repo 구성으로 적용해 가능한지 테스트하다 일단 막혀서&amp;hellip; 이 내용은 ubuntu, centos 도 진행해보며 정리할 예정입니다.
+&lt;em&gt;(Update: Mar 24, 2021)&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
     
