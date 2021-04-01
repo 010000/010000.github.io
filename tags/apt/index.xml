@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>apt on 010000 logbook</title>
+    <link>https://010000.github.io/tags/apt/</link>
+    <description>Recent content in apt on 010000 logbook</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Thu, 01 Apr 2021 17:30:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/apt/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Err: apt update error, Unable to connect to</title>
+      <link>https://010000.github.io/post/20210401_apt_update_unable_connect_ubuntu/</link>
+      <pubDate>Thu, 01 Apr 2021 17:30:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/post/20210401_apt_update_unable_connect_ubuntu/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;원인: 누군가 apt.conf에 과거 proxy ip를 남겨두고 계속 써와서 발생했던 오류&lt;/li&gt;
+&lt;li&gt;참고를 위해 기록 &lt;em&gt;(Update: Apr 1, 2021)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
