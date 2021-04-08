@@ -282,11 +282,11 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>config.toml은 사용중인 {Blog}/thmes/ 하위에 theme sample에 따라 다를 수 있습니다.</p>
+<p>e.g. md 확장자만 빠진 파일명으로 url 생성하기</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>permalinks<span style="color:#f92672">]</span>
 변경 전: post <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/:year/:month/:slug/&#34;</span>
 변경 후: post <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/:filename/&#34;</span>
-</code></pre></div><p>e.g. md 확장자만 빠진 파일명으로 url 생성하기</p>
-</li>
+</code></pre></div></li>
 <li>
 <p>참고<br>
 ; 변경 전 기본값으로 사용하면 생성된 정적페이지의 URL이 MD파일 내용, 저장 위치에 따라 변경 될 수 있습니다. 따라서 content 폴더 아래 작성한 MD 파일의 위치나 내용이 변경되어도 웹에 노출되는 URL이 유지되기를 바란다면 미리 테스트 해보시는 것이 좋습니다.</p>
