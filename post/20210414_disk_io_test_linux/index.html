@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.81.0 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="author" content="Jeffrey YM. Jo">
+<meta name="keywords" content="tech">
+<meta name="description" content="
+SSD가 설치된 가상머신에서 fio를 이용해 성능 측정을 진행해봤습니다.  (Update: Apr 14, 2021)
+">
+
+
+<meta property="og:description" content="
+SSD가 설치된 가상머신에서 fio를 이용해 성능 측정을 진행해봤습니다.  (Update: Apr 14, 2021)
+">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux, disk I/O 성능 측정하기 - fio">
+<meta name="twitter:title" content="Linux, disk I/O 성능 측정하기 - fio">
+<meta property="og:url" content="https://010000.github.io/post/20210414_disk_io_test_linux/">
+<meta property="twitter:url" content="https://010000.github.io/post/20210414_disk_io_test_linux/">
+<meta property="og:site_name" content="010000 logbook">
+<meta property="og:description" content="
+SSD가 설치된 가상머신에서 fio를 이용해 성능 측정을 진행해봤습니다.  (Update: Apr 14, 2021)
+">
+<meta name="twitter:description" content="
+SSD가 설치된 가상머신에서 fio를 이용해 성능 측정을 진행해봤습니다.  (Update: Apr 14, 2021)
+">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2021-04-14T20:47:00">
+  
+  
+    <meta property="article:modified_time" content="2021-04-14T20:47:00">
+  
+  
+  
+    
+      <meta property="article:section" content="OS_Linux">
+    
+  
+  
+    
+      <meta property="article:tag" content="disk">
+    
+      <meta property="article:tag" content="io">
+    
+      <meta property="article:tag" content="iops">
+    
+      <meta property="article:tag" content="throughput">
+    
+      <meta property="article:tag" content="latency">
+    
+      <meta property="article:tag" content="test">
+    
+      <meta property="article:tag" content="fio">
+    
+      <meta property="article:tag" content="linux">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://res.cloudinary.com/oloooo/image/upload/v1614951872/githubpages/netscape_wcocsw.gif">
+  <meta property="twitter:image" content="https://res.cloudinary.com/oloooo/image/upload/v1614951872/githubpages/netscape_wcocsw.gif">
+
+
+    <title>Linux, disk I/O 성능 측정하기 - fio</title>
+
+    <link rel="icon" href="https://010000.github.io/favicon.ico">
+    
+
+    
+
+    <link rel="canonical" href="https://010000.github.io/post/20210414_disk_io_test_linux/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://010000.github.io/css/style-s8xlgnopppjrvgff3zxwbooca3paivectafco2acr0hxdpldmmx7q5e8xki.min.css" />
+    
+    
+      
+        <link rel="stylesheet"  href="https://010000.github.io/css/syntax.css">
+      
+    
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-154694083-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    
+    
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.7.1/gist-embed.min.js"></script>
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="1">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://010000.github.io/">010000 logbook</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://010000.github.io/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://res.cloudinary.com/oloooo/image/upload/v1614951872/githubpages/netscape_wcocsw.gif" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="1">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://010000.github.io/#about">
+          <img class="sidebar-profile-picture" src="https://res.cloudinary.com/oloooo/image/upload/v1614951872/githubpages/netscape_wcocsw.gif" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Jeffrey YM. Jo</h4>
+        
+          <h5 class="sidebar-profile-bio">경험과 생각들을 정리하며, 다시 찾는 시간을 아끼기 위해 모아놓는 블로그입니다.</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://010000.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://010000.github.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://010000.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://010000.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-hashtag"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://010000.github.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-address-card"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="mailto:010000c@gmail.com" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-envelope"></i>
+      
+      <span class="sidebar-button-desc">Email</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://010000.github.io/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="1"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      Linux, disk I/O 성능 측정하기 - fio
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2021-04-14T20:47:00&#43;09:00">
+        
+  April 14, 2021
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://010000.github.io/categories/os_linux">OS_Linux</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <ul>
+<li>SSD가 설치된 가상머신에서 fio를 이용해 성능 측정을 진행해봤습니다.  <em>(Update: Apr 14, 2021)</em></li>
+</ul>
+<h3 id="환경-구성">환경 구성</h3>
+<ul>
+<li>OS: Ubuntu 20.04</li>
+<li>fio: v3.16 with apt install</li>
+<li>SSD: WD Black NVMe</li>
+</ul>
+<h3 id="1-fio-설치">1. fio 설치</h3>
+<p>;구글링 결과 많은 분들은 소스파일을 컴파일하여 사용하였지만 간단히 패키지 관리자로 진행했습니다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">USER1@SVR1 ~<span style="color:#f92672">]</span>$ sudo apt install fio
+
+</code></pre></div><h3 id="2-fio-실행과-결과">2. fio 실행과 결과</h3>
+<p>;각 옵션들은 아래 fio man 페이지를 참고</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">USER1@SVR1 ~<span style="color:#f92672">]</span>$ mkdir /home/USER1/fio
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">USER1@SVR1 ~/fio<span style="color:#f92672">]</span>$ fio --directory<span style="color:#f92672">=</span>/home/USER1/fio --name fio_test_file --direct<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> --rw<span style="color:#f92672">=</span>randread --bs<span style="color:#f92672">=</span>4K --size<span style="color:#f92672">=</span>1G --numjobs<span style="color:#f92672">=</span><span style="color:#ae81ff">16</span> --time_based --runtime<span style="color:#f92672">=</span><span style="color:#ae81ff">180</span> --group_reporting --norandommap
+
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">USER1@SVR1 ~/fio<span style="color:#f92672">]</span>$ fio --directory<span style="color:#f92672">=</span>/home/USER1/fio --name fio_test_file --direct<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> --rw<span style="color:#f92672">=</span>randwrite --bs<span style="color:#f92672">=</span>4K --size<span style="color:#f92672">=</span>1G --numjobs<span style="color:#f92672">=</span><span style="color:#ae81ff">16</span> --time_based --runtime<span style="color:#f92672">=</span><span style="color:#ae81ff">180</span> --group_reporting --norandommap --rwmixread <span style="color:#ae81ff">30</span>                     
+fio_test_file: <span style="color:#f92672">(</span>g<span style="color:#f92672">=</span>0<span style="color:#f92672">)</span>: rw<span style="color:#f92672">=</span>randwrite, bs<span style="color:#f92672">=(</span>R<span style="color:#f92672">)</span> 4096B-4096B, <span style="color:#f92672">(</span>W<span style="color:#f92672">)</span> 4096B-4096B, <span style="color:#f92672">(</span>T<span style="color:#f92672">)</span> 4096B-4096B,    ioengine<span style="color:#f92672">=</span>psync, iodepth<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+...
+fio-3.16
+Starting <span style="color:#ae81ff">16</span> processes
+fio_test_file: Laying out IO file <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> file / 1024MiB<span style="color:#f92672">)</span>
+fio_test_file: Laying out IO file <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> file / 1024MiB<span style="color:#f92672">)</span>
+fio_test_file: Laying out IO file <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> file / 1024MiB<span style="color:#f92672">)</span>
+fio_test_file: Laying out IO file <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> file / 1024MiB<span style="color:#f92672">)</span>
+fio_test_file: Laying out IO file <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> file / 1024MiB<span style="color:#f92672">)</span>
+fio_test_file: Laying out IO file <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> file / 1024MiB<span style="color:#f92672">)</span>
+fio_test_file: Laying out IO file <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> file / 1024MiB<span style="color:#f92672">)</span>
+fio_test_file: Laying out IO file <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> file / 1024MiB<span style="color:#f92672">)</span>
+fio_test_file: Laying out IO file <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> file / 1024MiB<span style="color:#f92672">)</span>
+fio_test_file: Laying out IO file <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> file / 1024MiB<span style="color:#f92672">)</span>
+fio_test_file: Laying out IO file <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> file / 1024MiB<span style="color:#f92672">)</span>
+fio_test_file: Laying out IO file <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> file / 1024MiB<span style="color:#f92672">)</span>
+fio_test_file: Laying out IO file <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> file / 1024MiB<span style="color:#f92672">)</span>
+fio_test_file: Laying out IO file <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> file / 1024MiB<span style="color:#f92672">)</span>
+fio_test_file: Laying out IO file <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> file / 1024MiB<span style="color:#f92672">)</span>
+fio_test_file: Laying out IO file <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> file / 1024MiB<span style="color:#f92672">)</span>
+Jobs: <span style="color:#ae81ff">11</span> <span style="color:#f92672">(</span>f<span style="color:#f92672">=</span>11<span style="color:#f92672">)</span>: <span style="color:#f92672">[</span>E<span style="color:#f92672">(</span>1<span style="color:#f92672">)</span>,w<span style="color:#f92672">(</span>2<span style="color:#f92672">)</span>,E<span style="color:#f92672">(</span>1<span style="color:#f92672">)</span>,w<span style="color:#f92672">(</span>1<span style="color:#f92672">)</span>,E<span style="color:#f92672">(</span>3<span style="color:#f92672">)</span>,w<span style="color:#f92672">(</span>8<span style="color:#f92672">)][</span>100.0%<span style="color:#f92672">][</span>w<span style="color:#f92672">=</span>564MiB/s<span style="color:#f92672">][</span>w<span style="color:#f92672">=</span>144k IOPS<span style="color:#f92672">][</span>eta 00m:00s<span style="color:#f92672">]</span>
+<span style="display:block;width:100%;background-color:#3c3d38">fio_test_file: <span style="color:#f92672">(</span>groupid<span style="color:#f92672">=</span>0, jobs<span style="color:#f92672">=</span>16<span style="color:#f92672">)</span>: err<span style="color:#f92672">=</span> 0: pid<span style="color:#f92672">=</span>1321467: Wed Apr <span style="color:#ae81ff">14</span> 17:37:11 <span style="color:#ae81ff">2021</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38">  write: IOPS<span style="color:#f92672">=</span>124k, BW<span style="color:#f92672">=</span>485MiB/s <span style="color:#f92672">(</span>508MB/s<span style="color:#f92672">)(</span>85.2GiB/180002msec<span style="color:#f92672">)</span>; <span style="color:#ae81ff">0</span> zone resets
+</span><span style="display:block;width:100%;background-color:#3c3d38">    clat <span style="color:#f92672">(</span>usec<span style="color:#f92672">)</span>: min<span style="color:#f92672">=</span>27, max<span style="color:#f92672">=</span>374097, avg<span style="color:#f92672">=</span>127.44, stdev<span style="color:#f92672">=</span>655.51
+</span><span style="display:block;width:100%;background-color:#3c3d38">     lat <span style="color:#f92672">(</span>usec<span style="color:#f92672">)</span>: min<span style="color:#f92672">=</span>27, max<span style="color:#f92672">=</span>374097, avg<span style="color:#f92672">=</span>127.65, stdev<span style="color:#f92672">=</span>655.53
+</span>    clat percentiles <span style="color:#f92672">(</span>usec<span style="color:#f92672">)</span>:
+     |  1.00th<span style="color:#f92672">=[</span>   53<span style="color:#f92672">]</span>,  5.00th<span style="color:#f92672">=[</span>   68<span style="color:#f92672">]</span>, 10.00th<span style="color:#f92672">=[</span>   74<span style="color:#f92672">]</span>, 20.00th<span style="color:#f92672">=[</span>   83<span style="color:#f92672">]</span>,
+     | 30.00th<span style="color:#f92672">=[</span>   89<span style="color:#f92672">]</span>, 40.00th<span style="color:#f92672">=[</span>   95<span style="color:#f92672">]</span>, 50.00th<span style="color:#f92672">=[</span>  102<span style="color:#f92672">]</span>, 60.00th<span style="color:#f92672">=[</span>  111<span style="color:#f92672">]</span>,
+     | 70.00th<span style="color:#f92672">=[</span>  120<span style="color:#f92672">]</span>, 80.00th<span style="color:#f92672">=[</span>  133<span style="color:#f92672">]</span>, 90.00th<span style="color:#f92672">=[</span>  155<span style="color:#f92672">]</span>, 95.00th<span style="color:#f92672">=[</span>  184<span style="color:#f92672">]</span>,
+     | 99.00th<span style="color:#f92672">=[</span>  338<span style="color:#f92672">]</span>, 99.50th<span style="color:#f92672">=[</span>  529<span style="color:#f92672">]</span>, 99.90th<span style="color:#f92672">=[</span> 5604<span style="color:#f92672">]</span>, 99.95th<span style="color:#f92672">=[</span> 8455<span style="color:#f92672">]</span>,
+     | 99.99th<span style="color:#f92672">=[</span>14615<span style="color:#f92672">]</span>
+   bw <span style="color:#f92672">(</span>  KiB/s<span style="color:#f92672">)</span>: min<span style="color:#f92672">=</span> 7392, max<span style="color:#f92672">=</span>708956, per<span style="color:#f92672">=</span>99.85%, avg<span style="color:#f92672">=</span>495814.75, stdev<span style="color:#f92672">=</span>8677.22, samples<span style="color:#f92672">=</span><span style="color:#ae81ff">5754</span>
+   iops        : min<span style="color:#f92672">=</span> 1848, max<span style="color:#f92672">=</span>177239, avg<span style="color:#f92672">=</span>123953.01, stdev<span style="color:#f92672">=</span>2169.32, samples<span style="color:#f92672">=</span><span style="color:#ae81ff">5754</span>
+  lat <span style="color:#f92672">(</span>usec<span style="color:#f92672">)</span>   : 50<span style="color:#f92672">=</span>0.64%, 100<span style="color:#f92672">=</span>46.31%, 250<span style="color:#f92672">=</span>51.12%, 500<span style="color:#f92672">=</span>1.39%, 750<span style="color:#f92672">=</span>0.21%
+  lat <span style="color:#f92672">(</span>usec<span style="color:#f92672">)</span>   : 1000<span style="color:#f92672">=</span>0.05%
+  lat <span style="color:#f92672">(</span>msec<span style="color:#f92672">)</span>   : 2<span style="color:#f92672">=</span>0.06%, 4<span style="color:#f92672">=</span>0.08%, 10<span style="color:#f92672">=</span>0.11%, 20<span style="color:#f92672">=</span>0.02%, 50<span style="color:#f92672">=</span>0.01%
+  lat <span style="color:#f92672">(</span>msec<span style="color:#f92672">)</span>   : 100<span style="color:#f92672">=</span>0.01%, 250<span style="color:#f92672">=</span>0.01%, 500<span style="color:#f92672">=</span>0.01%
+  cpu          : usr<span style="color:#f92672">=</span>2.10%, sys<span style="color:#f92672">=</span>14.40%, ctx<span style="color:#f92672">=</span>22732938, majf<span style="color:#f92672">=</span>0, minf<span style="color:#f92672">=</span><span style="color:#ae81ff">185</span>
+  IO depths    : 1<span style="color:#f92672">=</span>100.0%, 2<span style="color:#f92672">=</span>0.0%, 4<span style="color:#f92672">=</span>0.0%, 8<span style="color:#f92672">=</span>0.0%, 16<span style="color:#f92672">=</span>0.0%, 32<span style="color:#f92672">=</span>0.0%, &gt;<span style="color:#f92672">=</span>64<span style="color:#f92672">=</span>0.0%
+     submit    : 0<span style="color:#f92672">=</span>0.0%, 4<span style="color:#f92672">=</span>100.0%, 8<span style="color:#f92672">=</span>0.0%, 16<span style="color:#f92672">=</span>0.0%, 32<span style="color:#f92672">=</span>0.0%, 64<span style="color:#f92672">=</span>0.0%, &gt;<span style="color:#f92672">=</span>64<span style="color:#f92672">=</span>0.0%
+     complete  : 0<span style="color:#f92672">=</span>0.0%, 4<span style="color:#f92672">=</span>100.0%, 8<span style="color:#f92672">=</span>0.0%, 16<span style="color:#f92672">=</span>0.0%, 32<span style="color:#f92672">=</span>0.0%, 64<span style="color:#f92672">=</span>0.0%, &gt;<span style="color:#f92672">=</span>64<span style="color:#f92672">=</span>0.0%
+     issued rwts: total<span style="color:#f92672">=</span>0,22346101,0,0 short<span style="color:#f92672">=</span>0,0,0,0 dropped<span style="color:#f92672">=</span>0,0,0,0
+     latency   : target<span style="color:#f92672">=</span>0, window<span style="color:#f92672">=</span>0, percentile<span style="color:#f92672">=</span>100.00%, depth<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+
+Run status group <span style="color:#ae81ff">0</span> <span style="color:#f92672">(</span>all jobs<span style="color:#f92672">)</span>:
+  WRITE: bw<span style="color:#f92672">=</span>485MiB/s <span style="color:#f92672">(</span>508MB/s<span style="color:#f92672">)</span>, 485MiB/s-485MiB/s <span style="color:#f92672">(</span>508MB/s-508MB/s<span style="color:#f92672">)</span>, io<span style="color:#f92672">=</span>85.2GiB <span style="color:#f92672">(</span>91.5GB<span style="color:#f92672">)</span>,    run<span style="color:#f92672">=</span>180002-180002msec
+
+Disk stats <span style="color:#f92672">(</span>read/write<span style="color:#f92672">)</span>:
+  sda: ios<span style="color:#f92672">=</span>0/22343488, merge<span style="color:#f92672">=</span>0/320596, ticks<span style="color:#f92672">=</span>0/2183495, in_queue<span style="color:#f92672">=</span>233588, util<span style="color:#f92672">=</span>100.00
+
+</code></pre></div><h3 id="3-참고">3. 참고</h3>
+<ul>
+<li><a href="https://fio.readthedocs.io/en/latest/fio_doc.html" target="_blank" rel="noopener">fio - Flexible I/O tester rev. 3.26</a>
+</li>
+<li><a href="https://linux.die.net/man/1/fio" target="_blank" rel="noopener">fio(1) - Linux man page</a>
+</li>
+<li><a href="https://jcil.co.kr/29" target="_blank" rel="noopener">FIO test - NVMe / SSD / HDD 속도 테스트</a>
+</li>
+<li><a href="https://mozi.tistory.com/124" target="_blank" rel="noopener">LINUX - fio 사용법, Disk BandWidth, IOPS 측정하기</a>
+</li>
+<li><a href="https://harryp.tistory.com/664" target="_blank" rel="noopener">스토리지 fio - 리눅스 디스크 성능 측정 툴</a>
+</li>
+</ul>
+<h3 id="4-그-외-추가로-알게된-것들">4. 그 외 추가로 알게된 것들</h3>
+<p>; fio 테스트를 하며 알게된 것으로 다음에 확인하기 위해 남김</p>
+<ul>
+<li>
+<p>sysbench<br>
+<a href="https://extrememanual.net/26680" target="_blank" rel="noopener">리눅스 서버 벤치마크 프로그램 sysbench 사용 방법</a>
+<br>
+<a href="https://hiseon.me/linux/linux-sysbench-examples/" target="_blank" rel="noopener">리눅스 성능 측정 sysbench 사용법</a>
+<br>
+<a href="https://help.iwinv.kr/manualread.html?idx=442" target="_blank" rel="noopener">벤치마킹 툴 측정도구 사용법 (IOPS)</a>
+</p>
+</li>
+<li>
+<p>iozone</p>
+</li>
+<li>
+<p>tiotest</p>
+</li>
+<li>
+<p>dd<br>
+<a href="https://mozi.tistory.com/42?category=990187" target="_blank" rel="noopener">LINUX - dd 디스크 속도측정하기</a>
+<br>
+<a href="https://www.cyberciti.biz/faq/howto-linux-unix-test-disk-performance-with-dd-command/" target="_blank" rel="noopener">Linux and Unix Test Disk I/O Performance With dd Command</a>
+
+<a href="https://medium.com/@kenichishibata/test-i-o-performance-of-linux-using-dd-a5074f1de9ce" target="_blank" rel="noopener">Test I/O Performance of Linux using DD</a>
+</p>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/disk/">disk</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/io/">io</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/iops/">iops</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/throughput/">throughput</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/latency/">latency</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/test/">test</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/fio/">fio</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/linux/">linux</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/post/20210401_apt_update_unable_connect_ubuntu/" data-tooltip="Err: apt update error, Unable to connect to23">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/post/20210414_disk_io_test_linux/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/post/20210414_disk_io_test_linux/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/post/20210414_disk_io_test_linux/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+
+              
+            
+          </div>
+        </article>
+
+	<script src="https://utteranc.es/client.js"
+      	  repo="010000/blog-comments"
+       	 issue-term="pathname"
+       	 theme="github-light"
+       	 crossorigin="anonymous"
+       	 async>
+	</script>
+
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2021 <a href="https://github.com/010000">010000 Logbook</a>. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="1">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/post/20210401_apt_update_unable_connect_ubuntu/" data-tooltip="Err: apt update error, Unable to connect to23">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/post/20210414_disk_io_test_linux/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/post/20210414_disk_io_test_linux/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/post/20210414_disk_io_test_linux/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="1">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F010000.github.io%2Fpost%2F20210414_disk_io_test_linux%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2F010000.github.io%2Fpost%2F20210414_disk_io_test_linux%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2F010000.github.io%2Fpost%2F20210414_disk_io_test_linux%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://res.cloudinary.com/oloooo/image/upload/v1614951872/githubpages/netscape_wcocsw.gif" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Jeffrey YM. Jo</h4>
+    
+      <div id="about-card-bio">경험과 생각들을 정리하며, 다시 찾는 시간을 아끼기 위해 모아놓는 블로그입니다.</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Public
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        South Korea
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    <div id="cover" style="background-image:url('https://res.cloudinary.com/oloooo/image/upload/v1614216485/githubpages/cover_2560px_oemeya.jpg');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://010000.github.io/js/script-n8mqrxp8rsufxtye69p9ch2uxowamnju45qdhlzy3r6bzgixdxhhwaa9zgxf.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/010000.github.io\/post\/20210414_disk_io_test_linux\/';
+          
+            this.page.identifier = '\/post\/20210414_disk_io_test_linux\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = '010000';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+
