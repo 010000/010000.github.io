@@ -294,7 +294,7 @@ if (!doNotTrack) {
 <h3 id="1-fio-설치">1. fio 설치</h3>
 <p>;구글링 결과 많은 분들은 소스파일을 컴파일하여 사용하였지만 간단히 패키지 관리자로 진행했습니다.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">USER1@SVR1 ~<span style="color:#f92672">]</span>$ sudo apt install fio
-</code></pre></div><h3 id="2-fio-실행과-결과">2. fio 실행과 결과</h3>
+</code></pre></div><h3 id="2-fio-실행-결과">2. fio 실행 결과</h3>
 <p>;각 옵션들은 아래 fio man 페이지를 참고</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">USER1@SVR1 ~<span style="color:#f92672">]</span>$ mkdir /home/USER1/fio
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">USER1@SVR1 ~/fio<span style="color:#f92672">]</span>$ fio --directory<span style="color:#f92672">=</span>/home/USER1/fio --name fio_test_file --direct<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> --rw<span style="color:#f92672">=</span>randread --bs<span style="color:#f92672">=</span>4K --size<span style="color:#f92672">=</span>1G --numjobs<span style="color:#f92672">=</span><span style="color:#ae81ff">16</span> --time_based --runtime<span style="color:#f92672">=</span><span style="color:#ae81ff">180</span> --group_reporting --norandommap
@@ -424,7 +424,7 @@ Disk stats <span style="color:#f92672">(</span>read/write<span style="color:#f92
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/post/20210401_apt_update_unable_connect_ubuntu/" data-tooltip="Err: apt update error, Unable to connect to23">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/post/20210401_apt_update_unable_connect_ubuntu/" data-tooltip="Err: apt update error, Unable to connect to">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -517,7 +517,7 @@ Disk stats <span style="color:#f92672">(</span>read/write<span style="color:#f92
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/post/20210401_apt_update_unable_connect_ubuntu/" data-tooltip="Err: apt update error, Unable to connect to23">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/post/20210401_apt_update_unable_connect_ubuntu/" data-tooltip="Err: apt update error, Unable to connect to">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
