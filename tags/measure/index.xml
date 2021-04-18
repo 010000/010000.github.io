@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>io on 010000 logbook</title>
-    <link>https://010000.github.io/tags/io/</link>
-    <description>Recent content in io on 010000 logbook</description>
+    <title>measure on 010000 logbook</title>
+    <link>https://010000.github.io/tags/measure/</link>
+    <description>Recent content in measure on 010000 logbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Wed, 14 Apr 2021 20:47:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 14 Apr 2021 20:47:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/measure/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux, disk I/O 측정 - fio</title>
       <link>https://010000.github.io/post/20210414_disk_io_test_linux/</link>

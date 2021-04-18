@@ -8,7 +8,7 @@
     <language>ko-kr</language>
     <lastBuildDate>Wed, 14 Apr 2021 20:47:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/throughput/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Linux, disk I/O 성능 측정하기 - fio</title>
+      <title>Linux, disk I/O 측정 - fio</title>
       <link>https://010000.github.io/post/20210414_disk_io_test_linux/</link>
       <pubDate>Wed, 14 Apr 2021 20:47:00 +0900</pubDate>
       
