@@ -293,15 +293,8 @@ if (!doNotTrack) {
 <h3 id="1-code-server-설치와-실행">1. Code-server 설치와 실행</h3>
 <p>Download: <a href="https://github.com/cdr/code-server/releases" target="_blank" rel="noopener">code-server</a>
 </p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ pwd ; id -un
-/home/USER1
-USER1
-
-USER1@ ~<span style="color:#f92672">]</span>$ mkdir download ;cd download
-
-USER1@ ~<span style="color:#f92672">]</span>$ curl -fOL https://github.com/cdr/code-server/releases/download/v3.9.0/code-server-3.9.0-amd64.rpm
-
-USER1@ ~<span style="color:#f92672">]</span>$ sudo rpm -ivh ./code-server-3.9.0-amd64.rpm
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">chacha@V-AnsibleM1:~/download$ cd ~/download/
+chacha@V-AnsibleM1:~/download$ curl -fOL https://www.oracle.com/webapps/redirect/signon?nexturl<span style="color:#f92672">=</span>https://download.oracle.com/otn/utilities_drivers/vdbench/vdbench50407.zip
 </code></pre></div><p>(Ubuntu 참고용)</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ curl -fOL https://github.com/cdr/code-server/releases/download/v3.9.0/code-server_3.9.0_amd64.deb
 $ sudo dpkg -i code-server_3.9.0_amd64.deb
