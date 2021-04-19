@@ -9,10 +9,10 @@
     <lastBuildDate>Wed, 14 Apr 2021 20:47:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux, disk I/O 측정 - fio</title>
-      <link>https://010000.github.io/post/20210414_disk_io_test_linux/</link>
+      <link>https://010000.github.io/post/20210414_disk_io_test_fio_linux/</link>
       <pubDate>Wed, 14 Apr 2021 20:47:00 +0900</pubDate>
       
-      <guid>https://010000.github.io/post/20210414_disk_io_test_linux/</guid>
+      <guid>https://010000.github.io/post/20210414_disk_io_test_fio_linux/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;SSD가 설치된 가상머신에서 fio를 이용해 disk 성능 측정  &lt;em&gt;(Update: Apr 14, 2021)&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
