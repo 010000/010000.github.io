@@ -308,18 +308,21 @@ if (!doNotTrack) {
 ;서비스 제공측에서 http2 호환성에 문제가 없을 때까지 disable로 조치하여 서비스 유지가 적합</li>
 </ol>
 <h3 id="4-조치-방법">4. 조치 방법</h3>
-<p>;Windows 2016 http2 레지스트리 편집기를 열고, 값을 수정</p>
+<p>;레지스트리 편집기를 열고, 값을 추가 또는 수정</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\HTTP\Parameters]
 <span style="color:#960050;background-color:#1e0010">“</span>EnableHttp2Tls<span style="color:#960050;background-color:#1e0010">”</span>=dword<span style="color:#960050;background-color:#1e0010">:</span>00000000
 <span style="color:#960050;background-color:#1e0010">“</span>EnableHttp2Cleartext<span style="color:#960050;background-color:#1e0010">”</span>=dword<span style="color:#960050;background-color:#1e0010">:</span>00000000
 
-<span style="color:#75715e"># If you decide to enable HTTP/2 at a later time, you can either delete the two registry keys or change their values to 1.</span>
+<span style="color:#75715e"># If you decide to enable HTTP/2 at a later time,</span>
+ you can either delete the two registry keys or change their values to 1.
 
 </code></pre></div><h3 id="참고">참고</h3>
-<p><a href="https://www.ibm.com/support/pages/errhttp2inadequatetransportsecurity-error-message-google-chrome-browser-when-connecting-portal-https" target="_blank" rel="noopener">IBM - ERR_HTTP2_INADEQUATE_TRANSPORT_SECURITY error message in google Chrome browser when connecting to portal via HTTPS</a>
-<br>
-<a href="https://www.tecklyfe.com/how-to-fix-ns_error_net_inadequate_security-and-err_spdy_inadequate_transport_security-in-iis-on-windows-server-2016/" target="_blank" rel="noopener">How to Fix NS_ERROR_NET_INADEQUATE_SECURITY and ERR_SPDY_INADEQUATE_TRANSPORT_SECURITY in IIS on Windows Server 2016</a>
-</p>
+<ul>
+<li><a href="https://www.ibm.com/support/pages/errhttp2inadequatetransportsecurity-error-message-google-chrome-browser-when-connecting-portal-https" target="_blank" rel="noopener">IBM - ERR_HTTP2_INADEQUATE_TRANSPORT_SECURITY error message in google Chrome browser when connecting to portal via HTTPS</a>
+</li>
+<li><a href="https://www.tecklyfe.com/how-to-fix-ns_error_net_inadequate_security-and-err_spdy_inadequate_transport_security-in-iis-on-windows-server-2016/" target="_blank" rel="noopener">How to Fix NS_ERROR_NET_INADEQUATE_SECURITY and ERR_SPDY_INADEQUATE_TRANSPORT_SECURITY in IIS on Windows Server 2016</a>
+</li>
+</ul>
               
             </div>
           </div>
