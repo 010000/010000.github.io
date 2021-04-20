@@ -6,7 +6,19 @@
     <description>Recent content in windows on 010000 logbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Tue, 30 Mar 2021 15:21:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 20 Apr 2021 11:33:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows 2016 IIS, chrome 에서 log in failed</title>
+      <link>https://010000.github.io/post/20210420_login_fail_windows_2016/</link>
+      <pubDate>Tue, 20 Apr 2021 11:33:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/post/20210420_login_fail_windows_2016/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;Windows Server 2016 이상 IIS 웹서버로 크롬 또는 엣지에서 로그인 실패 이슈 참고용&lt;/li&gt;
+&lt;li&gt;서비스중인 웹서비스 페이지의 http2 호환성 이슈가 해결될 때까지 서버측의 대안 설정 &lt;em&gt;(Update: Apr 20, 2021)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
     <item>
       <title>Windows/Linux, tcpip 포트 고갈에 대한 참고용</title>
       <link>https://010000.github.io/post/20210330_tcpip_port_exhaust_windows/</link>
