@@ -595,7 +595,7 @@ Apr 22, <span style="color:#ae81ff">2021</span> ..Interval.. .ReqstdOps... ...cp
 <span style="color:#75715e"># 평균 CPU 25.3%, Read 70%, Total 364.14 MB/s = Read 254.9 MB/s + Write 109.2 MB/s</span>
 </code></pre></div><h3 id="5-file-system-테스트-진행-중-오류">5. File-System 테스트 진행 중 오류</h3>
 <ol>
-<li>물리 메모리 2GB에서 4GB 할당하니 조치됨</li>
+<li>메모리 2GB에서 4GB 할당하니 조치됨</li>
 </ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">USER1@VM1:~/download/vdbench$ sudo ./vdbench -f ./vdbench_param/param.txt -o param_report
 
@@ -617,7 +617,7 @@ java.lang.ClassFormatError: Incompatible magic value <span style="color:#ae81ff"
         at Vdb.Vdbmain.main<span style="color:#f92672">(</span>Vdbmain.java:628<span style="color:#f92672">)</span>
 16:50:37.629 common.failure<span style="color:#f92672">()</span>: System.exit<span style="color:#f92672">(</span>-99<span style="color:#f92672">)</span>
 
-</code></pre></div><h3 id="진행하며-검토했던-것들">진행하며 검토했던 것들</h3>
+</code></pre></div><h3 id="6-진행하며-검토-및-알게된-것">6. 진행하며 검토 및 알게된 것</h3>
 <ul>
 <li>스토리지의 최대 성능을 측정하는지, 스토리지에 연결된 서버에서 어느 수준의 성능이 나오는지 등 시나리오 따라 방향이 달라진다.</li>
 <li>가상 머신의 경우 thin provisioning 특성을 감안해야 한다.</li>
