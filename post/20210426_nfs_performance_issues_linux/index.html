@@ -516,8 +516,7 @@ img1nas1-1#
 <h4 id="1-nfs-file-attribute-cache-tuninghttpswwwibmcomdocsenaix72topicclient-nfs-file-attribute-cache-tuning">1) <a href="https://www.ibm.com/docs/en/aix/7.2?topic=client-nfs-file-attribute-cache-tuning" target="_blank" rel="noopener">NFS file-attribute cache tuning</a>
 </h4>
 <p>; NFS는 최근에 액세스 한 디렉토리 및 파일의 속성에 대한 캐시를 각 클라이언트 시스템에 유지합니다.<br>
-mount 명령을 사용하여 여러 매개 변수를 설정하여 주어진 항목이 캐시에 보관되는 기간을 제어 할 수 있습니다.<br>
-업데이트 후 파일 및 디렉토리 항목이 파일 속성 캐시에 보관되는 절대 시간입니다. 지정된 경우 이 값들 모두 actimeo 값으로 효과적으로 설정됩니다.</p>
+mount 명령을 사용하여 여러 매개 변수를 설정하여 주어진 항목이 캐시에 보관되는 기간을 제어 할 수 있습니다. 업데이트 후 파일 및 디렉토리 항목이 파일 속성 캐시에 보관되는 절대 시간입니다. 지정된 경우 이 값들 모두 actimeo 값으로 효과적으로 설정됩니다.</p>
 <h4 id="2-1-read-and-write-size-adjustmentshttpswwwibmcomdocsenaix72topicclient-read-write-size-adjustments">2-1) <a href="https://www.ibm.com/docs/en/aix/7.2?topic=client-read-write-size-adjustments" target="_blank" rel="noopener">Read and write size adjustments</a>
 </h4>
 <p>; NFS 파일 시스템이 기가비트 이더넷과 같은 고속 네트워크에 마운트 된 경우 읽기 및 쓰기 패킷 크기가 클수록 NFS 파일 시스템 성능이 향상 될 수 있습니다. NFS 버전 3 및 NFS 버전 4를 사용하면 네트워크 전송이 TCP 일 때 rsize 및 wsize 값을 65536까지 설정할 수 있습니다. 기본값은 32768입니다. NFS 버전 2에서 rsize 및 wsize 옵션의 최대 값은 기본값이기도 한 8192입니다.</p>
