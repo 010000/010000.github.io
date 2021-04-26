@@ -286,12 +286,14 @@ if (!doNotTrack) {
 <li>Client: CentOS 6</li>
 <li>Web service: Nginx with NAS (NFS mounted)</li>
 </ul>
+<p> </p>
 <h3 id="1-문제-현상">1. 문제 현상</h3>
 <ol>
 <li>이미지 웹 서비스 간헐적 오류</li>
 <li>불규칙하게 NAS에 저장된 샘플 파일의 속성을 읽을 때 지연 발생</li>
 <li>client 간 네트웍 연결 상태, Local file 호출 등은 언제든 정상</li>
 </ol>
+<p> </p>
 <h3 id="2-문제-해소를-위한-설정들">2. 문제 해소를 위한 설정들</h3>
 <ol>
 <li>웹 서비스를 하는 client의 설정</li>
@@ -509,7 +511,8 @@ Unlockres       Grantedres      Share           Unshare         Nmlock          
 <span style="color:#ae81ff">0</span>               <span style="color:#ae81ff">0</span>               <span style="color:#ae81ff">0</span>               <span style="color:#ae81ff">0</span>               <span style="color:#ae81ff">0</span>               <span style="color:#ae81ff">0</span>               <span style="color:#ae81ff">0</span>
 img1nas1-1#
 
-</code></pre></div><h3 id="3-테스트와-검토했던-내용들">3. 테스트와 검토했던 내용들</h3>
+</code></pre></div><p> </p>
+<h3 id="3-테스트와-검토했던-내용들">3. 테스트와 검토했던 내용들</h3>
 <h4 id="1-nfs-file-attribute-cache-tuninghttpswwwibmcomdocsenaix72topicclient-nfs-file-attribute-cache-tuning">1) <a href="https://www.ibm.com/docs/en/aix/7.2?topic=client-nfs-file-attribute-cache-tuning" target="_blank" rel="noopener">NFS file-attribute cache tuning</a>
 </h4>
 <p>; NFS는 최근에 액세스 한 디렉토리 및 파일의 속성에 대한 캐시를 각 클라이언트 시스템에 유지합니다.<br>
@@ -543,6 +546,7 @@ mount 명령을 사용하여 여러 매개 변수를 설정하여 주어진 항�
 <br>
 <a href="https://www.ibm.com/docs/en/aix/7.2?topic=client-performance-implications-hard-soft-nfs-mounts" target="_blank" rel="noopener">Performance implications of hard or soft NFS mounts</a>
 </p>
+<p> </p>
 <h3 id="4-참고-글">4. 참고 글</h3>
 <ul>
 <li><a href="https://coding-chobo.tistory.com/63" target="_blank" rel="noopener">NFS Performance Tuning</a>
