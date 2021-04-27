@@ -3,15 +3,39 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://010000.github.io/</loc>
-    <lastmod>2021-04-26T20:19:00+09:00</lastmod>
+    <lastmod>2021-04-27T23:59:00+09:00</lastmod>
+  </url><url>
+    <loc>https://010000.github.io/tags/bind/</loc>
+    <lastmod>2021-04-27T23:59:00+09:00</lastmod>
   </url><url>
     <loc>https://010000.github.io/categories/</loc>
-    <lastmod>2021-04-26T20:19:00+09:00</lastmod>
+    <lastmod>2021-04-27T23:59:00+09:00</lastmod>
   </url><url>
-    <loc>https://010000.github.io/tags/issue/</loc>
-    <lastmod>2021-04-26T20:19:00+09:00</lastmod>
+    <loc>https://010000.github.io/tags/dns/</loc>
+    <lastmod>2021-04-27T23:59:00+09:00</lastmod>
   </url><url>
     <loc>https://010000.github.io/tags/linux/</loc>
+    <lastmod>2021-04-27T23:59:00+09:00</lastmod>
+  </url><url>
+    <loc>https://010000.github.io/post/20210427_bind_message_logs_linux/</loc>
+    <lastmod>2021-04-27T23:59:00+09:00</lastmod>
+  </url><url>
+    <loc>https://010000.github.io/tags/log/</loc>
+    <lastmod>2021-04-27T23:59:00+09:00</lastmod>
+  </url><url>
+    <loc>https://010000.github.io/tags/message/</loc>
+    <lastmod>2021-04-27T23:59:00+09:00</lastmod>
+  </url><url>
+    <loc>https://010000.github.io/categories/os_linux/</loc>
+    <lastmod>2021-04-27T23:59:00+09:00</lastmod>
+  </url><url>
+    <loc>https://010000.github.io/post/</loc>
+    <lastmod>2021-04-27T23:59:00+09:00</lastmod>
+  </url><url>
+    <loc>https://010000.github.io/tags/</loc>
+    <lastmod>2021-04-27T23:59:00+09:00</lastmod>
+  </url><url>
+    <loc>https://010000.github.io/tags/issue/</loc>
     <lastmod>2021-04-26T20:19:00+09:00</lastmod>
   </url><url>
     <loc>https://010000.github.io/post/20210426_nfs_performance_issues_linux/</loc>
@@ -26,16 +50,7 @@
     <loc>https://010000.github.io/tags/option/</loc>
     <lastmod>2021-04-26T20:19:00+09:00</lastmod>
   </url><url>
-    <loc>https://010000.github.io/categories/os_linux/</loc>
-    <lastmod>2021-04-26T20:19:00+09:00</lastmod>
-  </url><url>
     <loc>https://010000.github.io/tags/performance/</loc>
-    <lastmod>2021-04-26T20:19:00+09:00</lastmod>
-  </url><url>
-    <loc>https://010000.github.io/post/</loc>
-    <lastmod>2021-04-26T20:19:00+09:00</lastmod>
-  </url><url>
-    <loc>https://010000.github.io/tags/</loc>
     <lastmod>2021-04-26T20:19:00+09:00</lastmod>
   </url><url>
     <loc>https://010000.github.io/tags/2016/</loc>
@@ -125,9 +140,6 @@
     <loc>https://010000.github.io/categories/hmm-terestings/</loc>
     <lastmod>2021-03-31T15:29:00+09:00</lastmod>
   </url><url>
-    <loc>https://010000.github.io/tags/message/</loc>
-    <lastmod>2021-03-31T15:29:00+09:00</lastmod>
-  </url><url>
     <loc>https://010000.github.io/tags/nginx/</loc>
     <lastmod>2021-03-31T15:29:00+09:00</lastmod>
   </url><url>
@@ -192,9 +204,6 @@
     <lastmod>2021-03-26T16:30:00+09:00</lastmod>
   </url><url>
     <loc>https://010000.github.io/post/20210326_message_logs_linux/</loc>
-    <lastmod>2021-03-26T13:40:00+09:00</lastmod>
-  </url><url>
-    <loc>https://010000.github.io/tags/log/</loc>
     <lastmod>2021-03-26T13:40:00+09:00</lastmod>
   </url><url>
     <loc>https://010000.github.io/tags/authentication/</loc>

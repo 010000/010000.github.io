@@ -6,22 +6,58 @@
     <description>Recent content in Tags on 010000 logbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Mon, 26 Apr 2021 20:19:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 27 Apr 2021 23:59:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>issue</title>
-      <link>https://010000.github.io/tags/issue/</link>
-      <pubDate>Mon, 26 Apr 2021 20:19:00 +0900</pubDate>
+      <title>bind</title>
+      <link>https://010000.github.io/tags/bind/</link>
+      <pubDate>Tue, 27 Apr 2021 23:59:00 +0900</pubDate>
       
-      <guid>https://010000.github.io/tags/issue/</guid>
+      <guid>https://010000.github.io/tags/bind/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dns</title>
+      <link>https://010000.github.io/tags/dns/</link>
+      <pubDate>Tue, 27 Apr 2021 23:59:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/dns/</guid>
       <description></description>
     </item>
     
     <item>
       <title>linux</title>
       <link>https://010000.github.io/tags/linux/</link>
-      <pubDate>Mon, 26 Apr 2021 20:19:00 +0900</pubDate>
+      <pubDate>Tue, 27 Apr 2021 23:59:00 +0900</pubDate>
       
       <guid>https://010000.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>log</title>
+      <link>https://010000.github.io/tags/log/</link>
+      <pubDate>Tue, 27 Apr 2021 23:59:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/log/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>message</title>
+      <link>https://010000.github.io/tags/message/</link>
+      <pubDate>Tue, 27 Apr 2021 23:59:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/message/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>issue</title>
+      <link>https://010000.github.io/tags/issue/</link>
+      <pubDate>Mon, 26 Apr 2021 20:19:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/issue/</guid>
       <description></description>
     </item>
     
@@ -269,15 +305,6 @@
     </item>
     
     <item>
-      <title>message</title>
-      <link>https://010000.github.io/tags/message/</link>
-      <pubDate>Wed, 31 Mar 2021 15:29:00 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/message/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>nginx</title>
       <link>https://010000.github.io/tags/nginx/</link>
       <pubDate>Wed, 31 Mar 2021 15:29:00 +0900</pubDate>
@@ -427,15 +454,6 @@
       <pubDate>Fri, 26 Mar 2021 16:30:00 +0900</pubDate>
       
       <guid>https://010000.github.io/tags/super/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>log</title>
-      <link>https://010000.github.io/tags/log/</link>
-      <pubDate>Fri, 26 Mar 2021 13:40:00 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/log/</guid>
       <description></description>
     </item>
     
