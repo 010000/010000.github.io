@@ -304,8 +304,8 @@ Jan <span style="color:#ae81ff">25</span> 02:39:37 DNSSVR1 named<span style="col
 category lame-servers <span style="color:#f92672">{</span> null; <span style="color:#f92672">}</span>;
 <span style="color:#f92672">(</span>...생략...<span style="color:#f92672">)</span>
 <span style="color:#f92672">}</span>;
-</code></pre></div><h3 id="로그-확인-2">로그 확인 2</h3>
-<hr>
+</code></pre></div><hr>
+<h3 id="로그-확인-2">로그 확인 2</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Jan <span style="color:#ae81ff">25</span> 03:08:47 DNSSVR1 named<span style="color:#f92672">[</span>4431<span style="color:#f92672">]</span>: error <span style="color:#f92672">(</span>FORMERR<span style="color:#f92672">)</span> resolving <span style="color:#e6db74">&#39;web.example.io/AAAA/IN&#39;</span>: 192.168.149.62#53
 Jan <span style="color:#ae81ff">25</span> 03:08:53 DNSSVR1 named<span style="color:#f92672">[</span>4431<span style="color:#f92672">]</span>: error <span style="color:#f92672">(</span>FORMERR<span style="color:#f92672">)</span> resolving <span style="color:#e6db74">&#39;web.example.io/AAAA/IN&#39;</span>: 192.168.149.62#53
 
@@ -325,9 +325,8 @@ OPTIONS<span style="color:#f92672">=</span>-4
 
 <span style="color:#75715e"># service named restart</span>
 <span style="color:#75715e"># -4 설정은 IPv4환경으로 동작, -6 설정은 IPv6 동작</span>
-</code></pre></div><p> </p>
+</code></pre></div><hr>
 <h3 id="로그-확인-3">로그 확인 3</h3>
-<hr>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Jan <span style="color:#ae81ff">25</span> 05:25:51 DNSSVR1 named<span style="color:#f92672">[</span>4431<span style="color:#f92672">]</span>: client 192.168.103.246#30100 <span style="color:#f92672">(</span>sl<span style="color:#f92672">)</span>: query <span style="color:#f92672">(</span>cache<span style="color:#f92672">)</span> <span style="color:#e6db74">&#39;sl/ANY/IN&#39;</span> denied
 Jan <span style="color:#ae81ff">25</span> 05:25:51 DNSSVR1 named<span style="color:#f92672">[</span>4431<span style="color:#f92672">]</span>: client 192.168.219.45#80 <span style="color:#f92672">(</span>sl<span style="color:#f92672">)</span>: query <span style="color:#f92672">(</span>cache<span style="color:#f92672">)</span> <span style="color:#e6db74">&#39;sl/ANY/IN&#39;</span> denied
 
@@ -345,7 +344,7 @@ category security <span style="color:#f92672">{</span> null; <span style="color:
 <span style="color:#f92672">(</span>...생략...<span style="color:#f92672">)</span>
 <span style="color:#f92672">}</span>;
 
-</code></pre></div><h3 id="추가로-도움되는-글">추가로 도움되는 글</h3>
+</code></pre></div><h3 id="도움되는-글">도움되는 글</h3>
 <ul>
 <li><a href="https://puzji.tistory.com/entry/CentOS7-Name-Server-%ea%b5%ac%ec%b6%95%ed%95%98%ea%b8%b0-bind" target="_blank" rel="noopener">CentOS7 - Name Server 구축하기(bind) (4/10)</a>
 </li>
