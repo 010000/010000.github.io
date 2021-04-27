@@ -284,7 +284,6 @@ if (!doNotTrack) {
 <li>OS: CentOS 7</li>
 <li>Service: DNS, Bind 9</li>
 </ul>
-<p> </p>
 <h3 id="로그-확인-1">로그 확인 1</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Jan <span style="color:#ae81ff">25</span> 01:31:41 DNSSVR1 named<span style="color:#f92672">[</span>4431<span style="color:#f92672">]</span>: error <span style="color:#f92672">(</span>unexpected RCODE SERVFAIL<span style="color:#f92672">)</span> resolving <span style="color:#e6db74">&#39;www.example.co.kr/A/IN&#39;</span>: 192.168.195.5#53
 Jan <span style="color:#ae81ff">25</span> 01:31:45 DNSSVR1 named<span style="color:#f92672">[</span>4431<span style="color:#f92672">]</span>: error <span style="color:#f92672">(</span>unexpected RCODE SERVFAIL<span style="color:#f92672">)</span> resolving <span style="color:#e6db74">&#39;admin.example.co.kr/A/IN&#39;</span>: 192.168.195.5#53
@@ -294,7 +293,7 @@ Jan <span style="color:#ae81ff">25</span> 02:39:37 DNSSVR1 named<span style="col
 
 </code></pre></div><blockquote>
 <p>Resolution<br>
-참조1) <a href="https://access.redhat.com/solutions/503843" target="_blank" rel="noopener">Why named logs <code>error (unexpected RCODE REFUSED) resolving</code> in messages file?</a>
+참조1) <a href="https://access.redhat.com/solutions/503843" target="_blank" rel="noopener">Why named logs &lsquo;error (unexpected RCODE REFUSED) resolving&rsquo; in messages file?</a>
 <br>
 참조2) <a href="https://faq.hostway.co.kr/Linux_DNS/7690" target="_blank" rel="noopener">Lame server 관련된 DNS 에러메시지 처리하기</a>
 <br>
@@ -305,8 +304,7 @@ Jan <span style="color:#ae81ff">25</span> 02:39:37 DNSSVR1 named<span style="col
 category lame-servers <span style="color:#f92672">{</span> null; <span style="color:#f92672">}</span>;
 <span style="color:#f92672">(</span>...생략...<span style="color:#f92672">)</span>
 <span style="color:#f92672">}</span>;
-</code></pre></div><p> </p>
-<h3 id="로그-확인-2">로그 확인 2</h3>
+</code></pre></div><h3 id="로그-확인-2">로그 확인 2</h3>
 <hr>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Jan <span style="color:#ae81ff">25</span> 03:08:47 DNSSVR1 named<span style="color:#f92672">[</span>4431<span style="color:#f92672">]</span>: error <span style="color:#f92672">(</span>FORMERR<span style="color:#f92672">)</span> resolving <span style="color:#e6db74">&#39;web.example.io/AAAA/IN&#39;</span>: 192.168.149.62#53
 Jan <span style="color:#ae81ff">25</span> 03:08:53 DNSSVR1 named<span style="color:#f92672">[</span>4431<span style="color:#f92672">]</span>: error <span style="color:#f92672">(</span>FORMERR<span style="color:#f92672">)</span> resolving <span style="color:#e6db74">&#39;web.example.io/AAAA/IN&#39;</span>: 192.168.149.62#53
