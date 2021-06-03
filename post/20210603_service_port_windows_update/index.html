@@ -9,50 +9,58 @@
 <meta name="author" content="Jeffrey YM. Jo">
 <meta name="keywords" content="tech">
 <meta name="description" content="
-DNS 서비스 중 볼 수 있는 log들을 확인하고 참고하기 위한 노트 (Update: Apr 27, 2021)
+Windows 정품 인증을 위한 포트 오픈 참고용
+목적지를 일일이 구분하기 번거롭다면 1day, 1회 제한으로만 열자 (Update: Jun 03, 2021)
 ">
 
 
 <meta property="og:description" content="
-DNS 서비스 중 볼 수 있는 log들을 확인하고 참고하기 위한 노트 (Update: Apr 27, 2021)
+Windows 정품 인증을 위한 포트 오픈 참고용
+목적지를 일일이 구분하기 번거롭다면 1day, 1회 제한으로만 열자 (Update: Jun 03, 2021)
 ">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux, Bind message logs">
-<meta name="twitter:title" content="Linux, Bind message logs">
-<meta property="og:url" content="https://010000.github.io/post/20210427_bind_message_logs_linux/">
-<meta property="twitter:url" content="https://010000.github.io/post/20210427_bind_message_logs_linux/">
+<meta property="og:title" content="Windows 정품 인증과 업데이트를 위한 포트">
+<meta name="twitter:title" content="Windows 정품 인증과 업데이트를 위한 포트">
+<meta property="og:url" content="https://010000.github.io/post/20210603_service_port_windows_update/">
+<meta property="twitter:url" content="https://010000.github.io/post/20210603_service_port_windows_update/">
 <meta property="og:site_name" content="010000 logbook">
 <meta property="og:description" content="
-DNS 서비스 중 볼 수 있는 log들을 확인하고 참고하기 위한 노트 (Update: Apr 27, 2021)
+Windows 정품 인증을 위한 포트 오픈 참고용
+목적지를 일일이 구분하기 번거롭다면 1day, 1회 제한으로만 열자 (Update: Jun 03, 2021)
 ">
 <meta name="twitter:description" content="
-DNS 서비스 중 볼 수 있는 log들을 확인하고 참고하기 위한 노트 (Update: Apr 27, 2021)
+Windows 정품 인증을 위한 포트 오픈 참고용
+목적지를 일일이 구분하기 번거롭다면 1day, 1회 제한으로만 열자 (Update: Jun 03, 2021)
 ">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2021-04-27T23:59:00">
+    <meta property="article:published_time" content="2021-06-03T20:03:00">
   
   
-    <meta property="article:modified_time" content="2021-04-27T23:59:00">
+    <meta property="article:modified_time" content="2021-06-03T20:03:00">
   
-  
-  
-    
-      <meta property="article:section" content="OS_Linux">
-    
   
   
     
-      <meta property="article:tag" content="dns">
+      <meta property="article:section" content="Service_port">
     
-      <meta property="article:tag" content="bind">
+  
+  
     
-      <meta property="article:tag" content="message">
+      <meta property="article:tag" content="windows">
     
-      <meta property="article:tag" content="log">
+      <meta property="article:tag" content="product">
     
-      <meta property="article:tag" content="linux">
+      <meta property="article:tag" content="activate">
+    
+      <meta property="article:tag" content="update">
+    
+      <meta property="article:tag" content="port">
+    
+      <meta property="article:tag" content="firewall">
+    
+      <meta property="article:tag" content="windows">
     
   
 
@@ -73,14 +81,14 @@ DNS 서비스 중 볼 수 있는 log들을 확인하고 참고하기 위한 노�
   <meta property="twitter:image" content="https://res.cloudinary.com/oloooo/image/upload/v1614951872/githubpages/netscape_wcocsw.gif">
 
 
-    <title>Linux, Bind message logs</title>
+    <title>Windows 정품 인증과 업데이트를 위한 포트</title>
 
     <link rel="icon" href="https://010000.github.io/favicon.ico">
     
 
     
 
-    <link rel="canonical" href="https://010000.github.io/post/20210427_bind_message_logs_linux/">
+    <link rel="canonical" href="https://010000.github.io/post/20210603_service_port_windows_update/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -249,15 +257,15 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      Linux, Bind message logs
+      Windows 정품 인증과 업데이트를 위한 포트
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2021-04-27T23:59:00&#43;09:00">
+      <time itemprop="datePublished" datetime="2021-06-03T20:03:00&#43;09:00">
         
-  April 27, 2021
+  June 3, 2021
 
       </time>
     
@@ -266,7 +274,7 @@ if (!doNotTrack) {
   
     <span>in</span>
     
-      <a class="category-link" href="https://010000.github.io/categories/os_linux">OS_Linux</a>
+      <a class="category-link" href="https://010000.github.io/categories/service_port">Service_port</a>
     
   
 
@@ -277,80 +285,34 @@ if (!doNotTrack) {
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
               <ul>
-<li>DNS 서비스 중 볼 수 있는 log들을 확인하고 참고하기 위한 노트 <em>(Update: Apr 27, 2021)</em></li>
+<li>Windows 정품 인증을 위한 포트 오픈 참고용</li>
+<li>목적지를 일일이 구분하기 번거롭다면 1day, 1회 제한으로만 열자 <em>(Update: Jun 03, 2021)</em></li>
 </ul>
-<h3 id="환경-구성">환경 구성</h3>
+<h3 id="출발지">출발지</h3>
+<pre><code>192.168.0.10
+192.168.10.0/24
+
+</code></pre><h3 id="목적지">목적지</h3>
+<pre><code>http://windowsupdate.microsoft.com
+http://*.windowsupdate.microsoft.com
+https://*.windowsupdate.microsoft.com
+http://*.update.microsoft.com
+https://*.update.microsoft.com
+http://*.windowsupdate.com
+http://download.windowsupdate.com
+http://download.microsoft.com
+http://*.download.windowsupdate.com
+http://wustat.windows.com
+http://ntservicepack.microsoft.com
+https://*.ws.microsoft.com
+http://*.ws.microsoft.com
+
+</code></pre><h3 id="사용-포트">사용 포트</h3>
+<pre><code>80, 443
+
+</code></pre><h3 id="참고">참고</h3>
 <ul>
-<li>OS: CentOS 7</li>
-<li>Service: DNS, Bind 9</li>
-</ul>
-<h3 id="로그-확인-1">로그 확인 1</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Jan <span style="color:#ae81ff">25</span> 01:31:41 DNSSVR1 named<span style="color:#f92672">[</span>4431<span style="color:#f92672">]</span>: error <span style="color:#f92672">(</span>unexpected RCODE SERVFAIL<span style="color:#f92672">)</span> resolving <span style="color:#e6db74">&#39;www.example.co.kr/A/IN&#39;</span>: 192.168.195.5#53
-Jan <span style="color:#ae81ff">25</span> 01:31:45 DNSSVR1 named<span style="color:#f92672">[</span>4431<span style="color:#f92672">]</span>: error <span style="color:#f92672">(</span>unexpected RCODE SERVFAIL<span style="color:#f92672">)</span> resolving <span style="color:#e6db74">&#39;admin.example.co.kr/A/IN&#39;</span>: 192.168.195.5#53
-
-Jan <span style="color:#ae81ff">25</span> 02:35:38 DNSSVR1 named<span style="color:#f92672">[</span>4431<span style="color:#f92672">]</span>: error <span style="color:#f92672">(</span>connection refused<span style="color:#f92672">)</span> resolving <span style="color:#e6db74">&#39;img1.example.com/A/IN&#39;</span>: 192.168.154.117#53
-Jan <span style="color:#ae81ff">25</span> 02:39:37 DNSSVR1 named<span style="color:#f92672">[</span>4431<span style="color:#f92672">]</span>: error <span style="color:#f92672">(</span>connection refused<span style="color:#f92672">)</span> resolving <span style="color:#e6db74">&#39;img2.example.com/A/IN&#39;</span>: 192.168.154.117#53
-
-</code></pre></div><blockquote>
-<p>Resolution<br>
-참조1) <a href="https://access.redhat.com/solutions/503843" target="_blank" rel="noopener">Why named logs &lsquo;error (unexpected RCODE REFUSED) resolving&rsquo; in messages file?</a>
-<br>
-참조2) <a href="https://faq.hostway.co.kr/Linux_DNS/7690" target="_blank" rel="noopener">Lame server 관련된 DNS 에러메시지 처리하기</a>
-<br>
-; 예기치 않은 RCODE SERVFAIL / REFUSED / FORMERR 오류는 다른 서버 또는 네트워크에서 간헐적으로 발생하는 문제입니다. (때때로 패킷이 삭제되거나 서버의 질의 쿼리가 다른 서버의 클라이언트 제한을 초과하는 등) named 자체의 문제를 나타내지 않으며 named.conf 파일에서 아래 옵션으로 메시지를 억제할 수 있습니다.</p>
-</blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">logging <span style="color:#f92672">{</span>
-<span style="color:#f92672">(</span>...생략...<span style="color:#f92672">)</span>
-category lame-servers <span style="color:#f92672">{</span> null; <span style="color:#f92672">}</span>;
-<span style="color:#f92672">(</span>...생략...<span style="color:#f92672">)</span>
-<span style="color:#f92672">}</span>;
-</code></pre></div><hr>
-<h3 id="로그-확인-2">로그 확인 2</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Jan <span style="color:#ae81ff">25</span> 03:08:47 DNSSVR1 named<span style="color:#f92672">[</span>4431<span style="color:#f92672">]</span>: error <span style="color:#f92672">(</span>FORMERR<span style="color:#f92672">)</span> resolving <span style="color:#e6db74">&#39;web.example.io/AAAA/IN&#39;</span>: 192.168.149.62#53
-Jan <span style="color:#ae81ff">25</span> 03:08:53 DNSSVR1 named<span style="color:#f92672">[</span>4431<span style="color:#f92672">]</span>: error <span style="color:#f92672">(</span>FORMERR<span style="color:#f92672">)</span> resolving <span style="color:#e6db74">&#39;web.example.io/AAAA/IN&#39;</span>: 192.168.149.62#53
-
-Jan <span style="color:#ae81ff">21</span> 11:16:15 DNSSVR1 named<span style="color:#f92672">[</span>6009<span style="color:#f92672">]</span>: error <span style="color:#f92672">(</span>network unreachable<span style="color:#f92672">)</span> resolving <span style="color:#e6db74">&#39;ns1.example.co.uk/AAAA/IN&#39;</span>: 0000:fd80:000::1#53
-Jan <span style="color:#ae81ff">21</span> 11:16:24 DNSSVR1 named<span style="color:#f92672">[</span>6009<span style="color:#f92672">]</span>: error <span style="color:#f92672">(</span>network unreachable<span style="color:#f92672">)</span> resolving <span style="color:#e6db74">&#39;ns2.example.net/A/IN&#39;</span>: 0000:1ec:000::4#53
-
-</code></pre></div><blockquote>
-<p>Resolution<br>
-참조1) <a href="https://access.redhat.com/solutions/283213" target="_blank" rel="noopener">Why /var/log/messages are full of &ldquo;named[xxxx]: error (FORMERR) resolving &lsquo;******/AAAA/IN&rsquo;: xx.xx.xx.xx#53&rdquo; error logs?</a>
-<br>
-참조2) <a href="https://faq.hostway.co.kr/Linux_DNS/7618" target="_blank" rel="noopener">bind IPv6 설정 제거</a>
-<br>
-; 이 메시지는 IPv6 사용으로 인해 발생합니다.</p>
-</blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ tail -1 /etc/sysconfig/named
-OPTIONS<span style="color:#f92672">=</span>-4
-
-<span style="color:#75715e"># service named restart</span>
-<span style="color:#75715e"># -4 설정은 IPv4환경으로 동작, -6 설정은 IPv6 동작</span>
-</code></pre></div><hr>
-<h3 id="로그-확인-3">로그 확인 3</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Jan <span style="color:#ae81ff">25</span> 05:25:51 DNSSVR1 named<span style="color:#f92672">[</span>4431<span style="color:#f92672">]</span>: client 192.168.103.246#30100 <span style="color:#f92672">(</span>sl<span style="color:#f92672">)</span>: query <span style="color:#f92672">(</span>cache<span style="color:#f92672">)</span> <span style="color:#e6db74">&#39;sl/ANY/IN&#39;</span> denied
-Jan <span style="color:#ae81ff">25</span> 05:25:51 DNSSVR1 named<span style="color:#f92672">[</span>4431<span style="color:#f92672">]</span>: client 192.168.219.45#80 <span style="color:#f92672">(</span>sl<span style="color:#f92672">)</span>: query <span style="color:#f92672">(</span>cache<span style="color:#f92672">)</span> <span style="color:#e6db74">&#39;sl/ANY/IN&#39;</span> denied
-
-</code></pre></div><blockquote>
-<p>Resolution<br>
-참조1) <a href="http://coffeenix.net/board_print.php?bd_code=1689" target="_blank" rel="noopener">네임서버(bind 9)에서 로그 설정(logging)</a>
-<br>
-참조2) <a href="http://www.nserver.co.kr/?mod=document&amp;uid=34&amp;page_id=157" target="_blank" rel="noopener">named query cache denied</a>
-<br>
-; 네임서버에 zone 파일 자체가 없는데 아래와 같은 denied 로그가 쌓입니다. 불필요하다면 /etc/named.conf 파일에 category security null 옵션을 추가합니다.</p>
-</blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">logging <span style="color:#f92672">{</span>
-<span style="color:#f92672">(</span>...생략...<span style="color:#f92672">)</span>
-category security <span style="color:#f92672">{</span> null; <span style="color:#f92672">}</span>;
-<span style="color:#f92672">(</span>...생략...<span style="color:#f92672">)</span>
-<span style="color:#f92672">}</span>;
-
-</code></pre></div><h3 id="도움되는-글">도움되는 글</h3>
-<ul>
-<li><a href="https://puzji.tistory.com/entry/CentOS7-Name-Server-%ea%b5%ac%ec%b6%95%ed%95%98%ea%b8%b0-bind" target="_blank" rel="noopener">CentOS7 - Name Server 구축하기(bind) (4/10)</a>
-</li>
-<li><a href="https://aegypius.tistory.com/entry/%eb%84%a4%ec%9e%84%ec%84%9c%eb%b2%84%ec%9d%98-%ea%b8%b0%eb%b3%b8%ec%84%a4%ec%a0%95-bind" target="_blank" rel="noopener">네임서버의 기본 보안 설정 - bind</a>
-</li>
-<li><a href="https://wiki.kldp.org/KoreanDoc/html/PoweredByDNS-KLDP/PoweredByDNS.html" target="_blank" rel="noopener">Powered by DNS</a>
+<li><a href="https://docs.microsoft.com/ko-kr/security-updates/WindowsUpdateServices/18135650?redirectedfrom=MSDN" target="_blank" rel="noopener">3단계: WSUS 3.0의 네트워크 연결 구성</a>
 </li>
 </ul>
               
@@ -364,15 +326,19 @@ category security <span style="color:#f92672">{</span> null; <span style="color:
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">TAGGED IN</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/dns/">dns</a>
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/windows/">windows</a>
 
-  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/bind/">bind</a>
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/product/">product</a>
 
-  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/message/">message</a>
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/activate/">activate</a>
 
-  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/log/">log</a>
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/update/">update</a>
 
-  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/linux/">linux</a>
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/port/">port</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/firewall/">firewall</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/windows/">windows</a>
 
                   </div>
                 
@@ -385,7 +351,7 @@ category security <span style="color:#f92672">{</span> null; <span style="color:
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/post/20210603_service_port_windows_update/" data-tooltip="Windows 정품 인증과 업데이트를 위한 포트">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -393,7 +359,7 @@ category security <span style="color:#f92672">{</span> null; <span style="color:
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/post/20210426_nfs_performance_issues_linux/" data-tooltip="Linux, NFS performance issues check">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/post/20210427_bind_message_logs_linux/" data-tooltip="Linux, Bind message logs">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -411,19 +377,19 @@ category security <span style="color:#f92672">{</span> null; <span style="color:
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/post/20210427_bind_message_logs_linux/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/post/20210603_service_port_windows_update/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/post/20210427_bind_message_logs_linux/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/post/20210603_service_port_windows_update/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/post/20210427_bind_message_logs_linux/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/post/20210603_service_port_windows_update/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -478,7 +444,7 @@ category security <span style="color:#f92672">{</span> null; <span style="color:
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/post/20210603_service_port_windows_update/" data-tooltip="Windows 정품 인증과 업데이트를 위한 포트">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -486,7 +452,7 @@ category security <span style="color:#f92672">{</span> null; <span style="color:
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/post/20210426_nfs_performance_issues_linux/" data-tooltip="Linux, NFS performance issues check">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/post/20210427_bind_message_logs_linux/" data-tooltip="Linux, Bind message logs">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -504,19 +470,19 @@ category security <span style="color:#f92672">{</span> null; <span style="color:
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/post/20210427_bind_message_logs_linux/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/post/20210603_service_port_windows_update/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/post/20210427_bind_message_logs_linux/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/post/20210603_service_port_windows_update/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/post/20210427_bind_message_logs_linux/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/post/20210603_service_port_windows_update/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -546,19 +512,19 @@ category security <span style="color:#f92672">{</span> null; <span style="color:
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F010000.github.io%2Fpost%2F20210427_bind_message_logs_linux%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F010000.github.io%2Fpost%2F20210603_service_port_windows_update%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2F010000.github.io%2Fpost%2F20210427_bind_message_logs_linux%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2F010000.github.io%2Fpost%2F20210603_service_port_windows_update%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2F010000.github.io%2Fpost%2F20210427_bind_message_logs_linux%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2F010000.github.io%2Fpost%2F20210603_service_port_windows_update%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -648,9 +614,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/010000.github.io\/post\/20210427_bind_message_logs_linux\/';
+          this.page.url = 'https:\/\/010000.github.io\/post\/20210603_service_port_windows_update\/';
           
-            this.page.identifier = '\/post\/20210427_bind_message_logs_linux\/'
+            this.page.identifier = '\/post\/20210603_service_port_windows_update\/'
           
         };
         (function() {

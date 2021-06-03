@@ -6,7 +6,61 @@
     <description>Recent content in Tags on 010000 logbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Tue, 27 Apr 2021 23:59:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 03 Jun 2021 20:03:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>activate</title>
+      <link>https://010000.github.io/tags/activate/</link>
+      <pubDate>Thu, 03 Jun 2021 20:03:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/activate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>firewall</title>
+      <link>https://010000.github.io/tags/firewall/</link>
+      <pubDate>Thu, 03 Jun 2021 20:03:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/firewall/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>port</title>
+      <link>https://010000.github.io/tags/port/</link>
+      <pubDate>Thu, 03 Jun 2021 20:03:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/port/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>product</title>
+      <link>https://010000.github.io/tags/product/</link>
+      <pubDate>Thu, 03 Jun 2021 20:03:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/product/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>update</title>
+      <link>https://010000.github.io/tags/update/</link>
+      <pubDate>Thu, 03 Jun 2021 20:03:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/update/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>windows</title>
+      <link>https://010000.github.io/tags/windows/</link>
+      <pubDate>Thu, 03 Jun 2021 20:03:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/windows/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>bind</title>
       <link>https://010000.github.io/tags/bind/</link>
@@ -152,15 +206,6 @@
     </item>
     
     <item>
-      <title>windows</title>
-      <link>https://010000.github.io/tags/windows/</link>
-      <pubDate>Tue, 20 Apr 2021 11:33:00 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/windows/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>disk</title>
       <link>https://010000.github.io/tags/disk/</link>
       <pubDate>Mon, 19 Apr 2021 12:30:00 +0900</pubDate>
@@ -287,15 +332,6 @@
     </item>
     
     <item>
-      <title>update</title>
-      <link>https://010000.github.io/tags/update/</link>
-      <pubDate>Thu, 01 Apr 2021 17:30:00 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/update/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>bot</title>
       <link>https://010000.github.io/tags/bot/</link>
       <pubDate>Wed, 31 Mar 2021 15:29:00 +0900</pubDate>
@@ -382,15 +418,6 @@
       <pubDate>Tue, 30 Mar 2021 15:21:00 +0900</pubDate>
       
       <guid>https://010000.github.io/tags/handles/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>port</title>
-      <link>https://010000.github.io/tags/port/</link>
-      <pubDate>Tue, 30 Mar 2021 15:21:00 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/port/</guid>
       <description></description>
     </item>
     
