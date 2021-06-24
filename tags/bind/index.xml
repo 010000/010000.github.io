@@ -9,10 +9,10 @@
     <lastBuildDate>Tue, 27 Apr 2021 23:59:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/bind/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux, Bind message logs</title>
-      <link>https://010000.github.io/posts/20210427_bind_message_logs_linux/</link>
+      <link>https://010000.github.io/post/20210427_bind_message_logs_linux/</link>
       <pubDate>Tue, 27 Apr 2021 23:59:00 +0900</pubDate>
       
-      <guid>https://010000.github.io/posts/20210427_bind_message_logs_linux/</guid>
+      <guid>https://010000.github.io/post/20210427_bind_message_logs_linux/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;DNS 서비스 중 볼 수 있는 log들을 확인하고 참고하기 위한 노트 &lt;em&gt;(Update: Apr 27, 2021)&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>

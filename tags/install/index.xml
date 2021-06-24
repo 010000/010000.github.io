@@ -9,10 +9,10 @@
     <lastBuildDate>Sat, 13 Mar 2021 16:07:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/install/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Code-server with Nginx, SSL 인증서 적용</title>
-      <link>https://010000.github.io/posts/20210313_ssl_cert_code-server_nginx_centos/</link>
+      <link>https://010000.github.io/post/20210313_ssl_cert_code-server_nginx_centos/</link>
       <pubDate>Sat, 13 Mar 2021 16:07:00 +0900</pubDate>
       
-      <guid>https://010000.github.io/posts/20210313_ssl_cert_code-server_nginx_centos/</guid>
+      <guid>https://010000.github.io/post/20210313_ssl_cert_code-server_nginx_centos/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;Code-server에 Nginx 구성 후 SSL(Let&amp;rsquo;s Encrypt 무료)인증서를 적용해봅니다. &lt;em&gt;(Update: Mar 13, 2021)&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
@@ -20,10 +20,10 @@
     
     <item>
       <title>인터넷망 오픈과 로그인을 위한 Code-server 와 Nginx 구성</title>
-      <link>https://010000.github.io/posts/20210312_login_code-server_nginx_centos/</link>
+      <link>https://010000.github.io/post/20210312_login_code-server_nginx_centos/</link>
       <pubDate>Fri, 12 Mar 2021 17:52:00 +0900</pubDate>
       
-      <guid>https://010000.github.io/posts/20210312_login_code-server_nginx_centos/</guid>
+      <guid>https://010000.github.io/post/20210312_login_code-server_nginx_centos/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;이번에는 오픈된 cloud 인터넷 망에 설치된 code-server 를 계속 열어놓고 사용하기엔 불안한 부분도 있고, 어느 기기에서나 좀 더 간편하게 언제든지 code-server 접근이 되도록 nginx proxy를 앞에 두고 로그인도 가능하도록 구성해봅니다.&lt;/li&gt;
 &lt;li&gt;Safari 브라우저에서 nginx 로그인 뒤 code-server 로그인 후에 (blank) white screen 이슈가 있네요. 해결되면 업데이트하겠습니다. &lt;em&gt;(Update: Mar 12, 2021)&lt;/em&gt;&lt;/li&gt;
@@ -32,10 +32,10 @@
     
     <item>
       <title>Code-server 설치와 활용 on Linux</title>
-      <link>https://010000.github.io/posts/20210307_install_code-server_linux/</link>
+      <link>https://010000.github.io/post/20210307_install_code-server_linux/</link>
       <pubDate>Sun, 07 Mar 2021 21:53:00 +0900</pubDate>
       
-      <guid>https://010000.github.io/posts/20210307_install_code-server_linux/</guid>
+      <guid>https://010000.github.io/post/20210307_install_code-server_linux/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;VS-Code 앱 설치없이 어디에서든 브라우저에서 python 코드를 실행합니다.&lt;/li&gt;
 &lt;li&gt;&lt;del&gt;게을러서&lt;/del&gt; Cloud VM에서 실행중인 code-server로 .md 포멧 문서를 작성, 수정하고 cronjob 으로 새문서를 모니터링해 자동 git push 되도록 구성하여 사용중입니다. &lt;em&gt;(Update: Mar 07, 2021)&lt;/em&gt;&lt;/li&gt;
@@ -44,10 +44,10 @@
     
     <item>
       <title>Windows 환경에서 Hugo theme 설치하기</title>
-      <link>https://010000.github.io/posts/20191214_install_hugo_tranquilpeak_theme_windows/</link>
+      <link>https://010000.github.io/post/20191214_install_hugo_tranquilpeak_theme_windows/</link>
       <pubDate>Sun, 15 Dec 2019 23:58:15 +0900</pubDate>
       
-      <guid>https://010000.github.io/posts/20191214_install_hugo_tranquilpeak_theme_windows/</guid>
+      <guid>https://010000.github.io/post/20191214_install_hugo_tranquilpeak_theme_windows/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;Windows  OS에서 Hugo / hugo-tranquilpeak-theme 테마를 설치합니다. &lt;em&gt;(Update: Dec 15, 2019)&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
@@ -55,10 +55,10 @@
     
     <item>
       <title>Windows 환경에서 Hugo 설치하기</title>
-      <link>https://010000.github.io/posts/20191214_install_hugo_windows/</link>
+      <link>https://010000.github.io/post/20191214_install_hugo_windows/</link>
       <pubDate>Sat, 14 Dec 2019 13:55:00 +0900</pubDate>
       
-      <guid>https://010000.github.io/posts/20191214_install_hugo_windows/</guid>
+      <guid>https://010000.github.io/post/20191214_install_hugo_windows/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;Windows  OS에서 Hugo 설치에 필요한 패키지들을 확인 및 설치합니다&lt;/li&gt;
 &lt;li&gt;Hugo 설명과 윈도우즈 환경설정(path) 과정은 생략했습니다. &lt;em&gt;(Update: Mar 24, 2021)&lt;/em&gt;&lt;/li&gt;

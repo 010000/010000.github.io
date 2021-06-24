@@ -9,10 +9,10 @@
     <lastBuildDate>Sat, 13 Mar 2021 16:07:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/renew/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Code-server with Nginx, SSL 인증서 적용</title>
-      <link>https://010000.github.io/posts/20210313_ssl_cert_code-server_nginx_centos/</link>
+      <link>https://010000.github.io/post/20210313_ssl_cert_code-server_nginx_centos/</link>
       <pubDate>Sat, 13 Mar 2021 16:07:00 +0900</pubDate>
       
-      <guid>https://010000.github.io/posts/20210313_ssl_cert_code-server_nginx_centos/</guid>
+      <guid>https://010000.github.io/post/20210313_ssl_cert_code-server_nginx_centos/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;Code-server에 Nginx 구성 후 SSL(Let&amp;rsquo;s Encrypt 무료)인증서를 적용해봅니다. &lt;em&gt;(Update: Mar 13, 2021)&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
