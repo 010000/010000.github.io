@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.81.0 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="author" content="Jeffrey YM. Jo">
+<meta name="keywords" content="tech">
+<meta name="description" content="
+md파일을 html 정적 페이지로 변환하고 github 에 올립니다.
+github repository 생성 및 git 사용법은 생략됐습니다. (Update: Dec 17, 2019)
+">
+
+
+<meta property="og:description" content="
+md파일을 html 정적 페이지로 변환하고 github 에 올립니다.
+github repository 생성 및 git 사용법은 생략됐습니다. (Update: Dec 17, 2019)
+">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Web page 생성과 Github upload">
+<meta name="twitter:title" content="Web page 생성과 Github upload">
+<meta property="og:url" content="https://010000.github.io/post/2019/20191216_gen_pages_git_push/">
+<meta property="twitter:url" content="https://010000.github.io/post/2019/20191216_gen_pages_git_push/">
+<meta property="og:site_name" content="010000 logbook">
+<meta property="og:description" content="
+md파일을 html 정적 페이지로 변환하고 github 에 올립니다.
+github repository 생성 및 git 사용법은 생략됐습니다. (Update: Dec 17, 2019)
+">
+<meta name="twitter:description" content="
+md파일을 html 정적 페이지로 변환하고 github 에 올립니다.
+github repository 생성 및 git 사용법은 생략됐습니다. (Update: Dec 17, 2019)
+">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2019-12-16T23:05:05">
+  
+  
+    <meta property="article:modified_time" content="2019-12-16T23:05:05">
+  
+  
+  
+    
+      <meta property="article:section" content="Blog_w/Hugo">
+    
+  
+  
+    
+      <meta property="article:tag" content="hugo">
+    
+      <meta property="article:tag" content="hugo-tranquilpeak-theme">
+    
+      <meta property="article:tag" content="new">
+    
+      <meta property="article:tag" content="md">
+    
+      <meta property="article:tag" content="git">
+    
+      <meta property="article:tag" content="upload">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://res.cloudinary.com/oloooo/image/upload/v1614951872/githubpages/netscape_wcocsw.gif">
+  <meta property="twitter:image" content="https://res.cloudinary.com/oloooo/image/upload/v1614951872/githubpages/netscape_wcocsw.gif">
+
+
+    <title>Web page 생성과 Github upload</title>
+
+    <link rel="icon" href="https://010000.github.io/favicon.ico">
+    
+
+    
+
+    <link rel="canonical" href="https://010000.github.io/post/2019/20191216_gen_pages_git_push/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://010000.github.io/css/style-s8xlgnopppjrvgff3zxwbooca3paivectafco2acr0hxdpldmmx7q5e8xki.min.css" />
+    
+    
+      
+        <link rel="stylesheet"  href="https://010000.github.io/css/syntax.css">
+      
+    
+
+    
+      
+    
+    
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.7.1/gist-embed.min.js"></script>
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="1">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://010000.github.io/">010000 logbook</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://010000.github.io/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://res.cloudinary.com/oloooo/image/upload/v1614951872/githubpages/netscape_wcocsw.gif" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="1">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://010000.github.io/#about">
+          <img class="sidebar-profile-picture" src="https://res.cloudinary.com/oloooo/image/upload/v1614951872/githubpages/netscape_wcocsw.gif" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Jeffrey YM. Jo</h4>
+        
+          <h5 class="sidebar-profile-bio">경험과 생각들을 정리하며, 다시 찾는 시간을 아끼기 위해 모아놓는 블로그입니다.</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://010000.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://010000.github.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://010000.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://010000.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-hashtag"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://010000.github.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-address-card"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="mailto:010000c@gmail.com" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-envelope"></i>
+      
+      <span class="sidebar-button-desc">Email</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://010000.github.io/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="1"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      Web page 생성과 Github upload
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2019-12-16T23:05:05&#43;09:00">
+        
+  December 16, 2019
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://010000.github.io/categories/blog_w/hugo">Blog_w/Hugo</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <ul>
+<li>md파일을 html 정적 페이지로 변환하고 github 에 올립니다.</li>
+<li>github repository 생성 및 git 사용법은 생략됐습니다. <em>(Update: Dec 17, 2019)</em></li>
+</ul>
+<h2 id="configurations">Configurations</h2>
+<ul>
+<li>OS: Windows 10 (x64)</li>
+<li>Browser: Google Chrome</li>
+<li>Hugo: v0.61.0</li>
+<li>Hugo theme: hugo-tranquilpeak-theme (0.4.7-BETA)</li>
+<li>Github repositories: BlogHugoContents, 010000.github.io</li>
+</ul>
+<h2 id="generate-static-pages--upload-it-on-github">Generate static pages &amp; Upload it on Github</h2>
+<h3 id="1-hugoblog-내-생성된-폴더와-파일을-github-push할-때-3개의-폴더로-구분하면-이해가-쉽습니다">1. Hugo\blog 내 생성된 폴더와 파일을 github push할 때 3개의 폴더로 구분하면 이해가 쉽습니다</h3>
+<p>1.1. public 폴더 내 파일들은 {userid}.github.io 에 올려져 (공개된)실제 웹페이지로 노출됩니다<br>
+1.2. hugo 테마가 저장된 themes 폴더는 별도 git 설정을 하지 않으면 github에 업로드 되지 않습니다<br>
+1.3. 1.1~1.2를 제외한 나머지는 소스관리 목적상 별도 github repository에 업로드하는 것이 좋습니다<br>
+(즉, 1.1 public 폴더에 객체들만 업로드되어도 원하는 정적 페이지 웹서비스가 가능합니다)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"> S:\Hugo\blog&gt; dir
+
+ 12/15/2019  01<span style="color:#960050;background-color:#1e0010">:</span>19    &lt;DIR&gt;          .
+ 12/15/2019  01<span style="color:#960050;background-color:#1e0010">:</span>19    &lt;DIR&gt;          ..
+ 08/31/1754  07<span style="color:#960050;background-color:#1e0010">:</span>43    &lt;DIR&gt;          public     1) html로 변환 저장. {userid}.github.io 로 업로드
+ 12/13/2019  13<span style="color:#960050;background-color:#1e0010">:</span>20    &lt;DIR&gt;          themes     2) hugo 테마
+ 12/13/2019  11<span style="color:#960050;background-color:#1e0010">:</span>04    &lt;DIR&gt;          archetypes 3) 나머지 md 문서, css, js 등의 contents 로
+ 12/13/2019  13<span style="color:#960050;background-color:#1e0010">:</span>42    &lt;DIR&gt;          content       별도의 github repository 로 관리
+ 12/13/2019  11<span style="color:#960050;background-color:#1e0010">:</span>04    &lt;DIR&gt;          data
+ 12/13/2019  13<span style="color:#960050;background-color:#1e0010">:</span>53    &lt;DIR&gt;          layouts
+ 12/13/2019  13<span style="color:#960050;background-color:#1e0010">:</span>40    &lt;DIR&gt;          resources
+ 12/13/2019  13<span style="color:#960050;background-color:#1e0010">:</span>48    &lt;DIR&gt;          static
+ 12/16/2019  14<span style="color:#960050;background-color:#1e0010">:</span>32             9,254 config.toml
+
+              2개 파일               9,361 바이트
+           10개 디렉터리  63,018,098,688 바이트 남음
+</code></pre></div><h3 id="2-hugocontent-폴더-내-md-파일-작성이-완료됐다면-hugo-실행으로-정적-페이지를-생성합니다">2. Hugo\content 폴더 내 md 파일 작성이 완료됐다면 hugo 실행으로 정적 페이지를 생성합니다</h3>
+<p>2.1. 사용중인 hugo 테마명 확인<br>
+2.2. 정적 페이지 생성<br>
+*주의 - Hugo\content 폴더 내 (md)문서 파일이 UTF-8 인코딩이 아니면 오류가 발생할 수 있습니다</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S:\Hugo\blog&gt; dir themes
+12/13/2019  13<span style="color:#960050;background-color:#1e0010">:</span>20    &lt;DIR&gt;          .
+12/13/2019  13<span style="color:#960050;background-color:#1e0010">:</span>20    &lt;DIR&gt;          ..
+12/13/2019  13<span style="color:#960050;background-color:#1e0010">:</span>37    &lt;DIR&gt;          hugo-tranquilpeak-theme
+               0개 파일                   0 바이트
+               
+S:\Hugo\blog&gt; hugo -t hugo-tranquilpeak-theme
+Building sites (<span style="color:#960050;background-color:#1e0010">…</span>)
+                   | EN-US
++------------------+-------+
+  Pages            |    22
+  Paginator pages  |     0
+  Non-page files   |     0
+  Static files     |     8
+  Processed images |     0
+  Aliases          |     7
+  Sitemaps         |     1
+  Cleaned          |     0
+
+Total <span style="color:#66d9ef">in</span> 119 ms
+</code></pre></div><p>2.3. blog\public 폴더 이동 후 git push 하면 {userid}.github.io url로 생성된 페이지를 볼 수 있습니다<br>
+*Github repository 생성과 git 설정이 선행되어야 아래 git push 가능합니다</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S:\Hugo\blog&gt; cd public
+S:\Hugo\blog\public&gt; git add .
+S:\Hugo\blog\public&gt; git commit -m <span style="color:#e6db74">&#34;first commit pages&#34;</span>
+S:\Hugo\blog\public&gt; git push origin master
+</code></pre></div><p>*Github 이 처음이라면&hellip;  <a href="https://rogerdudler.github.io/git-guide/index.ko.html" target="_blank" rel="noopener">Git간편안내서</a>
+<br>
+*<a href="https://git-scm.com/book/ko/v2" target="_blank" rel="noopener">Pro Git ebook</a>
+</p>
+<h3 id="3-submodule-로-hugo-repository-관리하기">3. Submodule 로 Hugo repository 관리하기</h3>
+<blockquote>
+<p>hugo는 jekyll과 달리 github에서 자동으로 빌드를 해주는 것이 아니라 내가 빌드해서 만든 파일을 github page 기능으로 띄우는 것이다.
+따라서 전체 컨텐츠를 저장할 곳과 빌드 결과로 github page를 띄울 곳, 이렇게 두개의 git repository가 필요하다.<br>
+<a href="https://ialy1595.github.io/post/blog-construct-1/">https://ialy1595.github.io/post/blog-construct-1/</a></p>
+</blockquote>
+<p>; 위의 2번과정까지만 완료해도 원하는 웹서비스가 되지만 관리 목적상 submodule 를 이용한 repository 구성도 참고로 남긴다. <del>지나고 나면 잊어버리도해서&hellip; :-)</del></p>
+<p>*Contents 관리용 repository 이름은 자유롭게 생성해도 됩니다<br>
+*{userid}.github.io 의 repository는 github 계정과 동일하게 생성해야 합니다<br>
+임의로 생성시 다른 계정에서 사용중일 경우 페이지가 안뜨거나 관계없는 페이지가 뜨는 현상이 보일 수 있습니다</p>
+<p>*Repositories<br>
+Contents용 - BlogHugoContents<br>
+Public 웹서비스용 - {userid}.github.io</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">S:\Hugo\blog&gt; git init
+<span style="color:#75715e"># $ git remote add origin &lt;contents용 repository url&gt;</span>
+S:\Hugo\blog&gt; git remote add origin https<span style="color:#960050;background-color:#1e0010">:</span>//github.com/0l0000/BlogHugoContents.git
+
+<span style="color:#75715e"># git submodule add -b master &lt;public용 repository url&gt; public</span>
+<span style="color:#75715e"># S:\Hugo\blog 폴더에 public 폴더가 있으며 오류가 발생하니 삭제할 것 </span>
+S:\Hugo\blog&gt; git submodule add -b master https<span style="color:#960050;background-color:#1e0010">:</span>//github.com/0l000/0l0000.github.io.git public
+<span style="color:#e6db74">&#39;public&#39;</span> does not have a commit checked out
+
+<span style="color:#75715e"># $ hugo -t &lt;테마 이름&gt;</span>
+S:\Hugo\blog&gt; hugo -t hugo-tranquilpeak-theme
+
+<span style="color:#75715e"># public 폴더에서 push 후 blog 폴더에서 push 한다.</span>
+S:\Hugo\blog&gt; cd public
+S:\Hugo\blog\public&gt; git add . &amp;&amp; git commit -m <span style="color:#e6db74">&#34;커밋 메세지&#34;</span> &amp;&amp; git push origin master
+S:\Hugo\blog\public&gt; cd ..
+S:\Hugo\blog&gt; git add . &amp;&amp; git commit -m <span style="color:#e6db74">&#34;커밋 메세지&#34;</span> &amp;&amp; git push origin master
+
+</code></pre></div><p>;Linux OS에서 SSH key로 설정하는 경우<br>
+(ssh.key 생성과 github에 등록까지 완료된 환경에서 진행)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">~<span style="color:#f92672">]</span>$ cd ~/Hugo/Blog
+~<span style="color:#f92672">]</span>$ git remote add origin git@github.com:0l0000/BlogHugoContents.git
+~<span style="color:#f92672">]</span>$ cd ~/Hugo/Blog/public
+~<span style="color:#f92672">]</span>$ git submodule add -b master git@github.com:0l000/0l0000.github.io.git public
+
+</code></pre></div><h3 id="4-브라우저에서-확인">4. 브라우저에서 확인</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">https://{userid}.github.io/
+</code></pre></div><h3 id="참고-글">참고 글</h3>
+<ul>
+<li><a href="https://ohgyun.com/711" target="_blank" rel="noopener">Git: 서브모듈 이해하기</a>
+</li>
+<li><a href="https://ialy1595.github.io/post/blog-construct-1/" target="_blank" rel="noopener">블로그 구축기1 (Hugo + github.io)</a>
+</li>
+<li><a href="https://010000.github.io/post/20210324_github_ssh_key/" target="_blank" rel="noopener">Hugo, git password 에서 SSH Key 인증으로 변경</a>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/hugo/">hugo</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/hugo-tranquilpeak-theme/">hugo-tranquilpeak-theme</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/new/">new</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/md/">md</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/git/">git</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/upload/">upload</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/post/2019/20191219_chane_font_theme/" data-tooltip="Font 와 Highlight color 수정 후 theme rebuild">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/post/2019/20191216_edit_template_new_md/" data-tooltip="md 파일 생성을 위한 template 수정과 새로운 문서 생성">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/post/2019/20191216_gen_pages_git_push/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/post/2019/20191216_gen_pages_git_push/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/post/2019/20191216_gen_pages_git_push/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+
+              
+            
+          </div>
+        </article>
+
+	<script src="https://utteranc.es/client.js"
+      	  repo="010000/blog-comments"
+       	 issue-term="pathname"
+       	 theme="github-light"
+       	 crossorigin="anonymous"
+       	 async>
+	</script>
+
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2021 <a href="https://github.com/010000">010000 Logbook</a>. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="1">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/post/2019/20191219_chane_font_theme/" data-tooltip="Font 와 Highlight color 수정 후 theme rebuild">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/post/2019/20191216_edit_template_new_md/" data-tooltip="md 파일 생성을 위한 template 수정과 새로운 문서 생성">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/post/2019/20191216_gen_pages_git_push/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/post/2019/20191216_gen_pages_git_push/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/post/2019/20191216_gen_pages_git_push/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="1">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F010000.github.io%2Fpost%2F2019%2F20191216_gen_pages_git_push%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2F010000.github.io%2Fpost%2F2019%2F20191216_gen_pages_git_push%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2F010000.github.io%2Fpost%2F2019%2F20191216_gen_pages_git_push%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://res.cloudinary.com/oloooo/image/upload/v1614951872/githubpages/netscape_wcocsw.gif" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Jeffrey YM. Jo</h4>
+    
+      <div id="about-card-bio">경험과 생각들을 정리하며, 다시 찾는 시간을 아끼기 위해 모아놓는 블로그입니다.</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Public
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        South Korea
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    <div id="cover" style="background-image:url('https://res.cloudinary.com/oloooo/image/upload/v1614216485/githubpages/cover_2560px_oemeya.jpg');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://010000.github.io/js/script-n8mqrxp8rsufxtye69p9ch2uxowamnju45qdhlzy3r6bzgixdxhhwaa9zgxf.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/010000.github.io\/post\/2019\/20191216_gen_pages_git_push\/';
+          
+            this.page.identifier = '\/post\/2019\/20191216_gen_pages_git_push\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = '010000';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

@@ -9,10 +9,10 @@
     <lastBuildDate>Thu, 19 Dec 2019 10:15:18 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/href/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo, 외부 링크를 새 창에서 열기</title>
-      <link>https://010000.github.io/post/20191219_open_link_newtab/</link>
+      <link>https://010000.github.io/post/2019/20191219_open_link_newtab/</link>
       <pubDate>Thu, 19 Dec 2019 10:15:18 +0900</pubDate>
       
-      <guid>https://010000.github.io/post/20191219_open_link_newtab/</guid>
+      <guid>https://010000.github.io/post/2019/20191219_open_link_newtab/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;Hugo에서 외부 링크가 target=&amp;quot;_blank&amp;quot;로 열리도록 수정하기. &lt;em&gt;(Update: Dec 19, 2019)&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>

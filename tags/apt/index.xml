@@ -9,10 +9,10 @@
     <lastBuildDate>Thu, 01 Apr 2021 17:30:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/apt/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Err: apt update error, Unable to connect to</title>
-      <link>https://010000.github.io/post/20210401_apt_update_unable_connect_ubuntu/</link>
+      <link>https://010000.github.io/post/2021/20210401_apt_update_unable_connect_ubuntu/</link>
       <pubDate>Thu, 01 Apr 2021 17:30:00 +0900</pubDate>
       
-      <guid>https://010000.github.io/post/20210401_apt_update_unable_connect_ubuntu/</guid>
+      <guid>https://010000.github.io/post/2021/20210401_apt_update_unable_connect_ubuntu/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;누군가 apt.conf에 과거 proxy ip를 남겨두고 계속 써와서 발생했던 오류&lt;/li&gt;
 &lt;li&gt;참고를 위해 기록 &lt;em&gt;(Update: Apr 1, 2021)&lt;/em&gt;&lt;/li&gt;
