@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.81.0 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="author" content="Jeffrey YM. Jo">
+<meta name="keywords" content="tech">
+<meta name="description" content="
+SSD가 설치된 가상머신에서 Vdbench를 이용해 disk 성능 측정  (Update: Apr 19, 2021)
+">
+
+
+<meta property="og:description" content="
+SSD가 설치된 가상머신에서 Vdbench를 이용해 disk 성능 측정  (Update: Apr 19, 2021)
+">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux, disk I/O 측정 - vdbench">
+<meta name="twitter:title" content="Linux, disk I/O 측정 - vdbench">
+<meta property="og:url" content="https://010000.github.io/posts/20210419_disk_io_test_vdbench_linux/">
+<meta property="twitter:url" content="https://010000.github.io/posts/20210419_disk_io_test_vdbench_linux/">
+<meta property="og:site_name" content="010000 logbook">
+<meta property="og:description" content="
+SSD가 설치된 가상머신에서 Vdbench를 이용해 disk 성능 측정  (Update: Apr 19, 2021)
+">
+<meta name="twitter:description" content="
+SSD가 설치된 가상머신에서 Vdbench를 이용해 disk 성능 측정  (Update: Apr 19, 2021)
+">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2021-04-19T12:30:00">
+  
+  
+    <meta property="article:modified_time" content="2021-04-19T12:30:00">
+  
+  
+  
+    
+      <meta property="article:section" content="OS_Linux">
+    
+  
+  
+    
+      <meta property="article:tag" content="disk">
+    
+      <meta property="article:tag" content="io">
+    
+      <meta property="article:tag" content="iops">
+    
+      <meta property="article:tag" content="throughput">
+    
+      <meta property="article:tag" content="test">
+    
+      <meta property="article:tag" content="measure">
+    
+      <meta property="article:tag" content="Vdbench">
+    
+      <meta property="article:tag" content="linux">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://res.cloudinary.com/oloooo/image/upload/v1614951872/githubpages/netscape_wcocsw.gif">
+  <meta property="twitter:image" content="https://res.cloudinary.com/oloooo/image/upload/v1614951872/githubpages/netscape_wcocsw.gif">
+
+
+    <title>Linux, disk I/O 측정 - vdbench</title>
+
+    <link rel="icon" href="https://010000.github.io/favicon.ico">
+    
+
+    
+
+    <link rel="canonical" href="https://010000.github.io/posts/20210419_disk_io_test_vdbench_linux/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://010000.github.io/css/style-s8xlgnopppjrvgff3zxwbooca3paivectafco2acr0hxdpldmmx7q5e8xki.min.css" />
+    
+    
+      
+        <link rel="stylesheet"  href="https://010000.github.io/css/syntax.css">
+      
+    
+
+    
+      
+    
+    
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.7.1/gist-embed.min.js"></script>
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="1">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://010000.github.io/">010000 logbook</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://010000.github.io/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://res.cloudinary.com/oloooo/image/upload/v1614951872/githubpages/netscape_wcocsw.gif" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="1">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://010000.github.io/#about">
+          <img class="sidebar-profile-picture" src="https://res.cloudinary.com/oloooo/image/upload/v1614951872/githubpages/netscape_wcocsw.gif" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Jeffrey YM. Jo</h4>
+        
+          <h5 class="sidebar-profile-bio">경험과 생각들을 정리하며, 다시 찾는 시간을 아끼기 위해 모아놓는 블로그입니다.</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://010000.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://010000.github.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://010000.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://010000.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-hashtag"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://010000.github.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-address-card"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="mailto:010000c@gmail.com" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-envelope"></i>
+      
+      <span class="sidebar-button-desc">Email</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://010000.github.io/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="1"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      Linux, disk I/O 측정 - vdbench
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2021-04-19T12:30:00&#43;09:00">
+        
+  April 19, 2021
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://010000.github.io/categories/os_linux">OS_Linux</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <ul>
+<li>SSD가 설치된 가상머신에서 Vdbench를 이용해 disk 성능 측정  <em>(Update: Apr 19, 2021)</em></li>
+</ul>
+<h3 id="환경-구성">환경 구성</h3>
+<ul>
+<li>OS: Ubuntu 20.04 on VM</li>
+<li>CPU: 1 way, 6 cores (No HyperThreading)</li>
+<li>Vdbench: v5.04.07</li>
+<li>SSD: WD Black NVMe</li>
+</ul>
+<h3 id="1-vdbench-와-실행에-필요한-java-패키지-설치">1. Vdbench 와 실행에 필요한 java 패키지 설치</h3>
+<p>;Oracle 사이트의 <a href="https://www.oracle.com/downloads/server-storage/vdbench-downloads.html" target="_blank" rel="noopener">Vdbench Downloads</a>
+에서 다운 받아 압축을 풀면 됩니다</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">USER1@VM1:~$ sudo apt install -y java*
+USER1@VM1:~$ cd ~/download/vdbench ; unzip ./vdbench50407.zip ; ls -al
+drwxrwxr-x <span style="color:#ae81ff">2</span> USER1 USER1      <span style="color:#ae81ff">4096</span> Apr <span style="color:#ae81ff">19</span> 12:50 ./
+drwx------ <span style="color:#ae81ff">8</span> USER1 USER1      <span style="color:#ae81ff">4096</span> Apr <span style="color:#ae81ff">14</span> 12:45 ../
+<span style="color:#f92672">(</span>...생략...<span style="color:#f92672">)</span>
+-rwxrwxrwx  <span style="color:#ae81ff">1</span> USER1 USER1    <span style="color:#ae81ff">1314</span> Jul <span style="color:#ae81ff">15</span>  <span style="color:#ae81ff">2016</span> vdbench
+-rw-rw-r--  <span style="color:#ae81ff">1</span> USER1 USER1 <span style="color:#ae81ff">3073219</span> Apr <span style="color:#ae81ff">16</span> 06:19 vdbench50407.zip
+<span style="color:#f92672">(</span>...생략...<span style="color:#f92672">)</span>
+
+</code></pre></div><h3 id="2-vdbench-quick-simple-test">2. Vdbench quick simple test</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">USER1@VM1:~/download/vdbench$ ./vdbench -t
+13:39:52.501 Created output directory <span style="color:#e6db74">&#39;/home/USER1/download/vdbench/output&#39;</span>
+13:39:52.535 input argument scanned: <span style="color:#e6db74">&#39;-f/tmp/parmfile&#39;</span>
+13:39:52.576 Starting slave: /home/USER1/download/vdbench/vdbench SlaveJvm -m localhost -n localhost-10-210419-13.39.52.486 -l localhost-0 -p <span style="color:#ae81ff">5570</span>   
+13:39:52.789 All slaves are now connected
+13:39:52.844 Vdbench will attempt to expand a disk file <span style="color:#66d9ef">if</span> the requested file size is a multiple of 1mb
+13:39:52.844 lun<span style="color:#f92672">=</span>/tmp/quick_vdbench_test does not exist or is too small. host<span style="color:#f92672">=</span>localhost
+13:39:54.001 Starting RD<span style="color:#f92672">=</span>SD_format; I/O rate: Uncontrolled MAX; elapsed<span style="color:#f92672">=(</span>none<span style="color:#f92672">)</span>; For loops: threads<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> iorate<span style="color:#f92672">=</span>max
+13:39:54.132 All sequential workloads on all slaves are <span style="color:#66d9ef">done</span>.
+13:39:54.132 This triggers end of run inspite of possibly some non-sequential workloads that are still running.
+
+Apr 19, <span style="color:#ae81ff">2021</span>    interval        i/o   MB/sec   bytes   read     resp     read    write     read    write     resp  queue  cpu%  cpu%
+                               rate  1024**2     i/o    pct     time     resp     resp      max      max   stddev  depth sys+u   sys
+13:39:55.045           <span style="color:#ae81ff">1</span>      320.0    40.00  <span style="color:#ae81ff">131072</span>   0.00    0.119    0.000    0.119     0.00     0.26    0.018    0.0   5.5   1.5
+13:39:55.052     avg_2-1        0.0     0.00       <span style="color:#ae81ff">0</span>   0.00    0.000    0.000    0.000     0.00     0.00    0.000    0.0   NaN   NaN
+<span style="color:#f92672">(</span>...생략...<span style="color:#f92672">)</span>
+13:40:02.001 Vdbench execution completed successfully. Output directory: /home/USER1/download/vdbench/output
+
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">USER1@VM1:~/download/vdbench$ ls output/
+config.html     localhost-0.html             logfile.html        sd1.html      swat_mon_total.txt  wd1.html
+errorlog.html   localhost-0.stdout.html      parmfile.html       skew.html     swat_mon.txt
+flatfile.html   localhost.html               parmscan.html       status.html   totals.html
+histogram.html  localhost.var_adm_msgs.html  sd1.histogram.html  summary.html  wd1.histogram.html
+
+</code></pre></div><h3 id="3-1-raw-device-io-테스트와-결과">3-1. Raw Device I/O 테스트와 결과</h3>
+<p>;SD 매개변수로 lun=/dev/sda (Name of raw disk)를 사용하는 경우</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">USER1@VM1:~/download/vdbench$ df -h |grep ^/dev
+/dev/sda4       121G  8.8G  106G   8% /
+/dev/sda2       976M  294M  616M  33% /boot
+<span style="color:#f92672">(</span>...생략...<span style="color:#f92672">)</span>
+
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">USER1@VM1:~/download/vdbench$ cat vdbench_param/param.txt
+
+sd<span style="color:#f92672">=</span>sd1,lun<span style="color:#f92672">=</span>/dev/sda,openflag<span style="color:#f92672">=</span>o_direct
+wd<span style="color:#f92672">=</span>wd1,sd<span style="color:#f92672">=</span>sd1,xfersize<span style="color:#f92672">=</span>4K,rdpct<span style="color:#f92672">=</span>0,seekpct<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>
+rd<span style="color:#f92672">=</span>rd1,wd<span style="color:#f92672">=</span>wd1,iorate<span style="color:#f92672">=</span>max,elapsed<span style="color:#f92672">=</span>180,interval<span style="color:#f92672">=</span>1,threads<span style="color:#f92672">=</span><span style="color:#ae81ff">16</span>
+
+<span style="color:#75715e">#180초 동안 I/O rate max로 4k 블록, 100% random write, 1초마다 출력  </span>
+<span style="color:#75715e">#상세 옵션은 압축 파일에 포함된 vdbench.pdf 파일을 참고  </span>
+
+<span style="color:#75715e"># SD (Storage Definition) parameters</span>
+<span style="color:#75715e">#&#39;lun=/dev/sda&#39;: Name of raw disk or file system file. e.g. lun=/home/USER1/10gFile</span>
+<span style="color:#75715e">#&#39;lun=/home/USER1/10gFile&#39;</span>
+<span style="color:#75715e">#     /home/USER1/10gFile: Solaris file system filename. No control over physical I/O guaranteed since the file system may use system cache.</span>
+<span style="color:#75715e">#&#39;openflag=o_direct&#39;: Pass specific flags when opening a lun or file</span>
+<span style="color:#75715e">#          o_direct : Gives you raw access to a full volume (no partition). This parameter is required when using /dev/xxx volumes</span>
+<span style="color:#75715e">#&#39;iorate=max&#39;: Run the maximum I/O rate possible. This is called an uncontrolled max workload.</span>
+<span style="color:#75715e">#&#39;rdpc=30&#39;: Read percentage. Default 100.</span>
+<span style="color:#75715e">#&#39;seekpct=100&#39;: Percentage of random seeks. Default seekpct=100 or seekpct=random.</span>
+
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">USER1@VM1:~/download$ sudo ./vdbench -f ./vdbench_param/param.txt -o param_report
+
+Copyright <span style="color:#f92672">(</span>c<span style="color:#f92672">)</span> 2000, 2018, Oracle and/or its affiliates. All rights reserved.
+Vdbench distribution: vdbench50407 Tue June <span style="color:#ae81ff">05</span>  9:49:29 MDT <span style="color:#ae81ff">2018</span>
+For documentation, see <span style="color:#e6db74">&#39;vdbench.pdf&#39;</span>.
+
+23:29:31.163 input argument scanned: <span style="color:#e6db74">&#39;-f./vdbench_param/param.txt&#39;</span>
+23:29:31.164 input argument scanned: <span style="color:#e6db74">&#39;-oparam_report&#39;</span>
+23:29:31.221 Starting slave: /home/USER1/download/vdbench SlaveJvm -m localhost -n localhost-10-210419-23.29.31.128 -l localhost-0 -p <span style="color:#ae81ff">5570</span>   
+23:29:31.456 All slaves are now connected
+23:29:33.001 Starting RD<span style="color:#f92672">=</span>rd1; I/O rate: Uncontrolled MAX; elapsed<span style="color:#f92672">=</span>180; For loops: threads<span style="color:#f92672">=</span><span style="color:#ae81ff">16</span>
+
+Apr 19, <span style="color:#ae81ff">2021</span>    interval        i/o   MB/sec   bytes   read     resp     read    write     read    write     resp  queue  cpu%  cpu%
+                               rate  1024**2     i/o    pct     time     resp     resp      max      max   stddev  depth sys+u   sys
+23:29:34.038           <span style="color:#ae81ff">1</span>     8504.0    33.22    <span style="color:#ae81ff">4096</span>   0.00    1.360    0.000    1.360     0.00    13.53    1.644   11.6   7.4   2.1
+23:29:35.006           <span style="color:#ae81ff">2</span>    11040.0    43.13    <span style="color:#ae81ff">4096</span>   0.00    1.416    0.000    1.416     0.00    20.22    2.218   15.8   6.1   3.1 
+<span style="color:#f92672">(</span>...생략...<span style="color:#f92672">)</span>
+23:32:32.002         <span style="color:#ae81ff">179</span>    10662.0    41.65    <span style="color:#ae81ff">4096</span>   0.00    1.496    0.000    1.496     0.00    19.94    1.826   16.0   3.4   2.7
+23:32:33.005         <span style="color:#ae81ff">180</span>    13789.0    53.86    <span style="color:#ae81ff">4096</span>   0.00    1.153    0.000    1.153     0.00    17.99    1.452   16.0   5.4   2.9
+<span style="display:block;width:100%;background-color:#3c3d38">23:32:33.010   avg_2-180    12143.3    47.43    <span style="color:#ae81ff">4096</span>   0.00    1.314    0.000    1.314     0.00    69.39    1.662   16.0   4.2   2.9
+</span>23:32:33.680 Vdbench execution completed successfully. Output directory: /home/USER1/download/param_report 
+
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">USER1@VM1:~/download/vdbench$ grep avg param_report/totals.html 
+Apr 19, <span style="color:#ae81ff">2021</span>    interval        i/o   MB/sec   bytes   read     resp     read    write     read    write     resp  queue  cpu%  cpu%
+                               rate  1024**2     i/o    pct     time     resp     resp      max      max   stddev  depth sys+u   sys
+23:32:33.010   avg_2-180    12143.3    47.43    <span style="color:#ae81ff">4096</span>   0.00    1.314    0.000    1.314     0.00    69.39    1.662   16.0   4.2   2.9
+<span style="color:#75715e"># max 설정의 평균 IOPS 12143, 전송속도 47.43M/s, read 응답시간 1.314초, write 응답시간 1.314초, cpu 사용률 4.2%</span>
+<span style="color:#75715e"># cpu core 수보다 많은 thread 설정으로 IOPS, 전송속도는 소폭 늘었지만 응답시간이 1초 이상으로 늘어남</span>
+
+</code></pre></div><h3 id="3-2-raw-device-io-테스트와-결과">3-2. Raw Device I/O 테스트와 결과</h3>
+<p>;SD 매개변수로 file system file 을 사용하는 경우<br>
+;Vdbench Users Guide를 참고하면 Name of raw disk, file system file 모두 사용 가능</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">USER1@VM1:~/files$ dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>/dev/zero of<span style="color:#f92672">=</span>1gFile count<span style="color:#f92672">=</span><span style="color:#ae81ff">1000000</span> bs<span style="color:#f92672">=</span><span style="color:#ae81ff">1024</span>    
+1000000+0 records in
+1000000+0 records out
+<span style="color:#ae81ff">1024000000</span> bytes <span style="color:#f92672">(</span>1.0 GB, <span style="color:#ae81ff">977</span> MiB<span style="color:#f92672">)</span> copied, 2.3842 s, <span style="color:#ae81ff">429</span> MB/s
+
+<span style="color:#f92672">(</span>...생략...<span style="color:#f92672">)</span>
+USER1@VM1:~/files$ ls -alhs |sort
+ 11G -rw-rw-r-- <span style="color:#ae81ff">1</span> USER1 USER1  10G Apr <span style="color:#ae81ff">19</span> 21:38 10gFile
+ 20G -rw-rw-r-- <span style="color:#ae81ff">1</span> USER1 USER1  20G Apr <span style="color:#ae81ff">19</span> 21:06 20gFile
+ 29G -rw-rw-r-- <span style="color:#ae81ff">1</span> USER1 USER1  29G Apr <span style="color:#ae81ff">19</span> 21:07 30gFile
+977M -rw-rw-r-- <span style="color:#ae81ff">1</span> USER1 USER1 977M Apr <span style="color:#ae81ff">19</span> 21:40 1gFile
+<span style="color:#75715e"># 매개변수 변경으로 테스트 결과를 비교하기 위해 1GB, 10GB, 20GB, 30GB dummy 생성  </span>
+
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">USER1@VM1:~/download/vdbench$ cat vdbench_param/param.txt
+sd<span style="color:#f92672">=</span>sd1,lun<span style="color:#f92672">=</span>/home/USER1/files/10gFile,size<span style="color:#f92672">=</span>10g
+wd<span style="color:#f92672">=</span>wd1,sd<span style="color:#f92672">=</span>sd1,xfersize<span style="color:#f92672">=</span>4K,rdpct<span style="color:#f92672">=</span>0,seekpct<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>
+rd<span style="color:#f92672">=</span>rd1,wd<span style="color:#f92672">=</span>wd1,iorate<span style="color:#f92672">=</span>max,elapsed<span style="color:#f92672">=</span>180,interval<span style="color:#f92672">=</span>1,threads<span style="color:#f92672">=</span><span style="color:#ae81ff">6</span>
+
+<span style="color:#75715e"># SD (Storage Definition) parameters</span>
+<span style="color:#75715e">#&#39;lun=/home/USER1/files/10gFile&#39;: Name of raw disk or file system file.</span>
+<span style="color:#75715e">#     *Solaris file system filename. No control over physical I/O guaranteed since the file system may use system cache.</span>
+<span style="color:#75715e">#&#39;size=10g&#39;: Size of the raw disk or file to use for workload. Optional unless you want Vdbench to create a disk file for you.</span>
+<span style="color:#75715e">#&#39;iorate=max&#39;: Run the maximum I/O rate possible. This is called an uncontrolled max workload.</span>
+<span style="color:#75715e">#&#39;rdpc=30&#39;: Read percentage. Default 100.</span>
+<span style="color:#75715e">#&#39;seekpct=100&#39;: Percentage of random seeks. Default seekpct=100 or seekpct=random.</span>
+
+</code></pre></div><p>;매개변수를 변경하며 실행 한 결과<br>
+;매개변수를 다르게 실행할 때 마다 전혀 다른 결과도 볼 수 있다.<br>
+(지금은 이해가 부족하여 언젠가 다시.. 분석을 위해 남겨 놓음)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">USER1@VM1:~/download/vdbench$ sudo ./vdbench -f ./vdbench_param/param.txt -o param_report
+<span style="color:#f92672">(</span>...생략...<span style="color:#f92672">)</span>
+Apr 19, <span style="color:#ae81ff">2021</span>    interval        i/o   MB/sec   bytes   read     resp     read    write     read    write     resp  queue  cpu%  cpu%
+                               rate  1024**2     i/o    pct     time     resp     resp      max      max   stddev  depth sys+u   sys
+
+<span style="color:#75715e"># sd=sd1,lun=/home/USER1/files/10gFile,size=9g  실행 결과</span>
+22:59:35.016   avg_2-180    67857.4   265.07    <span style="color:#ae81ff">4096</span>   0.00    0.086    0.000    0.086     0.00   141.18    1.421    5.8  25.7  22.7
+
+<span style="color:#75715e"># sd=sd1,lun=/home/USER1/files/10gFile,size=10g 실행 결과</span>
+23:04:43.009   avg_2-180    64894.9   253.50    <span style="color:#ae81ff">4096</span>   0.00    0.090    0.000    0.090     0.00   157.74    1.409    5.9  24.1  21.4
+
+<span style="color:#75715e"># sd=sd1,lun=/home/USER1/files/10gFile          실행 결과 (size=10g 매개변수 제거)</span>
+21:38:41.008   avg_2-180    61410.1   239.88    <span style="color:#ae81ff">4096</span>   0.00    0.095    0.000    0.095     0.00   207.60    1.697    5.9  17.0  14.7
+
+<span style="color:#75715e"># sd=sd1,lun=/home/USER1/files/10gFile,size=1g  실행 결과</span>
+21:22:44.011   avg_2-180   274043.2  1070.48    <span style="color:#ae81ff">4096</span>   0.00    0.020    0.000    0.020     0.00   168.18    0.513    5.5  48.4  38.2
+
+<span style="color:#75715e"># sd=sd1,lun=/home/USER1/files/30gFile,size=1m  실행 결과</span>
+22:49:17.031   avg_2-180   688208.1  2688.31    <span style="color:#ae81ff">4096</span>   0.00    0.007    0.000    0.007     0.00    93.11    0.084    4.7  87.5  59.0
+
+<span style="color:#75715e"># sd=sd1,lun=/home/USER1/files/20gFile,size=1m  실행 결과</span>
+22:45:33.013   avg_2-180   690853.1  2698.65    <span style="color:#ae81ff">4096</span>   0.00    0.007    0.000    0.007     0.00    52.51    0.074    4.7  87.6  58.6
+
+<span style="color:#75715e"># sd=sd1,lun=/home/USER1/files/10gFile,size=1m  실행 결과</span>
+22:02:00.058   avg_2-180   417458.5  1630.70    <span style="color:#ae81ff">4096</span>   0.00    0.011    0.000    0.011     0.00  2851.31    1.226    4.7  70.3  49.3
+
+<span style="color:#75715e"># sd=sd1,lun=/home/USER1/files/1gFile,size=10g  실행 결과</span>
+<span style="color:#75715e"># 추가로 아래 파일 사이즈 경고 메시지가 출력됨   </span>
+21:47:37.004   avg_2-180    66388.2   259.33    <span style="color:#ae81ff">4096</span>   0.00    0.088    0.000    0.088     0.00   203.61    1.579    5.9  19.6  17.0
+
+21:44:28.117 Warning: size requested <span style="color:#66d9ef">for</span> sd<span style="color:#f92672">=</span>sd1,lun<span style="color:#f92672">=</span>/home/USER1/files/1gFile: 10737418240; size available: 1024000000. Insufficient size.
+21:44:28.117 If this is a file system file vdbench will try to expand it. 
+21:44:28.117 
+21:44:28.119 Vdbench will attempt to expand a disk file <span style="color:#66d9ef">if</span> the requested file size is a multiple of 1mb
+
+</code></pre></div><h3 id="4-file-system-테스트와-결과">4. File-System 테스트와 결과</h3>
+<ol>
+<li>각각의 mount 포인트에 디렉토리 depth: 1, 파일 사이즈 1GB 5개, 전송사이즈 128k, 180초간 ramdon write 100% I/O 부하</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">USER1@VM1:~/download/vdbench$ vi vdbench_param/param.txt
+
+fsd<span style="color:#f92672">=</span>fsd1,anchor<span style="color:#f92672">=</span>/home/USER1/vdbench_fstest,depth<span style="color:#f92672">=</span>1,width<span style="color:#f92672">=</span>1,files<span style="color:#f92672">=</span>5,size<span style="color:#f92672">=</span>1G
+fwd<span style="color:#f92672">=</span>fwd1,fsd<span style="color:#f92672">=</span>fsd1,rdpct<span style="color:#f92672">=</span>0,xfersize<span style="color:#f92672">=</span>128k,fileselect<span style="color:#f92672">=</span>random,fileio<span style="color:#f92672">=</span>random,threads<span style="color:#f92672">=</span><span style="color:#ae81ff">6</span>
+rd<span style="color:#f92672">=</span>rd1,fwd<span style="color:#f92672">=</span>fwd*,fwdrate<span style="color:#f92672">=</span>max,format<span style="color:#f92672">=</span>yes,elapsed<span style="color:#f92672">=</span>180,interval<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+
+<span style="color:#75715e"># FSD (File System Definition) parameters</span>
+<span style="color:#75715e">#&#39;depth=1&#39; : How many levels of directories to create under the anchor.</span>
+<span style="color:#75715e">#&#39;width=1&#39; : How many directories to create in each new directory.</span>
+<span style="color:#75715e">#&#39;files=16&#39; : How many files to create in the lowest level of directories.</span>
+<span style="color:#75715e">#&#39;size=1g&#39; : Specifies the size(s) of the files that will be created.</span>
+
+<span style="color:#75715e"># FWD (Filesystem Workload Definition) parameters</span>
+<span style="color:#75715e">#&#39;fileio=random&#39; : How file I/O will be done: random or sequential</span>
+<span style="color:#75715e">#&#39;fileselect=random&#39; : How to select file names or directory names for processing. e.g. fileselect=random/seq</span>
+<span style="color:#75715e">#&#39;threads=16&#39; : How many concurrent threads to run for this workload.</span>
+<span style="color:#75715e">#&#39;operation=read&#39; : Specifies a single file system operation that must be done for this workload.</span>
+<span style="color:#75715e">#&#39;rdpct=30&#39; : For operation=read and operation=write only. This allows a mix and read and writes against a single file.</span>
+
+<span style="color:#75715e"># RD (Run Definition) parameters</span>
+<span style="color:#75715e">#&#39;fwdrate=max&#39; : How many file system operations per second</span>
+<span style="color:#75715e">#&#39;format=yes&#39; : During this run, if needed, create the complete file structure. e.g. format=yes/no/only/ restart/clean/once/ directories</span>
+
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">USER1@VM1:~/download/vdbench$ sudo ./vdbench -f vdbench_param/param.txt -m <span style="color:#ae81ff">4</span> -o param_report
+
+Copyright <span style="color:#f92672">(</span>c<span style="color:#f92672">)</span> 2000, 2018, Oracle and/or its affiliates. All rights reserved.
+Vdbench distribution: vdbench50407 Tue June <span style="color:#ae81ff">05</span>  9:49:29 MDT <span style="color:#ae81ff">2018</span>
+For documentation, see <span style="color:#e6db74">&#39;vdbench.pdf&#39;</span>.
+
+13:07:18.929 Created output directory <span style="color:#e6db74">&#39;/home/USER1/download/vdbench/param_report&#39;</span>
+13:07:18.950 input argument scanned: <span style="color:#e6db74">&#39;-fvdbench_param/param.txt&#39;</span>
+13:07:18.950 input argument scanned: <span style="color:#e6db74">&#39;-m4&#39;</span>
+13:07:18.951 input argument scanned: <span style="color:#e6db74">&#39;-oparam_report&#39;</span>
+13:07:18.989 Anchor size: anchor<span style="color:#f92672">=</span>/home/USER1/vdbench_fstest: dirs:            1; files:            5; bytes:     5.000g <span style="color:#f92672">(</span>5,368,709,120<span style="color:#f92672">)</span>
+13:07:19.029 Starting slave: /home/USER1/download/vdbench/vdbench SlaveJvm -m localhost -n localhost-10-210422-13.07.18.910 -l localhost-0 -p <span style="color:#ae81ff">5570</span>   
+13:07:19.050 Starting slave: /home/USER1/download/vdbench/vdbench SlaveJvm -m localhost -n localhost-11-210422-13.07.18.910 -l localhost-1 -p <span style="color:#ae81ff">5570</span>   
+13:07:19.070 Starting slave: /home/USER1/download/vdbench/vdbench SlaveJvm -m localhost -n localhost-12-210422-13.07.18.910 -l localhost-2 -p <span style="color:#ae81ff">5570</span>   
+13:07:19.090 Starting slave: /home/USER1/download/vdbench/vdbench SlaveJvm -m localhost -n localhost-13-210422-13.07.18.910 -l localhost-3 -p <span style="color:#ae81ff">5570</span>   
+13:07:19.451 All slaves are now connected
+13:07:20.002 Starting RD<span style="color:#f92672">=</span>format_for_rd1
+13:07:20.280 localhost-0: anchor<span style="color:#f92672">=</span>/home/USER1/vdbench_fstest mkdir complete.
+
+Apr 22, <span style="color:#ae81ff">2021</span> ..Interval.. .ReqstdOps... ...cpu%...  read ....read..... ....write.... ..mb/sec... mb/sec .xfer.. ...mkdir.... ...rmdir.... ...create... ....open.... ...close.... ...delete...
+                            rate   resp total  sys   pct   rate   resp   rate   resp  read write  total    size  rate   resp  rate   resp  rate   resp  rate   resp  rate   resp  rate   resp
+13:07:21.152            <span style="color:#ae81ff">1</span>  <span style="color:#ae81ff">11774</span>  0.321  31.3 22.3   0.0    0.0  0.000  <span style="color:#ae81ff">11774</span>  0.321  0.00  <span style="color:#ae81ff">1471</span> 1471.7  <span style="color:#ae81ff">131072</span>   1.0  0.504   0.0  0.000   0.0  0.000   5.0  1.373   0.0  0.000   0.0  0.000
+13:07:22.024            <span style="color:#ae81ff">2</span>  <span style="color:#ae81ff">11856</span>  0.393  47.3 39.8   0.0    0.0  0.000  <span style="color:#ae81ff">11856</span>  0.393  0.00  <span style="color:#ae81ff">1482</span> 1482.0  <span style="color:#ae81ff">131072</span>   0.0  0.000   0.0  0.000   0.0  0.000   0.0  0.000   0.0  0.000   0.0  0.000
+13:07:23.012            <span style="color:#ae81ff">3</span>  <span style="color:#ae81ff">13765</span>  0.367  32.8 28.0   0.0    0.0  0.000  <span style="color:#ae81ff">13765</span>  0.367  0.00  <span style="color:#ae81ff">1720</span> 1720.6  <span style="color:#ae81ff">131072</span>   0.0  0.000   0.0  0.000   0.0  0.000   0.0  0.000   0.0  0.000   0.0  0.000
+13:07:23.269 localhost-0: anchor<span style="color:#f92672">=</span>/home/USER1/vdbench_fstest create complete.
+13:07:24.007            <span style="color:#ae81ff">4</span> 3563.0  0.311  12.0 8.35   0.0    0.0  0.000 3563.0  0.311  0.00 445.3 445.38  <span style="color:#ae81ff">131072</span>   0.0  0.000   0.0  0.000   5.0 2937.1   0.0  0.000   5.0  0.041   0.0  0.000
+13:07:24.013      avg_2-4 9728.0  0.370  30.0 24.7   0.0    0.0  0.000 9728.0  0.370  0.00  <span style="color:#ae81ff">1216</span> 1216.0  <span style="color:#ae81ff">131072</span>   0.0  0.000   0.0  0.000   1.7 2937.1   0.0  0.000   1.7  0.041   0.0  0.000
+13:07:24.013      std_2-4 5423.7  2.482                                5423.7  2.482                                                        2.9 65.916                2.9  0.036             
+13:07:24.014      max_2-4  <span style="color:#ae81ff">13765</span> 48.064                                 <span style="color:#ae81ff">13765</span> 48.064                                   0.504                5.0 2987.5        1.539   5.0  0.105             
+13:07:24.134 
+13:07:24.134 Miscellaneous statistics:
+13:07:24.134 <span style="color:#f92672">(</span>These statistics <span style="color:#66d9ef">do</span> not include activity between the last reported interval and shutdown.<span style="color:#f92672">)</span>
+13:07:24.134 FILE_CREATES        Files created:                                    <span style="color:#ae81ff">5</span>          1/sec
+13:07:24.134 DIRECTORY_CREATES   Directories created:                              <span style="color:#ae81ff">1</span>          0/sec
+13:07:24.134 WRITE_OPENS         Files opened <span style="color:#66d9ef">for</span> write activity:                  <span style="color:#ae81ff">5</span>          1/sec
+13:07:24.134 DIR_EXISTS          Directory may not exist <span style="color:#f92672">(</span>yet<span style="color:#f92672">)</span>:                    <span style="color:#ae81ff">3</span>          0/sec
+13:07:24.134 FILE_CLOSES         Close requests:                                   <span style="color:#ae81ff">5</span>          1/sec
+13:07:24.134 
+13:07:25.001 Starting RD<span style="color:#f92672">=</span>rd1; elapsed<span style="color:#f92672">=</span>180; fwdrate<span style="color:#f92672">=</span>max. For loops: None
+
+Apr 22, <span style="color:#ae81ff">2021</span> ..Interval.. .ReqstdOps... ...cpu%...  read ....read..... ....write.... ..mb/sec... mb/sec .xfer.. ...mkdir.... ...rmdir.... ...create... ....open.... ...close.... ...delete...
+                            rate   resp total  sys   pct   rate   resp   rate   resp  read write  total    size  rate   resp  rate   resp  rate   resp  rate   resp  rate   resp  rate   resp
+13:07:26.012            <span style="color:#ae81ff">1</span>  <span style="color:#ae81ff">15171</span>  0.252  16.2 10.4   0.0    0.0  0.000  <span style="color:#ae81ff">15171</span>  0.252  0.00  <span style="color:#ae81ff">1896</span> 1896.3  <span style="color:#ae81ff">131072</span>   0.0  0.000   0.0  0.000   0.0  0.000   5.0  0.148   0.0  0.000   0.0  0.000
+13:07:27.005            <span style="color:#ae81ff">2</span>  <span style="color:#ae81ff">15255</span>  0.323  28.3 21.0   0.0    0.0  0.000  <span style="color:#ae81ff">15255</span>  0.323  0.00  <span style="color:#ae81ff">1906</span> 1906.8  <span style="color:#ae81ff">131072</span>   0.0  0.000   0.0  0.000   0.0  0.000   0.0  0.000   0.0  0.000   0.0  0.000
+<span style="color:#f92672">(</span>...생략...<span style="color:#f92672">)</span>
+13:10:24.004          <span style="color:#ae81ff">179</span>  <span style="color:#ae81ff">10724</span>  0.459  17.1 14.6   0.0    0.0  0.000  <span style="color:#ae81ff">10724</span>  0.459  0.00  <span style="color:#ae81ff">1340</span> 1340.5  <span style="color:#ae81ff">131072</span>   0.0  0.000   0.0  0.000   0.0  0.000   1.0  0.120   1.0  0.016   0.0  0.000
+13:10:25.004          <span style="color:#ae81ff">180</span>  <span style="color:#ae81ff">11040</span>  0.450  16.6 14.1   0.0    0.0  0.000  <span style="color:#ae81ff">11040</span>  0.450  0.00  <span style="color:#ae81ff">1380</span> 1380.0  <span style="color:#ae81ff">131072</span>   0.0  0.000   0.0  0.000   0.0  0.000   3.0  0.095   3.0  0.021   0.0  0.000
+13:10:25.010    avg_2-180  <span style="color:#ae81ff">11261</span>  0.437  19.3 15.7   0.0    0.0  0.000  <span style="color:#ae81ff">11261</span>  0.437  0.00  <span style="color:#ae81ff">1407</span> 1407.7  <span style="color:#ae81ff">131072</span>   0.0  0.000   0.0  0.000   0.0  0.000   1.4  0.158   1.4  0.020   0.0  0.000
+13:10:25.010    std_2-180                                              1356.7  3.593                                                                     1.3  0.110   1.3  0.032             
+13:10:25.010    max_2-180                                               <span style="color:#ae81ff">15255</span> 963.18                                                                     5.0  0.988   5.0  0.509             
+13:10:25.228 
+13:10:25.229 Miscellaneous statistics:
+13:10:25.229 <span style="color:#f92672">(</span>These statistics <span style="color:#66d9ef">do</span> not include activity between the last reported interval and shutdown.<span style="color:#f92672">)</span>
+13:10:25.229 WRITE_OPENS         Files opened <span style="color:#66d9ef">for</span> write activity:                <span style="color:#ae81ff">251</span>          1/sec
+13:10:25.229 FILE_BUSY           File busy:                                  152,272        845/sec
+13:10:25.229 FILE_CLOSES         Close requests:                                 <span style="color:#ae81ff">246</span>          1/sec
+13:10:25.229 
+13:10:25.645 Vdbench execution completed successfully. Output directory: /home/USER1/download/vdbench/param_report 
+
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">USER1@VM1:~/download$ grep avg param_report/summary.html    
+13:07:24.012      avg_2-4 9728.0  0.370  30.0 24.7   0.0    0.0  0.000 9728.0  0.370  0.00  <span style="color:#ae81ff">1216</span> 1216.0  <span style="color:#ae81ff">131072</span>   0.0  0.000   0.0  0.000   1.7 2937.1   0.0  0.000   1.7  0.041   0.0  0.000
+
+13:10:25.010    avg_2-180  <span style="color:#ae81ff">11261</span>  0.437  19.3 15.7   0.0    0.0  0.000  <span style="color:#ae81ff">11261</span>  0.437  0.00  <span style="color:#ae81ff">1407</span> 1407.7  <span style="color:#ae81ff">131072</span>   0.0  0.000   0.0  0.000   0.0  0.000   1.4  0.158   1.4  0.020   0.0  0.000
+<span style="color:#75715e"># 평균 CPU 19.3%, Write 100%, Total 1407.7 MB/s = Read 0 MB/s + Write 1407 MB/s</span>
+
+</code></pre></div><ol start="2">
+<li>각각의 mount 포인트에 디렉토리 depth: 1, 파일 사이즈 1MB 10,000개, 전송사이즈 4k, 180초간 random read 70%, ramdon write 30% I/O 부하</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">USER1@VM1:~/download/vdbench$ vi vdbench_param/param.txt
+
+fsd<span style="color:#f92672">=</span>fsd1,anchor<span style="color:#f92672">=</span>/home/USER1/vdbench_fstest,depth<span style="color:#f92672">=</span>1,width<span style="color:#f92672">=</span>1,files<span style="color:#f92672">=</span>10000,size<span style="color:#f92672">=</span>1M
+fwd<span style="color:#f92672">=</span>fwd1,fsd<span style="color:#f92672">=</span>fsd1,rdpct<span style="color:#f92672">=</span>70,xfersize<span style="color:#f92672">=</span>4k,fileselect<span style="color:#f92672">=</span>random,fileio<span style="color:#f92672">=</span>random,threads<span style="color:#f92672">=</span><span style="color:#ae81ff">6</span>
+rd<span style="color:#f92672">=</span>rd1,fwd<span style="color:#f92672">=</span>fwd*,fwdrate<span style="color:#f92672">=</span>max,format<span style="color:#f92672">=</span>yes,elapsed<span style="color:#f92672">=</span>180,interval<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">USER1@VM1:~/download/vdbench$ sudo ./vdbench -f vdbench_param/param.txt -m <span style="color:#ae81ff">4</span> -o param_report
+
+Copyright <span style="color:#f92672">(</span>c<span style="color:#f92672">)</span> 2000, 2018, Oracle and/or its affiliates. All rights reserved.
+Vdbench distribution: vdbench50407 Tue June <span style="color:#ae81ff">05</span>  9:49:29 MDT <span style="color:#ae81ff">2018</span>
+For documentation, see <span style="color:#e6db74">&#39;vdbench.pdf&#39;</span>.
+
+13:27:27.519 Created output directory <span style="color:#e6db74">&#39;/home/USER1/download/vdbench/param_report&#39;</span>
+13:27:27.538 input argument scanned: <span style="color:#e6db74">&#39;-fvdbench_param/param.txt&#39;</span>
+13:27:27.538 input argument scanned: <span style="color:#e6db74">&#39;-m4&#39;</span>
+13:27:27.539 input argument scanned: <span style="color:#e6db74">&#39;-oparam_report&#39;</span>
+13:27:27.575 Anchor size: anchor<span style="color:#f92672">=</span>/home/USER1/vdbench_fstest: dirs:            1; files:       10,000; bytes:     9.766g <span style="color:#f92672">(</span>10,485,760,000<span style="color:#f92672">)</span>
+13:27:27.613 Starting slave: /home/USER1/download/vdbench/vdbench SlaveJvm -m localhost -n localhost-10-210422-13.27.27.501 -l localhost-0 -p <span style="color:#ae81ff">5570</span>   
+13:27:27.633 Starting slave: /home/USER1/download/vdbench/vdbench SlaveJvm -m localhost -n localhost-11-210422-13.27.27.501 -l localhost-1 -p <span style="color:#ae81ff">5570</span>   
+13:27:27.654 Starting slave: /home/USER1/download/vdbench/vdbench SlaveJvm -m localhost -n localhost-12-210422-13.27.27.501 -l localhost-2 -p <span style="color:#ae81ff">5570</span>   
+13:27:27.676 Starting slave: /home/USER1/download/vdbench/vdbench SlaveJvm -m localhost -n localhost-13-210422-13.27.27.501 -l localhost-3 -p <span style="color:#ae81ff">5570</span>   
+13:27:28.005 All slaves are now connected
+13:27:29.001 Starting RD<span style="color:#f92672">=</span>format_for_rd1
+13:27:29.325 localhost-0: anchor<span style="color:#f92672">=</span>/home/USER1/vdbench_fstest mkdir complete.
+
+Apr 22, <span style="color:#ae81ff">2021</span> ..Interval.. .ReqstdOps... ...cpu%...  read ....read..... ....write.... ..mb/sec... mb/sec .xfer.. ...mkdir.... ...rmdir.... ...create... ....open.... ...close.... ...delete...
+                            rate   resp total  sys   pct   rate   resp   rate   resp  read write  total    size  rate   resp  rate   resp  rate   resp  rate   resp  rate   resp  rate   resp
+13:27:30.066            <span style="color:#ae81ff">1</span> 7229.0  0.675  17.8 7.16   0.0    0.0  0.000 7229.0  0.675  0.00 903.6 903.62  <span style="color:#ae81ff">131072</span>   1.0  0.479   0.0  0.000 899.0  6.120 907.0  0.230 899.0  0.009   0.0  0.000
+13:27:31.017            <span style="color:#ae81ff">2</span> 5951.0  1.266  13.6 7.27   0.0    0.0  0.000 5951.0  1.266  0.00 743.8 743.88  <span style="color:#ae81ff">131072</span>   0.0  0.000   0.0  0.000 745.0 10.196 745.0  0.038 745.0  0.010   0.0  0.000
+<span style="color:#f92672">(</span>...생략...<span style="color:#f92672">)</span>
+13:30:41.008          <span style="color:#ae81ff">179</span>  <span style="color:#ae81ff">94612</span>  0.061  27.7 22.5  70.0  <span style="color:#ae81ff">66247</span>  0.084  <span style="color:#ae81ff">28365</span>  0.007 258.7 110.8 369.58    <span style="color:#ae81ff">4096</span>   0.0  0.000   0.0  0.000   0.0  0.000 369.0  0.025 369.0  0.005   0.0  0.000
+13:30:42.003          <span style="color:#ae81ff">180</span>  <span style="color:#ae81ff">87924</span>  0.066  29.3 23.1  69.8  <span style="color:#ae81ff">61345</span>  0.091  <span style="color:#ae81ff">26579</span>  0.007 239.6 103.8 343.45    <span style="color:#ae81ff">4096</span>   0.0  0.000   0.0  0.000   0.0  0.000 343.0  0.025 343.0  0.006   0.0  0.000
+13:30:42.006    avg_2-180  <span style="color:#ae81ff">93218</span>  0.062  25.3 20.7  70.0  <span style="color:#ae81ff">65253</span>  0.086  <span style="color:#ae81ff">27965</span>  0.007 254.9 109.2 364.14    <span style="color:#ae81ff">4095</span>   0.0  0.000   0.0  0.000   0.0  0.000 364.1  0.028 364.1  0.006   0.0  0.000
+13:30:42.006    std_2-180                                 <span style="color:#ae81ff">11103</span>  0.255 4750.7  0.044                                                                    61.9  0.201  61.9  0.014             
+13:30:42.006    max_2-180                                 <span style="color:#ae81ff">89102</span> 39.057  <span style="color:#ae81ff">38223</span> 18.777                                                                   497.0 18.745 497.0  3.129             
+13:30:42.229 
+13:30:42.229 Miscellaneous statistics:
+13:30:42.229 <span style="color:#f92672">(</span>These statistics <span style="color:#66d9ef">do</span> not include activity between the last reported interval and shutdown.<span style="color:#f92672">)</span>
+13:30:42.230 WRITE_OPENS         Files opened <span style="color:#66d9ef">for</span> write activity:             65,550        364/sec
+13:30:42.230 FILE_BUSY           File busy:                                       <span style="color:#ae81ff">28</span>          0/sec
+13:30:42.230 FILE_CLOSES         Close requests:                              65,544        364/sec
+13:30:42.230 
+13:30:43.300 Vdbench execution completed successfully. Output directory: /home/USER1/download/vdbench/param_report 
+
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">USER1@VM1:~/download/vdbench$ grep avg param_report/summary.html   
+13:27:41.009     avg_2-12 6615.5  1.172  15.4 9.90   0.0    0.0  0.000 6615.5  1.172  0.00 826.9 826.94  <span style="color:#ae81ff">131072</span>   0.0  0.000   0.0  0.000 827.4  9.493 826.6  0.090 827.4  0.006   0.0  0.000
+
+13:30:42.006    avg_2-180  <span style="color:#ae81ff">93218</span>  0.062  25.3 20.7  70.0  <span style="color:#ae81ff">65253</span>  0.086  <span style="color:#ae81ff">27965</span>  0.007 254.9 109.2 364.14    <span style="color:#ae81ff">4095</span>   0.0  0.000   0.0  0.000   0.0  0.000 364.1  0.028 364.1  0.006   0.0  0.000
+<span style="color:#75715e"># 평균 CPU 25.3%, Read 70%, Total 364.14 MB/s = Read 254.9 MB/s + Write 109.2 MB/s</span>
+</code></pre></div><h3 id="5-file-system-테스트-진행-중-오류">5. File-System 테스트 진행 중 오류</h3>
+<ol>
+<li>메모리 2GB에서 4GB 할당하니 조치됨</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">USER1@VM1:~/download/vdbench$ sudo ./vdbench -f ./vdbench_param/param.txt -o param_report
+
+
+Copyright <span style="color:#f92672">(</span>c<span style="color:#f92672">)</span> 2000, 2018, Oracle and/or its affiliates. All rights reserved.
+Vdbench distribution: vdbench50407 Tue June <span style="color:#ae81ff">05</span>  9:49:29 MDT <span style="color:#ae81ff">2018</span>
+For documentation, see <span style="color:#e6db74">&#39;vdbench.pdf&#39;</span>.
+
+16:50:37.585 input argument scanned: <span style="color:#e6db74">&#39;-f./vdbench_param/param.txt&#39;</span>
+16:50:37.586 input argument scanned: <span style="color:#e6db74">&#39;-oparam_report&#39;</span>
+16:50:37.621 Anchor size: anchor<span style="color:#f92672">=</span>/home/USER1/vdbench_fstest: dirs:            1; files:           16; bytes:    16.000g <span style="color:#f92672">(</span>17,179,869,184<span style="color:#f92672">)</span>
+java.lang.ClassFormatError: Incompatible magic value <span style="color:#ae81ff">1379526822</span> in class file java/nio/ByteBufferAsLongBufferB
+        at java.base/java.nio.HeapByteBuffer.asLongBuffer<span style="color:#f92672">(</span>HeapByteBuffer.java:486<span style="color:#f92672">)</span>
+        at Utils.Bin.&lt;init&gt;<span style="color:#f92672">(</span>Bin.java:168<span style="color:#f92672">)</span>
+        at Utils.Bin.&lt;init&gt;<span style="color:#f92672">(</span>Bin.java:185<span style="color:#f92672">)</span>
+        at Vdb.FwdStats.defineNamedData<span style="color:#f92672">(</span>FwdStats.java:1063<span style="color:#f92672">)</span>
+        at Vdb.Vdbmain.open_print_files<span style="color:#f92672">(</span>Vdbmain.java:183<span style="color:#f92672">)</span>
+        at Vdb.Vdbmain.masterRun<span style="color:#f92672">(</span>Vdbmain.java:792<span style="color:#f92672">)</span>
+        at Vdb.Vdbmain.main<span style="color:#f92672">(</span>Vdbmain.java:628<span style="color:#f92672">)</span>
+16:50:37.629 common.failure<span style="color:#f92672">()</span>: System.exit<span style="color:#f92672">(</span>-99<span style="color:#f92672">)</span>
+
+</code></pre></div><h3 id="6-진행하며-검토-및-알게된-것">6. 진행하며 검토 및 알게된 것</h3>
+<ul>
+<li>스토리지의 최대 성능을 측정하는지, 스토리지에 연결된 서버에서 어느 수준의 성능이 나오는지 등 시나리오 따라 방향이 달라진다.</li>
+<li>가상 머신의 경우 thin provisioning 특성을 감안해야 하는데 재구성이 번거로워 반복해서 실행했다.</li>
+<li>부하를 일으키는 테스트 서버의 성능에 따라 multi thread 외 jvm 실행 수 등 매개변수 설정도 적정한지 테스트 해봐야한다.</li>
+<li>테스트를 진행하는 스토리지 볼륨에는 데이터 손실이 있을 수 있으므로 스냅샷을 미리 생성하거나 분리된 볼륨에서 진행해야 한다.</li>
+<li>스토리지 엔지니어마다 다르지만 현업 지인의 경험으로는 vdbench, iometer 가 스토리지 자체 측정 결과와 비슷하게 나와 이를 주로 사용한다고 한다.</li>
+<li>경험 많은 스토리지 엔지니어가 아닌 한 나처럼 테스트에 의미있는 다양한 매개변수의 이해와 구성 시나리오, 난해한 가이드 문서에서 적절한 매개변수를 찾기란 어려워 PC에서 CrystalDiskMark 처럼 손쉽게 실행 후 결과를 얻기란 쉽지 않다.</li>
+</ul>
+<h3 id="참고-글">참고 글</h3>
+<ul>
+<li><a href="https://www.oracle.com/downloads/server-storage/vdbench-downloads.html" target="_blank" rel="noopener">Vdbench Downloads</a>
+</li>
+<li><a href="https://blog.goodusdata.com/9" target="_blank" rel="noopener">DB기술노트81회 Oracle VDBENCH</a>
+</li>
+<li><a href="https://harryp.tistory.com/728" target="_blank" rel="noopener">스토리지 vdbench - 스토리지, 파일 시스템 벤치마킹 툴</a>
+</li>
+<li><a href="https://boeok.tistory.com/entry/File-System-%ea%b3%bc-Raw-Device%ec%9d%98-%ec%b0%a8%ec%9d%b4" target="_blank" rel="noopener">File System 과 Raw Device의 차이</a>
+</li>
+<li><a href="http://www.infostor.com/blogs_new/greg_schulz/whats-the-best-storage-benchmark.html" target="_blank" rel="noopener">What’s The Best Storage Benchmark?</a>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/disk/">disk</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/io/">io</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/iops/">iops</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/throughput/">throughput</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/test/">test</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/measure/">measure</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/vdbench/">Vdbench</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/linux/">linux</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/posts/20210420_login_fail_windows_2016/" data-tooltip="Windows Server 2016 IIS web, chrome 에서 failed log in">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/posts/20210414_disk_io_test_fio_linux/" data-tooltip="Linux, disk I/O 측정 - fio">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/posts/20210419_disk_io_test_vdbench_linux/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/posts/20210419_disk_io_test_vdbench_linux/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/posts/20210419_disk_io_test_vdbench_linux/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+
+              
+            
+          </div>
+        </article>
+
+	<script src="https://utteranc.es/client.js"
+      	  repo="010000/blog-comments"
+       	 issue-term="pathname"
+       	 theme="github-light"
+       	 crossorigin="anonymous"
+       	 async>
+	</script>
+
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2021 <a href="https://github.com/010000">010000 Logbook</a>. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="1">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/posts/20210420_login_fail_windows_2016/" data-tooltip="Windows Server 2016 IIS web, chrome 에서 failed log in">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/posts/20210414_disk_io_test_fio_linux/" data-tooltip="Linux, disk I/O 측정 - fio">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/posts/20210419_disk_io_test_vdbench_linux/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/posts/20210419_disk_io_test_vdbench_linux/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/posts/20210419_disk_io_test_vdbench_linux/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="1">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F010000.github.io%2Fposts%2F20210419_disk_io_test_vdbench_linux%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2F010000.github.io%2Fposts%2F20210419_disk_io_test_vdbench_linux%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2F010000.github.io%2Fposts%2F20210419_disk_io_test_vdbench_linux%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://res.cloudinary.com/oloooo/image/upload/v1614951872/githubpages/netscape_wcocsw.gif" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Jeffrey YM. Jo</h4>
+    
+      <div id="about-card-bio">경험과 생각들을 정리하며, 다시 찾는 시간을 아끼기 위해 모아놓는 블로그입니다.</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Public
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        South Korea
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    <div id="cover" style="background-image:url('https://res.cloudinary.com/oloooo/image/upload/v1614216485/githubpages/cover_2560px_oemeya.jpg');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://010000.github.io/js/script-n8mqrxp8rsufxtye69p9ch2uxowamnju45qdhlzy3r6bzgixdxhhwaa9zgxf.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/010000.github.io\/posts\/20210419_disk_io_test_vdbench_linux\/';
+          
+            this.page.identifier = '\/posts\/20210419_disk_io_test_vdbench_linux\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = '010000';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

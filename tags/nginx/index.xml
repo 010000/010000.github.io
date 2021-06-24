@@ -9,10 +9,10 @@
     <lastBuildDate>Wed, 31 Mar 2021 15:29:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Telegram message listener를 이용한 nginx start &amp; stop</title>
-      <link>https://010000.github.io/post/20210331_control_nginx_telegram_message/</link>
+      <link>https://010000.github.io/posts/20210331_control_nginx_telegram_message/</link>
       <pubDate>Wed, 31 Mar 2021 15:29:00 +0900</pubDate>
       
-      <guid>https://010000.github.io/post/20210331_control_nginx_telegram_message/</guid>
+      <guid>https://010000.github.io/posts/20210331_control_nginx_telegram_message/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;정각 알림용으로 메시지를 받고있는 Telegram bot을 이용해 메시지를 보내면 code-server에 사용중인 Nginx 서비스를 시작하고 중지되게 해봤습니다.&lt;/li&gt;
 &lt;li&gt;code-server를 혼자 사용중이라 안쓸 때 보안상 닫고 싶은데 좀 더 편한 방법일까 싶어 작성해봤네요.  &lt;em&gt;(Update: Mar 31, 2021)&lt;/em&gt;&lt;/li&gt;
@@ -21,10 +21,10 @@
     
     <item>
       <title>Code-server with Nginx, SSL 인증서 적용</title>
-      <link>https://010000.github.io/post/20210313_ssl_cert_code-server_nginx_centos/</link>
+      <link>https://010000.github.io/posts/20210313_ssl_cert_code-server_nginx_centos/</link>
       <pubDate>Sat, 13 Mar 2021 16:07:00 +0900</pubDate>
       
-      <guid>https://010000.github.io/post/20210313_ssl_cert_code-server_nginx_centos/</guid>
+      <guid>https://010000.github.io/posts/20210313_ssl_cert_code-server_nginx_centos/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;Code-server에 Nginx 구성 후 SSL(Let&amp;rsquo;s Encrypt 무료)인증서를 적용해봅니다. &lt;em&gt;(Update: Mar 13, 2021)&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
@@ -32,10 +32,10 @@
     
     <item>
       <title>인터넷망 오픈과 로그인을 위한 Code-server 와 Nginx 구성</title>
-      <link>https://010000.github.io/post/20210312_login_code-server_nginx_centos/</link>
+      <link>https://010000.github.io/posts/20210312_login_code-server_nginx_centos/</link>
       <pubDate>Fri, 12 Mar 2021 17:52:00 +0900</pubDate>
       
-      <guid>https://010000.github.io/post/20210312_login_code-server_nginx_centos/</guid>
+      <guid>https://010000.github.io/posts/20210312_login_code-server_nginx_centos/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;이번에는 오픈된 cloud 인터넷 망에 설치된 code-server 를 계속 열어놓고 사용하기엔 불안한 부분도 있고, 어느 기기에서나 좀 더 간편하게 언제든지 code-server 접근이 되도록 nginx proxy를 앞에 두고 로그인도 가능하도록 구성해봅니다.&lt;/li&gt;
 &lt;li&gt;Safari 브라우저에서 nginx 로그인 뒤 code-server 로그인 후에 (blank) white screen 이슈가 있네요. 해결되면 업데이트하겠습니다. &lt;em&gt;(Update: Mar 12, 2021)&lt;/em&gt;&lt;/li&gt;

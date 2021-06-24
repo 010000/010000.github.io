@@ -9,10 +9,10 @@
     <lastBuildDate>Wed, 24 Mar 2021 09:02:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/repository/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Enable Redhat subscription, redhat.repo</title>
-      <link>https://010000.github.io/post/20210324_yum_repo_subscription_redhat/</link>
+      <link>https://010000.github.io/posts/20210324_yum_repo_subscription_redhat/</link>
       <pubDate>Wed, 24 Mar 2021 09:02:00 +0900</pubDate>
       
-      <guid>https://010000.github.io/post/20210324_yum_repo_subscription_redhat/</guid>
+      <guid>https://010000.github.io/posts/20210324_yum_repo_subscription_redhat/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;평소 사용할 일이 없었던 Redhat linux, 개인 개발자용(Red Hat Developer Subscription for Individuals)으로 redhat.repo 활성화를 진행하며 남깁니다.&lt;/li&gt;
 &lt;li&gt;Redhat Enterprise linux를 로컬 yum.repo 구성으로 적용해 가능한지 테스트하다 일단 막혀서&amp;hellip; 이 내용은 ubuntu, centos 도 진행해보며 정리할 예정입니다.

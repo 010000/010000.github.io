@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.81.0 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="author" content="Jeffrey YM. Jo">
+<meta name="keywords" content="tech">
+<meta name="description" content="
+Code-server에 Nginx 구성 후 SSL(Let&rsquo;s Encrypt 무료)인증서를 적용해봅니다. (Update: Mar 13, 2021)
+">
+
+
+<meta property="og:description" content="
+Code-server에 Nginx 구성 후 SSL(Let&rsquo;s Encrypt 무료)인증서를 적용해봅니다. (Update: Mar 13, 2021)
+">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Code-server with Nginx, SSL 인증서 적용">
+<meta name="twitter:title" content="Code-server with Nginx, SSL 인증서 적용">
+<meta property="og:url" content="https://010000.github.io/posts/20210313_ssl_cert_code-server_nginx_centos/">
+<meta property="twitter:url" content="https://010000.github.io/posts/20210313_ssl_cert_code-server_nginx_centos/">
+<meta property="og:site_name" content="010000 logbook">
+<meta property="og:description" content="
+Code-server에 Nginx 구성 후 SSL(Let&rsquo;s Encrypt 무료)인증서를 적용해봅니다. (Update: Mar 13, 2021)
+">
+<meta name="twitter:description" content="
+Code-server에 Nginx 구성 후 SSL(Let&rsquo;s Encrypt 무료)인증서를 적용해봅니다. (Update: Mar 13, 2021)
+">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2021-03-13T16:07:00">
+  
+  
+    <meta property="article:modified_time" content="2021-03-13T16:07:00">
+  
+  
+  
+    
+      <meta property="article:section" content="Code-Server">
+    
+  
+  
+    
+      <meta property="article:tag" content="install">
+    
+      <meta property="article:tag" content="renew">
+    
+      <meta property="article:tag" content="code-server">
+    
+      <meta property="article:tag" content="code">
+    
+      <meta property="article:tag" content="server">
+    
+      <meta property="article:tag" content="centos">
+    
+      <meta property="article:tag" content="nginx">
+    
+      <meta property="article:tag" content="ssl">
+    
+      <meta property="article:tag" content="certbot">
+    
+      <meta property="article:tag" content="Let&#39;s Encrypt">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://res.cloudinary.com/oloooo/image/upload/v1614951872/githubpages/netscape_wcocsw.gif">
+  <meta property="twitter:image" content="https://res.cloudinary.com/oloooo/image/upload/v1614951872/githubpages/netscape_wcocsw.gif">
+
+
+    <title>Code-server with Nginx, SSL 인증서 적용</title>
+
+    <link rel="icon" href="https://010000.github.io/favicon.ico">
+    
+
+    
+
+    <link rel="canonical" href="https://010000.github.io/posts/20210313_ssl_cert_code-server_nginx_centos/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://010000.github.io/css/style-s8xlgnopppjrvgff3zxwbooca3paivectafco2acr0hxdpldmmx7q5e8xki.min.css" />
+    
+    
+      
+        <link rel="stylesheet"  href="https://010000.github.io/css/syntax.css">
+      
+    
+
+    
+      
+    
+    
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.7.1/gist-embed.min.js"></script>
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="1">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://010000.github.io/">010000 logbook</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://010000.github.io/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://res.cloudinary.com/oloooo/image/upload/v1614951872/githubpages/netscape_wcocsw.gif" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="1">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://010000.github.io/#about">
+          <img class="sidebar-profile-picture" src="https://res.cloudinary.com/oloooo/image/upload/v1614951872/githubpages/netscape_wcocsw.gif" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Jeffrey YM. Jo</h4>
+        
+          <h5 class="sidebar-profile-bio">경험과 생각들을 정리하며, 다시 찾는 시간을 아끼기 위해 모아놓는 블로그입니다.</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://010000.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://010000.github.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://010000.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://010000.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-hashtag"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://010000.github.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-address-card"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="mailto:010000c@gmail.com" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-envelope"></i>
+      
+      <span class="sidebar-button-desc">Email</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://010000.github.io/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="1"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      Code-server with Nginx, SSL 인증서 적용
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2021-03-13T16:07:00&#43;09:00">
+        
+  March 13, 2021
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://010000.github.io/categories/code-server">Code-Server</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <ul>
+<li>Code-server에 Nginx 구성 후 SSL(Let&rsquo;s Encrypt 무료)인증서를 적용해봅니다. <em>(Update: Mar 13, 2021)</em></li>
+</ul>
+<h3 id="환경-구성">환경 구성</h3>
+<ul>
+<li>OS: CentOS 8.3.2011 (on Oracle cloud VM)<br>
+!참고 - <a href="https://010000.github.io/post/20210312_login_code-server_nginx_centos/" target="_blank" rel="noopener">이전 글의 Coder-server &amp; Nginx 구성</a>
+이 진행되어 SSL 인증서를 적용 합니다</li>
+<li>Code-server: 3.9.0-amd64.rpm</li>
+<li>Nginx: v1.14.1 (with yum)</li>
+</ul>
+<h3 id="1-install-certbot-nginx">1. Install certbot-nginx</h3>
+<p>; dns-01 방식으로 진행합니다. (도메인은 변경없이, server ip와 sub-domain은 변경 가능)<br>
+; 공인ip를 요구하는 http-01 방식도 가능하지만 언제든 다른 곳, ip로 변경할 수 있도록 보류</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ sudo yum install -y certbot python3-certbot-nginx
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ sudo certbot -d vm2.mydomain.com --manual --preferred-challenges dns certonly
+ <span style="color:#f92672">(</span>...생략...<span style="color:#f92672">)</span>
+Plugins selected: Authenticator manual, Installer None
+Enter email address <span style="color:#f92672">(</span>used <span style="color:#66d9ef">for</span> urgent renewal and security notices<span style="color:#f92672">)</span>
+ <span style="color:#f92672">(</span>Enter <span style="color:#e6db74">&#39;c&#39;</span> to cancel<span style="color:#f92672">)</span>: <span style="color:#f92672">{</span>myEmail<span style="color:#f92672">}</span>@hotmail.com
+</code></pre></div><pre><code> (...생략...)
+agree in order to register with the ACME server. Do you agree?
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+(Y)es/(N)o: y
+</code></pre><p>;news, campains&hellip;? No.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt"> (...생략...)
+develops Certbot? We&#39;d like to send you email about our work encrypting the web,
+EFF news, campaigns, and ways to support digital freedom.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+(Y)es/(N)o: n
+Account registered.
+Requesting a certificate for vm2.mydomain.com
+Performing the following challenges:
+dns-01 challenge for vm2.mydomain.com
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Please deploy a DNS TXT record under the name
+_acme-challenge.vm2.mydomain.com with the following value:
+
+-FzP4bCvVVXm1p9TTB7v8FCc80TejN83FhKTuIOnQwQ
+
+Before continuing, verify the record is deployed.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Press Enter to Continue
+</code></pre></div><p>; 여기에서는 위의 도메인 TXT 레코드 등록과 nslookup 확인 후 진행합니다.<br>
+; 개인 도메인을 등록해 사용중인 <a href="https://www.cloudflare.com/" target="_blank" rel="noopener">cloudflare</a>
+ DNS 서비스에 등록했습니다.</p>
+<p>;TXT 레코드 등록 확인</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ dig -t txt _acme-challenge.vm2.mydomain.com
+
+; &lt;&lt;&gt;&gt; DiG 9.10.6 &lt;&lt;&gt;&gt; -t txt _acme-challenge.vm2.mydomain.com
+;; global options: +cmd
+;; Got answer:
+;; -&gt;&gt;HEADER<span style="color:#e6db74">&lt;&lt;- opco</span>de: QUERY, status: NOERROR, id: <span style="color:#ae81ff">35168</span>
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: <span style="color:#ae81ff">1</span>
+
+<span style="color:#f92672">(</span>...생략...<span style="color:#f92672">)</span>
+
+<span style="display:block;width:100%;background-color:#3c3d38">;; ANSWER SECTION:
+</span><span style="display:block;width:100%;background-color:#3c3d38">_acme-challenge.vm2.mydomain.com. <span style="color:#ae81ff">286</span> IN TXT	<span style="color:#e6db74">&#34;-FzP4bCvVVXm1p9TTB7v8FCc80TejN83FhKTuIOnQwQ&#34;</span>
+</span>
+<span style="color:#f92672">(</span>...생략...<span style="color:#f92672">)</span>
+</code></pre></div><p>;nslookup 확인 후, {Enter키 입력} 다시 진행합니다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Please deploy a DNS TXT record under the name
+_acme-challenge.vm2.mydomain.com with the following value:
+
+-FzP4bCvVVXm1p9TTB7v8FCc80TejN83FhKTuIOnQwQ
+
+Before continuing, verify the record is deployed.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+<span style="display:block;width:100%;background-color:#3c3d38">Press Enter to Continue
+</span><span style="display:block;width:100%;background-color:#3c3d38">Waiting <span style="color:#66d9ef">for</span> verification...
+</span><span style="display:block;width:100%;background-color:#3c3d38">Cleaning up challenges
+</span>
+IMPORTANT NOTES:
+ - Congratulations! Your certificate and chain have been saved at:
+   /etc/letsencrypt/live/vm2.mydomain.com/fullchain.pem
+   Your key file has been saved at:
+   /etc/letsencrypt/live/vm2.mydomain.com/privkey.pem
+   Your certificate will expire on 2021-06-11. To obtain a new or
+   tweaked version of this certificate in the future, simply run
+   certbot again. To non-interactively renew *all* of your
+   certificates, run <span style="color:#e6db74">&#34;certbot renew&#34;</span>
+</code></pre></div><h3 id="2-nginx-인증서-적용">2. Nginx 인증서 적용</h3>
+<p>; 정상 완료되면 /etc/nginx/sites-enabled/code-server.conf 파일에 인증서 설정이 수정되어 있습니다.<br>
+; 다른 글의 Ubuntu 인증서 적용 과정에서의 http to https 리디렉션 설정이 생략되어 추가로 넣었습니다.<br>
+; Liten {http port} 를 삭제하거나 주석처리합니다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>변경 후<span style="color:#f92672">]</span>
+upstream vm2-code-server <span style="color:#f92672">{</span>
+     server 127.0.0.1:8080;
+<span style="color:#f92672">}</span>
+
+server <span style="color:#f92672">{</span>
+<span style="display:block;width:100%;background-color:#3c3d38">     <span style="color:#75715e">#listen 7788;</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38">     <span style="color:#75715e">#listen [::]:7788;</span>
+</span>     server_name vm2.mydomain.com;
+
+     location / <span style="color:#f92672">{</span>
+             proxy_pass http://vm2-code-server;
+             proxy_set_header Host $host;
+             proxy_set_header Upgrade $http_upgrade;
+             proxy_set_header Connection upgrade;
+             proxy_set_header Accept-Encoding gzip;
+             auth_basic <span style="color:#e6db74">&#34;Authentication Page&#34;</span>;
+             auth_basic_user_file /etc/nginx/.htpasswd;
+             proxy_buffering off;
+     <span style="color:#f92672">}</span>
+
+ listen <span style="color:#f92672">[</span>::<span style="color:#f92672">]</span>:443 ssl ipv6only<span style="color:#f92672">=</span>on; <span style="color:#75715e"># managed by Certbot</span>
+ listen <span style="color:#ae81ff">443</span> ssl; <span style="color:#75715e"># managed by Certbot</span>
+ ssl_certificate /etc/letsencrypt/live/vm2.mydomain.com/fullchain.pem; <span style="color:#75715e"># managed by Certbot</span>
+ ssl_certificate_key /etc/letsencrypt/live/vm2.mydomain.com/privkey.pem; <span style="color:#75715e"># managed by Certbot</span>
+ include /etc/letsencrypt/options-ssl-nginx.conf; <span style="color:#75715e"># managed by Certbot</span>
+ ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; <span style="color:#75715e"># managed by Certbot</span>
+
+<span style="color:#f92672">}</span>
+
+</code></pre></div><p>; (Ubuntu 설정 과정에는 자동 추가되는) http → https redirection 설정을 원한다면 추가해줍니다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">server <span style="color:#f92672">{</span>
+ <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>$host <span style="color:#f92672">=</span> vm2.mydomain.com<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+     <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">301</span> https://$host$request_uri;
+ <span style="color:#f92672">}</span>
+
+     listen <span style="color:#ae81ff">80</span> ;
+     listen <span style="color:#f92672">[</span>::<span style="color:#f92672">]</span>:80 ;
+ server_name vm2.mydomain.com;
+ <span style="color:#66d9ef">return</span> 404;
+<span style="color:#f92672">}</span>
+</code></pre></div><p>;설정 완료된 파일</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">upstream vm2-code-server <span style="color:#f92672">{</span>
+     server 127.0.0.1:8080;
+<span style="color:#f92672">}</span>
+
+server <span style="color:#f92672">{</span>
+        <span style="color:#75715e">#listen 7788;</span>
+        <span style="color:#75715e">#listen [::]:7788;</span>
+        server_name vm2.mydomain.com;
+
+        location / <span style="color:#f92672">{</span>
+                proxy_pass http://vm2-code-server;
+                proxy_set_header Host $host;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection upgrade;
+                proxy_set_header Accept-Encoding gzip;
+                auth_basic <span style="color:#e6db74">&#34;Authentication Page&#34;</span>;
+                auth_basic_user_file /etc/nginx/.htpasswd;
+                proxy_buffering off;
+        <span style="color:#f92672">}</span>
+
+    listen <span style="color:#f92672">[</span>::<span style="color:#f92672">]</span>:443 ssl ipv6only<span style="color:#f92672">=</span>on; <span style="color:#75715e"># managed by Certbot</span>
+    listen <span style="color:#ae81ff">443</span> ssl; <span style="color:#75715e"># managed by Certbot</span>
+    ssl_certificate /etc/letsencrypt/live/vm2.mydomain.com/fullchain.pem; <span style="color:#75715e"># managed by Certbot</span>
+    ssl_certificate_key /etc/letsencrypt/live/vm2.mydomain.com/privkey.pem; <span style="color:#75715e"># managed by Certbot</span>
+    include /etc/letsencrypt/options-ssl-nginx.conf; <span style="color:#75715e"># managed by Certbot</span>
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; <span style="color:#75715e"># managed by Certbot</span>
+
+<span style="color:#f92672">}</span>
+
+<span style="color:#75715e"># Redirection http to https</span>
+server <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>$host <span style="color:#f92672">=</span> vm2.mydomain.com<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">301</span> https://$host$request_uri;
+    <span style="color:#f92672">}</span>
+
+        listen <span style="color:#ae81ff">80</span> ;
+        listen <span style="color:#f92672">[</span>::<span style="color:#f92672">]</span>:80 ;
+    server_name vm2.mydomain.com;
+    <span style="color:#66d9ef">return</span> 404;
+<span style="color:#f92672">}</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ sudo systemctl restart nginx.service
+</code></pre></div><h3 id="3-인증서-자동-갱신">3. 인증서 자동 갱신</h3>
+<p>;root권한 cronjob으로 만료 2주전에 갱신되도록 설정합니다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ touch RenewCert.sh; chmod <span style="color:#ae81ff">700</span> RenewCert.sh
+
+USER1@ ~<span style="color:#f92672">]</span>$ vi RenewCert.sh
+<span style="color:#75715e">#!/bin/bash</span>
+VALID<span style="color:#f92672">=(</span><span style="color:#66d9ef">$(</span>certbot certificates | grep VALID<span style="color:#66d9ef">)</span><span style="color:#f92672">)</span>
+VALID_DATE<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>expr <span style="color:#e6db74">${</span>VALID[5]<span style="color:#e6db74">}</span><span style="color:#66d9ef">)</span>
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $VALID_DATE -lt <span style="color:#ae81ff">15</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span> 
+ echo <span style="color:#e6db74">&#34;\r&#34;</span> | certbot --text --agree-tos -d vm2.mydomain.com --manual --preferred-challenges dns --expand --renew-by-default --manual-public-ip-logging-ok certonly --post-hook <span style="color:#e6db74">&#34;systemctl restart nginx.service&#34;</span>
+<span style="color:#66d9ef">fi</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>USER1@vm2 cronjobs<span style="color:#f92672">]</span>$ sudo vi /etc/crontab
+<span style="color:#ae81ff">55</span> <span style="color:#ae81ff">13</span>   * * *   root    /bin/sh /home/USER1/RenewCert.sh &gt; /dev/null 2&gt;&amp;<span style="color:#ae81ff">1</span>
+</code></pre></div><h3 id="참고-글">참고 글</h3>
+<ul>
+<li><a href="https://www.hakawati.co.kr/445" target="_blank" rel="noopener">Code Server - 구축편</a>
+</li>
+<li><a href="https://www.ssllabs.com/ssltest/" target="_blank" rel="noopener">ssllabs.com - SSL Server Test</a>
+</li>
+</ul>
+<p>;Centos에서 code-server, nignx proxy, certbot 을 구성하며 몰랐던 부분도 많이 배웠네요. 먼저 진행하며 공유해주신 분들께 감사드립니다.</p>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/install/">install</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/renew/">renew</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/code-server/">code-server</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/code/">code</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/server/">server</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/centos/">centos</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/nginx/">nginx</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/ssl/">ssl</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/certbot/">certbot</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/lets-encrypt/">Let&#39;s Encrypt</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/posts/20210317_autoupdate_password_code-server/" data-tooltip="쉘스크립트로 Code-server password 자동 갱신과 재시작">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/posts/20210312_login_code-server_nginx_centos/" data-tooltip="인터넷망 오픈과 로그인을 위한 Code-server 와 Nginx 구성">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/posts/20210313_ssl_cert_code-server_nginx_centos/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/posts/20210313_ssl_cert_code-server_nginx_centos/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/posts/20210313_ssl_cert_code-server_nginx_centos/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+
+              
+            
+          </div>
+        </article>
+
+	<script src="https://utteranc.es/client.js"
+      	  repo="010000/blog-comments"
+       	 issue-term="pathname"
+       	 theme="github-light"
+       	 crossorigin="anonymous"
+       	 async>
+	</script>
+
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2021 <a href="https://github.com/010000">010000 Logbook</a>. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="1">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/posts/20210317_autoupdate_password_code-server/" data-tooltip="쉘스크립트로 Code-server password 자동 갱신과 재시작">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/posts/20210312_login_code-server_nginx_centos/" data-tooltip="인터넷망 오픈과 로그인을 위한 Code-server 와 Nginx 구성">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/posts/20210313_ssl_cert_code-server_nginx_centos/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/posts/20210313_ssl_cert_code-server_nginx_centos/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/posts/20210313_ssl_cert_code-server_nginx_centos/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="1">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F010000.github.io%2Fposts%2F20210313_ssl_cert_code-server_nginx_centos%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2F010000.github.io%2Fposts%2F20210313_ssl_cert_code-server_nginx_centos%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2F010000.github.io%2Fposts%2F20210313_ssl_cert_code-server_nginx_centos%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://res.cloudinary.com/oloooo/image/upload/v1614951872/githubpages/netscape_wcocsw.gif" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Jeffrey YM. Jo</h4>
+    
+      <div id="about-card-bio">경험과 생각들을 정리하며, 다시 찾는 시간을 아끼기 위해 모아놓는 블로그입니다.</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Public
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        South Korea
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    <div id="cover" style="background-image:url('https://res.cloudinary.com/oloooo/image/upload/v1614216485/githubpages/cover_2560px_oemeya.jpg');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://010000.github.io/js/script-n8mqrxp8rsufxtye69p9ch2uxowamnju45qdhlzy3r6bzgixdxhhwaa9zgxf.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/010000.github.io\/posts\/20210313_ssl_cert_code-server_nginx_centos\/';
+          
+            this.page.identifier = '\/posts\/20210313_ssl_cert_code-server_nginx_centos\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = '010000';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

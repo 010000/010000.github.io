@@ -9,10 +9,10 @@
     <lastBuildDate>Thu, 19 Dec 2019 10:10:18 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/hugo-tranquilpeak-theme/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Font 와 Highlight color 수정 후 theme rebuild</title>
-      <link>https://010000.github.io/post/20191219_chane_font_theme/</link>
+      <link>https://010000.github.io/posts/20191219_chane_font_theme/</link>
       <pubDate>Thu, 19 Dec 2019 10:10:18 +0900</pubDate>
       
-      <guid>https://010000.github.io/post/20191219_chane_font_theme/</guid>
+      <guid>https://010000.github.io/posts/20191219_chane_font_theme/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;Hugo / hugo-tranquilpeak-theme 테마의 font를 변경합니다.&lt;/li&gt;
 &lt;li&gt;수정한 값을 적용하기 위해 테마 rebuild 과정이 포함되어 있습니다. &lt;em&gt;(Update: Dec 19, 2019)&lt;/em&gt;&lt;/li&gt;
@@ -21,10 +21,10 @@
     
     <item>
       <title>Web page 생성과 Github upload</title>
-      <link>https://010000.github.io/post/20191216_gen_pages_git_push/</link>
+      <link>https://010000.github.io/posts/20191216_gen_pages_git_push/</link>
       <pubDate>Mon, 16 Dec 2019 23:05:05 +0900</pubDate>
       
-      <guid>https://010000.github.io/post/20191216_gen_pages_git_push/</guid>
+      <guid>https://010000.github.io/posts/20191216_gen_pages_git_push/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;md파일을 html 정적 페이지로 변환하고 github 에 올립니다.&lt;/li&gt;
 &lt;li&gt;github repository 생성 및 git 사용법은 생략됐습니다. &lt;em&gt;(Update: Dec 17, 2019)&lt;/em&gt;&lt;/li&gt;
@@ -33,10 +33,10 @@
     
     <item>
       <title>Windows 환경에서 Hugo theme 설치하기</title>
-      <link>https://010000.github.io/post/20191214_install_hugo_tranquilpeak_theme_windows/</link>
+      <link>https://010000.github.io/posts/20191214_install_hugo_tranquilpeak_theme_windows/</link>
       <pubDate>Sun, 15 Dec 2019 23:58:15 +0900</pubDate>
       
-      <guid>https://010000.github.io/post/20191214_install_hugo_tranquilpeak_theme_windows/</guid>
+      <guid>https://010000.github.io/posts/20191214_install_hugo_tranquilpeak_theme_windows/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;Windows  OS에서 Hugo / hugo-tranquilpeak-theme 테마를 설치합니다. &lt;em&gt;(Update: Dec 15, 2019)&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>

@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.81.0 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="author" content="Jeffrey YM. Jo">
+<meta name="keywords" content="tech">
+<meta name="description" content="
+이번에는 오픈된 cloud 인터넷 망에 설치된 code-server 를 계속 열어놓고 사용하기엔 불안한 부분도 있고, 어느 기기에서나 좀 더 간편하게 언제든지 code-server 접근이 되도록 nginx proxy를 앞에 두고 로그인도 가능하도록 구성해봅니다.
+Safari 브라우저에서 nginx 로그인 뒤 code-server 로그인 후에 (blank) white screen 이슈가 있네요. 해결되면 업데이트하겠습니다. (Update: Mar 12, 2021)
+">
+
+
+<meta property="og:description" content="
+이번에는 오픈된 cloud 인터넷 망에 설치된 code-server 를 계속 열어놓고 사용하기엔 불안한 부분도 있고, 어느 기기에서나 좀 더 간편하게 언제든지 code-server 접근이 되도록 nginx proxy를 앞에 두고 로그인도 가능하도록 구성해봅니다.
+Safari 브라우저에서 nginx 로그인 뒤 code-server 로그인 후에 (blank) white screen 이슈가 있네요. 해결되면 업데이트하겠습니다. (Update: Mar 12, 2021)
+">
+<meta property="og:type" content="article">
+<meta property="og:title" content="인터넷망 오픈과 로그인을 위한 Code-server 와 Nginx 구성">
+<meta name="twitter:title" content="인터넷망 오픈과 로그인을 위한 Code-server 와 Nginx 구성">
+<meta property="og:url" content="https://010000.github.io/posts/20210312_login_code-server_nginx_centos/">
+<meta property="twitter:url" content="https://010000.github.io/posts/20210312_login_code-server_nginx_centos/">
+<meta property="og:site_name" content="010000 logbook">
+<meta property="og:description" content="
+이번에는 오픈된 cloud 인터넷 망에 설치된 code-server 를 계속 열어놓고 사용하기엔 불안한 부분도 있고, 어느 기기에서나 좀 더 간편하게 언제든지 code-server 접근이 되도록 nginx proxy를 앞에 두고 로그인도 가능하도록 구성해봅니다.
+Safari 브라우저에서 nginx 로그인 뒤 code-server 로그인 후에 (blank) white screen 이슈가 있네요. 해결되면 업데이트하겠습니다. (Update: Mar 12, 2021)
+">
+<meta name="twitter:description" content="
+이번에는 오픈된 cloud 인터넷 망에 설치된 code-server 를 계속 열어놓고 사용하기엔 불안한 부분도 있고, 어느 기기에서나 좀 더 간편하게 언제든지 code-server 접근이 되도록 nginx proxy를 앞에 두고 로그인도 가능하도록 구성해봅니다.
+Safari 브라우저에서 nginx 로그인 뒤 code-server 로그인 후에 (blank) white screen 이슈가 있네요. 해결되면 업데이트하겠습니다. (Update: Mar 12, 2021)
+">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2021-03-12T17:52:00">
+  
+  
+    <meta property="article:modified_time" content="2021-03-12T17:52:00">
+  
+  
+  
+    
+      <meta property="article:section" content="Code-Server">
+    
+  
+  
+    
+      <meta property="article:tag" content="install">
+    
+      <meta property="article:tag" content="code-server">
+    
+      <meta property="article:tag" content="code">
+    
+      <meta property="article:tag" content="server">
+    
+      <meta property="article:tag" content="centos">
+    
+      <meta property="article:tag" content="nginx">
+    
+      <meta property="article:tag" content="proxy">
+    
+      <meta property="article:tag" content="login">
+    
+      <meta property="article:tag" content="502">
+    
+      <meta property="article:tag" content="Bad Gateway">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://res.cloudinary.com/oloooo/image/upload/v1614951872/githubpages/netscape_wcocsw.gif">
+  <meta property="twitter:image" content="https://res.cloudinary.com/oloooo/image/upload/v1614951872/githubpages/netscape_wcocsw.gif">
+
+
+    <title>인터넷망 오픈과 로그인을 위한 Code-server 와 Nginx 구성</title>
+
+    <link rel="icon" href="https://010000.github.io/favicon.ico">
+    
+
+    
+
+    <link rel="canonical" href="https://010000.github.io/posts/20210312_login_code-server_nginx_centos/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://010000.github.io/css/style-s8xlgnopppjrvgff3zxwbooca3paivectafco2acr0hxdpldmmx7q5e8xki.min.css" />
+    
+    
+      
+        <link rel="stylesheet"  href="https://010000.github.io/css/syntax.css">
+      
+    
+
+    
+      
+    
+    
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.7.1/gist-embed.min.js"></script>
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="1">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://010000.github.io/">010000 logbook</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://010000.github.io/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://res.cloudinary.com/oloooo/image/upload/v1614951872/githubpages/netscape_wcocsw.gif" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="1">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://010000.github.io/#about">
+          <img class="sidebar-profile-picture" src="https://res.cloudinary.com/oloooo/image/upload/v1614951872/githubpages/netscape_wcocsw.gif" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Jeffrey YM. Jo</h4>
+        
+          <h5 class="sidebar-profile-bio">경험과 생각들을 정리하며, 다시 찾는 시간을 아끼기 위해 모아놓는 블로그입니다.</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://010000.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://010000.github.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://010000.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://010000.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-hashtag"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://010000.github.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-address-card"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="mailto:010000c@gmail.com" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-envelope"></i>
+      
+      <span class="sidebar-button-desc">Email</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://010000.github.io/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="1"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      인터넷망 오픈과 로그인을 위한 Code-server 와 Nginx 구성
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2021-03-12T17:52:00&#43;09:00">
+        
+  March 12, 2021
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://010000.github.io/categories/code-server">Code-Server</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <ul>
+<li>이번에는 오픈된 cloud 인터넷 망에 설치된 code-server 를 계속 열어놓고 사용하기엔 불안한 부분도 있고, 어느 기기에서나 좀 더 간편하게 언제든지 code-server 접근이 되도록 nginx proxy를 앞에 두고 로그인도 가능하도록 구성해봅니다.</li>
+<li>Safari 브라우저에서 nginx 로그인 뒤 code-server 로그인 후에 (blank) white screen 이슈가 있네요. 해결되면 업데이트하겠습니다. <em>(Update: Mar 12, 2021)</em></li>
+</ul>
+<h3 id="환경-구성">환경 구성</h3>
+<ul>
+<li>OS: CentOS 8.3.2011 (on Oracle cloud VM)<br>
+!!! 사용하려는 port가 (cloud network)방화벽에서 오픈되었는지 먼저 확인하세요</li>
+<li>Code-server: 3.9.0-amd64.rpm</li>
+<li>Nginx: v1.14.1 (with yum)</li>
+</ul>
+<h3 id="1-code-server-설정-확인">1. Code-server 설정 확인</h3>
+<p>; code-server 구성이 처음이라면 <a href="https://010000.github.io/post/20210307_install_code-server_linux/" target="_blank" rel="noopener">이전 code-server 설치 글</a>
+을 참고하세요.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ cat /home/USER1/.config/code-server/config.yaml
+
+bind-addr: 127.0.0.1:8080
+auth: password
+password: $myNewPassword
+cert: false
+</code></pre></div><h3 id="2-install-nginx">2. Install Nginx</h3>
+<p>; CentOS에서 nginx 설치를 하니 Ubuntu 진행과 다르게 default.conf 파일과 폴더 등이 없습니다.<br>
+; /etc/nginx/nginx.conf 파일을 복사하여 가능하지만 Ubuntu OS에서 재구성할 경우를 대비해 Ubuntu 구성 절차로 진행했습니다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ sudo yum install nginx
+USER1@ ~<span style="color:#f92672">]</span>$ sudo mkdir /etc/nginx/sites-available
+USER1@ ~<span style="color:#f92672">]</span>$ sudo mkdir /etc/nginx/sites-enabled
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ sudo vi /etc/nginx/nginx.conf
+
+<span style="color:#f92672">[</span>변경 전<span style="color:#f92672">]</span> 
+include /etc/nginx/conf.d/*.conf;
+<span style="color:#f92672">(</span>...이하 생략...<span style="color:#f92672">)</span>
+
+<span style="color:#f92672">[</span>변경 후<span style="color:#f92672">]</span>
+server_tokens off;      <span style="color:#75715e">#off로 설정하면 에러페이지의 nginx 버전 숨김  </span>
+include /etc/nginx/sites-enabled/*.conf;
+
+<span style="color:#75715e"># /etc/nginx/nginx.conf 파일 내 server {} 블록 주석처리</span>
+<span style="color:#75715e">#    server {</span>
+<span style="color:#75715e">#        listen       80 default_server;</span>
+<span style="color:#75715e">#        listen       [::]:80 default_server;</span>
+<span style="color:#75715e">#        server_name  _;</span>
+<span style="color:#75715e">#        root         /usr/share/nginx/html;</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">#        # Load configuration files for the default server block.</span>
+<span style="color:#75715e">#        include /etc/nginx/default.d/*.conf;</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">#        location / {</span>
+<span style="color:#75715e">#        }       </span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">#        error_page 404 /404.html;</span>
+<span style="color:#75715e">#            location = /40x.html {</span>
+<span style="color:#75715e">#        }       </span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">#        error_page 500 502 503 504 /50x.html;</span>
+<span style="color:#75715e">#            location = /50x.html {</span>
+<span style="color:#75715e">#        }       </span>
+<span style="color:#75715e">#    }</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ sudo vi /etc/nginx/sites-available/code-server.conf
+
+upstream vm2-code-server <span style="color:#f92672">{</span>             <span style="color:#75715e">#upstream group name</span>
+     server 127.0.0.1:8080;            <span style="color:#75715e">#code-server의 ip:port</span>
+<span style="color:#f92672">}</span>
+
+server <span style="color:#f92672">{</span>
+        listen 7777;                   <span style="color:#75715e">#외부에서 접근하는 port</span>
+        listen <span style="color:#f92672">[</span>::<span style="color:#f92672">]</span>:7777;
+        server_name vm2.mydomain.com;  <span style="color:#75715e">#외부에서 호출하는 도메인 or VM ip</span>
+
+        location / <span style="color:#f92672">{</span>
+                proxy_pass http://vm2-code-server;  <span style="color:#75715e">#upstream group name</span>
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection upgrade;
+                proxy_set_header Accept-Encoding gzip;
+                proxy_buffering off;
+                <span style="color:#75715e">#proxy_buffer_size          128k;</span>
+                <span style="color:#75715e">#proxy_buffers              4 256k;</span>
+                <span style="color:#75715e">#proxy_busy_buffers_size    256k;   </span>
+        <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ sudo ln -s /etc/nginx/sites-available/code-server.conf /etc/nginx/sites-enabled/code-server.conf
+
+USER1@ ~<span style="color:#f92672">]</span>$ cd /etc/nginx/sites-enabled/
+
+USER1@ sites-enabled<span style="color:#f92672">]</span>$ ls -al
+lrwxrwxrwx. <span style="color:#ae81ff">1</span> root root   <span style="color:#ae81ff">43</span> Mar <span style="color:#ae81ff">12</span> 14:29 code-server.conf -&gt; /etc/nginx/sites-available/code-server.conf
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>root@vm2 ~<span style="color:#f92672">]</span>$ sudo nginx -t
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+
+USER1@ ~<span style="color:#f92672">]</span>$ sudo systemctl start nginx.service
+USER1@ ~<span style="color:#f92672">]</span>$ sudo systemctl status nginx.service
+USER1@ ~<span style="color:#f92672">]</span>$ sudo systemctl enable nginx.service
+USER1@ ~<span style="color:#f92672">]</span>$ sudo systemctl -t service list-unit-files |grep -i nginx
+nginx.service         enabled 
+</code></pre></div><h3 id="3-nginx-구성-중-오류">3. Nginx 구성 중 오류</h3>
+<p>3-1. (인터넷)외부에서 접근할 포트를 7777 등으로 설정하면 nginx 시작이 안되는 오류</p>
+<p>오류 - [emerg] bind() to 0.0.0.0:7777 failed (13: Permission denied)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ sudo systemctl status nginx.service
+
+● nginx.service - The nginx HTTP and reverse proxy server
+Loaded: loaded <span style="color:#f92672">(</span>/usr/lib/systemd/system/nginx.service; disabled; vendor preset: disabled<span style="color:#f92672">)</span>
+Active: failed <span style="color:#f92672">(</span>Result: exit-code<span style="color:#f92672">)</span> since Fri 2021-03-12 17:13:34 KST; 13s ago
+Process: <span style="color:#ae81ff">3336</span> ExecStartPre<span style="color:#f92672">=</span>/usr/sbin/nginx -t <span style="color:#f92672">(</span>code<span style="color:#f92672">=</span>exited, status<span style="color:#f92672">=</span>1/FAILURE<span style="color:#f92672">)</span>
+Process: <span style="color:#ae81ff">3334</span> ExecStartPre<span style="color:#f92672">=</span>/usr/bin/rm -f /run/nginx.pid <span style="color:#f92672">(</span>code<span style="color:#f92672">=</span>exited, status<span style="color:#f92672">=</span>0/SUCCESS<span style="color:#f92672">)</span>
+
+Mar <span style="color:#ae81ff">12</span> 17:13:34 vm2 systemd<span style="color:#f92672">[</span>1<span style="color:#f92672">]</span>: Starting The nginx HTTP and reverse proxy server...
+Mar <span style="color:#ae81ff">12</span> 17:13:34 vm2 nginx<span style="color:#f92672">[</span>3336<span style="color:#f92672">]</span>: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+Mar <span style="color:#ae81ff">12</span> 17:13:34 vm2 nginx<span style="color:#f92672">[</span>3336<span style="color:#f92672">]</span>: nginx: <span style="color:#f92672">[</span>emerg<span style="color:#f92672">]</span> bind<span style="color:#f92672">()</span> to 0.0.0.0:7777 failed <span style="color:#f92672">(</span>13: Permission denied<span style="color:#f92672">)</span>
+Mar <span style="color:#ae81ff">12</span> 17:13:34 vm2 nginx<span style="color:#f92672">[</span>3336<span style="color:#f92672">]</span>: nginx: configuration file /etc/nginx/nginx.conf test failed
+<span style="color:#f92672">(</span>..생략..<span style="color:#f92672">)</span>
+</code></pre></div><p>조치 - 사용할 포트 추가 (또는 아래 3-2의 SELINUX=disabled 변경)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ sudo semanage port -l | grep http_port_t
+http_port_t                    tcp      80, 81, 443, 488, 8008, 8009, 8443, <span style="color:#ae81ff">9000</span>
+
+USER1@ ~<span style="color:#f92672">]</span>$ sudo semanage port -a -t http_port_t -p tcp <span style="color:#ae81ff">7777</span>
+USER1@ ~<span style="color:#f92672">]</span>$ sudo semanage port -l | grep http_port_t
+http_port_t                    tcp      7777, 80, 81, 443, 488, 8008, 8009, 8443, <span style="color:#ae81ff">9000</span>
+
+USER1@ ~<span style="color:#f92672">]</span>$ sudo systemctl restart nginx.service
+</code></pre></div><p>3-2. 웹 브라우저로 http:// {mydomain}:{port} 접근할 때 &ldquo;502 Bad Gateway&rdquo; 오류<br>
+조치 - selinux disabled<br>
+;selinux 는 사용하지 않기에 disabled 수정하고 리부팅 후 재확인<br>
+;selinux 안쓰면 미리 변경해줍시다. ㅠ.ㅠ</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ sudo vi /etc/selinux/config
+
+<span style="color:#f92672">[</span>변경 전<span style="color:#f92672">]</span>
+SELINUX<span style="color:#f92672">=</span>enforcing
+
+<span style="color:#f92672">[</span>변경 후<span style="color:#f92672">]</span>
+SELINUX<span style="color:#f92672">=</span>disabled
+</code></pre></div><h3 id="4-nginx-암호-인증-구성">4. Nginx 암호 인증 구성</h3>
+<p>;htpasswd 만 필요하여 찾아서 설치</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ yum provides <span style="color:#ae81ff">\*</span>bin/htpasswd
+Failed loading plugin <span style="color:#e6db74">&#34;osmsplugin&#34;</span>: No module named <span style="color:#e6db74">&#39;librepo&#39;</span>
+Last metadata expiration check: 10:51:48 ago on Fri <span style="color:#ae81ff">12</span> Mar <span style="color:#ae81ff">2021</span> 12:29:59 PM KST.
+httpd-tools-2.4.37-30.module_el8.3.0+561+97fdbbcc.x86_64 : Tools <span style="color:#66d9ef">for</span> use with the Apache HTTP Server
+Repo        : appstream
+Matched from:
+Other       : *bin/htpasswd
+
+USER1@ ~<span style="color:#f92672">]</span>$ sudo yum install -y httpd-tools
+
+USER1@ ~<span style="color:#f92672">]</span>$ which htpasswd
+/usr/bin/htpasswd
+</code></pre></div><p>;로그인에 사용할 계정{myID}, 암호 설정</p>
+<pre><code>USER1@ ~]$ sudo htpasswd -c /etc/nginx/.htpasswd {myID}
+New password: 
+Re-type new password: 
+Adding password for user {myID}
+</code></pre><p>;auth_basic 인증 설정 추가<br>
+;MacOS/iPAD Safari 브라우저에서 nginx 로그인 후 code-server 로그인 뒤에 blank white screen 이슈가 있네요. 해결되면 업데이트하겠습니다. ㅠ.ㅠ</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ sudo vi /etc/nginx/sites-available/code-server.conf
+
+upstream vm2-code-server <span style="color:#f92672">{</span>             <span style="color:#75715e">#upstream group name</span>
+     server 127.0.0.1:8080;            <span style="color:#75715e">#code-server의 ip:port</span>
+<span style="color:#f92672">}</span>
+
+server <span style="color:#f92672">{</span>
+        listen 7777;                   <span style="color:#75715e">#외부에서 접근하는 port</span>
+        listen <span style="color:#f92672">[</span>::<span style="color:#f92672">]</span>:7777;
+        server_name vm2.mydomain.com;  <span style="color:#75715e">#외부에서 호출할 도메인 or VM ip</span>
+
+        location / <span style="color:#f92672">{</span>
+                proxy_pass http://vm2-code-server;   <span style="color:#75715e">#upstream group name</span>
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection upgrade;
+                proxy_set_header Accept-Encoding gzip;
+<span style="display:block;width:100%;background-color:#3c3d38">                auth_basic <span style="color:#e6db74">&#34;Authentication Page&#34;</span>;
+</span><span style="display:block;width:100%;background-color:#3c3d38">                auth_basic_user_file /etc/nginx/.htpasswd;
+</span>                proxy_buffering off;
+                <span style="color:#75715e">#proxy_buffer_size          128k;</span>
+                <span style="color:#75715e">#proxy_buffers              4 256k;</span>
+                <span style="color:#75715e">#proxy_busy_buffers_size    256k;   </span>
+        <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>; nginx 재시작 후 브라우저에서 암호 설정한 계정으로 로그인 테스트</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ sudo nginx -t
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+
+USER1@ ~<span style="color:#f92672">]</span>$ sudo systemctl restart nginx.service
+USER1@ ~<span style="color:#f92672">]</span>$ 
+</code></pre></div><h3 id="참고-글">참고 글</h3>
+<ul>
+<li><a href="https://www.hakawati.co.kr/445" target="_blank" rel="noopener">Code Server - 구축편</a>
+</li>
+<li><a href="https://velog.io/@jakeshin/AWS-EC2%ec%97%90-code-server-%ec%84%a4%ec%b9%98%ed%95%98%ea%b3%a0-%ec%bb%a4%ec%8a%a4%ed%85%80-%eb%8f%84%eb%a9%94%ec%9d%b8-ssl-%eb%b0%b0%ed%8f%ac%ea%b9%8c%ec%a7%80" target="_blank" rel="noopener">AWS EC2에 code-server 설치하고 커스텀 도메인 ssl 배포까지</a>
+</li>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-nginx-server-blocks-on-centos-7" target="_blank" rel="noopener">How To Set Up Nginx Server Blocks on CentOS 7</a>
+</li>
+<li><a href="https://github.com/cdr/code-server/blob/v3.7.4/doc/guide.md" target="_blank" rel="noopener">code-server /doc /guide.md</a>
+</li>
+<li><a href="https://juneyr.dev/nginx-basics" target="_blank" rel="noopener">나는 nginx 설정이 정말 싫다구요</a>
+</li>
+<li><a href="https://www.vompressor.com/code-server-nginx/" target="_blank" rel="noopener">Code Server Nginx 연결</a>
+</li>
+<li><a href="https://www.burndogfather.com/192" target="_blank" rel="noopener">nginx에서 특정포트를 사용할때 막힐경우 [emerg] bind() to 0.0.0.0 failed</a>
+</li>
+<li><a href="https://blog.gomgom.net/502-bad-gateway-solution-on-nginx-php_fpm/" target="_blank" rel="noopener">nginx + PHP-fpm에서 502 Bad gateway 에러 해결법 총정리</a>
+</li>
+<li><a href="https://www.lesstif.com/linux-infra-book/selinux-18219476.html" target="_blank" rel="noopener">SELinux 사용하기</a>
+</li>
+<li><a href="https://kscory.com/dev/nginx/setting" target="_blank" rel="noopener">[Nginx] 정적 웹 페이지 서버, 프록시 서버, 캐시 서버 구축하기</a>
+</li>
+<li><a href="https://wani.kr/posts/2016/07/01/nginx-proxy-settings/" target="_blank" rel="noopener">Nginx 하위 경로를 다른 서버로 보내기</a>
+</li>
+<li><a href="https://serverfault.com/questions/259505/how-can-i-install-the-htpasswd-utility-in-red-hat-scientific-linux" target="_blank" rel="noopener">How can I install the htpasswd utility in Red Hat / Scientific Linux?</a>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/install/">install</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/code-server/">code-server</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/code/">code</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/server/">server</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/centos/">centos</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/nginx/">nginx</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/proxy/">proxy</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/login/">login</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/502/">502</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/bad-gateway/">Bad Gateway</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/posts/20210313_ssl_cert_code-server_nginx_centos/" data-tooltip="Code-server with Nginx, SSL 인증서 적용">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/posts/20210307_install_code-server_linux/" data-tooltip="Code-server 설치와 활용 on Linux">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/posts/20210312_login_code-server_nginx_centos/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/posts/20210312_login_code-server_nginx_centos/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/posts/20210312_login_code-server_nginx_centos/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+
+              
+            
+          </div>
+        </article>
+
+	<script src="https://utteranc.es/client.js"
+      	  repo="010000/blog-comments"
+       	 issue-term="pathname"
+       	 theme="github-light"
+       	 crossorigin="anonymous"
+       	 async>
+	</script>
+
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2021 <a href="https://github.com/010000">010000 Logbook</a>. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="1">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/posts/20210313_ssl_cert_code-server_nginx_centos/" data-tooltip="Code-server with Nginx, SSL 인증서 적용">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/posts/20210307_install_code-server_linux/" data-tooltip="Code-server 설치와 활용 on Linux">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/posts/20210312_login_code-server_nginx_centos/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/posts/20210312_login_code-server_nginx_centos/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/posts/20210312_login_code-server_nginx_centos/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="1">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F010000.github.io%2Fposts%2F20210312_login_code-server_nginx_centos%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2F010000.github.io%2Fposts%2F20210312_login_code-server_nginx_centos%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2F010000.github.io%2Fposts%2F20210312_login_code-server_nginx_centos%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://res.cloudinary.com/oloooo/image/upload/v1614951872/githubpages/netscape_wcocsw.gif" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Jeffrey YM. Jo</h4>
+    
+      <div id="about-card-bio">경험과 생각들을 정리하며, 다시 찾는 시간을 아끼기 위해 모아놓는 블로그입니다.</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Public
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        South Korea
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    <div id="cover" style="background-image:url('https://res.cloudinary.com/oloooo/image/upload/v1614216485/githubpages/cover_2560px_oemeya.jpg');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://010000.github.io/js/script-n8mqrxp8rsufxtye69p9ch2uxowamnju45qdhlzy3r6bzgixdxhhwaa9zgxf.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/010000.github.io\/posts\/20210312_login_code-server_nginx_centos\/';
+          
+            this.page.identifier = '\/posts\/20210312_login_code-server_nginx_centos\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = '010000';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

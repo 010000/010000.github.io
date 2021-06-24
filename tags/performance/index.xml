@@ -9,10 +9,10 @@
     <lastBuildDate>Mon, 26 Apr 2021 20:19:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/performance/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux, NFS performance issues check</title>
-      <link>https://010000.github.io/post/20210426_nfs_performance_issues_linux/</link>
+      <link>https://010000.github.io/posts/20210426_nfs_performance_issues_linux/</link>
       <pubDate>Mon, 26 Apr 2021 20:19:00 +0900</pubDate>
       
-      <guid>https://010000.github.io/post/20210426_nfs_performance_issues_linux/</guid>
+      <guid>https://010000.github.io/posts/20210426_nfs_performance_issues_linux/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;언제가 NAS에 연결된 이미지 웹 서비스 지연이 발생했던 과거 자료를 찾아 다시 정리한 노트  &lt;em&gt;(Update: Apr 26, 2021)&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>

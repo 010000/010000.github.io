@@ -9,10 +9,10 @@
     <lastBuildDate>Mon, 16 Dec 2019 22:53:53 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/template/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>md 파일 생성을 위한 template 수정과 새로운 문서 생성</title>
-      <link>https://010000.github.io/post/20191216_edit_template_new_md/</link>
+      <link>https://010000.github.io/posts/20191216_edit_template_new_md/</link>
       <pubDate>Mon, 16 Dec 2019 22:53:53 +0900</pubDate>
       
-      <guid>https://010000.github.io/post/20191216_edit_template_new_md/</guid>
+      <guid>https://010000.github.io/posts/20191216_edit_template_new_md/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;.md 문서가 생성될 때 사용되는 template을 수정하고 테스트 글을 작성합니다. &lt;em&gt;(Update: Dec 16, 2019)&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
