@@ -9,10 +9,10 @@
     <lastBuildDate>Mon, 16 Dec 2019 23:05:05 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/upload/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Web page 생성과 Github upload</title>
-      <link>https://010000.github.io/post/2019/20191216_gen_pages_git_push/</link>
+      <link>https://010000.github.io/post/20191216_gen_pages_git_push/</link>
       <pubDate>Mon, 16 Dec 2019 23:05:05 +0900</pubDate>
       
-      <guid>https://010000.github.io/post/2019/20191216_gen_pages_git_push/</guid>
+      <guid>https://010000.github.io/post/20191216_gen_pages_git_push/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;md파일을 html 정적 페이지로 변환하고 github 에 올립니다.&lt;/li&gt;
 &lt;li&gt;github repository 생성 및 git 사용법은 생략됐습니다. &lt;em&gt;(Update: Dec 17, 2019)&lt;/em&gt;&lt;/li&gt;

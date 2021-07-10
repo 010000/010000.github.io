@@ -9,10 +9,10 @@
     <lastBuildDate>Tue, 27 Apr 2021 23:59:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/message/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux, Bind message logs</title>
-      <link>https://010000.github.io/post/2021/20210427_bind_message_logs_linux/</link>
+      <link>https://010000.github.io/post/20210427_bind_message_logs_linux/</link>
       <pubDate>Tue, 27 Apr 2021 23:59:00 +0900</pubDate>
       
-      <guid>https://010000.github.io/post/2021/20210427_bind_message_logs_linux/</guid>
+      <guid>https://010000.github.io/post/20210427_bind_message_logs_linux/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;DNS 서비스 중 볼 수 있는 log들을 확인하고 참고하기 위한 노트 &lt;em&gt;(Update: Apr 27, 2021)&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
@@ -20,10 +20,10 @@
     
     <item>
       <title>Telegram message listener를 이용한 nginx start &amp; stop</title>
-      <link>https://010000.github.io/post/2021/20210331_control_nginx_telegram_message/</link>
+      <link>https://010000.github.io/post/20210331_control_nginx_telegram_message/</link>
       <pubDate>Wed, 31 Mar 2021 15:29:00 +0900</pubDate>
       
-      <guid>https://010000.github.io/post/2021/20210331_control_nginx_telegram_message/</guid>
+      <guid>https://010000.github.io/post/20210331_control_nginx_telegram_message/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;정각 알림용으로 메시지를 받고있는 Telegram bot을 이용해 메시지를 보내면 code-server에 사용중인 Nginx 서비스를 시작하고 중지되게 해봤습니다.&lt;/li&gt;
 &lt;li&gt;code-server를 혼자 사용중이라 안쓸 때 보안상 닫고 싶은데 좀 더 편한 방법일까 싶어 작성해봤네요.  &lt;em&gt;(Update: Mar 31, 2021)&lt;/em&gt;&lt;/li&gt;
@@ -32,10 +32,10 @@
     
     <item>
       <title>Linux OS 사용중에 확인하게 된 로그들</title>
-      <link>https://010000.github.io/post/2021/20210326_message_logs_linux/</link>
+      <link>https://010000.github.io/post/20210326_message_logs_linux/</link>
       <pubDate>Fri, 26 Mar 2021 13:40:00 +0900</pubDate>
       
-      <guid>https://010000.github.io/post/2021/20210326_message_logs_linux/</guid>
+      <guid>https://010000.github.io/post/20210326_message_logs_linux/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;Linux OS를 사용하다 보게되는 log들을 확인하고 참고하기 위해 기록해둡니다.&lt;/li&gt;
 &lt;li&gt;특이사항 없는 내용은 링크 내용의 일부를 복붙했고 틈틈이 보게되는 로그들을 모을 예정입니다. &lt;em&gt;(Update: Mar 26, 2021)&lt;/em&gt;&lt;/li&gt;
