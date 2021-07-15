@@ -302,38 +302,38 @@ if (!doNotTrack) {
 <h3 id="1-실행-조건과-테스트">1. 실행 조건과 테스트</h3>
 <p>; 원격지 서버의 수정할 이더넷 장치의 이름을 알고 있어야 한다<br>
 ; 이더넷 장치의 이름이 &lsquo;nic1&rsquo; 이란 이름으로 되어 있을 경우로 진행</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">$ psexec -v
+<pre><code class="language-dos" data-lang="dos">$ psexec -v
 
 PsExec v2.11 - Execute processes remotely
 Copyright (C) 2001-2014 Mark Russinovich
 Sysinternals - www.sysinternals.com
 
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">c:\&gt; type edit-nsinfo.bat
+</code></pre><pre><code class="language-dos" data-lang="dos">c:\&gt; type edit-nsinfo.bat
 :: nic1 란 이름의 이더넷 장치의 ns1, ns2 값 지우고 다시 넣기
-psexec \\DestHostname -u 도메인명\계정명 -p 계정암호 -h netsh interface ip delete dnsservers name=<span style="color:#e6db74">&#34;nic1&#34;</span> all no
-psexec \\DestHostname -u 도메인명\계정명 -p 계정암호 -h netsh interface ip add dnsservers name=<span style="color:#e6db74">&#34;nic1&#34;</span> address=192.168.1.11 index=1 no
-psexec \\DestHostname -u 도메인명\계정명 -p 계정암호 -h netsh interface ip add dnsservers name=<span style="color:#e6db74">&#34;nic1&#34;</span> address=192.168.1.12 index=2 no
+psexec \\DestHostname -u 도메인명\계정명 -p 계정암호 -h netsh interface ip delete dnsservers name=&quot;nic1&quot; all no
+psexec \\DestHostname -u 도메인명\계정명 -p 계정암호 -h netsh interface ip add dnsservers name=&quot;nic1&quot; address=192.168.1.11 index=1 no
+psexec \\DestHostname -u 도메인명\계정명 -p 계정암호 -h netsh interface ip add dnsservers name=&quot;nic1&quot; address=192.168.1.12 index=2 no
 
-</code></pre></div><h3 id="2-원격지-노드들의-반복-수정">2. 원격지 노드들의 반복 수정</h3>
+</code></pre><h3 id="2-원격지-노드들의-반복-수정">2. 원격지 노드들의 반복 수정</h3>
 <p>; 대상이 많을 경우 반복해서 실행하는 예</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">c:\&gt; type edit-nsinfo-all.bat
+<pre><code class="language-dos" data-lang="dos">c:\&gt; type edit-nsinfo-all.bat
 @echo off
 
-<span style="color:#66d9ef">for</span> /f <span style="color:#e6db74">&#34;tokens=1 delims=&#34;</span> %<span style="color:#66d9ef">%</span>a <span style="color:#66d9ef">in</span> (<span style="color:#e6db74">&#39;type hosts.txt&#39;</span>) <span style="color:#66d9ef">do</span> (
-echo <span style="color:#e6db74">&#34;ns1,ns2 delete %%a&#34;</span> &gt;&gt; ./log.txt &amp; psexec \\%<span style="color:#66d9ef">%</span>a -u 도메인명\계정명 -p 계정암호 -h netsh interface ip delete dnsservers name=<span style="color:#e6db74">&#34;nic1&#34;</span> all no &gt;&gt; ./log.txt
+for /f &quot;tokens=1 delims=&quot; %%a in ('type hosts.txt') do (
+echo &quot;ns1,ns2 delete %%a&quot; &gt;&gt; ./log.txt &amp; psexec \\%%a -u 도메인명\계정명 -p 계정암호 -h netsh interface ip delete dnsservers name=&quot;nic1&quot; all no &gt;&gt; ./log.txt
 
-echo <span style="color:#e6db74">&#34;ns1 add %%a&#34;</span> &gt;&gt; ./log.txt &amp; psexec \\%<span style="color:#66d9ef">%</span>a -u 도메인명\ 계정명 -p 계정암호 -h netsh interface ip add dnsservers name=<span style="color:#e6db74">&#34;nic1&#34;</span> address=192.168.1.11 index=1 no &gt;&gt; ./log.txt
+echo &quot;ns1 add %%a&quot; &gt;&gt; ./log.txt &amp; psexec \\%%a -u 도메인명\ 계정명 -p 계정암호 -h netsh interface ip add dnsservers name=&quot;nic1&quot; address=192.168.1.11 index=1 no &gt;&gt; ./log.txt
 
-echo <span style="color:#e6db74">&#34;ns2 add %%a&#34;</span> &gt;&gt; ./log.txt &amp; psexec \\%<span style="color:#66d9ef">%</span>a -u 도메인명\ 계정명 -p 계정암호 -h netsh interface ip add dnsservers name=<span style="color:#e6db74">&#34;nic1&#34;</span> address=192.168.1.12 index=2 no &gt;&gt; ./log.txt
-echo <span style="color:#e6db74">&#34;-----------------------------------------&#34;</span> &gt;&gt; ./log.txt
+echo &quot;ns2 add %%a&quot; &gt;&gt; ./log.txt &amp; psexec \\%%a -u 도메인명\ 계정명 -p 계정암호 -h netsh interface ip add dnsservers name=&quot;nic1&quot; address=192.168.1.12 index=2 no &gt;&gt; ./log.txt
+echo &quot;-----------------------------------------&quot; &gt;&gt; ./log.txt
 )
 
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">c:\&gt; type hosts.txt
+</code></pre><pre><code class="language-dos" data-lang="dos">c:\&gt; type hosts.txt
 test01
 Test02
 MSDB03
 
-</code></pre></div><h3 id="3-참고-사항">3. 참고 사항</h3>
+</code></pre><h3 id="3-참고-사항">3. 참고 사항</h3>
 <p>; 반복 수정 대상이 많을 경우 실행 중 멈추거나 느려질 수 있어 로그 확인 필요<br>
 ; 기존 ns정보 삭제가 아닌 업데이트의 경우 ns1 값만 수정되어 모두 삭제 후 재 입력으로 진행<br>
 ; 대량 작업시 psexec 보다 powershell 작성, 실행을 권장</p>
