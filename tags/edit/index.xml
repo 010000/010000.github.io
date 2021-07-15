@@ -15,7 +15,7 @@
       <guid>https://010000.github.io/post/20210626_psexec_remote_edit_nsinfo/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;remote windows OS 노드들을 psexec로 ns1, ns2 수정하기&lt;/li&gt;
-&lt;li&gt;접근 가능 네트웍 대역과 수정 권한이 있는 계정 사용을 전제로 함. &lt;em&gt;(Update: Jun 26, 2021)&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;접근 가능 네트웍 대역과 수정 권한이 있는 계정 사용을 전제로 함 &lt;em&gt;(Update: Jun 26, 2021)&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
     
