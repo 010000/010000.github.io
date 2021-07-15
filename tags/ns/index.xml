@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ns on 010000 logbook</title>
+    <link>https://010000.github.io/tags/ns/</link>
+    <description>Recent content in ns on 010000 logbook</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Sat, 26 Jun 2021 16:32:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/ns/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>psexec 로 windows OS의 ns1, ns2 수정하기</title>
+      <link>https://010000.github.io/post/20210626_psexec_remote_edit_nsinfo/</link>
+      <pubDate>Sat, 26 Jun 2021 16:32:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/post/20210626_psexec_remote_edit_nsinfo/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;remote windows OS 노드들을 psexec로 ns1, ns2 수정하기&lt;/li&gt;
+&lt;li&gt;접근 가능 네트웍 대역과 수정 권한이 있는 계정 사용을 전제로 함 &lt;em&gt;(Update: Jun 26, 2021)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

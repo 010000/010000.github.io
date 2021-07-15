@@ -6,7 +6,52 @@
     <description>Recent content in Tags on 010000 logbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Thu, 03 Jun 2021 20:03:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 26 Jun 2021 16:32:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>edit</title>
+      <link>https://010000.github.io/tags/edit/</link>
+      <pubDate>Sat, 26 Jun 2021 16:32:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/edit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>loop</title>
+      <link>https://010000.github.io/tags/loop/</link>
+      <pubDate>Sat, 26 Jun 2021 16:32:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/loop/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ns</title>
+      <link>https://010000.github.io/tags/ns/</link>
+      <pubDate>Sat, 26 Jun 2021 16:32:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/ns/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>psexec</title>
+      <link>https://010000.github.io/tags/psexec/</link>
+      <pubDate>Sat, 26 Jun 2021 16:32:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/psexec/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>windows</title>
+      <link>https://010000.github.io/tags/windows/</link>
+      <pubDate>Sat, 26 Jun 2021 16:32:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/windows/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>activate</title>
       <link>https://010000.github.io/tags/activate/</link>
@@ -49,15 +94,6 @@
       <pubDate>Thu, 03 Jun 2021 20:03:00 +0900</pubDate>
       
       <guid>https://010000.github.io/tags/update/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>windows</title>
-      <link>https://010000.github.io/tags/windows/</link>
-      <pubDate>Thu, 03 Jun 2021 20:03:00 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/windows/</guid>
       <description></description>
     </item>
     
@@ -904,15 +940,6 @@
       <pubDate>Thu, 19 Dec 2019 10:10:18 +0900</pubDate>
       
       <guid>https://010000.github.io/tags/color/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>edit</title>
-      <link>https://010000.github.io/tags/edit/</link>
-      <pubDate>Thu, 19 Dec 2019 10:10:18 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/edit/</guid>
       <description></description>
     </item>
     
