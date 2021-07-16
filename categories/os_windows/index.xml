@@ -6,7 +6,18 @@
     <description>Recent content in OS_Windows on 010000 logbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Tue, 20 Apr 2021 11:33:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/categories/os_windows/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 16 Jul 2021 16:25:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/categories/os_windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows OS 체크용 tips</title>
+      <link>https://010000.github.io/post/20210716_simple_tips_windows/</link>
+      <pubDate>Fri, 16 Jul 2021 16:25:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/post/20210716_simple_tips_windows/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;오랜만에 사용하려고 하면 생각안나는 명령들과 팁 메모 &lt;em&gt;(Update: Jul 16, 2021)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
     <item>
       <title>Windows Server 2016 IIS web, chrome 에서 failed log in</title>
       <link>https://010000.github.io/post/20210420_login_fail_windows_2016/</link>
