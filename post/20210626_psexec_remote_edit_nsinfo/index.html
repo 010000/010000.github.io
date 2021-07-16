@@ -309,7 +309,7 @@ Copyright (C) 2001-2014 Mark Russinovich
 Sysinternals - www.sysinternals.com
 
 </code></pre><pre><code class="language-dos" data-lang="dos">c:\&gt; type edit-nsinfo.bat
-:: nic1 란 이름의 이더넷 장치의 ns1, ns2 값 지우고 다시 넣기
+:: nic1 이름의 이더넷 장치의 ns1, ns2 값 지우고 다시 넣기
 psexec \\DestHostname -u 도메인명\계정명 -p 계정암호 -h netsh interface ip delete dnsservers name=&quot;nic1&quot; all no
 psexec \\DestHostname -u 도메인명\계정명 -p 계정암호 -h netsh interface ip add dnsservers name=&quot;nic1&quot; address=192.168.1.11 index=1 no
 psexec \\DestHostname -u 도메인명\계정명 -p 계정암호 -h netsh interface ip add dnsservers name=&quot;nic1&quot; address=192.168.1.12 index=2 no
