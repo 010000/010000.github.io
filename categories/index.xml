@@ -6,7 +6,16 @@
     <description>Recent content in Categories on 010000 logbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Fri, 16 Jul 2021 16:25:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 Aug 2021 12:03:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Software</title>
+      <link>https://010000.github.io/categories/software/</link>
+      <pubDate>Thu, 12 Aug 2021 12:03:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/categories/software/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>OS_Windows</title>
       <link>https://010000.github.io/categories/os_windows/</link>
@@ -76,15 +85,6 @@
       <pubDate>Mon, 01 Mar 2021 20:45:00 +0900</pubDate>
       
       <guid>https://010000.github.io/categories/nas/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Software</title>
-      <link>https://010000.github.io/categories/software/</link>
-      <pubDate>Thu, 25 Feb 2021 14:57:00 +0900</pubDate>
-      
-      <guid>https://010000.github.io/categories/software/</guid>
       <description></description>
     </item>
     

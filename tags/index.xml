@@ -6,7 +6,88 @@
     <description>Recent content in Tags on 010000 logbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Fri, 16 Jul 2021 16:25:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 Aug 2021 12:03:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>bulk</title>
+      <link>https://010000.github.io/tags/bulk/</link>
+      <pubDate>Thu, 12 Aug 2021 12:03:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/bulk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>csv</title>
+      <link>https://010000.github.io/tags/csv/</link>
+      <pubDate>Thu, 12 Aug 2021 12:03:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/csv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>delete</title>
+      <link>https://010000.github.io/tags/delete/</link>
+      <pubDate>Thu, 12 Aug 2021 12:03:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/delete/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>edit</title>
+      <link>https://010000.github.io/tags/edit/</link>
+      <pubDate>Thu, 12 Aug 2021 12:03:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/edit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>export</title>
+      <link>https://010000.github.io/tags/export/</link>
+      <pubDate>Thu, 12 Aug 2021 12:03:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/export/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>import</title>
+      <link>https://010000.github.io/tags/import/</link>
+      <pubDate>Thu, 12 Aug 2021 12:03:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/import/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jira</title>
+      <link>https://010000.github.io/tags/jira/</link>
+      <pubDate>Thu, 12 Aug 2021 12:03:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/jira/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>move</title>
+      <link>https://010000.github.io/tags/move/</link>
+      <pubDate>Thu, 12 Aug 2021 12:03:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/move/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>search</title>
+      <link>https://010000.github.io/tags/search/</link>
+      <pubDate>Thu, 12 Aug 2021 12:03:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/search/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>check</title>
       <link>https://010000.github.io/tags/check/</link>
@@ -40,15 +121,6 @@
       <pubDate>Fri, 16 Jul 2021 16:25:00 +0900</pubDate>
       
       <guid>https://010000.github.io/tags/windows/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>edit</title>
-      <link>https://010000.github.io/tags/edit/</link>
-      <pubDate>Sat, 26 Jun 2021 16:32:00 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/edit/</guid>
       <description></description>
     </item>
     
@@ -859,24 +931,6 @@
       <pubDate>Thu, 25 Feb 2021 14:57:00 +0900</pubDate>
       
       <guid>https://010000.github.io/tags/example/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>jira</title>
-      <link>https://010000.github.io/tags/jira/</link>
-      <pubDate>Thu, 25 Feb 2021 14:57:00 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/jira/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>search</title>
-      <link>https://010000.github.io/tags/search/</link>
-      <pubDate>Thu, 25 Feb 2021 14:57:00 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/search/</guid>
       <description></description>
     </item>
     

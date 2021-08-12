@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>import on 010000 logbook</title>
+    <link>https://010000.github.io/tags/import/</link>
+    <description>Recent content in import on 010000 logbook</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Thu, 12 Aug 2021 12:03:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/import/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jira bulk create, edit, delete with CSV</title>
+      <link>https://010000.github.io/post/20210811_import_export_bulk_changes_jira/</link>
+      <pubDate>Thu, 12 Aug 2021 12:03:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/post/20210811_import_export_bulk_changes_jira/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;Jira ticket을 csv 파일을 이용해 import, export 하기&lt;/li&gt;
+&lt;li&gt;대량 생성된 ticket을 삭제 수정하기  &lt;em&gt;(Update: Aug 12, 2021)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
