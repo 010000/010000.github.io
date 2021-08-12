@@ -379,32 +379,99 @@ Date format (기본값 yy/MM/dd HH:mm)<br>
 </p>
 <h2 id="4-mapping-field">4. mapping field</h2>
 <ol>
-<li>자동 생성 (또는 첫 번째 값 자동 적용)</li>
+<li>
+<table>
+<thead>
+<tr>
+<th>자동 생성 (또는 첫 번째 값 자동 적용)</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Issue key: 자동생성</td>
+<td></td>
+</tr>
+<tr>
+<td>Issue id</td>
+<td>자동생성</td>
+</tr>
+<tr>
+<td>Resolution</td>
+<td>자동생성 (Unresolved)</td>
+</tr>
+<tr>
+<td>Reporter</td>
+<td>자동생성, import 할 때 등록자 이름</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>자동생성 (Open)</td>
+</tr>
+<tr>
+<td>Updated</td>
+<td>자동생성 (2021-08-12 00:00)</td>
+</tr>
+<tr>
+<td>Created</td>
+<td>자동생성 (2021-08-12 00:00)</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<table>
+<thead>
+<tr>
+<th>csv &amp; jira field 사용자 설정</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Priority: (사용자입력) Medium</td>
+<td></td>
+</tr>
+<tr>
+<td>Summary: (사용자입력)</td>
+<td></td>
+</tr>
+<tr>
+<td>Issue Type: (사용자입력) Improvement, Bug, Task</td>
+<td></td>
+</tr>
+<tr>
+<td>Component/s: (사용자입력)</td>
+<td></td>
+</tr>
+<tr>
+<td>Labels: (사용자입력1) *import 할 때 Labels 하나만 선택해도 모두 입력됨</td>
+<td></td>
+</tr>
+<tr>
+<td>Labels: (사용자입력2)</td>
+<td></td>
+</tr>
+<tr>
+<td>Labels: (사용자입력3)</td>
+<td></td>
+</tr>
+<tr>
+<td>Description: (사용자입력)</td>
+<td></td>
+</tr>
+<tr>
+<td>Assignee: (사용자입력) e.g. james</td>
+<td></td>
+</tr>
+<tr>
+<td>Due Date: (사용자입력) (2021-08-12  15:00:00)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
 </ol>
-<blockquote>
-<p>Issue key: 자동생성<br>
-Issue id: 자동생성<br>
-Resolution: 자동생성 (Unresolved)<br>
-Reporter: 자동생성, import 할 때 등록자 이름<br>
-Status: 자동생성 (Open)<br>
-Updated: 자동생성 (2021-08-12 00:00)<br>
-Created: 자동생성 (2021-08-12 00:00)</p>
-</blockquote>
-<ol start="2">
-<li>csv &amp; jira field 사용자 설정</li>
-</ol>
-<blockquote>
-<p>Priority: (사용자입력) Medium<br>
-Summary: (사용자입력)<br>
-Issue Type: (사용자입력) Improvement | Bug | Task<br>
-Component/s: (사용자입력)<br>
-Labels: (사용자입력1) *import 할 때 Labels 하나만 선택해도 모두 입력됨<br>
-Labels: (사용자입력2)<br>
-Labels: (사용자입력3)<br>
-Description: (사용자입력)
-Assignee: (사용자입력) e.g. james
-Due Date: (사용자입력) (2021-08-12  15:00:00)</p>
-</blockquote>
 <h2 id="5-sample-csv-format">5. sample csv format</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Priority,Issue key,Issue id,Summary,Assignee,Reporter,Status,Resolution,Created,Updated,Due Date,Component/s,Description,Labels,Labels,Labels
 
