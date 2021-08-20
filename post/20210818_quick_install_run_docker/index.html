@@ -389,7 +389,7 @@ $ docker logs [OPTIONS] CONTAINER<br>
 <p>$ docker rmi [OPTIONS] IMAGE [IMAGE&hellip;]<br>
 <a href="https://docs.docker.com/engine/reference/commandline/rmi/">https://docs.docker.com/engine/reference/commandline/rmi/</a></p>
 </blockquote>
-<h2 id="4-docker-network">4. Docker network</h2>
+<h2 id="4-network">4. network</h2>
 <p>; docker host port 와 container port mapping<br>
 <p class="md__image">
   <img src="https://010000.github.io/images/20210818_quick_install_run_docker/20210818_quick_install_run_docker_img01.png" alt="20210818_quick_install_run_docker_img01"  />
@@ -398,7 +398,7 @@ $ docker logs [OPTIONS] CONTAINER<br>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">~ $ docker run -p 8000:80 httpd
 ~ $ docker run --name web3 -p 8080:80 httpd
 
-</code></pre></div><h2 id="5-docker-container-filesystem">5. Docker container filesystem</h2>
+</code></pre></div><h2 id="5-container-filesystem">5. container filesystem</h2>
 <p>; docker host의 filesystem을 container filesystem으로 container 생성, 실행<br>
 <p class="md__image">
   <img src="https://010000.github.io/images/20210818_quick_install_run_docker/20210818_quick_install_run_docker_img02.png" alt="20210818_quick_install_run_docker_img02"  />
@@ -411,7 +411,7 @@ $ docker logs [OPTIONS] CONTAINER<br>
 <p><a href="https://hub.docker.com/_/httpd?tab=description&amp;page=1&amp;ordering=last_updated" target="_blank" rel="noopener">hub.docker.com - httpd - How to use this image</a>
 </p>
 </blockquote>
-<h2 id="6-docker-container-cli">6. Docker container CLI</h2>
+<h2 id="6-container-cli">6. container CLI</h2>
 <p>; docker container 내 명령 실행, shell 열어서 연속 작업하기</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">~ docker exec web3 pwd
 ~ docker exec -it web3 /bin/sh		#web3 container에서 shell 실행
