@@ -6,7 +6,79 @@
     <description>Recent content in Tags on 010000 logbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Thu, 12 Aug 2021 12:03:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 20 Aug 2021 12:16:38 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>container</title>
+      <link>https://010000.github.io/tags/container/</link>
+      <pubDate>Fri, 20 Aug 2021 12:16:38 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/container/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>delete</title>
+      <link>https://010000.github.io/tags/delete/</link>
+      <pubDate>Fri, 20 Aug 2021 12:16:38 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/delete/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://010000.github.io/tags/docker/</link>
+      <pubDate>Fri, 20 Aug 2021 12:16:38 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>image</title>
+      <link>https://010000.github.io/tags/image/</link>
+      <pubDate>Fri, 20 Aug 2021 12:16:38 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/image/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>install</title>
+      <link>https://010000.github.io/tags/install/</link>
+      <pubDate>Fri, 20 Aug 2021 12:16:38 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/install/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>skim</title>
+      <link>https://010000.github.io/tags/skim/</link>
+      <pubDate>Fri, 20 Aug 2021 12:16:38 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/skim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>start</title>
+      <link>https://010000.github.io/tags/start/</link>
+      <pubDate>Fri, 20 Aug 2021 12:16:38 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/start/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>stop</title>
+      <link>https://010000.github.io/tags/stop/</link>
+      <pubDate>Fri, 20 Aug 2021 12:16:38 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/stop/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>bulk</title>
       <link>https://010000.github.io/tags/bulk/</link>
@@ -22,15 +94,6 @@
       <pubDate>Thu, 12 Aug 2021 12:03:00 +0900</pubDate>
       
       <guid>https://010000.github.io/tags/csv/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>delete</title>
-      <link>https://010000.github.io/tags/delete/</link>
-      <pubDate>Thu, 12 Aug 2021 12:03:00 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/delete/</guid>
       <description></description>
     </item>
     
@@ -485,24 +548,6 @@
     </item>
     
     <item>
-      <title>start</title>
-      <link>https://010000.github.io/tags/start/</link>
-      <pubDate>Wed, 31 Mar 2021 15:29:00 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/start/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>stop</title>
-      <link>https://010000.github.io/tags/stop/</link>
-      <pubDate>Wed, 31 Mar 2021 15:29:00 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/stop/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>telegram</title>
       <link>https://010000.github.io/tags/telegram/</link>
       <pubDate>Wed, 31 Mar 2021 15:29:00 +0900</pubDate>
@@ -791,15 +836,6 @@
     </item>
     
     <item>
-      <title>install</title>
-      <link>https://010000.github.io/tags/install/</link>
-      <pubDate>Sat, 13 Mar 2021 16:07:00 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/install/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Let&#39;s Encrypt</title>
       <link>https://010000.github.io/tags/lets-encrypt/</link>
       <pubDate>Sat, 13 Mar 2021 16:07:00 +0900</pubDate>
@@ -985,15 +1021,6 @@
       <pubDate>Thu, 19 Dec 2019 10:15:18 +0900</pubDate>
       
       <guid>https://010000.github.io/tags/window/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>image</title>
-      <link>https://010000.github.io/tags/image/</link>
-      <pubDate>Thu, 19 Dec 2019 10:13:18 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/image/</guid>
       <description></description>
     </item>
     

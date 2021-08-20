@@ -9,62 +9,60 @@
 <meta name="author" content="Jeffrey YM. Jo">
 <meta name="keywords" content="tech">
 <meta name="description" content="
-Jira ticket을 csv 파일을 이용해 import, export 하기
-대량 생성된 ticket을 삭제 수정하기  (Update: Aug 12, 2021)
+설치, 실행 과정으로 빠르게 훑어보는 docker 서비스의 이해
+&lsquo;생활코딩 Docker 입구 수업&rsquo; 내용을 정리 (Update: Aug 20, 2021)
 ">
 
 
 <meta property="og:description" content="
-Jira ticket을 csv 파일을 이용해 import, export 하기
-대량 생성된 ticket을 삭제 수정하기  (Update: Aug 12, 2021)
+설치, 실행 과정으로 빠르게 훑어보는 docker 서비스의 이해
+&lsquo;생활코딩 Docker 입구 수업&rsquo; 내용을 정리 (Update: Aug 20, 2021)
 ">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Jira bulk create, edit, delete with CSV">
-<meta name="twitter:title" content="Jira bulk create, edit, delete with CSV">
-<meta property="og:url" content="https://010000.github.io/post/20210811_import_export_bulk_changes_jira/">
-<meta property="twitter:url" content="https://010000.github.io/post/20210811_import_export_bulk_changes_jira/">
+<meta property="og:title" content="docker 서비스 이해를 위한 설치, 실행, 종료">
+<meta name="twitter:title" content="docker 서비스 이해를 위한 설치, 실행, 종료">
+<meta property="og:url" content="https://010000.github.io/post/20210818_quick_install_run_docker/">
+<meta property="twitter:url" content="https://010000.github.io/post/20210818_quick_install_run_docker/">
 <meta property="og:site_name" content="010000 logbook">
 <meta property="og:description" content="
-Jira ticket을 csv 파일을 이용해 import, export 하기
-대량 생성된 ticket을 삭제 수정하기  (Update: Aug 12, 2021)
+설치, 실행 과정으로 빠르게 훑어보는 docker 서비스의 이해
+&lsquo;생활코딩 Docker 입구 수업&rsquo; 내용을 정리 (Update: Aug 20, 2021)
 ">
 <meta name="twitter:description" content="
-Jira ticket을 csv 파일을 이용해 import, export 하기
-대량 생성된 ticket을 삭제 수정하기  (Update: Aug 12, 2021)
+설치, 실행 과정으로 빠르게 훑어보는 docker 서비스의 이해
+&lsquo;생활코딩 Docker 입구 수업&rsquo; 내용을 정리 (Update: Aug 20, 2021)
 ">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2021-08-12T12:03:00">
+    <meta property="article:published_time" content="2021-08-20T12:16:38">
   
   
-    <meta property="article:modified_time" content="2021-08-12T12:03:00">
+    <meta property="article:modified_time" content="2021-08-20T12:16:38">
   
-  
-  
-    
-      <meta property="article:section" content="Software">
-    
   
   
     
-      <meta property="article:tag" content="jira">
+      <meta property="article:section" content="Docker">
     
-      <meta property="article:tag" content="search">
+  
+  
     
-      <meta property="article:tag" content="bulk">
+      <meta property="article:tag" content="docker">
     
-      <meta property="article:tag" content="import">
+      <meta property="article:tag" content="image">
     
-      <meta property="article:tag" content="export">
+      <meta property="article:tag" content="container">
     
-      <meta property="article:tag" content="edit">
+      <meta property="article:tag" content="install">
     
-      <meta property="article:tag" content="move">
+      <meta property="article:tag" content="start">
+    
+      <meta property="article:tag" content="stop">
     
       <meta property="article:tag" content="delete">
     
-      <meta property="article:tag" content="csv">
+      <meta property="article:tag" content="skim">
     
   
 
@@ -85,14 +83,14 @@ Jira ticket을 csv 파일을 이용해 import, export 하기
   <meta property="twitter:image" content="https://res.cloudinary.com/oloooo/image/upload/v1614951872/githubpages/netscape_wcocsw.gif">
 
 
-    <title>Jira bulk create, edit, delete with CSV</title>
+    <title>docker 서비스 이해를 위한 설치, 실행, 종료</title>
 
     <link rel="icon" href="https://010000.github.io/favicon.ico">
     
 
     
 
-    <link rel="canonical" href="https://010000.github.io/post/20210811_import_export_bulk_changes_jira/">
+    <link rel="canonical" href="https://010000.github.io/post/20210818_quick_install_run_docker/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -271,15 +269,15 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      Jira bulk create, edit, delete with CSV
+      docker 서비스 이해를 위한 설치, 실행, 종료
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2021-08-12T12:03:00&#43;09:00">
+      <time itemprop="datePublished" datetime="2021-08-20T12:16:38&#43;09:00">
         
-  August 12, 2021
+  August 20, 2021
 
       </time>
     
@@ -288,7 +286,7 @@ if (!doNotTrack) {
   
     <span>in</span>
     
-      <a class="category-link" href="https://010000.github.io/categories/software">Software</a>
+      <a class="category-link" href="https://010000.github.io/categories/docker">Docker</a>
     
   
 
@@ -299,196 +297,137 @@ if (!doNotTrack) {
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
               <ul>
-<li>Jira ticket을 csv 파일을 이용해 import, export 하기</li>
-<li>대량 생성된 ticket을 삭제 수정하기  <em>(Update: Aug 12, 2021)</em></li>
+<li>설치, 실행 과정으로 빠르게 훑어보는 docker 서비스의 이해</li>
+<li>&lsquo;생활코딩 Docker 입구 수업&rsquo; 내용을 정리 <em>(Update: Aug 20, 2021)</em></li>
 </ul>
-<h2 id="실행-환경">실행 환경</h2>
-<p>Jira: v8.17.0<br>
-Browser: Chrome v93.0.4577.25</p>
-<h2 id="1-export-csv-file">1. Export CSV file</h2>
-<p>; (Search 결과에서 오른쪽 상단) <strong>Export &gt; CSV (All fields 또는 Current fields)</strong></p>
-<p>*처음해보는 것이라면 All fields 로 받은 후 필요한 filed 확인을 추천<br>
-*search 결과에서 필요한 field 추가 선택, 노출 후 CSV (Current fields)으로 받는다 <br>
-*한글이 깨져서 안보이면 notepad 등으로 UTF-8(BOM) 으로 다시 저장한다</p>
-<p>참고: <a href="https://community.atlassian.com/t5/Jira-questions/How-do-I-export-all-issues-to-excel-or-CSV-with-Jira-project/qaq-p/1423652" target="_blank" rel="noopener">How do I export all issues to excel or CSV with Jira project?</a>
+<h2 id="1-docker-설치-파일">1. Docker 설치 파일</h2>
+<p>; Docker (Desktop) for MAC, Windows, Linux<br>
+<a href="https://docs.docker.com/get-docker/" target="_blank" rel="noopener">Get Docker</a>
 </p>
-<h2 id="2-import-csv-file">2. Import CSV file</h2>
-<p>; (Jira 페이지 상단 메뉴에서) <strong>Issues &gt; Import Issues from CSV</strong> 선택</p>
-<ol>
-<li>csv 파일선택  (파일만 선택하고 기본값으로 Next 진행)</li>
-<li><strong>Import to Project 선택</strong>,<br>
-File encoing UTF-8<br>
-Delimiter (기본값 , )<br>
-Date format (기본값 yy/MM/dd HH:mm)<br>
-<strong>요약: project만 선택하고 Next 진행</strong></li>
-<li>Map fields 항목에서는 export 받은 csv 파일을 import 하였기에 해당 컬럼값을 동일하게 맞춰 선택<br>
-*field 구분이 어려우면 excel로 해당 csv 파일을 열면 쉽게 확인 가능)<br>
-*e.g. Assignee → Assignee,  Issue Type → Issue Type<br>
-*만약 없는 field는 Don&rsquo;t map this field로 선택. Issue key,  Issue id 등 없는 값은 자동 또는 해당 field 첫번째 값으로 생성됨<br>
-*<input disabled="" type="checkbox"> Map field value 항목은 체크하지 않음</li>
-<li>Begin Import 진행<br>
-&ldquo;0 projects and 0 issues imported successfully!&rdquo; 메시지와 함께 결과 확인</li>
-</ol>
-<p>참고: <a href="https://confluence.atlassian.com/servicemanagementserver/creating-issues-using-the-csv-importer-939937206.html" target="_blank" rel="noopener">Creating issues using the CSV importer</a>
-</p>
-<h2 id="3-delete-multiple-issues">3. Delete multiple issues</h2>
-<ol>
-<li>Search 검색 결과에서 오른쪽 상단 <strong>Tools &gt; Bulk chagen</strong> 검색된 이슈 선택</li>
-<li>Search 검색 결과를 선택할 수 있는 체크박스가 활성화 되어 변경을 원하는 이슈들을 선택, Next</li>
-<li>(삭제를 할 경우) Delete Issues 를 선택, Next</li>
-<li>내용 확인 후, Confirm</li>
-<li>Bulk Operation 진행 상태와 결과 확인</li>
-</ol>
+<h2 id="2-설치-및-확인">2. 설치 및 확인</h2>
+<ul>
+<li>docker (desktop) 설치, 실행</li>
+<li>docker images 실행, 확인</li>
+</ul>
+<h2 id="3-pull--run">3. Pull &amp; Run</h2>
 <table>
 <thead>
 <tr>
-<th>*선택 가능한 옵션</th>
-<th></th>
+<th><strong>[<a href="https://hub.docker.com/" target="_blank" rel="noopener">docker hub</a>
+]</strong></th>
+<th>→ <em>pull</em> →</th>
+<th>[<strong>image</strong>]</th>
+<th>→ <em>run</em> →</th>
+<th>[<strong>container</strong>]</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Edit Issues</td>
-<td>Edit field values of issues</td>
-</tr>
-<tr>
-<td>Move Issues</td>
-<td>Move issues to new projects and issue types</td>
-</tr>
-<tr>
-<td>Transition Issues</td>
-<td>Transition issues through workflow</td>
-</tr>
-<tr>
-<td>Delete Issues</td>
-<td>Permanently delete issues from Jira</td>
-</tr>
-<tr>
-<td>Watch Issues</td>
-<td>Watch all the selected issues. You will   receive notifications when any of these issues are updated</td>
-</tr>
-<tr>
-<td>Stop Watching Issues</td>
-<td>Stop watching all the selected   issues. You will no longer receive notifications when any of these issues are updated</td>
+<td></td>
+<td>(operation)</td>
+<td></td>
+<td>(operation)</td>
+<td></td>
 </tr>
 </tbody>
 </table>
-<p>참고: <a href="https://confluence.atlassian.com/jiracoreserver/editing-multiple-issues-at-the-same-time-939937916.html" target="_blank" rel="noopener">Editing multiple issues at the same time</a>
+<h3 id="3-1-도커-이미지-pull">3-1. 도커 이미지 pull</h3>
+<p>; docker image 생성<br>
+; httpd image 적용의 예</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">~ docker pull httpd
+~ docker images
+
+</code></pre></div><blockquote>
+<p>$ docker pull [OPTIONS] NAME[:TAG|@DIGEST]<br>
+$ docker images [OPTIONS] [REPOSITORY[:TAG]]<br>
+<a href="https://docs.docker.com/engine/reference/commandline/pull/">https://docs.docker.com/engine/reference/commandline/pull/</a>
+<a href="https://docs.docker.com/engine/reference/commandline/images/">https://docs.docker.com/engine/reference/commandline/images/</a></p>
+</blockquote>
+<h3 id="3-2-도커-이미지-run-stop-start-delete">3-2. 도커 이미지 run, stop, start, delete</h3>
+<p>; docker image 에서 container 생성, 실행</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">~ docker run httpd
+~ docker run --name web2 httpd
+
+</code></pre></div><blockquote>
+<p>$ docker run [OPTIONS] IMAGE [COMMAND] [ARG&hellip;]<br>
+<a href="https://docs.docker.com/engine/reference/commandline/run/">https://docs.docker.com/engine/reference/commandline/run/</a></p>
+</blockquote>
+<p>; 생성 및 실행중인 container 확인</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">~ docker ps
+~ docker ps -a		              #모든 container 확인
+
+</code></pre></div><blockquote>
+<p>$ docker ps [OPTIONS]<br>
+<a href="https://docs.docker.com/engine/reference/commandline/ps/">https://docs.docker.com/engine/reference/commandline/ps/</a></p>
+</blockquote>
+<p>; container 중지, 실행, 로그 확인</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">~ docker stop web2
+~ docker start web2
+~ docker logs -f web2
+
+</code></pre></div><blockquote>
+<p>$ docker stop [OPTIONS] CONTAINER [CONTAINER&hellip;]<br>
+$ docker start [OPTIONS] CONTAINER [CONTAINER&hellip;]<br>
+$ docker logs [OPTIONS] CONTAINER<br>
+<a href="https://docs.docker.com/engine/reference/commandline/start/">https://docs.docker.com/engine/reference/commandline/start/</a><br>
+<a href="https://docs.docker.com/engine/reference/commandline/stop/">https://docs.docker.com/engine/reference/commandline/stop/</a><br>
+<a href="https://docs.docker.com/engine/reference/commandline/logs/">https://docs.docker.com/engine/reference/commandline/logs/</a></p>
+</blockquote>
+<p>; container 삭제</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">~ $ docker rm web2			      #stop 상태의 web2 container 삭제
+~ $ docker rm --force web2
+
+</code></pre></div><blockquote>
+<p>docker rm [OPTIONS] CONTAINER [CONTAINER&hellip;]<br>
+<a href="https://docs.docker.com/engine/reference/commandline/rm/">https://docs.docker.com/engine/reference/commandline/rm/</a></p>
+</blockquote>
+<p>; image 삭제<br>
+; httpd image 삭제의 예</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">~ $ docker rmi httpd
+
+</code></pre></div><blockquote>
+<p>$ docker rmi [OPTIONS] IMAGE [IMAGE&hellip;]<br>
+<a href="https://docs.docker.com/engine/reference/commandline/rmi/">https://docs.docker.com/engine/reference/commandline/rmi/</a></p>
+</blockquote>
+<h2 id="4-docker-network">4. Docker network</h2>
+<p>; docker host port 와 container port mapping<br>
+<p class="md__image">
+  <img src="https://010000.github.io/images/20210818_quick_install_run_docker/20210818_quick_install_run_docker_img01.png" alt="20210818_quick_install_run_docker_img01"  />
 </p>
-<h2 id="4-mapping-fields">4. mapping fields</h2>
-<ol>
-<li>
-<table>
-<thead>
-<tr>
-<th>자동 생성 (또는 첫 번째 값 자동 적용)</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Issue key</td>
-<td>자동생성</td>
-</tr>
-<tr>
-<td>Issue id</td>
-<td>자동생성</td>
-</tr>
-<tr>
-<td>Resolution</td>
-<td>자동생성 (Unresolved)</td>
-</tr>
-<tr>
-<td>Reporter</td>
-<td>자동생성, import 할 때 등록자 이름</td>
-</tr>
-<tr>
-<td>Status</td>
-<td>자동생성 (Open)</td>
-</tr>
-<tr>
-<td>Updated</td>
-<td>자동생성 (2021-08-12 00:00)</td>
-</tr>
-<tr>
-<td>Created</td>
-<td>자동생성 (2021-08-12 00:00)</td>
-</tr>
-</tbody>
-</table>
+</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">~ $ docker run -p 8000:80 httpd
+~ $ docker run --name web3 -p 8080:80 httpd
+
+</code></pre></div><h2 id="5-docker-container-filesystem">5. Docker container filesystem</h2>
+<p>; docker host의 filesystem을 container filesystem으로 container 생성, 실행<br>
+<p class="md__image">
+  <img src="https://010000.github.io/images/20210818_quick_install_run_docker/20210818_quick_install_run_docker_img02.png" alt="20210818_quick_install_run_docker_img02"  />
+</p>
+</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">~ docker run -p 8080:80 -v ~/Desktop/htdocs:/usr/local/apache2/htdocs/ httpd 
+
+~ &#34;docker run -p 8888:80 -v C:\Users\USER1\Desktop\htdocs\:/usr/local/apache2/htdocs/ httpd&#34;
+</code></pre></div><blockquote>
+<p><a href="https://hub.docker.com/_/httpd?tab=description&amp;page=1&amp;ordering=last_updated" target="_blank" rel="noopener">hub.docker.com - httpd - How to use this image</a>
+</p>
+</blockquote>
+<h2 id="6-docker-container-cli">6. Docker container CLI</h2>
+<p>; docker container 내 명령 실행, shell 열어서 연속 작업하기</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">~ docker exec web3 pwd
+~ docker exec -it web3 /bin/sh		#web3 container에서 shell 실행
+~ docker exec -it web3 /bin/bash	# -it 옵션으로 container cli 연결 유지
+# pwd
+# apt update
+# apt install vim
+# vi /usr/local/apache2/htdocs/index.html
+# exit
+</code></pre></div><h2 id="참고한-글">참고한 글</h2>
+<ul>
+<li><a href="https://opentutorials.org/course/4781" target="_blank" rel="noopener">생활코딩 Docker 입구 수업</a>
 </li>
-<li>
-<table>
-<thead>
-<tr>
-<th>csv &amp; jira field 사용자 설정</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Priority</td>
-<td>사용자입력 (Medium)</td>
-</tr>
-<tr>
-<td>Summary</td>
-<td>사용자입력</td>
-</tr>
-<tr>
-<td>Issue Type</td>
-<td>사용자입력 (Improvement, Bug, Task)</td>
-</tr>
-<tr>
-<td>Component/s</td>
-<td>사용자입력</td>
-</tr>
-<tr>
-<td>Labels</td>
-<td>사용자입력1  *import 할 때 Labels 하나만 선택해도 모두 입력됨</td>
-</tr>
-<tr>
-<td>Labels</td>
-<td>사용자입력2</td>
-</tr>
-<tr>
-<td>Labels</td>
-<td>사용자입력3</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>사용자입력</td>
-</tr>
-<tr>
-<td>Assignee</td>
-<td>사용자입력 (e.g. james)</td>
-</tr>
-<tr>
-<td>Due Date</td>
-<td>사용자입력 (2021-08-12  15:00:00)</td>
-</tr>
-</tbody>
-</table>
+<li><a href="https://www.youtube.com/playlist?list=PLuHgQVnccGMDeMJsGq2O-55Ymtx0IdKWf" target="_blank" rel="noopener">생활코딩 Docker 입구 수업 - YouTube</a>
 </li>
-</ol>
-<h2 id="5-sample-csv-format">5. sample csv format</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Priority,Issue key,Issue id,Summary,Assignee,Reporter,Status,Resolution,Created,Updated,Due Date,Component/s,Description,Labels,Labels,Labels
-
-Medium,System-4471,9327,ABCweb01 서버 점검,james,smith,Open,,2021-08-12 00:00,2021-08-12 00:00,,Operations,
-&#34; 
-*{color:#de350b}JIRA TEST{color}*
-
-Server 점검 요청
- 작업 서버 : ABCweb01, 담당자 : James
- guide : [https://docs.test.io/guide.html]
-(테이블 작성 예)
-|Host|EquipTypeName|ServiceName|OsName|ServerIp|Div|ManagerTeam|ManagerName|
-|abcweb01|Virtual|WEB|CentOS 7|192.168.0.101|Dev1|Web1팀|James|
-
-요청일: 0일 0일까지
-(내용 끝)&#34;
-(Labels 추가 예)
-,SystemAdmin,미진행,정기
-</code></pre></div>
+</ul>
               
             </div>
           </div>
@@ -500,23 +439,21 @@ Server 점검 요청
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">TAGGED IN</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/jira/">jira</a>
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/docker/">docker</a>
 
-  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/search/">search</a>
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/image/">image</a>
 
-  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/bulk/">bulk</a>
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/container/">container</a>
 
-  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/import/">import</a>
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/install/">install</a>
 
-  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/export/">export</a>
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/start/">start</a>
 
-  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/edit/">edit</a>
-
-  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/move/">move</a>
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/stop/">stop</a>
 
   <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/delete/">delete</a>
 
-  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/csv/">csv</a>
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/skim/">skim</a>
 
                   </div>
                 
@@ -529,7 +466,7 @@ Server 점검 요청
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/post/20210818_quick_install_run_docker/" data-tooltip="docker 서비스 이해를 위한 설치, 실행, 종료">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -537,7 +474,7 @@ Server 점검 요청
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/post/20210716_simple_tips_windows/" data-tooltip="필요할 때는 생각안나는 Windows OS command">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/post/20210811_import_export_bulk_changes_jira/" data-tooltip="Jira bulk create, edit, delete with CSV">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -555,19 +492,19 @@ Server 점검 요청
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/post/20210811_import_export_bulk_changes_jira/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/post/20210818_quick_install_run_docker/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/post/20210811_import_export_bulk_changes_jira/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/post/20210818_quick_install_run_docker/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/post/20210811_import_export_bulk_changes_jira/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/post/20210818_quick_install_run_docker/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -622,7 +559,7 @@ Server 점검 요청
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/post/20210818_quick_install_run_docker/" data-tooltip="docker 서비스 이해를 위한 설치, 실행, 종료">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -630,7 +567,7 @@ Server 점검 요청
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/post/20210716_simple_tips_windows/" data-tooltip="필요할 때는 생각안나는 Windows OS command">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/post/20210811_import_export_bulk_changes_jira/" data-tooltip="Jira bulk create, edit, delete with CSV">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -648,19 +585,19 @@ Server 점검 요청
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/post/20210811_import_export_bulk_changes_jira/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/post/20210818_quick_install_run_docker/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/post/20210811_import_export_bulk_changes_jira/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/post/20210818_quick_install_run_docker/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/post/20210811_import_export_bulk_changes_jira/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/post/20210818_quick_install_run_docker/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -690,19 +627,19 @@ Server 점검 요청
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F010000.github.io%2Fpost%2F20210811_import_export_bulk_changes_jira%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F010000.github.io%2Fpost%2F20210818_quick_install_run_docker%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2F010000.github.io%2Fpost%2F20210811_import_export_bulk_changes_jira%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2F010000.github.io%2Fpost%2F20210818_quick_install_run_docker%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2F010000.github.io%2Fpost%2F20210811_import_export_bulk_changes_jira%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2F010000.github.io%2Fpost%2F20210818_quick_install_run_docker%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -792,9 +729,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/010000.github.io\/post\/20210811_import_export_bulk_changes_jira\/';
+          this.page.url = 'https:\/\/010000.github.io\/post\/20210818_quick_install_run_docker\/';
           
-            this.page.identifier = '\/post\/20210811_import_export_bulk_changes_jira\/'
+            this.page.identifier = '\/post\/20210818_quick_install_run_docker\/'
           
         };
         (function() {

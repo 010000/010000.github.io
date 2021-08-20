@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>image on 010000 logbook</title>
-    <link>https://010000.github.io/tags/image/</link>
-    <description>Recent content in image on 010000 logbook</description>
+    <title>Docker on 010000 logbook</title>
+    <link>https://010000.github.io/categories/docker/</link>
+    <description>Recent content in Docker on 010000 logbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Fri, 20 Aug 2021 12:16:38 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/image/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 20 Aug 2021 12:16:38 +0900</lastBuildDate><atom:link href="https://010000.github.io/categories/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>docker 서비스 이해를 위한 설치, 실행, 종료</title>
       <link>https://010000.github.io/post/20210818_quick_install_run_docker/</link>
@@ -16,17 +16,6 @@
       <description>&lt;ul&gt;
 &lt;li&gt;설치, 실행 과정으로 빠르게 훑어보는 docker 서비스의 이해&lt;/li&gt;
 &lt;li&gt;&amp;lsquo;생활코딩 Docker 입구 수업&amp;rsquo; 내용을 정리 &lt;em&gt;(Update: Aug 20, 2021)&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    
-    <item>
-      <title>md 문서에 이미지 넣기</title>
-      <link>https://010000.github.io/post/20191219_add_images_md/</link>
-      <pubDate>Thu, 19 Dec 2019 10:13:18 +0900</pubDate>
-      
-      <guid>https://010000.github.io/post/20191219_add_images_md/</guid>
-      <description>&lt;ul&gt;
-&lt;li&gt;내부 저장소와 외부 저장소의 이미지를 추가합니다. &lt;em&gt;(Update: Dec 19, 2019)&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
     

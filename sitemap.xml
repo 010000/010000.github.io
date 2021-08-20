@@ -3,18 +3,51 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://010000.github.io/</loc>
-    <lastmod>2021-08-12T12:03:00+09:00</lastmod>
+    <lastmod>2021-08-20T12:16:38+09:00</lastmod>
+  </url><url>
+    <loc>https://010000.github.io/categories/</loc>
+    <lastmod>2021-08-20T12:16:38+09:00</lastmod>
+  </url><url>
+    <loc>https://010000.github.io/tags/container/</loc>
+    <lastmod>2021-08-20T12:16:38+09:00</lastmod>
+  </url><url>
+    <loc>https://010000.github.io/tags/delete/</loc>
+    <lastmod>2021-08-20T12:16:38+09:00</lastmod>
+  </url><url>
+    <loc>https://010000.github.io/categories/docker/</loc>
+    <lastmod>2021-08-20T12:16:38+09:00</lastmod>
+  </url><url>
+    <loc>https://010000.github.io/tags/docker/</loc>
+    <lastmod>2021-08-20T12:16:38+09:00</lastmod>
+  </url><url>
+    <loc>https://010000.github.io/post/20210818_quick_install_run_docker/</loc>
+    <lastmod>2021-08-20T12:16:38+09:00</lastmod>
+  </url><url>
+    <loc>https://010000.github.io/tags/image/</loc>
+    <lastmod>2021-08-20T12:16:38+09:00</lastmod>
+  </url><url>
+    <loc>https://010000.github.io/tags/install/</loc>
+    <lastmod>2021-08-20T12:16:38+09:00</lastmod>
+  </url><url>
+    <loc>https://010000.github.io/post/</loc>
+    <lastmod>2021-08-20T12:16:38+09:00</lastmod>
+  </url><url>
+    <loc>https://010000.github.io/tags/skim/</loc>
+    <lastmod>2021-08-20T12:16:38+09:00</lastmod>
+  </url><url>
+    <loc>https://010000.github.io/tags/start/</loc>
+    <lastmod>2021-08-20T12:16:38+09:00</lastmod>
+  </url><url>
+    <loc>https://010000.github.io/tags/stop/</loc>
+    <lastmod>2021-08-20T12:16:38+09:00</lastmod>
+  </url><url>
+    <loc>https://010000.github.io/tags/</loc>
+    <lastmod>2021-08-20T12:16:38+09:00</lastmod>
   </url><url>
     <loc>https://010000.github.io/tags/bulk/</loc>
     <lastmod>2021-08-12T12:03:00+09:00</lastmod>
   </url><url>
-    <loc>https://010000.github.io/categories/</loc>
-    <lastmod>2021-08-12T12:03:00+09:00</lastmod>
-  </url><url>
     <loc>https://010000.github.io/tags/csv/</loc>
-    <lastmod>2021-08-12T12:03:00+09:00</lastmod>
-  </url><url>
-    <loc>https://010000.github.io/tags/delete/</loc>
     <lastmod>2021-08-12T12:03:00+09:00</lastmod>
   </url><url>
     <loc>https://010000.github.io/tags/edit/</loc>
@@ -35,16 +68,10 @@
     <loc>https://010000.github.io/tags/move/</loc>
     <lastmod>2021-08-12T12:03:00+09:00</lastmod>
   </url><url>
-    <loc>https://010000.github.io/post/</loc>
-    <lastmod>2021-08-12T12:03:00+09:00</lastmod>
-  </url><url>
     <loc>https://010000.github.io/tags/search/</loc>
     <lastmod>2021-08-12T12:03:00+09:00</lastmod>
   </url><url>
     <loc>https://010000.github.io/categories/software/</loc>
-    <lastmod>2021-08-12T12:03:00+09:00</lastmod>
-  </url><url>
-    <loc>https://010000.github.io/tags/</loc>
     <lastmod>2021-08-12T12:03:00+09:00</lastmod>
   </url><url>
     <loc>https://010000.github.io/tags/check/</loc>
@@ -221,12 +248,6 @@
     <loc>https://010000.github.io/tags/nginx/</loc>
     <lastmod>2021-03-31T15:29:00+09:00</lastmod>
   </url><url>
-    <loc>https://010000.github.io/tags/start/</loc>
-    <lastmod>2021-03-31T15:29:00+09:00</lastmod>
-  </url><url>
-    <loc>https://010000.github.io/tags/stop/</loc>
-    <lastmod>2021-03-31T15:29:00+09:00</lastmod>
-  </url><url>
     <loc>https://010000.github.io/tags/telegram/</loc>
     <lastmod>2021-03-31T15:29:00+09:00</lastmod>
   </url><url>
@@ -356,9 +377,6 @@
     <loc>https://010000.github.io/post/20210313_ssl_cert_code-server_nginx_centos/</loc>
     <lastmod>2021-03-13T16:07:00+09:00</lastmod>
   </url><url>
-    <loc>https://010000.github.io/tags/install/</loc>
-    <lastmod>2021-03-13T16:07:00+09:00</lastmod>
-  </url><url>
     <loc>https://010000.github.io/tags/lets-encrypt/</loc>
     <lastmod>2021-03-13T16:07:00+09:00</lastmod>
   </url><url>
@@ -442,9 +460,6 @@
   </url><url>
     <loc>https://010000.github.io/tags/window/</loc>
     <lastmod>2019-12-19T10:15:18+09:00</lastmod>
-  </url><url>
-    <loc>https://010000.github.io/tags/image/</loc>
-    <lastmod>2019-12-19T10:13:18+09:00</lastmod>
   </url><url>
     <loc>https://010000.github.io/tags/insert/</loc>
     <lastmod>2019-12-19T10:13:18+09:00</lastmod>
