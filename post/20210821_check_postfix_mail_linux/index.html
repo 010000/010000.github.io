@@ -353,8 +353,8 @@ Mail queue is empty
 $ postfix flush
 <span style="color:#75715e"># you can force Postfix to immediately attempt to send all queued messages. There are two to choose from:</span>
 
-$ postsuper -d ALL			    <span style="color:#75715e">#메일큐 전체 삭제</span>
-$ postsuper -d ALL deferred	    <span style="color:#75715e">#메일큐에서 deferred 상태인 메일만 삭제</span>
+$ postsuper -d ALL			    <span style="color:#75715e">#메일 큐 전체 삭제</span>
+$ postsuper -d ALL deferred	    <span style="color:#75715e">#메일 큐에서 deferred 상태인 메일만 삭제</span>
 <span style="color:#75715e"># allow you to delete all queued messages in Postfix. This includes messages from both the pending and deferred queues:</span>
 
 </code></pre></div><h2 id="2-메일-발송-테스트">2. 메일 발송 테스트</h2>
