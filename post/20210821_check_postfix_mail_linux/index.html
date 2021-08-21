@@ -475,16 +475,16 @@ MailServer01.BRANCH_OFFICE.TEST.COM
 </li>
 </ul>
 <h3 id="4-2-메일-큐-디렉토리">4-2. 메일 큐 디렉토리</h3>
-<p><strong>/var/spool/postfix/hold</strong><br>
-; 관리자 개입 때까지 무기한 보류. 보류 해제시엔 &ldquo;postsuper -r&quot;을 사용하여 maildrop 대기열로 이동시킨다.<br>
-**| <strong>/var/spool/postfix/incoming</strong><br>
+<p><strong>- /var/spool/postfix/hold</strong><br>
+; 관리자 개입 때까지 무기한 보류. &ldquo;postsuper -r&quot;로 보류 해제, maildrop 대기열로 이동시킨다.<br>
+<strong>- /var/spool/postfix/incoming</strong><br>
 ; Postfix 대기열로 들어오는 새 메일은 &ldquo;incoming&rdquo; 대기열에 기록된다. 정상적인 상태에서는 mode 0600 files 존재하고 거의 비워져 있다.<br>
-<strong>/var/spool/postfix/deferred</strong><br>
+<strong>- /var/spool/postfix/deferred</strong><br>
 ; 메일 발송 후 (발송이 가능한 상태의) 실패된 메일들이 배치된다.<br>
-<strong>/var/spool/postfix/active</strong><br>
+<strong>- /var/spool/postfix/active</strong><br>
 ; incoming queue 수신과 &amp; deferred queue 재시도로 발생한다.<br>
-<strong>/var/spool/postfix/corrupt</strong><br>
-<strong>/var/spool/postfix/maildrop</strong></p>
+<strong>- /var/spool/postfix/corrupt</strong><br>
+<strong>- /var/spool/postfix/maildrop</strong></p>
 <h2 id="참고-글">참고 글</h2>
 <ul>
 <li><a href="https://www.wirehive.com/thoughts/5-top-tips-reviewing-postfix-mail-queue/" target="_blank" rel="noopener">5 top tips for reviewing your Postfix mail queue</a>
