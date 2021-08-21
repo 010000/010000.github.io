@@ -6,7 +6,70 @@
     <description>Recent content in Tags on 010000 logbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Fri, 20 Aug 2021 12:16:38 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 21 Aug 2021 01:50:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>check</title>
+      <link>https://010000.github.io/tags/check/</link>
+      <pubDate>Sat, 21 Aug 2021 01:50:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/check/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>error</title>
+      <link>https://010000.github.io/tags/error/</link>
+      <pubDate>Sat, 21 Aug 2021 01:50:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/error/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://010000.github.io/tags/linux/</link>
+      <pubDate>Sat, 21 Aug 2021 01:50:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mail</title>
+      <link>https://010000.github.io/tags/mail/</link>
+      <pubDate>Sat, 21 Aug 2021 01:50:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/mail/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>postfix</title>
+      <link>https://010000.github.io/tags/postfix/</link>
+      <pubDate>Sat, 21 Aug 2021 01:50:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/postfix/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>service</title>
+      <link>https://010000.github.io/tags/service/</link>
+      <pubDate>Sat, 21 Aug 2021 01:50:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/service/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>test</title>
+      <link>https://010000.github.io/tags/test/</link>
+      <pubDate>Sat, 21 Aug 2021 01:50:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/test/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>container</title>
       <link>https://010000.github.io/tags/container/</link>
@@ -152,15 +215,6 @@
     </item>
     
     <item>
-      <title>check</title>
-      <link>https://010000.github.io/tags/check/</link>
-      <pubDate>Fri, 16 Jul 2021 16:25:00 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/check/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>command</title>
       <link>https://010000.github.io/tags/command/</link>
       <pubDate>Fri, 16 Jul 2021 16:25:00 +0900</pubDate>
@@ -274,15 +328,6 @@
       <pubDate>Tue, 27 Apr 2021 23:59:00 +0900</pubDate>
       
       <guid>https://010000.github.io/tags/dns/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>linux</title>
-      <link>https://010000.github.io/tags/linux/</link>
-      <pubDate>Tue, 27 Apr 2021 23:59:00 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/linux/</guid>
       <description></description>
     </item>
     
@@ -436,15 +481,6 @@
       <pubDate>Mon, 19 Apr 2021 12:30:00 +0900</pubDate>
       
       <guid>https://010000.github.io/tags/measure/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>test</title>
-      <link>https://010000.github.io/tags/test/</link>
-      <pubDate>Mon, 19 Apr 2021 12:30:00 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/test/</guid>
       <description></description>
     </item>
     

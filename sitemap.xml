@@ -3,10 +3,43 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://010000.github.io/</loc>
-    <lastmod>2021-08-20T12:16:38+09:00</lastmod>
+    <lastmod>2021-08-21T01:50:00+09:00</lastmod>
   </url><url>
     <loc>https://010000.github.io/categories/</loc>
-    <lastmod>2021-08-20T12:16:38+09:00</lastmod>
+    <lastmod>2021-08-21T01:50:00+09:00</lastmod>
+  </url><url>
+    <loc>https://010000.github.io/tags/check/</loc>
+    <lastmod>2021-08-21T01:50:00+09:00</lastmod>
+  </url><url>
+    <loc>https://010000.github.io/tags/error/</loc>
+    <lastmod>2021-08-21T01:50:00+09:00</lastmod>
+  </url><url>
+    <loc>https://010000.github.io/tags/linux/</loc>
+    <lastmod>2021-08-21T01:50:00+09:00</lastmod>
+  </url><url>
+    <loc>https://010000.github.io/tags/mail/</loc>
+    <lastmod>2021-08-21T01:50:00+09:00</lastmod>
+  </url><url>
+    <loc>https://010000.github.io/categories/os_linux/</loc>
+    <lastmod>2021-08-21T01:50:00+09:00</lastmod>
+  </url><url>
+    <loc>https://010000.github.io/tags/postfix/</loc>
+    <lastmod>2021-08-21T01:50:00+09:00</lastmod>
+  </url><url>
+    <loc>https://010000.github.io/post/20210821_check_postfix_mail_linux/</loc>
+    <lastmod>2021-08-21T01:50:00+09:00</lastmod>
+  </url><url>
+    <loc>https://010000.github.io/post/</loc>
+    <lastmod>2021-08-21T01:50:00+09:00</lastmod>
+  </url><url>
+    <loc>https://010000.github.io/tags/service/</loc>
+    <lastmod>2021-08-21T01:50:00+09:00</lastmod>
+  </url><url>
+    <loc>https://010000.github.io/tags/</loc>
+    <lastmod>2021-08-21T01:50:00+09:00</lastmod>
+  </url><url>
+    <loc>https://010000.github.io/tags/test/</loc>
+    <lastmod>2021-08-21T01:50:00+09:00</lastmod>
   </url><url>
     <loc>https://010000.github.io/tags/container/</loc>
     <lastmod>2021-08-20T12:16:38+09:00</lastmod>
@@ -29,9 +62,6 @@
     <loc>https://010000.github.io/tags/install/</loc>
     <lastmod>2021-08-20T12:16:38+09:00</lastmod>
   </url><url>
-    <loc>https://010000.github.io/post/</loc>
-    <lastmod>2021-08-20T12:16:38+09:00</lastmod>
-  </url><url>
     <loc>https://010000.github.io/tags/skim/</loc>
     <lastmod>2021-08-20T12:16:38+09:00</lastmod>
   </url><url>
@@ -39,9 +69,6 @@
     <lastmod>2021-08-20T12:16:38+09:00</lastmod>
   </url><url>
     <loc>https://010000.github.io/tags/stop/</loc>
-    <lastmod>2021-08-20T12:16:38+09:00</lastmod>
-  </url><url>
-    <loc>https://010000.github.io/tags/</loc>
     <lastmod>2021-08-20T12:16:38+09:00</lastmod>
   </url><url>
     <loc>https://010000.github.io/tags/bulk/</loc>
@@ -73,9 +100,6 @@
   </url><url>
     <loc>https://010000.github.io/tags/search/</loc>
     <lastmod>2021-08-12T12:03:00+09:00</lastmod>
-  </url><url>
-    <loc>https://010000.github.io/tags/check/</loc>
-    <lastmod>2021-07-16T16:25:00+09:00</lastmod>
   </url><url>
     <loc>https://010000.github.io/tags/command/</loc>
     <lastmod>2021-07-16T16:25:00+09:00</lastmod>
@@ -131,9 +155,6 @@
     <loc>https://010000.github.io/tags/dns/</loc>
     <lastmod>2021-04-27T23:59:00+09:00</lastmod>
   </url><url>
-    <loc>https://010000.github.io/tags/linux/</loc>
-    <lastmod>2021-04-27T23:59:00+09:00</lastmod>
-  </url><url>
     <loc>https://010000.github.io/post/20210427_bind_message_logs_linux/</loc>
     <lastmod>2021-04-27T23:59:00+09:00</lastmod>
   </url><url>
@@ -141,9 +162,6 @@
     <lastmod>2021-04-27T23:59:00+09:00</lastmod>
   </url><url>
     <loc>https://010000.github.io/tags/message/</loc>
-    <lastmod>2021-04-27T23:59:00+09:00</lastmod>
-  </url><url>
-    <loc>https://010000.github.io/categories/os_linux/</loc>
     <lastmod>2021-04-27T23:59:00+09:00</lastmod>
   </url><url>
     <loc>https://010000.github.io/tags/issue/</loc>
@@ -198,9 +216,6 @@
     <lastmod>2021-04-19T12:30:00+09:00</lastmod>
   </url><url>
     <loc>https://010000.github.io/tags/measure/</loc>
-    <lastmod>2021-04-19T12:30:00+09:00</lastmod>
-  </url><url>
-    <loc>https://010000.github.io/tags/test/</loc>
     <lastmod>2021-04-19T12:30:00+09:00</lastmod>
   </url><url>
     <loc>https://010000.github.io/tags/throughput/</loc>

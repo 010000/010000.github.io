@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>error on 010000 logbook</title>
+    <link>https://010000.github.io/tags/error/</link>
+    <description>Recent content in error on 010000 logbook</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Sat, 21 Aug 2021 01:50:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/error/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>postfix mail service check</title>
+      <link>https://010000.github.io/post/20210821_check_postfix_mail_linux/</link>
+      <pubDate>Sat, 21 Aug 2021 01:50:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/post/20210821_check_postfix_mail_linux/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;메일 발송에 문제가 있다고하여 찾아보고 테스트했던 기록  &lt;em&gt;(Update: Aug 21, 2021)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.81.0 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="author" content="Jeffrey YM. Jo">
+<meta name="keywords" content="tech">
+<meta name="description" content="
+메일 발송에 문제가 있다고하여 찾아보고 테스트했던 기록  (Update: Aug 21, 2021)
+">
+
+
+<meta property="og:description" content="
+메일 발송에 문제가 있다고하여 찾아보고 테스트했던 기록  (Update: Aug 21, 2021)
+">
+<meta property="og:type" content="article">
+<meta property="og:title" content="postfix mail service check">
+<meta name="twitter:title" content="postfix mail service check">
+<meta property="og:url" content="https://010000.github.io/post/20210821_check_postfix_mail_linux/">
+<meta property="twitter:url" content="https://010000.github.io/post/20210821_check_postfix_mail_linux/">
+<meta property="og:site_name" content="010000 logbook">
+<meta property="og:description" content="
+메일 발송에 문제가 있다고하여 찾아보고 테스트했던 기록  (Update: Aug 21, 2021)
+">
+<meta name="twitter:description" content="
+메일 발송에 문제가 있다고하여 찾아보고 테스트했던 기록  (Update: Aug 21, 2021)
+">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2021-08-21T01:50:00">
+  
+  
+    <meta property="article:modified_time" content="2021-08-21T01:50:00">
+  
+  
+  
+    
+      <meta property="article:section" content="os_linux">
+    
+  
+  
+    
+      <meta property="article:tag" content="postfix">
+    
+      <meta property="article:tag" content="mail">
+    
+      <meta property="article:tag" content="service">
+    
+      <meta property="article:tag" content="error">
+    
+      <meta property="article:tag" content="check">
+    
+      <meta property="article:tag" content="test">
+    
+      <meta property="article:tag" content="linux">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://res.cloudinary.com/oloooo/image/upload/v1614951872/githubpages/netscape_wcocsw.gif">
+  <meta property="twitter:image" content="https://res.cloudinary.com/oloooo/image/upload/v1614951872/githubpages/netscape_wcocsw.gif">
+
+
+    <title>postfix mail service check</title>
+
+    <link rel="icon" href="https://010000.github.io/favicon.ico">
+    
+
+    
+
+    <link rel="canonical" href="https://010000.github.io/post/20210821_check_postfix_mail_linux/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://010000.github.io/css/style-s8xlgnopppjrvgff3zxwbooca3paivectafco2acr0hxdpldmmx7q5e8xki.min.css" />
+    
+    
+      
+        <link rel="stylesheet"  href="https://010000.github.io/css/syntax.css">
+      
+    
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-154694083-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    
+    
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.7.1/gist-embed.min.js"></script>
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="1">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://010000.github.io/">010000 logbook</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://010000.github.io/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://res.cloudinary.com/oloooo/image/upload/v1614951872/githubpages/netscape_wcocsw.gif" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="1">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://010000.github.io/#about">
+          <img class="sidebar-profile-picture" src="https://res.cloudinary.com/oloooo/image/upload/v1614951872/githubpages/netscape_wcocsw.gif" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Jeffrey YM. Jo</h4>
+        
+          <h5 class="sidebar-profile-bio">경험과 생각들을 정리하며, 다시 찾는 시간을 아끼기 위해 모아놓는 블로그입니다.</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://010000.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://010000.github.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://010000.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://010000.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-hashtag"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://010000.github.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-address-card"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="mailto:010000c@gmail.com" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-envelope"></i>
+      
+      <span class="sidebar-button-desc">Email</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/010000" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://010000.github.io/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="1"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      postfix mail service check
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2021-08-21T01:50:00&#43;09:00">
+        
+  August 21, 2021
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://010000.github.io/categories/os_linux">os_linux</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <ul>
+<li>메일 발송에 문제가 있다고하여 찾아보고 테스트했던 기록  <em>(Update: Aug 21, 2021)</em></li>
+</ul>
+<h2 id="실행-환경">실행 환경</h2>
+<p>Hostname: MailServer01<br>
+OS: CentOS 7<br>
+Service: Postfix v</p>
+<h2 id="1-서버-서비스-점검">1. 서버, 서비스 점검</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>USER1@MailServer01 ~<span style="color:#f92672">]</span>$ df -h |grep -v tmpfs
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda2       279G  2.9G  262G   2% /
+/dev/sda1       477M  128M  320M  29% /boot
+
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>USER1@MailServer01 ~<span style="color:#f92672">]</span>$ systemctl status postfix
+● postfix.service - Postfix Mail Transport Agent
+   Loaded: loaded <span style="color:#f92672">(</span>/usr/lib/systemd/system/postfix.service; enabled; vendor preset: disabled<span style="color:#f92672">)</span>
+   Active: active <span style="color:#f92672">(</span>running<span style="color:#f92672">)</span>
+   <span style="color:#f92672">(</span>...생략...<span style="color:#f92672">)</span>
+
+<span style="color:#f92672">[</span>USER1@MailServer01 ~<span style="color:#f92672">]</span>$ postfix status
+postfix/postfix-script: the Postfix mail system is running: PID: <span style="color:#ae81ff">1706</span>
+
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>USER1@MailServer01 ~<span style="color:#f92672">]</span>$ netstat -napt |grep :25
+Active Internet connections <span style="color:#f92672">(</span>servers and established<span style="color:#f92672">)</span>
+Proto Recv-Q Send-Q Local Address               Foreign Address             State       PID/Program name
+tcp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> 0.0.0.0:25                  0.0.0.0:*                   LISTEN      1706/master
+tcp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">1</span> 192.168.100.213:59928       192.168.49.5:25             SYN_SENT    1824/smtp
+tcp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> 192.168.100.213:44582       192.168.238.100:25          TIME_WAIT   -
+tcp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> 192.168.100.213:33406       192.168.108.46:25           ESTABLISHED 1730/smtp
+tcp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> 192.168.100.213:53068       192.168.157.27:25           ESTABLISHED 1729/smtp
+
+<span style="color:#f92672">[</span>USER1@MailServer01 ~<span style="color:#f92672">]</span>$ netstat -napt |grep SYN_SENT
+Active Internet connections <span style="color:#f92672">(</span>servers and established<span style="color:#f92672">)</span>
+Proto Recv-Q Send-Q Local Address               Foreign Address             State       PID/Program name
+tcp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">1</span> 192.168.100.213:60338       192.168.92.148:25           SYN_SENT    1328/smtp
+tcp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">1</span> 192.168.100.213:56134       128.14.151.197:25           SYN_SENT    1814/smtp
+tcp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">1</span> 192.168.100.213:57334       192.168.222.142:25          SYN_SENT    1700/smtp
+tcp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">1</span> 192.168.100.213:47934       192.168.159.23:25            SYN_SENT    1705/smtp
+tcp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">1</span> 192.168.100.213:57336       192.168.222.142:25          SYN_SENT    1726/smtp
+tcp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">1</span> 192.168.100.213:57344       192.168.222.142:25          SYN_SENT    1816/smtp
+
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>USER1@MailServer01 ~<span style="color:#f92672">]</span>$ mailq
+Mail queue is empty
+
+<span style="color:#f92672">[</span>USER1@MailServer01 ~<span style="color:#f92672">]</span>$ postqueue -p
+Mail queue is empty
+
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>USER1@MailServer01 ~<span style="color:#f92672">]</span>$ ls -altR /var/spool/postfix/defer |grep -Ev <span style="color:#e6db74">&#39;^d|^s&#39;</span> |grep <span style="color:#e6db74">&#39;Aug 18&#39;</span>|wc -l
+<span style="color:#ae81ff">363</span>
+<span style="color:#f92672">[</span>USER1@MailServer01 ~<span style="color:#f92672">]</span>$ ls -altR /var/spool/postfix/deferred/ |grep -Ev <span style="color:#e6db74">&#39;^d|^s&#39;</span> |grep <span style="color:#e6db74">&#39;Aug 18&#39;</span>|wc -l
+<span style="color:#ae81ff">363</span>
+<span style="color:#f92672">[</span>USER1@MailServer01 ~<span style="color:#f92672">]</span>$ ls -altR /var/spool/postfix/hold/ |grep -Ev <span style="color:#e6db74">&#39;^d|^s&#39;</span> |grep <span style="color:#e6db74">&#39;Aug 18&#39;</span>|wc -l
+<span style="color:#ae81ff">0</span>
+<span style="color:#f92672">[</span>USER1@MailServer01 ~<span style="color:#f92672">]</span>$ ls -altR /var/spool/postfix/incoming/ |grep -Ev <span style="color:#e6db74">&#39;^d|^s&#39;</span> |grep <span style="color:#e6db74">&#39;Aug 18&#39;</span>|wc -l
+<span style="color:#ae81ff">0</span>
+<span style="color:#f92672">[</span>USER1@MailServer01 ~<span style="color:#f92672">]</span>$ ls -altR /var/spool/postfix/active/ |grep -Ev <span style="color:#e6db74">&#39;^d|^s&#39;</span> |grep <span style="color:#e6db74">&#39;Aug 18&#39;</span>|wc -l
+<span style="color:#ae81ff">0</span>
+
+</code></pre></div><p>; 참고</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ postqueue -f
+$ postfix flush
+<span style="color:#75715e"># you can force Postfix to immediately attempt to send all queued messages. There are two to choose from:</span>
+
+$ postsuper -d ALL			    <span style="color:#75715e">#메일큐 전체 삭제</span>
+$ postsuper -d ALL deferred	    <span style="color:#75715e">#메일큐에서 deferred 상태인 메일만 삭제</span>
+<span style="color:#75715e"># allow you to delete all queued messages in Postfix. This includes messages from both the pending and deferred queues:</span>
+
+</code></pre></div><h2 id="2-메일-발송-테스트">2. 메일 발송 테스트</h2>
+<h3 id="2-1-다른-서버에서-telnet으로-발송">2-1. 다른 서버에서 telnet으로 발송</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>USER1@WEB01 ~<span style="color:#f92672">]</span>$ telnet MAIL.BRANCH_OFFICE.TEST.COM <span style="color:#ae81ff">25</span>
+Trying 192.168.100.119...
+Connected to MAIL.BRANCH_OFFICE.TEST.COM.
+Escape character is <span style="color:#e6db74">&#39;^]&#39;</span>.
+<span style="color:#ae81ff">220</span> MailServer01.BRANCH_OFFICE.TEST.COM ESMTP Postfix
+ehlo 127.0.0.1
+250-MailServer01.BRANCH_OFFICE.TEST.COM
+250-PIPELINING
+250-SIZE <span style="color:#ae81ff">20480000</span>
+250-VRFY
+250-ETRN
+250-AUTH PLAIN LOGIN
+250-AUTH<span style="color:#f92672">=</span>PLAIN LOGIN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+<span style="color:#ae81ff">250</span> DSN
+mail from:reporter11.BRANCH_OFFICE.TEST.COM
+<span style="color:#ae81ff">250</span> 2.1.0 Ok
+rcpt to:head01@HO.TEST.COM
+<span style="color:#ae81ff">250</span> 2.1.5 Ok
+data
+<span style="color:#ae81ff">354</span> End data with &lt;CR&gt;&lt;LF&gt;.&lt;CR&gt;&lt;LF&gt;
+test mail from WEB01, 10:07
+.
+<span style="color:#ae81ff">250</span> 2.0.0 Ok: queued as A547A1000487
+subject:testmail2
+<span style="color:#ae81ff">221</span> 2.7.0 Error: I can break rules, too. Goodbye.
+Connection closed by foreign host.
+
+</code></pre></div><p>; 메일 발송 성공 로그</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Aug <span style="color:#ae81ff">19</span> 10:06:57 MailServer01 postfix/smtpd<span style="color:#f92672">[</span>21119<span style="color:#f92672">]</span>: connect from WEB01.BRANCH_OFFICE.TEST.COM<span style="color:#f92672">[</span>192.168.100.217<span style="color:#f92672">]</span>
+Aug <span style="color:#ae81ff">19</span> 10:07:24 MailServer01 postfix/smtpd<span style="color:#f92672">[</span>21119<span style="color:#f92672">]</span>: A547A1000487: client<span style="color:#f92672">=</span>WEB01.BRANCH_OFFICE.TEST.COM<span style="color:#f92672">[</span>192.168.100.217<span style="color:#f92672">]</span>
+Aug <span style="color:#ae81ff">19</span> 10:07:59 MailServer01 postfix/cleanup<span style="color:#f92672">[</span>21702<span style="color:#f92672">]</span>: A547A1000487: message-id<span style="color:#f92672">=</span>&lt;&gt;
+Aug <span style="color:#ae81ff">19</span> 10:07:59 MailServer01 postfix/qmgr<span style="color:#f92672">[</span>39584<span style="color:#f92672">]</span>: A547A1000487: from<span style="color:#f92672">=</span>&lt;reporter11.BRANCH_OFFICE.TEST.COM&gt;, size<span style="color:#f92672">=</span>264, nrcpt<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">(</span>queue active<span style="color:#f92672">)</span>
+Aug <span style="color:#ae81ff">19</span> 10:08:01 MailServer01 postfix/smtp<span style="color:#f92672">[</span>22012<span style="color:#f92672">]</span>: A547A1000487: to<span style="color:#f92672">=</span>&lt;head01@HO.TEST.COM&gt;, relay<span style="color:#f92672">=</span>mx2.ho1234-12.TEST.COM<span style="color:#f92672">[</span>192.168.100.183<span style="color:#f92672">]</span>:25, delay<span style="color:#f92672">=</span>42, delays<span style="color:#f92672">=</span>41/0.02/0.55/0.77, dsn<span style="color:#f92672">=</span>2.0.0, status<span style="color:#f92672">=</span>sent <span style="color:#f92672">(</span><span style="color:#ae81ff">250</span> ok: Message <span style="color:#ae81ff">777213156</span> accepted<span style="color:#f92672">)</span>
+Aug <span style="color:#ae81ff">19</span> 10:08:01 MailServer01 postfix/qmgr<span style="color:#f92672">[</span>39584<span style="color:#f92672">]</span>: A547A1000487: removed
+Aug <span style="color:#ae81ff">19</span> 10:08:16 MailServer01 postfix/smtpd<span style="color:#f92672">[</span>21119<span style="color:#f92672">]</span>: warning: non-SMTP command from WEB01.BRANCH_OFFICE.TEST.COM<span style="color:#f92672">[</span>192.168.100.217<span style="color:#f92672">]</span>: subject:testmail2
+
+</code></pre></div><h3 id="2-2-메일-서버에서-mail로-발송">2-2. 메일 서버에서 mail로 발송</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>USER1@MailServer01 ~<span style="color:#f92672">]</span>$ sudo yum install mailx
+
+<span style="color:#f92672">[</span>USER1@MailServer01 ~<span style="color:#f92672">]</span>$ date | mailx -s <span style="color:#e6db74">&#34;service check&#34;</span> -r reporter11.BRANCH_OFFICE.TEST.COM head01@HO.TEST.COM
+
+<span style="color:#f92672">[</span>USER1@MailServer01 ~<span style="color:#f92672">]</span>$ date | mail -s <span style="color:#e6db74">&#34;service check&#34;</span> -r reporter11.BRANCH_OFFICE.TEST.COM head01@HO.TEST.COM
+
+</code></pre></div><p>; 메일 발송 성공 로그</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>USER1@MailServer01 ~<span style="color:#f92672">]</span>$ grep reporter11 /var/log/maillog
+Aug <span style="color:#ae81ff">17</span> 22:53:23 MailServer01 postfix/smtp<span style="color:#f92672">[</span>28251<span style="color:#f92672">]</span>: 4BABB6A1E40: to<span style="color:#f92672">=</span>&lt;reporter11@naver.com&gt;, relay<span style="color:#f92672">=</span>mx2.NAVER.COM<span style="color:#f92672">[</span>125.209.238.137<span style="color:#f92672">]</span>:25, delay<span style="color:#f92672">=</span>0.86, delays<span style="color:#f92672">=</span>0.02/0.3/0.02/0.52, dsn<span style="color:#f92672">=</span>2.0.0, status<span style="color:#f92672">=</span>sent <span style="color:#f92672">(</span><span style="color:#ae81ff">250</span> 2.0.0 OK OOX9VjeBRXGN5u0zqV4O5g - nsmtp<span style="color:#f92672">)</span>
+Aug <span style="color:#ae81ff">18</span> 17:44:41 MailServer01 postfix/pickup<span style="color:#f92672">[</span>39583<span style="color:#f92672">]</span>: D61301000738: uid<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> from<span style="color:#f92672">=</span>&lt;reporter11.BRANCH_OFFICE.TEST.COM&gt;
+Aug <span style="color:#ae81ff">18</span> 17:44:41 MailServer01 postfix/cleanup<span style="color:#f92672">[</span>44236<span style="color:#f92672">]</span>: D61301000738: message-id<span style="color:#f92672">=</span>&lt;611cc879.VWX9VvpHQka4657H%reporter11.BRANCH_OFFICE.TEST.COM&gt;
+Aug <span style="color:#ae81ff">18</span> 17:44:41 MailServer01 postfix/qmgr<span style="color:#f92672">[</span>39584<span style="color:#f92672">]</span>: D61301000738: from<span style="color:#f92672">=</span>&lt;reporter11.BRANCH_OFFICE.TEST.COM&gt;, size<span style="color:#f92672">=</span>471, nrcpt<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">(</span>queue active<span style="color:#f92672">)</span>
+Aug <span style="color:#ae81ff">18</span> 17:44:43 MailServer01 postfix/smtp<span style="color:#f92672">[</span>44238<span style="color:#f92672">]</span>: D61301000738: to<span style="color:#f92672">=</span>&lt;head01@HO.TEST.COM&gt;, relay<span style="color:#f92672">=</span>mx2.ho1234-12.TEST.COM<span style="color:#f92672">[</span>192.168.100.207<span style="color:#f92672">]</span>:25, delay<span style="color:#f92672">=</span>1.2, delays<span style="color:#f92672">=</span>0.01/0/0.42/0.8, dsn<span style="color:#f92672">=</span>2.0.0, status<span style="color:#f92672">=</span>sent <span style="color:#f92672">(</span><span style="color:#ae81ff">250</span> ok:  Message <span style="color:#ae81ff">771430293</span> accepted<span style="color:#f92672">)</span>
+Aug <span style="color:#ae81ff">18</span> 17:44:43 MailServer01 postfix/qmgr<span style="color:#f92672">[</span>39584<span style="color:#f92672">]</span>: D61301000738: removed
+
+</code></pre></div><p>; 메일 발송 실패</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>USER1@MailServer01 ~<span style="color:#f92672">]</span>$ grep head01 /var/log/maillog
+Aug <span style="color:#ae81ff">18</span> 12:06:46 MailServer01 postfix/smtp<span style="color:#f92672">[</span>6699<span style="color:#f92672">]</span>: BB8911000700: to<span style="color:#f92672">=</span>&lt;head01@HO.TEST.COM&gt;, relay<span style="color:#f92672">=</span>mx1.ho0987-12.TEST.COM<span style="color:#f92672">[</span>192.168.100.128<span style="color:#f92672">]</span>:25, delay<span style="color:#f92672">=</span>1.9, delays<span style="color:#f92672">=</span>0.04/0.02/1.7/0.15, dsn<span style="color:#f92672">=</span>5.0.0, status<span style="color:#f92672">=</span>bounced <span style="color:#f92672">(</span>host mx1.ho0987-12.TEST.COM<span style="color:#f92672">[</span>192.168.100.128<span style="color:#f92672">]</span> said: <span style="color:#ae81ff">501</span> 5.5.2 syntax error <span style="color:#e6db74">&#39;MAIL FROM:&lt;USER1@MailServer01.BRANCH_OFFICE.TEST.COM&gt; SIZE=507&#39;</span> <span style="color:#f92672">(</span>in reply to MAIL FROM command<span style="color:#f92672">))</span>
+
+</code></pre></div><h2 id="3-발송-실패-확인">3. 발송 실패 확인</h2>
+<h3 id="3-1-방화벽-등으로-메일-서버로-접근이-안될-경우">3-1. 방화벽 등으로 메일 서버로 접근이 안될 경우</h3>
+<blockquote>
+<p>connect to gmail-smtp-in.l.google.com[2404:6800:4008:c00::1b]:25: Network is unreachable</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Aug 18 16:50:10 MailServer01 postfix/pickup[29294]: 563661000738: uid=2140601791 from=&lt;reporter11&gt;
+Aug 18 16:50:10 MailServer01 postfix/cleanup[38190]: 563661000738: message-id=&lt;20200818075010.563661000738@MailServer01.BRANCH_OFFICE.TEST.COM&gt;
+Aug 18 16:50:10 MailServer01 postfix/qmgr[7631]: 563661000738: from=&lt;reporter11@MailServer01.BRANCH_OFFICE.TEST.COM&gt;, size=522, nrcpt=1 (queue active)
+Aug 18 16:50:11 MailServer01 postfix/smtp[38192]: connect to gmail-smtp-in.l.google.com[2404:6800:4008:c00::1b]:25: Network is unreachable
+Aug 18 16:50:11 MailServer01 postfix/smtp[38192]: 563661000738: to=&lt;reporter11@gmail.com&gt;, relay=gmail-smtp-in.l.google.com[108.177.97.26]:25, delay=1.6, delays=0.01/0/1.4/0.18, dsn=5.1.7, status=bounced (host gmail-smtp-in.l.google.com[108.177.97.26] said: 553-5.1.7 The sender address &lt;reporter11@MailServer01.BRANCH_OFFICE.TEST.COM&gt; is 553 5.1.7 not a valid RFC-5321 address. c18si5885039pgc.294 - gsmtp (in reply to MAIL FROM command))
+Aug 18 16:50:12 MailServer01 postfix/bounce[38193]: 563661000738: sender non-delivery notification: 23475100073
+</code></pre></div><h3 id="3-2-메일-주소에-오류가-있거나-임의-작성할-경우">3-2. 메일 주소에 오류가 있거나 임의 작성할 경우</h3>
+<blockquote>
+<p>said: 553 #5.1.8 Domain of sender address <a href="mailto:report11@WOWWOW.IO">report11@WOWWOW.IO</a> does not exist (in reply to MAIL FROM command))</p>
+</blockquote>
+<blockquote>
+<p>said: 553-5.1.7 The sender address &lt;reporter11@MailServer01.BRANCH_OFFICE.TEST.COM&gt; is 553 5.1.7 not a valid RFC-5321 address. d14si5879612plh.24 - gsmtp (in reply to MAIL FROM command))</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Aug 18 17:55:12 MailServer01 postfix/pickup[39583]: 885771000738: uid=0 from=&lt;report11@WOWWOW.IO&gt;
+Aug 18 17:55:12 MailServer01 postfix/cleanup[45530]: 885771000738: message-id=&lt;611ccaf0.PE8svUx0zZ2OJSIn%report11@WOWWOW.IO&gt;
+Aug 18 17:55:12 MailServer01 postfix/qmgr[39584]: 885771000738: from=&lt;report11@WOWWOW.IO&gt;, size=445, nrcpt=1 (queue active)
+Aug 18 17:55:13 MailServer01 postfix/smtp[45532]: 885771000738: to=&lt;head01@HO.TEST.COM&gt;, relay=mx1.ho0987-12.TEST.COM[192.168.100.44]:25, delay=0.64, delays=0.01/0/0.46/0.18, dsn=5.0.0, status=bounced (host mx1.ho0987-12.TEST.COM[192.168.100.44] said: 553 #5.1.8 Domain of sender address report11@WOWWOW.IO does not exist (in reply to MAIL FROM command))
+Aug 18 17:55:13 MailServer01 postfix/bounce[45656]: 885771000738: sender non-delivery notification: 54CA7100073A
+
+</code></pre></div><h3 id="3-3-syntax-error">3-3. syntax error</h3>
+<p>; 도메인 주소에 whitespace 또는 _가 있는 경우에도 보게 되는 오류</p>
+<blockquote>
+<p>status=bounced (host mx1.ho0987-12.TEST.COM[192.168.100.88] said: 501 #5.5.2 syntax error &lsquo;MAIL &hellip;</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Aug 18 15:29:39 MailServer01 postfix/smtp[29219]: 48727100071D: to=&lt;head01@HO.TEST.COM&gt;, relay=mx1.ho0987-12.TEST.COM[192.168.100.88]:25, delay=0.69, delays=0.02/0/0.52/0.14, dsn=5.0.0, status=bounced (host mx1.ho0987-12.TEST.COM[192.168.100.88] said: 501 #5.5.2 syntax error &#39;MAIL FROM:&lt;USER1@MailServer01.BRANCH_OFFICE.TEST.COM&gt; SIZE=507&#39; (in reply to MAIL FROM command))
+
+</code></pre></div><h2 id="4-참고-사항">4. 참고 사항</h2>
+<h3 id="4-1-메일-서버-추가-체크사항">4-1. 메일 서버 추가 체크사항</h3>
+<p>; 도메인에 join된 메일서버이거나 도메인 연결이 안될 경우 추가로 확인</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>USER1@MailServer01 ~<span style="color:#f92672">]</span>$ hostname -d
+BRANCH_OFFICE.TEST.COM
+
+<span style="color:#f92672">[</span>USER1@MailServer01 ~<span style="color:#f92672">]</span>$ hostname -s
+MailServer01
+
+<span style="color:#f92672">[</span>USER1@MailServer01 ~<span style="color:#f92672">]</span>$ hostname -f
+MailServer01.BRANCH_OFFICE.TEST.COM
+
+<span style="color:#f92672">[</span>USER1@MailServer01 ~<span style="color:#f92672">]</span>$ cat /etc/hostname 
+MailServer01.BRANCH_OFFICE.TEST.COM
+
+<span style="color:#f92672">[</span>USER1@MailServer01 ~<span style="color:#f92672">]</span>$ cat /etc/hosts
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+127.0.0.1   MailServer01.BRANCH_OFFICE.TEST.COM MailServer01
+
+</code></pre></div><ul>
+<li><a href="https://askubuntu.com/questions/158957/how-to-set-the-fully-qualified-domain-name-in-12-04" target="_blank" rel="noopener">How to set the fully qualified domain name in 12.04?</a>
+</li>
+<li><a href="https://knowledge.informatica.com/s/article/391310?language=en_US" target="_blank" rel="noopener">ERROR: &ldquo;Bad sender address syntax (in reply to MAIL FROM command)&rdquo; while sending an email using Email Task of PowerCenter</a>
+</li>
+</ul>
+<h3 id="4-2-메일-큐-디렉토리">4-2. 메일 큐 디렉토리</h3>
+<p>|&mdash;|<br>
+| /var/spool/postfix/hold |<br>
+| ; 관리자 개입 때까지 무기한 보류. 보류 해제시엔 &ldquo;postsuper -r&quot;을 사용하여 maildrop 대기열로 이동시킨다.|<br>
+| /var/spool/postfix/incoming	|<br>
+| ; Postfix 대기열로 들어오는 새 메일은 &ldquo;incoming&rdquo; 대기열에 기록된다. 정상적인 상태에서는 mode 0600 files 존재하고 거의 비워져 있다. |<br>
+| /var/spool/postfix/deferred	|<br>
+| ; 메일 발송 후 (발송이 가능한 상태의) 실패된 메일들이 배치된다. |<br>
+| /var/spool/postfix/active		|<br>
+| ; incoming queue 수신과 &amp; deferred queue 재시도로 발생한다. |<br>
+| /var/spool/postfix/corrupt |<br>
+| /var/spool/postfix/maildrop |</p>
+<h2 id="참고-글">참고 글</h2>
+<ul>
+<li><a href="https://www.wirehive.com/thoughts/5-top-tips-reviewing-postfix-mail-queue/" target="_blank" rel="noopener">5 top tips for reviewing your Postfix mail queue</a>
+</li>
+<li><a href="https://linuxhint.com/postfix_mail_queue_management/" target="_blank" rel="noopener">Postfix Mail Queue Management</a>
+</li>
+<li><a href="http://www.postfix.org/QSHAPE_README.html#queues" target="_blank" rel="noopener">Postfix Bottleneck Analysis</a>
+</li>
+<li><a href="https://tocup.tistory.com/170" target="_blank" rel="noopener">Postfix 표준 설정 예제</a>
+</li>
+<li><a href="https://empering.tistory.com/entry/telnet%ec%9d%84-%ec%9d%b4%ec%9a%a9%ed%95%9c-SMTP-%eb%a9%94%ec%9d%bc%ec%a0%84%ec%86%a1-%ed%85%8c%ec%8a%a4%ed%8a%b8" target="_blank" rel="noopener">telnet을 이용한 SMTP 메일 전송 테스트</a>
+</li>
+<li><a href="https://m.blog.naver.com/james2021/30170373091" target="_blank" rel="noopener">메일 SMTP 오류 코드 정리</a>
+</li>
+<li><a href="http://coffeenix.net/board_view.php?cata_code=60&amp;bd_code=1658&amp;bpage=" target="_blank" rel="noopener">도메인명으로 사용가능한 문자</a>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/postfix/">postfix</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/mail/">mail</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/service/">service</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/error/">error</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/check/">check</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/test/">test</a>
+
+  <a class="tag tag--primary tag--small" href="https://010000.github.io/tags/linux/">linux</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/post/20210820_quick_install_run_docker/" data-tooltip="docker 서비스 이해를 위한 설치, 실행, 종료">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/post/20210821_check_postfix_mail_linux/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/post/20210821_check_postfix_mail_linux/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/post/20210821_check_postfix_mail_linux/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+
+              
+            
+          </div>
+        </article>
+
+	<script src="https://utteranc.es/client.js"
+      	  repo="010000/blog-comments"
+       	 issue-term="pathname"
+       	 theme="github-light"
+       	 crossorigin="anonymous"
+       	 async>
+	</script>
+
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2021 <a href="https://github.com/010000">010000 Logbook</a>. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="1">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://010000.github.io/post/20210820_quick_install_run_docker/" data-tooltip="docker 서비스 이해를 위한 설치, 실행, 종료">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://010000.github.io/post/20210821_check_postfix_mail_linux/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://010000.github.io/post/20210821_check_postfix_mail_linux/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://010000.github.io/post/20210821_check_postfix_mail_linux/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="1">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F010000.github.io%2Fpost%2F20210821_check_postfix_mail_linux%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2F010000.github.io%2Fpost%2F20210821_check_postfix_mail_linux%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2F010000.github.io%2Fpost%2F20210821_check_postfix_mail_linux%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://res.cloudinary.com/oloooo/image/upload/v1614951872/githubpages/netscape_wcocsw.gif" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Jeffrey YM. Jo</h4>
+    
+      <div id="about-card-bio">경험과 생각들을 정리하며, 다시 찾는 시간을 아끼기 위해 모아놓는 블로그입니다.</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Public
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        South Korea
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    <div id="cover" style="background-image:url('https://res.cloudinary.com/oloooo/image/upload/v1614216485/githubpages/cover_2560px_oemeya.jpg');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://010000.github.io/js/script-n8mqrxp8rsufxtye69p9ch2uxowamnju45qdhlzy3r6bzgixdxhhwaa9zgxf.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/010000.github.io\/post\/20210821_check_postfix_mail_linux\/';
+          
+            this.page.identifier = '\/post\/20210821_check_postfix_mail_linux\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = '010000';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

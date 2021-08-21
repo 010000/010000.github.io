@@ -6,7 +6,18 @@
     <description>Recent content in OS_Linux on 010000 logbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Tue, 27 Apr 2021 23:59:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/categories/os_linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 21 Aug 2021 01:50:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/categories/os_linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>postfix mail service check</title>
+      <link>https://010000.github.io/post/20210821_check_postfix_mail_linux/</link>
+      <pubDate>Sat, 21 Aug 2021 01:50:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/post/20210821_check_postfix_mail_linux/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;메일 발송에 문제가 있다고하여 찾아보고 테스트했던 기록  &lt;em&gt;(Update: Aug 21, 2021)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
     <item>
       <title>Linux, Bind message logs</title>
       <link>https://010000.github.io/post/20210427_bind_message_logs_linux/</link>
