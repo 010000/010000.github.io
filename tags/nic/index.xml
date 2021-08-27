@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>nic on 010000 logbook</title>
+    <link>https://010000.github.io/tags/nic/</link>
+    <description>Recent content in nic on 010000 logbook</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Thu, 26 Aug 2021 22:40:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/nic/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rename network interface on Ubuntu</title>
+      <link>https://010000.github.io/post/20210826_rename_nic_eth0_linux/</link>
+      <pubDate>Thu, 26 Aug 2021 22:40:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/post/20210826_rename_nic_eth0_linux/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;Ubuntu OS에서 network 장치의 이름을 rename하며 정리한 노트&lt;/li&gt;
+&lt;li&gt;꼭 수정할 필요없으며 기본값 사용 권장 &lt;em&gt;(Update: Aug 26, 2021)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
