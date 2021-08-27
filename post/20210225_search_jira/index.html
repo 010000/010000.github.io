@@ -10,13 +10,13 @@
 <meta name="keywords" content="tech">
 <meta name="description" content="
 가끔 필요한 jira 검색을 위한 기록
-찾아봤던 예제들은 틈틈이 업데이트 됩니다. (Update: Aug 11, 2021)
+찾아봤던 예제들은 틈틈이 업데이트 됩니다. (Update: Aug 28, 2021)
 ">
 
 
 <meta property="og:description" content="
 가끔 필요한 jira 검색을 위한 기록
-찾아봤던 예제들은 틈틈이 업데이트 됩니다. (Update: Aug 11, 2021)
+찾아봤던 예제들은 틈틈이 업데이트 됩니다. (Update: Aug 28, 2021)
 ">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Jira search 예제">
@@ -26,11 +26,11 @@
 <meta property="og:site_name" content="010000 logbook">
 <meta property="og:description" content="
 가끔 필요한 jira 검색을 위한 기록
-찾아봤던 예제들은 틈틈이 업데이트 됩니다. (Update: Aug 11, 2021)
+찾아봤던 예제들은 틈틈이 업데이트 됩니다. (Update: Aug 28, 2021)
 ">
 <meta name="twitter:description" content="
 가끔 필요한 jira 검색을 위한 기록
-찾아봤던 예제들은 틈틈이 업데이트 됩니다. (Update: Aug 11, 2021)
+찾아봤던 예제들은 틈틈이 업데이트 됩니다. (Update: Aug 28, 2021)
 ">
 <meta property="og:locale" content="en-us">
 
@@ -290,7 +290,7 @@ if (!doNotTrack) {
             <div class="main-content-wrap">
               <ul>
 <li>가끔 필요한 jira 검색을 위한 기록</li>
-<li>찾아봤던 예제들은 틈틈이 업데이트 됩니다. <em>(Update: Aug 11, 2021)</em></li>
+<li>찾아봤던 예제들은 틈틈이 업데이트 됩니다. <em>(Update: Aug 28, 2021)</em></li>
 </ul>
 <p>e.g. 지난 1주간 분류된 component 작업 중 완료되었고 작업자들의 코멘트가 있는 것</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">resolutiondate <span style="color:#f92672">&gt;=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>w <span style="color:#66d9ef">AND</span> component <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Software&#34;</span> <span style="color:#66d9ef">AND</span> status <span style="color:#f92672">=</span> Closed <span style="color:#66d9ef">AND</span> <span style="color:#66d9ef">comment</span> <span style="color:#f92672">~</span> <span style="color:#e6db74">&#34;*operator*&#34;</span>
@@ -313,13 +313,15 @@ resolutiondate <span style="color:#f92672">&gt;=</span> <span style="color:#ae81
 <li>reporter 나 assignee 에는 like 구문처럼 검색이 안된다. (검색 중 알림으로도 알 수 있음)</li>
 <li>component 를 세세하게 쪼개진 않아서 등록된 케이스가 많을 경우 기간을 먼저 쿼리 후 조건을 작성하는게 정확도를 높인다</li>
 </ul>
-<h3 id="ref">Ref.</h3>
+<h3 id="참고-글">참고 글</h3>
 <ul>
 <li><a href="https://support.atlassian.com/jira-software-cloud/docs/advanced-search-reference-jql-operators/" target="_blank" rel="noopener">Advanced search reference - JQL operators</a>
 </li>
 <li><a href="https://3kllhk1ibq34qk6sp3bhtox1-wpengine.netdna-ssl.com/wp-content/uploads/2017/12/atlassian-jql-cheat-sheet-2.pdf" target="_blank" rel="noopener">JQL Cheat Sheet</a>
 </li>
 <li><a href="https://www.atlassian.com/ko/software/jira/guides/expand-jira/jql#advanced-search" target="_blank" rel="noopener">고급 검색 및 JQL 시작하기</a>
+</li>
+<li><a href="https://010000.github.io/post/20210811_import_export_bulk_changes_jira/" target="_blank" rel="noopener">Jira bulk create, edit, delete with CSV</a>
 </li>
 </ul>
               
