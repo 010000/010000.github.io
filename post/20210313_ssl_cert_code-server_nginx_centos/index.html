@@ -475,7 +475,7 @@ USER1@ ~<span style="color:#f92672">]</span>$ vi RenewCert.sh
 <span style="color:#75715e">#!/bin/bash</span>
 VALID<span style="color:#f92672">=(</span><span style="color:#66d9ef">$(</span>certbot certificates | grep VALID<span style="color:#66d9ef">)</span><span style="color:#f92672">)</span>
 VALID_DATE<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>expr <span style="color:#e6db74">${</span>VALID[5]<span style="color:#e6db74">}</span><span style="color:#66d9ef">)</span>
-<span style="color:#75715e">#인증서 갱신신 dns 레코드를 수정해야되어 자동 갱신은 webroot 인증으로 변경 함</span>
+<span style="color:#75715e">#인증서 갱신시 dns 레코드를 수정해야되어 webroot 인증으로 자동 갱신 변경</span>
 <span style="color:#75715e">#if [ $VALID_DATE -lt 15 ]; then </span>
 <span style="color:#75715e">#	echo &#34;\r&#34; | certbot --text --agree-tos -d vm2.mydomain.com --manual --preferred-challenges dns --expand --renew-by-default --manual-public-ip-logging-ok certonly --post-hook &#34;systemctl restart nginx.service&#34;</span>
 <span style="color:#75715e">#fi</span>
