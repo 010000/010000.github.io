@@ -475,9 +475,15 @@ USER1@ ~<span style="color:#f92672">]</span>$ vi RenewCert.sh
 <span style="color:#75715e">#!/bin/bash</span>
 VALID<span style="color:#f92672">=(</span><span style="color:#66d9ef">$(</span>certbot certificates | grep VALID<span style="color:#66d9ef">)</span><span style="color:#f92672">)</span>
 VALID_DATE<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>expr <span style="color:#e6db74">${</span>VALID[5]<span style="color:#e6db74">}</span><span style="color:#66d9ef">)</span>
-<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $VALID_DATE -lt <span style="color:#ae81ff">15</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span> 
- echo <span style="color:#e6db74">&#34;\r&#34;</span> | certbot --text --agree-tos -d vm2.mydomain.com --manual --preferred-challenges dns --expand --renew-by-default --manual-public-ip-logging-ok certonly --post-hook <span style="color:#e6db74">&#34;systemctl restart nginx.service&#34;</span>
+<span style="color:#75715e">#인증서 갱신신 dns 레코드를 수정해야되어 자동 갱신은 webroot 인증으로 변경 함</span>
+<span style="color:#75715e">#if [ $VALID_DATE -lt 15 ]; then </span>
+<span style="color:#75715e">#	echo &#34;\r&#34; | certbot --text --agree-tos -d vm2.mydomain.com --manual --preferred-challenges dns --expand --renew-by-default --manual-public-ip-logging-ok certonly --post-hook &#34;systemctl restart nginx.service&#34;</span>
+<span style="color:#75715e">#fi</span>
+
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $VALID_DATE -lt <span style="color:#ae81ff">15</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+     echo <span style="color:#e6db74">&#34;\r&#34;</span> | /bin/letsencrypt certonly --webroot --webroot-path /usr/share/nginx/html/ --agree-tos -d vm2.mydomain.com --renew-by-default --post-hook <span style="color:#e6db74">&#34;/usr/bin/systemctl restart nginx.service&#34;</span>
 <span style="color:#66d9ef">fi</span>
+
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>USER1@vm2 cronjobs<span style="color:#f92672">]</span>$ sudo vi /etc/crontab
 <span style="color:#ae81ff">55</span> <span style="color:#ae81ff">13</span>   * * *   root    /bin/sh /home/USER1/RenewCert.sh &gt; /dev/null 2&gt;&amp;<span style="color:#ae81ff">1</span>
 </code></pre></div><h3 id="참고-글">참고 글</h3>
