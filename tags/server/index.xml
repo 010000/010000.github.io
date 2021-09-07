@@ -50,7 +50,7 @@
       <guid>https://010000.github.io/post/20210307_install_code-server_linux/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;VS-Code 앱 설치없이 어디에서든 브라우저에서 python 코드를 실행합니다.&lt;/li&gt;
-&lt;li&gt;&lt;del&gt;게을러서&lt;/del&gt; Cloud VM에서 실행중인 code-server로 .md 포멧 문서를 작성, 수정하고 cronjob 으로 새문서를 모니터링해 자동 git push 되도록 구성하여 사용중입니다. &lt;em&gt;(Update: Mar 07, 2021)&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;게을러서&lt;/del&gt; Cloud VM에서 실행중인 code-server로 .md 포멧 문서를 작성, 수정하고 cronjob 으로 새문서를 모니터링해 자동 git push 되도록 구성하여 사용중입니다 &lt;em&gt;(Update: Mar 07, 2021)&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
     
