@@ -325,7 +325,7 @@ USER1@ ~<span style="color:#f92672">]</span>$ CURRENTUSER<span style="color:#f92
 
 USER1@ ~<span style="color:#f92672">]</span>$ CURRENTUSER<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>id -un<span style="color:#e6db74">`</span> ; sudo systemctl enable code-server@$CURRENTUSER
 </code></pre></div><h3 id="2-code-server-암호-설정">2. Code-server 암호 설정</h3>
-<p>;pasword 와 함께 기본 localhost에서 어디에서든 접근할 수 있도록 bind address 수정</p>
+<p>;password 와 함께 기본 localhost에서 어디에서든 접근할 수 있도록 bind address 수정</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ vi /home/USER1/.config/code-server/config.yaml
 
 <span style="color:#f92672">[</span>변경 전<span style="color:#f92672">]</span>
@@ -337,7 +337,7 @@ cert: false
 <span style="color:#f92672">[</span>변경 후<span style="color:#f92672">]</span>
 bind-addr: 0.0.0.0:8080
 auth: password
-password: $myNewPassword
+password: $Set_NewPassword_Here
 cert: false
 </code></pre></div><h3 id="3-폰트-추가">3. 폰트 추가</h3>
 <p>; 개인적으로 선호하는 bitstream-vera-sans 폰트 추가 설치<br>
