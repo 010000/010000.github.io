@@ -296,16 +296,25 @@ if (!doNotTrack) {
 </ul>
 <h3 id="환경-구성">환경 구성</h3>
 <ul>
-<li>OS: Ubuntu 20.04</li>
-<li>Vdbench: v5.04.07</li>
-<li>SSD: WD Black NVMe</li>
+<li>OS: CentOS 8.3.2011 (on Oracle cloud VM)</li>
+<li>Code-server: 3.9.0-amd64.rpm</li>
+<li>Python: v3.6.8</li>
 </ul>
 <h3 id="1-code-server-설치와-실행">1. Code-server 설치와 실행</h3>
 <p>Download: <a href="https://github.com/cdr/code-server/releases" target="_blank" rel="noopener">code-server</a>
 </p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">chacha@V-AnsibleM1:~/download$ cd ~/download/
-chacha@V-AnsibleM1:~/download$ curl -fOL https://www.oracle.com/webapps/redirect/signon?nexturl<span style="color:#f92672">=</span>https://download.oracle.com/otn/utilities_drivers/vdbench/vdbench50407.zip
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ pwd ; id -un
+/home/USER1
+USER1
 
+USER1@ ~<span style="color:#f92672">]</span>$ mkdir download ;cd download
+
+USER1@ ~<span style="color:#f92672">]</span>$ curl -fOL https://github.com/cdr/code-server/releases/download/v3.9.0/code-server-3.9.0-amd64.rpm
+
+USER1@ ~<span style="color:#f92672">]</span>$ sudo rpm -ivh ./code-server-3.9.0-amd64.rpm
+</code></pre></div><p>(Ubuntu 참고용)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ curl -fOL https://github.com/cdr/code-server/releases/download/v3.9.0/code-server_3.9.0_amd64.deb
+$ sudo dpkg -i code-server_3.9.0_amd64.deb
 </code></pre></div><p>; 사용자 id를 그냥 입력해도 되지만 사용자마다 다르기에 id를 찾아서 실행하는 것으로 했습니다.<br>
 ; 개인적인 편의에 따라 .bashrc에 alias 추가로 간단히 사용</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USER1@ ~<span style="color:#f92672">]</span>$ CURRENTUSER<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>id -un<span style="color:#e6db74">`</span> ; sudo systemctl start code-server@$CURRENTUSER
