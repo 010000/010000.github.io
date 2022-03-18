@@ -6,7 +6,16 @@
     <description>Recent content in Categories on 010000 logbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Thu, 26 Aug 2021 22:40:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 18 Mar 2022 19:02:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>mobile</title>
+      <link>https://010000.github.io/categories/mobile/</link>
+      <pubDate>Fri, 18 Mar 2022 19:02:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/categories/mobile/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>OS_Linux</title>
       <link>https://010000.github.io/categories/os_linux/</link>

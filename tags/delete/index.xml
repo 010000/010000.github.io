@@ -6,7 +6,19 @@
     <description>Recent content in delete on 010000 logbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Fri, 20 Aug 2021 12:16:38 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/delete/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 18 Mar 2022 19:02:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/delete/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Delete Game apps(GOS) on Samsung mobile</title>
+      <link>https://010000.github.io/post/20220318_delete_gos_samsung_phone/</link>
+      <pubDate>Fri, 18 Mar 2022 19:02:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/post/20220318_delete_gos_samsung_phone/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;삼성폰에서 GOS 삭제하기&lt;/li&gt;
+&lt;li&gt;삭제 후 남아있다면 GOS 앱의 권한을 모두 제하기 &lt;em&gt;(Update: Mar 18, 2022)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
     <item>
       <title>docker 서비스 이해를 위한 설치, 실행, 종료</title>
       <link>https://010000.github.io/post/20210820_quick_install_run_docker/</link>
