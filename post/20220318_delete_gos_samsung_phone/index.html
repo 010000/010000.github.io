@@ -9,14 +9,14 @@
 <meta name="author" content="Jeffrey Y. Jo">
 <meta name="keywords" content="tech">
 <meta name="description" content="
-삼성폰에서 GOS 삭제하기
-삭제 후 남아있다면 GOS 앱의 권한을 모두 제하기 (Update: Mar 18, 2022)
+DGame Optimizing Service 삭제
+삭제 작업 후 남아있다면 GOS 앱의 권한을 모두 해제로 (Update: Mar 18, 2022)
 ">
 
 
 <meta property="og:description" content="
-삼성폰에서 GOS 삭제하기
-삭제 후 남아있다면 GOS 앱의 권한을 모두 제하기 (Update: Mar 18, 2022)
+DGame Optimizing Service 삭제
+삭제 작업 후 남아있다면 GOS 앱의 권한을 모두 해제로 (Update: Mar 18, 2022)
 ">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Delete Game apps(GOS) on Samsung mobile">
@@ -25,12 +25,12 @@
 <meta property="twitter:url" content="https://010000.github.io/post/20220318_delete_gos_samsung_phone/">
 <meta property="og:site_name" content="010000 logbook">
 <meta property="og:description" content="
-삼성폰에서 GOS 삭제하기
-삭제 후 남아있다면 GOS 앱의 권한을 모두 제하기 (Update: Mar 18, 2022)
+DGame Optimizing Service 삭제
+삭제 작업 후 남아있다면 GOS 앱의 권한을 모두 해제로 (Update: Mar 18, 2022)
 ">
 <meta name="twitter:description" content="
-삼성폰에서 GOS 삭제하기
-삭제 후 남아있다면 GOS 앱의 권한을 모두 제하기 (Update: Mar 18, 2022)
+DGame Optimizing Service 삭제
+삭제 작업 후 남아있다면 GOS 앱의 권한을 모두 해제로 (Update: Mar 18, 2022)
 ">
 <meta property="og:locale" content="en-us">
 
@@ -295,20 +295,20 @@ if (!doNotTrack) {
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
               <ul>
-<li>삼성폰에서 GOS 삭제하기</li>
-<li>삭제 후 남아있다면 GOS 앱의 권한을 모두 제하기 <em>(Update: Mar 18, 2022)</em></li>
+<li>DGame Optimizing Service 삭제</li>
+<li>삭제 작업 후 남아있다면 GOS 앱의 권한을 모두 해제로 <em>(Update: Mar 18, 2022)</em></li>
 </ul>
 <h3 id="실행-환경">실행 환경</h3>
 <ul>
 <li>OS: Windows</li>
-<li>Phone: 삼성폰 설정 - 개발자옵션 - USB 디버깅 ON</li>
+<li>Phone: 설정 - 개발자옵션 - USB debugging ON</li>
 </ul>
 <h2 id="1-adb-설치하기">1. ADB 설치하기</h2>
-<p>SDK 플랫폼 도구
+<p>SDK 플랫폼 도구<br>
 <a href="https://developer.android.com/studio/releases/platform-tools" target="_blank" rel="noopener">https://developer.android.com/studio/releases/platform-tools</a>
 </p>
 <h2 id="2-adb-실행-앱-삭제">2. ADB 실행, 앱 삭제</h2>
-<pre><code class="language-dos" data-lang="dos">C:\platform-tools_r33.0.1-windows\platform-tools&gt;dir
+<pre><code class="language-dos" data-lang="dos">C:\platform-tools_r33.0.1-windows\platform-tools&gt; dir
  C 드라이브의 볼륨에는 이름이 없습니다.
  볼륨 일련 번호: A267-7FBB
 
@@ -334,24 +334,31 @@ if (!doNotTrack) {
               15개 파일          14,576,328 바이트
                2개 디렉터리  227,256,352,768 바이트 남음
 
-</code></pre><pre><code class="language-dos" data-lang="dos">C:\platform-tools_r33.0.1-windows\platform-tools&gt;adb shell
+</code></pre><pre><code class="language-dos" data-lang="dos">C:\platform-tools_r33.0.1-windows\platform-tools&gt; adb shell
 
 crownlteks:/ $ pm uninstall -k --user 0 com.samsung.android.game.gamehome
 Success
+
 crownlteks:/ $ pm uninstall -k --user 0 com.samsung.android.game.gametools
 Success
+
 crownlteks:/ $ pm uninstall -k --user 0 com.samsung.android.game.gos
 Success
+
 crownlteks:/ $ pm uninstall -k --user 0 com.enhance.gameservice
 Failure [not installed for 0]
+
 crownlteks:/ $
 
 </code></pre><h2 id="3-폰-리부팅-후-상태-확인">3. 폰 리부팅 후 상태 확인</h2>
-<p>리부팅 후 확인.<br>
-만일 삭제되지 않고 남아있다면 GOS 앱의 권한을 제외한다.</p>
+<ul>
+<li>리부팅 후 앱 확인.</li>
+<li>만일 삭제되지 않고 남아있다면 GOS 앱의 권한을 제외한다.<br>
+(ADB로 앱 삭제없이 권한 제외를 먼저해보는 것도 추천)</li>
+</ul>
 <ol>
-<li>설정 - 애플리케이션 - (오른쪽 상단)시스템 앱 표시 - (상단 돋보기) - Game Optimizing Service 찾기</li>
-<li>아래 메뉴 사용안함 또는 (허용)권한없음으로 변경</li>
+<li>설정 - 애플리케이션 - (오른쪽 상단)시스템 앱 표시 - (상단 돋보기) - Game Optimizing Service 입력하여 찾기</li>
+<li>아래 항목들을 &lsquo;사용안함&rsquo; 또는 &lsquo;(허용)권한없음&rsquo;으로 변경</li>
 </ol>
 <ul>
 <li>권한</li>
