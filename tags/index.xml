@@ -6,7 +6,61 @@
     <description>Recent content in Tags on 010000 logbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Thu, 26 Aug 2021 22:40:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 18 Mar 2022 19:01:00 +0900</lastBuildDate><atom:link href="https://010000.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>802.3ad</title>
+      <link>https://010000.github.io/tags/802.3ad/</link>
+      <pubDate>Fri, 18 Mar 2022 19:01:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/802.3ad/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>aggregation</title>
+      <link>https://010000.github.io/tags/aggregation/</link>
+      <pubDate>Fri, 18 Mar 2022 19:01:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/aggregation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bond</title>
+      <link>https://010000.github.io/tags/bond/</link>
+      <pubDate>Fri, 18 Mar 2022 19:01:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/bond/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>lacp</title>
+      <link>https://010000.github.io/tags/lacp/</link>
+      <pubDate>Fri, 18 Mar 2022 19:01:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/lacp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://010000.github.io/tags/linux/</link>
+      <pubDate>Fri, 18 Mar 2022 19:01:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nic</title>
+      <link>https://010000.github.io/tags/nic/</link>
+      <pubDate>Fri, 18 Mar 2022 19:01:00 +0900</pubDate>
+      
+      <guid>https://010000.github.io/tags/nic/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>ens160</title>
       <link>https://010000.github.io/tags/ens160/</link>
@@ -26,29 +80,11 @@
     </item>
     
     <item>
-      <title>linux</title>
-      <link>https://010000.github.io/tags/linux/</link>
-      <pubDate>Thu, 26 Aug 2021 22:40:00 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>network</title>
       <link>https://010000.github.io/tags/network/</link>
       <pubDate>Thu, 26 Aug 2021 22:40:00 +0900</pubDate>
       
       <guid>https://010000.github.io/tags/network/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>nic</title>
-      <link>https://010000.github.io/tags/nic/</link>
-      <pubDate>Thu, 26 Aug 2021 22:40:00 +0900</pubDate>
-      
-      <guid>https://010000.github.io/tags/nic/</guid>
       <description></description>
     </item>
     
